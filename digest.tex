@@ -1,0 +1,197 @@
+\documentclass[10pt]{amsart}
+\usepackage[margin=1.6cm,top=1.5cm,bottom=1.7cm]{geometry}
+\usepackage{amsmath,amssymb}
+\let\olditemize\itemize\renewcommand{\itemize}{\olditemize\setlength{\itemsep}{1pt}\setlength{\topsep}{2pt}\setlength{\parsep}{0pt}}
+\setlength{\parskip}{2pt}
+\newcommand{\Z}{\mathbb Z}\newcommand{\Q}{\mathbb Q}\newcommand{\F}{\mathbb F}
+\newcommand{\CP}{\mathbb{CP}}\newcommand{\PD}{\operatorname{PD}}
+\newcommand{\Hol}{\operatorname{Hol}}
+\title{Purely cosmetic surgeries via a $\mathrm{PU}(2)$-monopole cobordism:\\ a digest of the argument}
+\date{}
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.5\baselineskip}{.2\baselineskip}{\normalfont\bfseries}}\makeatother
+\begin{document}
+\maketitle
+\vspace{-2.5em}
+
+\noindent\textbf{Setting.} $Y_r=S^3_r(K)$. By Hanselman and
+Daemi--Lidman--Miller Eismeier (Cor.~1.4), the only open case is $g(K)=2$
+with an orientation-preserving diffeomorphism $\phi\colon Y_{-2}\to Y_2$.
+Everything below derives a contradiction from $\phi$; no peripheral
+condition on $\phi$ is used.
+
+\noindent\textbf{Strategy.} Use $\phi$ to build a closed $4$-manifold $X$
+with an $n$-cube of metrics and a signed sum over $2^n$ determinant lifts
+such that (a)~the cut-down zero-dimensional instanton count is an integer
+$\Omega\ne0$, and (b)~the coupled Dirac index $n_D=\Theta-\kappa$ is
+positive. Run the $\mathrm{PU}(2)$-monopole cobordism
+(Pidstrigach--Tyurin, Okonek--Teleman, Feehan--Leness): after the
+$S^1$-quotient and $\eta=n_D-1$ phase cuts (sections of the weight-two
+line) the free monopole space is $1$-dimensional. Its ends are instanton
+links ($2^\eta\Omega$), Seiberg--Witten-type reducibles, and face ends.
+Lattice and curvature estimates remove \emph{all} reducible fixed points
+and all face ends except lens walls. The lens walls cancel in pairs with the
+same signs that make $\Omega$ integral. Hence $2^\eta\Omega=0$. The analysis
+never glues at a Seiberg--Witten point or at a bubbling level.
+
+\section*{1. Ordinary maps (paper, Secs.~2--3)}
+Use the irreducible determinant-one complexes. $Y_{\pm1},Y_{\pm2},S^3$ have
+only central reducibles. On $Y_0$, $w\cdot A$ is odd ($A$ the capped Seifert
+surface). The unperturbed complex gives $C(S^3)=0$.
+\begin{itemize}
+\item $f_+\colon Y_0\to Y_1\to Y_2$ (meridional $2$-handles) and its mirror
+$f_-\colon Y_{-2}\to Y_0$ are $\F_2$-isomorphisms by exact-triangle
+pentagons (Culler--Daemi--Xie, DLME); the third term vanishes because
+$C(S^3)=0$. The outer cap is a sphere chain bounded by $S^1\times S^2$.
+Replacing it by $S^1\times D^3$ gives continuation, and the harmonic path of
+boundary flats has odd degree.
+$g_+\colon Y_2\to S^3\to Y_0$ and $g_-$ are one-parameter interval counts,
+summed mod~$2$ over two lifts differing by $\PD$ of the $(-2)$-sphere; the
+$\mathbb{RP}^3$-wall terms agree and cancel mod~$2$. The compressed pentagon
+gives $f_+g_+\simeq\mathrm{id}$.
+\item \emph{Negative interval $B$ (first new ingredient).}
+$W'=(-C_2)\cup_{S^3}C_{-2}\colon Y_2\to Y_{-2}$ has $b^+=0$ and
+$H_2=\langle F_l,F_r\rangle$ with $F^2=-2$. The sphere is $S=F_l-F_r$, $S^2=-4$.
+The metric interval runs from the $S^3$-split $J$ to splitting off
+$N=\nu S$, $\partial N=L(4,1)$. The degree-two insertion $x(S)$ requires the
+normalized holonomy $=-1$ on a one-parameter sweep of loops across $S$. The
+count has $i+1+1-3=0$ and sums over lifts $c_e=e\PD(S)$. At the lens wall
+only the minimal cap survives: trace-zero flat, $\kappa=\frac14$, harmonic
+reducible. Its eigenline has degree one, so the sweep crosses $-1$ with
+signed count $\pm1$. A local determinant-line comparison (tensor by the line
+$-2x$ on $N$, then a boundary Weyl conjugation) gives weights
+$\varepsilon_1=-s\varepsilon_0$ that cancel these terms \emph{integrally}.
+Hence $B$ is an integral chain map. Mod~$2$, $B\simeq g_-g_+$: in the
+$3$-dimensional associahedron for $2\to\infty\to0\to\infty\to-2$, the face
+$\nu U$ ($U^2=0$) becomes $B$ in two steps. First replace $\nu U$ by
+$S^1\times D^3$; the $w_2$ root mismatch makes the matching condition
+$\Hol_\beta=-1$. Then contract $\beta$ through two discs whose union is
+$\pm S$.
+\item Bridge $T=f_-\phi^{-1}f_+\colon I(Y_0)\to I(Y_0)$ is a mod-$2$ unit,
+hence a $\Q$-isomorphism.
+\end{itemize}
+
+\section*{2. Caps with a nonzero pairing on $Y_2$ (paper, Sec.~4)}
+Take a symplectic closure $X_0\supset Y_0$ (Gabai, Eliashberg--Thurston,
+Eliashberg caps, as in Kronheimer--Mrowka). Arrange simply connected halves,
+tight genus-$2$ surfaces in each half, and $A$ primitive.
+$D^w_{X_0}(x_0^mh^a)\ne0$ with $h\cdot A=1$; the paper reproves this. The
+extremal joint eigenspace of $(\mu(\Sigma),\mu(\mathrm{pt}))$ on
+$I(\Sigma_g\times S^1)$ is a line (Mu\~noz). The Lefschetz word of the blown-up
+$X_0$ is extracted by Hurwitz moves as a prefix of model words from
+$E(g+1)$, which have nonzero extremal coefficient. Then apply the KM structure
+theorem and the blow-up formula.
+Insert $T^k$ at $Y_0$. Surface insertions crossing $T$ are tracked by a
+nilpotent deformation over $\Q[t_i]/(t_i^2)$, and the deformed $T_L$ is still
+a quasi-isomorphism. Cayley--Hamilton gives $k\ge1$ with nonzero all-label
+coefficient. Cut at an internal $Y_2$ seam, where $H_2$ splits over $\Q$, and
+allocate the probes. This gives caps $C_\pm$ with $b^+>0$, containing $A$
+with $w\cdot A$ odd, so generic periods kill reducibles. Each cap gets one
+extra blow-up $E_{\rm exc}$. The result is an integral cycle $x$ and cocycle
+$y$ on $I(Y_2)$ with $yx=q\ne0$.
+
+\section*{3. The stack: $\Omega\ne0$ and $n_D>0$ (paper, Sec.~5)}
+$X=C_-\cup(\text{$n$ copies of }B,\ \text{each followed by }\phi)\cup C_+$,
+except at $m$ places where $H=f_+f_-$ replaces the return. These positive
+bridges are spaced exactly four intervals apart.
+\begin{itemize}
+\item \emph{Integrality.} Each step is a unit of $L/2^NL$, where
+$L=I(Y_2;\Z)/\mathrm{Tor}$ and $q\not\equiv0\ (2^N)$. Take all repetition
+counts divisible by $\exp\mathrm{GL}_r(\Z/2^N)$ and by $8$. Then the composite
+is the identity mod $2^N$, so $\Omega\equiv\pm q\ne0$. Stretching the finite
+$Y$-seams identifies $\Omega$ with the composite: a central contact costs
+$3$, and a macro $BHB$ recovers at most $2$ per central outer limit.
+\item \emph{Lattices.} Cut at the $S^3$'s. A negative cell is unimodular,
+$\langle a,b\rangle$ with $a^2=b^2=-1$. A positive cell has
+$H_2=\bigl(\begin{smallmatrix}2&1\\1&0\end{smallmatrix}\bigr)\oplus(-1)^4$,
+$b^+=1$, $\sigma=-4$, and contains the plumbing
+$X_1=-S_j,\ U,\ X_2=S_{j+1}$ with squares $(-4,0,-4)$.
+\item \emph{Indices.} Fix a characteristic $l$ and put $\Lambda=l+c$. A bit
+flip adds $\PD(S_i)$ to both $c$ and $\Lambda$, preserving $\Lambda^2$ and
+$\kappa$. $\Theta=(\Lambda^2-\sigma)/4$ telescopes, gaining $+1$ per positive
+cell. With $D_I=8\kappa-3(1+b^+)=n+z$ and $b^+=m+b_0$,
+$n_D=\Theta-\kappa=\frac{5m-n}{8}+\mathrm{const}$, which is about $m/8$ for $n\approx4m$.
+\end{itemize}
+\emph{Where $\phi$ enters.} $n_D>0$ needs $m/n>1/5$. The exclusions of
+part~5 below need spacing $\ge4$, i.e.\ $m/n\le1/4$. Without $\phi$ every $B$
+must be followed by $H$, since the reversed interval
+$Y_{-2}\to Y_2$ has $b^+=2$. That forces $m\approx n$.
+
+\section*{4. Metrics and the Abelian clamp (paper, Secs.~6--7)}
+Only the $S^3$ cuts $J_i$ and the lens cuts $\partial N_i$ become infinite;
+both have psc. All $Y$-seams stay finite, so no monopole Floer theory on
+$Y_j$ is needed. In each macro the two adjacent interval parameters drive
+a toric K\"ahler metric (Guillemin) on the $(-4,0,-4)$ plumbing. Its moment
+polygon is $\{4|y|\le x\le1,\,-a\le y\le b\}$, its class is
+$H=U+aX_1+bX_2$, and $0\le a,b\le\frac14$. The value $a=\frac14$ splits off
+$N_1$ (the lens face); $a\to0$ approaches $J$. Abreu's formula plus a Schur
+product identity give $\mathrm{Scal}\ge0$. Near $a=b=0$ a round
+$S^2\times S^1$ tube in class $U$ has length $\sim1/\epsilon$.
+For reductions (R: $\Phi=0$ split; S: $\Phi$ in one summand) let $v$ be the
+line difference, $K=\Lambda+v$ and $u=v\cdot U$.
+\begin{itemize}
+\item Small width: the energy is $o(1/\epsilon)$, but $u\ne0$ costs
+$\gtrsim u^2/\epsilon$. Hence $u=0$.
+\item Positive width: Weitzenb\"ock gives $vH=0$ (R) or $(vH)(KH)<0$ (S).
+$H$ is a convex combination of the vertex classes
+$H_I=U+\frac14\sum_{i\in I}X_i$, and $\Lambda H_I<0$. So for some
+$I\ne\emptyset$: $\operatorname{sign}(u)\,vH_I\le0$ (R) or
+$<|\Lambda H_I|$ (S).
+\item Caps: no R component meets a cap. S components satisfy
+$v_W^2,\ K_W^2\le C_W$, with $C_W$ independent of the stack.
+\end{itemize}
+
+\section*{5. Index exclusion (paper, Sec.~8)}
+The equations are $D_a\Phi=0$, $\rho(F_a^{0,+})=(\Phi\Phi^*)_{00}$, with
+determinant-one gauge and $S^1$ acting on $\Phi$. Fixed types are A
+(instanton), R and S; free type is P. Take a limit with $k$ cuts at the
+$J_i$. Virtually fill the lens caps with sharp references; the framed lens
+corrections come from $\mathbb F_4$ versus $\mathbb P(1,1,4)$. Then
+$q_i=D_{I,i}+p_i-2s_i-z_i$ satisfies $\sum(q_i+4)=4$.
+On R/S components $\kappa_i=-v_i^2/4+\ell_i$ with $\ell_i\ge0$. A test with
+$v(S)=0$ on a reducible forces a unit of $\ell$; this uses a smooth
+zero-winding modification of the holonomy test. Every assigned test pays a
+negative half of square $\le-2$ or a unit of $\ell$. Every positive cell has
+square $\le-2$ by the clamp, with one exception that is paid by $\ell$.
+With $L\ge4m-3$ (spacing four), every interior run of R/S components has
+$\sum(q_i+4)\ge-2$. A cap component is never R. An S cap component has
+$q+4\ge8$ after long delays and large odd $\Lambda(E_{\rm exc})$, using both
+cap bounds. So $k\ge1$ would force $\sum(q_i+4)\ge2a+6b+2\ge6>4$, and
+$k=0$ forces type A. \emph{Hence there are no Seiberg--Witten (S) or R fixed
+points at all.} For a mixed limit, delete the R components and keep their
+parameters. For $k\ge1$ there are $N\ge2$ non-R components and the projected
+dimension is $\le3-2N<0$. The only survivor is one P
+component plus one split $N_i$ with the minimal trace cap ($\kappa=\frac14$)
+and no particles.
+
+\section*{6. Boundary count (paper, Secs.~9--10)}
+Instanton links: make the Dirac operator surjective; the link is
+$\CP^{n_D-1}$ and the phase cuts are $\mathcal O(2)$-sections, giving
+$2^\eta\operatorname{sign}$. Lens ends: on $N$ the spinor vanishes and the
+Dirac operator is invertible (psc, index $0$), and the cap glues to the free
+main solution. The two bit lifts contribute opposite terms with the same
+$\varepsilon$ as in $B$; the Dirac line is complex, so it adds no sign.
+Stokes (rational multisections on the free stratum) gives
+$0=\pm2^\eta\Omega$, a contradiction.\hfill$\square$
+
+\section*{Assessment}
+The architecture is the standard $\mathrm{PU}(2)$-monopole cobordism. Its
+twist is that the geometry empties the Seiberg--Witten side, so the
+Feehan--Leness reducible gluing is never needed. Genuinely new:
+(i)~the integral negative-interval map $B$, whose lens-wall cancellation
+carries over to the monopole problem; (ii)~using $\phi$ to set the
+positive-bridge density in $(\frac15,\frac14]$; (iii)~the toric psc families
+and the period clamp on the $b^+=1$ cells. The mod-$2^N$ repetition and the
+labelled deformation are routine. The rest of the length is index
+bookkeeping and analytic verification. Points to check, in my reading:
+\begin{itemize}
+\item transversality and compactness of the ``necessary projection'' that
+forgets R components in mixed strata, with multisections;
+\item the zero-winding holonomy test: it must preserve the class of $B$ and
+behave correctly under Uhlenbeck limits;
+\item uniformity of the clamp across the degenerating toric family and
+genuine faces, and its compatibility with the product-metric computation of
+$\Omega$;
+\item the local orientation comparison that cancels lens ends in both
+problems.
+\end{itemize}
+\end{document}
