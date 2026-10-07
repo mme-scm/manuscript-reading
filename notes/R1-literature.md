@@ -418,7 +418,7 @@ Each $J$-cut costs 3 for the SO(3) gluing parameter and 1 for the lost interval 
 >
 > Truncate $\sum_e\varepsilon(e)\mathcal Z_e$ at $\{\|\Phi\|^2_{L^2}<\varepsilon\}$ near $\iota(\mathcal I_e)$ and at neck length $>D$ near the minimal lens limits. For generic small $\varepsilon$ and large $D$ the result is a compact oriented one-dimensional branched manifold with rational weights. Its boundary is as follows.
 > - Near $\iota(\mathcal I_e)$ there are $2^{n_a-1}$ points for each instanton, with total $\sigma_0\,2^{n_a-1}\,\Omega$, where $\sigma_0=\pm1$ does not depend on $e$.
-> - At the minimal lens limits there is one collar end for each main solution and each cap crossing. The ends for $e$ and $e^{(i)}$ over the same main solution cancel after weighting by $\varepsilon(e)$.
+> - At the minimal lens limits there is one collar end for each pair consisting of a free solution on $X\setminus N_i$ and a point of $\mathcal V(S_i)$ on the minimal cap. The ends for $e$ and $e^{(i)}$ over the same solution on $X\setminus N_i$ cancel after weighting by $\varepsilon(e)$.
 >
 > Hence $2^{n_a-1}\Omega=0$ in $\mathbb Q$, and so $\Omega=0$.
 
