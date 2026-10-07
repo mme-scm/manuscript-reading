@@ -1,0 +1,290 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+% US letter, margins of about 1.8 cm set by hand; compact section headings.
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+
+\numberwithin{equation}{section}
+\newtheoremstyle{compact}{4pt}{4pt}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{compact}
+\newtheorem{theorem}{Theorem}[section]
+\makeatletter % the proof environment of amsthm, with the spacing of the theorems
+\renewenvironment{proof}[1][\proofname]{\par\pushQED{\qed}\normalfont
+  \topsep4\p@\relax\trivlist\item[\hskip\labelsep\itshape#1\@addpunct{.}]%
+  \ignorespaces}{\popQED\endtrivlist\@endpefalse}
+\makeatother
+
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\CPb}{\overline{\mathbb{CP}}{}^2}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\PD}{\operatorname{PD}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\fs}{\mathfrak s}
+\newcommand{\ft}{\mathfrak t}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\step}[1]{\par\noindent\textit{#1}\enspace}
+% References set as one paragraph, to keep the note within two pages.
+\makeatletter
+\renewenvironment{thebibliography}[1]{\par\footnotesize\noindent
+  \textbf{References.}\ignorespaces
+  \def\@lbibitem[##1]##2{\unskip\enspace[##1]~\if@filesw\immediate
+    \write\@auxout{\string\bibcite{##2}{##1}}\fi\ignorespaces}%
+  \def\bysame{---}}{\par}
+\makeatother
+
+\begin{document}
+
+\section{Strategy}
+
+Let $K\subset S^3$ be a nontrivial knot, $Y_r=S^3_r(K)$, and
+$\phi\colon Y_{-2}\to Y_2$ an orientation-preserving diffeomorphism. By
+\cite[Cor.~1.4]{DLME}, after Ni--Wu and Hanselman, this is the last open case
+of the cosmetic surgery conjecture, and the Chern--Simons filtration, which
+settles $\pm1/n$, is unfavourable for the analogous maps, such as $B$ below
+\cite[\S1.2]{DLME}. We replace it by an obstruction from $\SO(3)$-monopoles. Thanks to $\phi$,
+copies of $B$ compose indefinitely, keeping the pairings of
+Step~2 nonzero, but each brings a sphere of square $-4$ whose $\mu$-class
+costs every Seiberg--Witten stratum more energy than it supplies (Step~3),
+until no stratum can carry the nonzero count that Step~1 requires.
+
+\step{Step 1. A Witten-type relation, used in reverse.}
+The $\SO(3)$-monopole cobordism of Pidstrigach and Tyurin, from which Feehan
+and Leness derive Witten's conjecture \cite{W} for many four-manifolds
+modulo a gluing theorem \cite{PT,FLM,FL6}, also gives a proved vanishing
+theorem. Take a spin$^u$ structure $\ft$ (a spin$^c$ structure
+twisted by a $\mathrm U(2)$-bundle $E$) with $w=c_1(E)$, $\Lambda=c_1(\ft)$,
+energy $\kappa=-p_1(\ft)/4$, and positive index
+$n_D=(\Lambda^2-\sigma)/4-\kappa$ of the Dirac operator coupled to an
+instanton. Near a generic instanton $A$ the link in the quotient by the circle
+acting on the spinor has fibre $\mathbb P(\ker D_A)\cong\CP^{n_D-1}$, on which the
+class $\mu_c$ of \cite{FL2b} is twice the hyperplane class. So for $\deg
+z=\dim M^w_\kappa$ the quotient cut down by $\mu_p(z)$ and $\mu_c^{n_D-1}$ is a
+one-manifold with $2^{n_D-1}D^w_X(z)$ ends at instantons
+\cite[Prop.~3.29]{FL2b}; its other ends are at Seiberg--Witten strata
+$M_\fs\times\Sym^\ell(X)$, $c_1(\fs)=\Lambda+v$, of level
+$\ell=\kappa+v^2/4\ge0$, the number of bubbles. If it reaches none,
+Stokes' theorem gives $D^w_X(z)=0$ without gluing at reducibles
+(Theorem~\ref{thm:closed}). In reverse: a nonzero count must reach a
+stratum with $M_\fs\neq\emptyset$, even if $SW(\fs)=0$; we produce one where
+none can be reached.
+
+\step{Step 2. Nonvanishing.}
+In Floer's instanton homology $I$ \cite{DLME}, let $B\colon I(Y_2)\to
+I(Y_{-2})$ be the map of the negative-definite cobordism
+$W'=(-X_2(K))\cup_{S^3}X_{-2}(K)$ over an interval of metrics (Step~4), and
+$H\colon I(Y_{-2})\to I(Y_2)$ that of the cobordism $W_H$ through $Y_0$. Both
+are defined over $\Z$; $H$ is an isomorphism, and modulo two $B$ is expected to invert
+it up to a fixed automorphism. So $u=(\phi_*B)^3HB$ is invertible on
+$(I(Y_2;\Z)/\text{torsion})\otimes\Z_{(2)}$, and $u^M\equiv1\pmod{2^N}$ for
+some $M$. Caps of $\pm Y_2$ with $b^+>0$ and relative
+invariants $\langle\Psi_+,\Psi_-\rangle=q\neq0$, obtained as in \cite{KM04}
+from a symplectic manifold containing $Y_0$ (here $K$ must be nontrivial),
+give
+$\langle\Psi_+,u^M\Psi_-\rangle\equiv q\not\equiv0\pmod{2^N}$. Integrality
+matters: Step~1 has a factor $2^{n_D-1}$, which vanishes modulo two.
+
+\step{Step 3. An insertion costs more energy than it supplies.}
+The cores of the $2$-handles of $W'$ form a sphere $S$, $[S]=F_l-F_r$,
+with halves $F_l$, $F_r$ from the two traces, orthogonal of square $-2$; so
+$S\cdot S=-4$, $\partial\nu S=L(4,1)$, and $B$ is cut down by $\mu(S)$. Regard
+$\kappa$ as the energy available; a stratum spends $-v^2/4$ on its
+reducible and $\ell$ on bubbles. As
+$\dim M^w_\kappa=8\kappa-3(1+b^+)$, a degree-two insertion supplies $1/4$, or
+$1/8$ with a parameter as in $B$. Represent $\mu(S)$ by the
+jumping-line divisor $V_S$ (\S\ref{sec:closed}). A reducible with class
+$v$ lies in $V_S$ iff $\langle v,S\rangle\neq0$, and then the halves,
+on which $w$, hence $v$, is even, cost at least $1/2$ in $-v^2/4$; if
+$\langle v,S\rangle=0$, a limit lies in $V_S$ only with a bubble on $S$. So a
+stratum is reached only if $\ell\ge T(v)$, the number of spheres orthogonal
+to $v$, and each sphere lowers $\ell-T(v)$ by at least
+$3/8$.
+
+\step{Step 4. Why a family.}
+The closed manifold $X_M$ capping the composite of $u^M$ is a
+connected sum along the middle $3$-spheres of the copies of $W'$, with
+$b^+>0$ on both sides, so its Donaldson and Seiberg--Witten invariants vanish.
+The pairing of Step~2 computes instead a secondary invariant $\Omega_M$, a
+count of instantons over the cube $[-1,1]^n$ of metrics whose faces stretch the necks $S^3$
+and $L(4,1)$, cut down by the $\mu(S_i)$ and the cap classes, and summed with
+signs over the bundles $c_e=c_0+\sum_ie_i\PD(S_i)$, $e\in\{0,1\}^n$. So is $B$:
+summed over $c$ and $c+\PD(S)$, the map of $W'$ cut down by $\mu(S)$ is
+null-homotopic by stretching $S^3$, as $I(S^3)=0$, and $L(4,1)$, where the
+ends at the reducible of energy $1/4$ on $\nu S$ cancel; $B$ is the
+difference. The
+parameter also lowers the energy an insertion supplies from $1/4$ to
+$1/8$, and this is decisive: $\ell(K)+\ell(-K)-2n_D=4\kappa+(K^2+\sigma)/2$ does not involve $\Lambda$, and a sphere with its halves changes
+it by $4s-1$, $s$ the energy supplied, for $K$ orthogonal to the halves (the
+hardest to exclude): by $0$ in a closed manifold, by $-1/2$ in a family. So with
+$\Lambda$ constrained as in Step~5, a closed manifold gains nothing from
+spheres (Section~\ref{sec:closed}).
+
+\step{Step 5. Why $b^+$.}
+Step~1 needs $n_D\ge1$, else the link is empty; Feehan and Leness
+take $\Lambda$ large \cite[Thm.~1]{FLM}. Here the relation is applied to the signed sum
+over the $c_e$, whose instanton ends carry $2^{n_D-1}$, so $n_D$ must be constant; as changing $e_i$ changes $\Lambda^2$ by $2\Lambda\cdot
+S_i-4$, $\Lambda\cdot S_i=2$. Then $\Lambda\cdot F_l$, $\Lambda\cdot F_r$ are
+even with difference $2$, the halves add nothing to
+$\Theta=(\Lambda^2-\sigma)/4$, and a chain of negative-definite pieces
+adds at most $1/2$, from its ends: the index must come from $b^+$. The
+positive piece $P\cong\CP^2\#5\CPb$, $W_H$ capped by the adjacent traces,
+has $\Theta(P)=1$ for the $\Lambda$ its chamber condition allows, and its
+positive direction supplies $3/8$: $P$ raises $n_D$ by $5/8$. Its
+Seiberg--Witten classes are controlled by a sphere of square zero and by toric
+metrics with $\mathrm{Scal}\ge0$, admitting only $K$ with $K\cdot H$ between
+$0$ and $\Lambda\cdot H$ ($H$ the period point); as $P$ is indefinite, a class
+can pair nontrivially with both adjacent spheres at total cost $1/2$, not $1$.
+
+\step{Step 6. The balance.}
+With $n$ spheres and $m$ positive pieces, a copy of $B$ lowers $n_D$ by
+$1/8$ and $\ell-T(v)$ by at least $3/8$; a positive piece raises $n_D$ by
+$5/8$ and the bound on $\ell-T(v)$ by $7/8$, its $3/8$ plus the $1/2$ it saves
+its neighbours. So $n_D=(5m-n)/8+O(1)$ and $\ell-T(v)\le(7m-3n)/8+O(1)$: for
+large $n$, $n_D\ge1$ and exclusion hold if $1/5<m/n<3/7$, and outside
+$[1/5,3/7]$ the count fails. As limits may break along the $3$-spheres, the inequality is needed on
+each segment of consecutive pieces; it holds once positive pieces are three
+copies of $B$ apart, except next to an irreducible component with nonzero
+spinor, where the available argument needs four. So the average spacing is
+in $[4,5)$; $u$ realizes four. Only $\phi$ allows it: $-W'$ has
+$b^+=2$, so without $\phi$ the only return supplied by the triangles is $W_H$,
+$m=n$, and exclusion fails. It must, since Step~2 also gives nonzero pairings
+$\langle\Psi_+,(HB)^M\Psi_-\rangle$, with $n_D\to\infty$, for every
+nontrivial knot. For $u$ and large $M$, the family
+version of Step~1 gives $2^{n_D-1}\Omega_M=0$, while Step~2 gives
+$\Omega_M\not\equiv0\pmod{2^N}$: the contradiction. That version is not in
+the literature; Section~\ref{sec:closed} proves its closed model.
+
+\section{A closed prototype}\label{sec:closed}
+
+The mechanism of Steps~1 and~3 can be seen on a closed four-manifold, in a version of
+\cite[Thm.~3.33(a)]{FL2b} in which the insertions exclude the reducibles,
+though it cannot by itself give the contradiction. Let $X$ be closed,
+oriented and simply connected with $b^+\ge1$, with generic metric $g$ and
+perturbations as in \cite{FL2b,FLM}, and $\ft$, $w$, $\Lambda$, $\kappa$,
+$n_D$ (FL's $n_a$) as in Step~1. For a spin$^c$ structure $\fs$ let
+$v=c_1(\fs)-\Lambda\equiv w\pmod2$, and $M_\fs$ its Seiberg--Witten moduli
+space, perturbed so that its points are the reducibles split by $\fs$
+\cite[Lemma~3.13]{FL2a}; it occurs in the Uhlenbeck closure $\bar\cM_\ft$
+only as
+$M_\fs\times\Sym^\ell(X)$, $\ell=\kappa+v^2/4$
+\cite[Lemma~3.32, (3.64)]{FL2b}. Let
+$S_1,\dots,S_n$ be disjoint embedded spheres with $\langle w,S_i\rangle$ even,
+and $T(v)=\#\{i:\langle v,S_i\rangle=0\}$.
+
+\begin{theorem}\label{thm:closed}
+Let $w\not\equiv0\pmod2$ and $n_D\ge1$, and let $z'$ be a monomial in the point
+class and classes of embedded surfaces with $\deg z'+2n=\dim M^w_\kappa$.
+\textup{(a)} If
+\begin{equation}\label{eq:excl}
+\kappa+v^2/4<T(v)\qquad\text{for every $\fs$ with $M_\fs\neq\emptyset$,}
+\end{equation}
+then $D^w_X(\mu(S_1)\cdots\mu(S_n)\,z')=0$ (for $b^+=1$, in the chamber of
+$g$). \textup{(b)} Let $[S_i]=F_{l,i}-F_{r,i}$, where the $2n$ classes
+$F_{l,i}$, $F_{r,i}$ are pairwise orthogonal of square $-2$ and $w$ is even on
+each; let $\pi$ be the orthogonal projection to the complement of their span,
+and $c_\perp$ the largest $(\pi v)^2$ for $M_\fs\neq\emptyset$. If
+$2n>\deg z'+3(1+b^+)+2c_\perp$, then \eqref{eq:excl} holds.
+\end{theorem}
+
+For $n=0$, \eqref{eq:excl} is hypothesis (3.68) of \cite[Thm.~3.33(a)]{FL2b}
+and (a) is that theorem. The insertions enter \eqref{eq:excl} on both sides:
+each raises $\kappa$ by $1/4$ and forces a bubble onto every sphere
+orthogonal to $v$.
+
+\begin{proof}
+(a) We follow the proof of \cite[Thm.~3.33(a)]{FL2b}, changing only the
+representatives of $\mu(S_i)$; all new inputs are elementary except
+transversality, standard but not written out for $\SO(3)$-monopoles. As $\langle w,S_i\rangle$ is even, $\bar\partial_A$ makes
+$E_A|_{S_i}\otimes(\det E_A|_{S_i})^{-1/2}$ a holomorphic bundle $\mathcal
+O(k)\oplus\mathcal O(-k)$ on $S_i\cong\mathbb P^1$ (Grothendieck), and the
+coupled Dirac operator, $\bar\partial$ on its twist by $\mathcal O(-1)$, has
+index zero and kernel $H^0(\mathcal O(k-1)\oplus\mathcal O(-k-1))$, nonzero
+iff $k\ge1$. So the canonical section of its determinant line, of first Chern
+class $\pm\mu(S_i)$ \cite{D90}, vanishes exactly on the jumping-line divisor
+$V_i=\{[A]:k\ge1\}$. (J1)~$V_i$ depends only on $A|_{S_i}$ and is closed under
+$C^0$ convergence of these restrictions, as $\bar\partial_A-\bar\partial_{A'}$
+has order zero. (J2)~A connection preserving a splitting
+$E|_{S_i}=L_1\oplus L_2$ with $\deg L_1=\deg L_2$ is not in $V_i$, as $k=0$.
+A small perturbation through sections depending only on $A|_{S_i}$ gives
+transversality on the irreducible strata of all levels, and makes $\cV(z)$
+smooth and transverse to $M^w_\kappa$ at the finitely many points of
+$\bar\cV(z)\cap\bar M^w_\kappa$, as \cite[Lemma~3.22]{FL2b} requires; it keeps (J1), and (J2) near the compact set of restrictions of
+reducible limits with $\langle v,S_i\rangle=0$, where the canonical section
+is nonzero. Put the
+representatives of $z'$ and $\mu_c$ of \cite[Lemmas~3.12--3.13]{FL2b} in
+general position, with base points off $\bigcup S_i$. Then no point lies in
+supports of total codimension above four ($S_i$ counting two), i.e.\
+\cite[(3.25)]{FL2b}: $z=\mu(S_1)\cdots\mu(S_n)\,z'$ is intersection-suitable.
+
+So $\cZ=\cV(z)\cap\mathcal W^{n_D-1}\cap\cM^{*,0}_\ft/S^1$, where $\cV(z)$,
+$\mathcal W$ represent $\mu_p(z)$, $\mu_c$ and $\cM^{*,0}_\ft$ consists of the irreducible monopoles
+with nonzero spinor, is a one-manifold \cite[(3.26), (3.62)]{FL2b} with
+$2^{n_D-1}D^w_X(z)$ signed ends at the link $\{\|\Phi\|^2_{L^2}=\varepsilon\}$
+of the instantons: the proof of \cite[Prop.~3.29, (3.32)]{FL2b} uses only that
+the representatives are determined by restriction, and the smoothness above.
+Uhlenbeck convergence is $C^\infty$, after gauge, away from the bubbles
+\cite[Def.~4.19, Thm.~4.20]{FL1}; so by (J1) and \cite[Lemma~3.15(1)]{FL2b} a
+limit at level $\ell\ge1$ satisfies every condition whose support contains no
+bubble, and as a level costs six dimensions and a bubble relieves at most
+four, the count of \cite[Cor.~3.18]{FL2b} excludes irreducible limits with
+nonzero spinor. There are no reducibles with zero spinor
+\cite[Prop.~3.1, Cor.~3.3]{FL2a}. At a limit in
+$M_\fs\times\Sym^\ell(X)$, a bubble lies on each $S_i$ with $\langle
+v,S_i\rangle=0$, for otherwise the restrictions to $S_i$ would converge in $C^0$ to one
+outside $V_i$, contradicting (J1) and (J2); the $S_i$ are disjoint, so
+$\ell\ge T(v)$, contrary to \eqref{eq:excl}. Hence
+$\bar\cZ\cap\{\|\Phi\|^2_{L^2}\ge\varepsilon\}$ is a compact oriented
+one-manifold with boundary on the link, so $2^{n_D-1}D^w_X(z)=0$.
+
+(b) The even numbers $\langle v,F_{l,i}\rangle$, $\langle
+v,F_{r,i}\rangle$ are not both zero if $\langle v,S_i\rangle\neq0$, so
+$-v^2/4=-(\pi v)^2/4+\sum_i(\langle v,F_{l,i}\rangle^2+\langle
+v,F_{r,i}\rangle^2)/8\ge-c_\perp/4+(n-T(v))/2$; with
+$8\kappa=2n+\deg z'+3(1+b^+)$ this gives \eqref{eq:excl}.
+\end{proof}
+
+In (b), $c_\perp$ depends on $\Lambda$. If $b^+\ge2$ and $K$ is basic, the
+moduli spaces of $\pm K$ are nonempty, so $c_\perp\ge(\pi K)^2+(\pi\Lambda)^2$,
+and (b) with $n_D\ge1$ needs
+$b^-_\perp>4b^++7+\deg z'+(\pi K)^2-2n-\Lambda_R^2$, where $b^-_\perp$ counts
+negative directions orthogonal to the halves and $\Lambda_R$ is the part of
+$\Lambda$ along them. With $\Lambda$ constrained as in Step~5,
+$\Lambda_R^2\le-2n$ and $n$ drops out (Step~4); with $\Lambda_R=0$ the halves
+add $n/2$ to the Dirac index, which the sum over bundles forbids.
+
+\begin{thebibliography}{DLME}
+\bibitem[D]{D90} S.~K. Donaldson, \emph{Polynomial invariants for smooth
+four-manifolds}, Topology \textbf{29} (1990), 257--315.
+\bibitem[DLME]{DLME} A.~Daemi, T.~Lidman and M.~Miller Eismeier,
+\emph{Filtered instanton homology and cosmetic surgery}, arXiv:2410.21248.
+\bibitem[FL1]{FL1} P.~M.~N. Feehan and T.~G. Leness, \emph{PU(2) monopoles.
+I}, J. Differential Geom. \textbf{49} (1998), 265--410.
+\bibitem[FL2a]{FL2a} \bysame, \emph{PU(2) monopoles and links of top-level
+Seiberg--Witten moduli spaces}, J. Reine Angew. Math. \textbf{538} (2001),
+57--133.
+\bibitem[FL2b]{FL2b} \bysame, \emph{PU(2) monopoles. II}, ibid., 135--212.
+\bibitem[FL6]{FL6} \bysame, \emph{Witten's conjecture for many four-manifolds
+of simple type}, J. Eur. Math. Soc. \textbf{17} (2015), 899--923.
+\bibitem[FLM]{FLM} \bysame, \emph{An $\mathrm{SO}(3)$-monopole cobordism
+formula relating Donaldson and Seiberg--Witten invariants}, Mem. Amer. Math.
+Soc. \textbf{256} (2018), no.~1226.
+\bibitem[KM]{KM04} P.~B. Kronheimer and T.~S. Mrowka, \emph{Witten's
+conjecture and Property P}, Geom. Topol. \textbf{8} (2004), 295--310.
+\bibitem[PT]{PT} V.~Ya. Pidstrigach and A.~N. Tyurin, \emph{Localisation of
+Donaldson invariants along Seiberg--Witten classes}, arXiv:dg-ga/9507004.
+\bibitem[W]{W} E.~Witten, \emph{Monopoles and four-manifolds}, Math. Res.
+Lett. \textbf{1} (1994), 769--796.
+\end{thebibliography}
+
+\end{document}
