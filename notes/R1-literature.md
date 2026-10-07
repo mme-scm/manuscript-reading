@@ -365,7 +365,7 @@ This is the family form of the one-manifold FL2b (3.62), with "$\deg z=d_a$" rep
 
 ### (e2) The compactification over $\bar Q$
 
-**Ideal tuples.** Fix a point of an open face where the necks $J_i$ ($i\in\mathcal J$) and $\partial N_i$ ($i\in\mathcal N$) are infinitely long, and put $k=|\mathcal J|$. An *ideal tuple* consists of:
+**Ideal limits.** Fix a point of an open face where the necks $J_i$ ($i\in\mathcal J$) and $\partial N_i$ ($i\in\mathcal N$) are infinitely long, and put $k=|\mathcal J|$. An *ideal limit* consists of:
 - on each main piece $P_0,\dots,P_k$ of $X\setminus(\bigcup_{\mathcal J}J_i\cup\bigcup_{\mathcal N}N_i)$, completed by half-cylinders, an ideal SO(3) monopole $[A_j,\Phi_j,\mathbf x_j]$ of finite energy, exponentially asymptotic to flat connections with $\Phi=0$;
 - on each completed cap $\hat N_i$, an ideal anti-self-dual connection. Its spinor vanishes by the Weitzenböck formula.
 - on each infinitely long neck, a finite chain of non-constant anti-self-dual connections on $\mathbb R\times J_i$ or $\mathbb R\times\partial N_i$, with zero spinor.
@@ -404,7 +404,7 @@ Then
 $$\sum_j(q_j+4)=4,\qquad\sum_ji_j-2\eta=2-4k .$$
 Each $J$-cut costs 3 for the SO(3) gluing parameter and 1 for the lost interval parameter.
 
-**Losses.**
+**Dimension lost to bubbles, lens caps and necks.**
 - An ideal point of charge $a$ lowers $d_a$ by $8a$ and $d_a+2n_a$ by $6a$, and it restores at most $4a$ dimensions.
 - A separated lens costs $\delta_I-1$ in the instanton count and $\delta_{\rm sp}-1$ in the monopole count, both at least $1$.
   - At a central flat the costs are $\ge7$ and $\ge5$.
@@ -414,17 +414,17 @@ Each $J$-cut costs 3 for the SO(3) gluing parameter and 1 for the lost interval 
 
 > **Theorem E (family SO(3)-monopole cobordism, vanishing form).** Let the data be as in (e1), with $n_a\ge1$ and with generic perturbations and representatives in the class described. Assume:
 > 1. *(instanton points)* $\mathcal I_e:=\bar{\mathcal V}(z)\cap\bar M^{w_e}_\kappa(\bar Q)$ is a finite set of regular points of the parametrized cut-down anti-self-dual problem. It lies in the top stratum over ${\rm int}\,Q$, and $D_{A,\vartheta}$ is onto at each of its points.
-> 2. *(exclusion)* For every $e$, $\bar{\mathcal Z}_e\setminus\mathcal Z_e$ consists only of the points $\iota(\mathcal I_e)$ and of *minimal lens tuples*. A minimal lens tuple lies over a face with exactly one coordinate $t_i=+1$ and no other coordinate equal to $\pm1$. It consists of a free main component on $X\setminus N_i$ with no ideal points, together with the reducible anti-self-dual connection of charge $\tfrac14$ on $\hat N_i$ asymptotic to the trace-zero flat, with no ideal points and no trajectories.
+> 2. *(exclusion)* For every $e$, $\bar{\mathcal Z}_e\setminus\mathcal Z_e$ consists only of the points $\iota(\mathcal I_e)$ and of *minimal lens limits*. A minimal lens limit lies over a face with exactly one coordinate $t_i=+1$ and no other coordinate equal to $\pm1$. It consists of a free main component on $X\setminus N_i$ with no ideal points, together with the reducible anti-self-dual connection of charge $\tfrac14$ on $\hat N_i$ asymptotic to the trace-zero flat, with no ideal points and no trajectories.
 >
-> Truncate $\sum_e\varepsilon(e)\mathcal Z_e$ at $\{\|\Phi\|^2_{L^2}<\varepsilon\}$ near $\iota(\mathcal I_e)$ and at neck length $>D$ near the minimal lens tuples. For generic small $\varepsilon$ and large $D$ the result is a compact oriented one-dimensional branched manifold with rational weights. Its boundary is as follows.
+> Truncate $\sum_e\varepsilon(e)\mathcal Z_e$ at $\{\|\Phi\|^2_{L^2}<\varepsilon\}$ near $\iota(\mathcal I_e)$ and at neck length $>D$ near the minimal lens limits. For generic small $\varepsilon$ and large $D$ the result is a compact oriented one-dimensional branched manifold with rational weights. Its boundary is as follows.
 > - Near $\iota(\mathcal I_e)$ there are $2^{n_a-1}$ points for each instanton, with total $\sigma_0\,2^{n_a-1}\,\Omega$, where $\sigma_0=\pm1$ does not depend on $e$.
-> - At the minimal lens tuples there is one collar end for each main solution and each cap crossing. The ends for $e$ and $e^{(i)}$ over the same main solution cancel after weighting by $\varepsilon(e)$.
+> - At the minimal lens limits there is one collar end for each main solution and each cap crossing. The ends for $e$ and $e^{(i)}$ over the same main solution cancel after weighting by $\varepsilon(e)$.
 >
 > Hence $2^{n_a-1}\Omega=0$ in $\mathbb Q$, and so $\Omega=0$.
 
 **Relation to FL.**
 - For $n=0$ (closed $X$, fixed generic metric), Theorem E is FL2b Thm. 3.33(a) in cut-down form. FL's hypothesis (3.68), that $\bar{\mathcal M}_{\mathfrak t}$ contains no reducible at any level, is weakened to hypothesis 2, that the closure of the cut-down space contains none.
-- The proof is FL's: Stokes, Prop. 3.29 at the instanton ends, and Cor. 3.18 (here, the loss count) at the free lower strata.
+- The proof is FL's: Stokes, Prop. 3.29 at the instanton ends, and Cor. 3.18 (here, the count of dimensions lost to bubbles) at the free lower strata.
 - Theorem E is not a family form of Memoir Thm. 1 or Thm. 8.1.9: no reducible stratum is linked or evaluated.
 - Hypothesis 1 is arranged by perturbation. If $\operatorname{Coker}D_{A,\vartheta}\ne0$ were allowed, FL2b Lemma 3.27 would give the same count.
 
@@ -436,26 +436,26 @@ Each $J$-cut costs 3 for the SO(3) gluing parameter and 1 for the lost interval 
 >    - (c) Membership persists under Uhlenbeck limits unless an ideal point lies on $S_i$. Distinct $S_i$ need distinct ideal points.
 >    - (d) At $t_i=-1$, $\mathcal V(S_i)$ splits into half-representatives of $F_{l,i}$ and $F_{r,i}$. At $t_i=+1$ it is a condition on $\hat N_i$.
 >
->    All representatives obey the loss count of (e2).
+>    All representatives obey the dimension count for bubbles in (e2).
 > 3. **(Seiberg–Witten localization, uniformly over $\bar Q$)** On every face, every Seiberg–Witten or reducible zero-section configuration on a union of consecutive pieces satisfies three conditions.
 >    - *The chamber condition on positive pieces:* $(v\cdot H)(c_1(\mathfrak s)\cdot H)<0$, respectively $v\cdot H=0$, for the periods $H$ of the toric metrics. The manuscript's Theorem `estimates:clamp` extends this over the hull of the vertex classes $H_I$.
 >    - $\langle v,U\rangle=0$ near the cusp.
 >    - On a piece containing a cap there is no reducible zero-section configuration, and $v_W^2,(\Lambda_W+v_W)^2\le C_W$.
 > 4. **(numerics)** Positive pieces are at mutual distance $\ge4$ and at distance $\ge L_*$ from the caps. $\langle\Lambda_0,E_\pm\rangle$ is odd and large. $3n-7m>C_0$.
-> 5. **(projected regularity)** Call a tuple of main components a *candidate* if the components solve their equations and retained cuts, are given admissible charges for the omitted caps and trajectories, and are not required to match. Let a candidate contain a free component. Delete its reducible zero-section components, their ideal points and their cuts, but keep their parameters. The resulting problem must be Fredholm, with finite isotropy for the common circle, independent of the deleted data, and transverse near the projections of all candidates. In particular it must be fully regular at its Seiberg–Witten and anti-self-dual components.
+> 5. **(projected regularity)** Call a collection of solutions on the main pieces an *unmatched limit* if the solutions satisfy their equations and retained cuts, are given admissible charges for the omitted caps and trajectories, and are not required to match. Let an unmatched limit contain a free component. Delete its reducible zero-section components, their ideal points and their cuts, but keep their parameters. The resulting problem must be Fredholm, with finite isotropy for the common circle, independent of the deleted data, and transverse near the projections of all unmatched limits. In particular it must be fully regular at its Seiberg–Witten and anti-self-dual components.
 
 **Mechanism.** The arithmetic input is the manuscript's family adjunction inequality. For an abelian configuration on consecutive pieces $\Gamma$,
 $$\kappa_\Gamma\ge\tfrac12\big(s^-(\Gamma)+m(\Gamma)\big),$$
-where $s^-$ counts the assigned spheres not adjacent to positive pieces. This is a lattice statement, checked by machine and sharp. Every actual limit is a candidate in the sense of condition 5, so excluding candidates suffices, and no stratum is ever parametrized. The cases are as follows.
+where $s^-$ counts the assigned spheres not adjacent to positive pieces. This is a lattice statement, checked by machine and sharp. Every actual limit, with its matching conditions forgotten, is an unmatched limit in the sense of condition 5, so excluding unmatched limits suffices, and no stratum is ever parametrized. The cases are as follows.
 - *Unbroken Seiberg–Witten limits, at every level $\ell\ge0$.* Incidence gives $\ell\ge T(v)$, the number of spheres met only through ideal points. The inequality gives $-\tfrac14v^2+T(v)\ge\tfrac12(n-m)-C$. With $8\kappa=n+3m+c$, this forces $\ell-T(v)\le\tfrac18(7m-3n)+C'<0$. No regularity is used.
 - *Unbroken reducible zero-section limits.* Excluded by the cap: $\langle w_0,A\rangle$ odd forces $v\ne0$ on the cap, and the generic cap period, with long isolation necks, prevents $v$ from being anti-self-dual.
-- *Broken tuples with no free component.* Let $a$ be the number of anti-self-dual components, each contributing at least $4$ to $\sum(q_j+4)$, and $b\le2$ the number of outer Seiberg–Witten components, each contributing at least $8$. Then $a+b\ge2$. There are at most $a+b-1$ maximal runs of consecutive reducible components between them, and each contributes at least $-2$ at spacing $\ge3$. Hence $\sum(q_j+4)\ge2a+6b+2\ge6$, which contradicts the identity $\sum(q_j+4)=4$.
-- *Tuples with a free component.*
+- *Broken limits with no free component.* Let $a$ be the number of anti-self-dual components, each contributing at least $4$ to $\sum(q_j+4)$, and $b\le2$ the number of outer Seiberg–Witten components, each contributing at least $8$. Then $a+b\ge2$. There are at most $a+b-1$ maximal segments of consecutive reducible components between them, and each contributes at least $-2$ at spacing $\ge3$. Hence $\sum(q_j+4)\ge2a+6b+2\ge6$, which contradicts the identity $\sum(q_j+4)=4$.
+- *Limits with a free component.*
   - Write $N$ for the number of main components that are not reducible zero-section components. The projected dimension is at most
-$$5-4N-\sum_{\rm runs}\sum_{j\in\text{run}}(4+i_j-p_j)-(\text{losses}).$$
-    Each run contributes at least $-2$ at spacing $\ge4$. At spacing $3$ a run can contribute $-5$, so the bound fails there.
-  - For $k\ge1$ the outer components are never reducible zero-section components (by the caps), so $N\ge2$, there are at most $N-1$ runs, and the projected dimension is at most $5-4N+2(N-1)=3-2N<0$.
-  - For $k=0$ it is at most $1-N_{\rm lens}-2w$, which leaves only the unbroken free stratum and the minimal lens tuples.
+$$5-4N-\sum_{\rm segments}\sum_{j\in\text{segment}}(4+i_j-p_j)-(\text{dimension lost to bubbles, lens caps and necks}).$$
+    Each such segment contributes at least $-2$ at spacing $\ge4$. At spacing $3$ a segment can contribute $-5$, so the bound fails there.
+  - For $k\ge1$ the outer components are never reducible zero-section components (by the caps), so $N\ge2$, there are at most $N-1$ such segments, and the projected dimension is at most $5-4N+2(N-1)=3-2N<0$.
+  - For $k=0$ it is at most $1-N_{\rm lens}-2w$, which leaves only the unbroken free stratum and the minimal lens limits.
 
 ### (e4) Strata to be excluded
 
@@ -468,10 +468,10 @@ $$5-4N-\sum_{\rm runs}\sum_{j\in\text{run}}(4+i_j-p_j)-(\text{losses}).$$
 | unbroken Seiberg–Witten, $M_{\mathfrak s}(g_t)\times\mathrm{Sym}^\ell(X)$, every $\ell\ge0$, interior and lens faces | ends of Memoir Thm. 8.1.9 (links; Hyp. 7.8.1 for $\ell\ge1$); hypothesis (3.68) of FL2b Thm. 3.33(a) | incidence and the adjunction inequality | none |
 | unbroken reducible zero-section | excluded in FL by good $w$ and a generic metric (FL2a Prop. 3.1; Memoir (2.2.2)); Memoir Hyp. 11.3.5 in a path | cap class $A$ with a generic cap period, uniform over $\bar Q$ | none |
 | $k\ge1$, no free component | none | $\sum(q_j+4)\ge6$ | anti-self-dual; tangential Seiberg–Witten only |
-| $k\ge1$, free and Seiberg–Witten components, no reducible zero-section component | none (FL never meet Seiberg–Witten components in broken limits) | $1-4k-(\text{losses})<0$ | full regularity at Seiberg–Witten components in the coupled problem |
+| $k\ge1$, free and Seiberg–Witten components, no reducible zero-section component | none (FL never meet Seiberg–Witten components in broken limits) | $1-4k-(\text{dimension lost to bubbles, lens caps and necks})<0$ | full regularity at Seiberg–Witten components in the coupled problem |
 | $k\ge1$, free and reducible zero-section components | none; compare Memoir Hyps. 7.8.1 and 11.3.5 | projection: dimension $\le3-2N<0$ | none at the zero-section reducibles; the projected problem regular |
 
-Two kinds of tuple are kept: the points $\iota(\mathcal I_e)$ and the minimal lens tuples.
+Two types of limit survive: the points $\iota(\mathcal I_e)$ and the minimal lens limits.
 
 FL's local-finiteness caveat (FL2b §3, introduction) does not arise here. The closure of $\mathcal Z_e$ meets the lower strata only at points with explicit local models. The price is that the exclusion must be exhaustive.
 
@@ -479,7 +479,7 @@ FL's local-finiteness caveat (FL2b §3, introduction) does not arise here. The c
 
 1. **The reducible strata exist.**
    - On the positive pieces, classes in the Weitzenböck band carry Seiberg–Witten solutions; wall-crossing gives $SW=\pm1$ across the band.
-   - On runs of negative pieces at $J$-faces, reducible zero-section configurations exist for every parameter value.
+   - On segments of consecutive negative pieces at $J$-faces, reducible zero-section configurations exist for every parameter value.
    - What is excluded is their meeting the closure of $\mathcal Z_e$.
    - The exposition's formula "$2^{n_D-1}\Omega=-\#\{\text{abelian ends}\}$" (exposition, Theorem `thm:FL`) is not a theorem: without gluing at reducibles, abelian limits are not known to be ends of a one-manifold. Only the vanishing form, Theorem E with Proposition E′, is available, and it is all the argument uses.
 2. **How $n_a>0$ is obtained.** In FL, $n_a>0$ is the hypothesis $\delta<i(\Lambda)$ of Memoir Thm. 1, which FL6 arranges by taking $\Lambda^2$ large (proof of Main Thm. 1.2). Here $\Lambda$ is constrained by $\Lambda_0\cdot S_i=2$ and by $|\Lambda\cdot H_I|\le\tfrac32$ for the vertex classes $H_I$, $I\ne\emptyset$, of the positive pieces, and $n_a=\tfrac18(5m-n)+c$ comes from topology. Enlarging $\Lambda$ would widen the band.
@@ -538,16 +538,16 @@ Classification: *routine extension* means known methods with no new idea, though
      - the cap bounds;
      - the order of choices.
    - **Substantial.**
-8. **Exclusion of unbroken Seiberg–Witten strata at every level, and of broken tuples with no free component.**
+8. **Exclusion of unbroken Seiberg–Witten strata at every level, and of broken limits with no free component.**
    - *Replaces:* the *hypothesis* of FL2b Thm. 3.33(a) by a theorem. The strata are non-empty but miss the closure of the cut-down space.
    - **Routine** given items 6 and 7. The lattice inequality has been checked by machine.
 9. **Reducible zero-section configurations.**
    - *FL:* excluded by FL2a Prop. 3.1, Lemma 3.2 and Cor. 3.3, by Memoir (2.2.2) and by FL3 §2.1; met only under Memoir Hyp. 11.3.5.
    - *Here they are unavoidable* at $J$-faces, on pieces with $b^+=0$, and on walls $\langle v,H\rangle=0$ of the positive pieces, because $\dim Q=n>b^+(X)$.
    - Exclusion at $k=0$ by the caps: **routine**.
-   - Exclusion in broken tuples without a free component: **routine** (item 8).
+   - Exclusion in broken limits without a free component: **routine** (item 8).
    - Exclusion with a free component: item 11.
-10. **Coupled regularity in mixed tuples** (condition 5 of E′, and the phase sections).
+10. **Coupled regularity in mixed limits** (condition 5 of E′, and the phase sections).
     - *Content:* full regularity at Seiberg–Witten and anti-self-dual components, using perturbations that sample a free component. These have finite isotropy and are multivalued with rational weights.
     - *No FL counterpart:*
       - FL never regularize at Seiberg–Witten points (FL2a §3.4);
@@ -555,13 +555,13 @@ Classification: *routine extension* means known methods with no new idea, though
       - FL1's holonomy perturbations vanish at reducible connections (FL1 §1.1.1);
       - FL stabilize instead (FL2a Thms. 3.19, 3.21; FL3 Thm. 8.3).
     - **Substantial (new).**
-11. **The projection for tuples with free and reducible zero-section components.**
+11. **The projection for limits with free and reducible zero-section components.**
     - *It replaces*, rather than extends, the step FL would need here: a gluing theorem, in families with faces, for a reducible zero-section component glued to non-abelian components across $S^3$ necks. The gluing parameter would lie in $\mathrm{SO}(3)/\mathrm{U}(1)$, and the obstructions would include the normal anti-self-dual cokernel and the Dirac cokernel. This is the face analogue of Memoir Hyp. 11.3.5 and of a Hyp. 7.8.1-type gluing at mixed strata. Neither is proved even on closed manifolds.
     - *It needs:*
       - independence of the retained equations from the deleted data;
       - item 10 for the projected problem;
-      - compactness of the candidate projections, by induction over degeneration types;
-      - the run bound $\ge-2$, which needs spacing $\ge4$.
+      - compactness of the projections of unmatched limits, by induction over degeneration types;
+      - the bound $\ge-2$ for each segment of consecutive reducible components, which needs spacing $\ge4$.
     - *Proposed proof:* the manuscript's Lemma `analysis:projection`, with Lemmas `analysis:R-independence`, `analysis:samples` and `analysis:finite-data` and Prop. `analysis:finite-induction`.
     - **Substantial (new; the decisive step).** It is not open: an argument is written, and its structure checks. What is open is the gluing theorem it replaces, which is not needed.
 12. **Lens faces.**
@@ -587,9 +587,9 @@ Classification: *routine extension* means known methods with no new idea, though
 - *Several new ingredients at once:*
   - perturbations independent of discarded data;
   - finite-isotropy multisections across strata where the isotropy jumps;
-  - a compactness and induction argument for candidates without matching.
+  - a compactness and induction argument for unmatched limits.
 - *No numerical slack.*
-  - The run bound is attained at spacing $3$.
+  - The bound for segments of consecutive reducible components is attained at spacing $3$.
   - At spacing $4$ the projected index is at most $-1$ when $N=2$. An error of one in any lens, particle or phase count would leave an unexcluded zero-dimensional stratum.
 - *Next in seriousness:*
   - item 7, the uniform Seiberg–Witten localization at faces, where FL offer nothing;
