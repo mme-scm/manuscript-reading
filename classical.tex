@@ -1,0 +1,117 @@
+\documentclass[10pt]{amsart}
+\usepackage[margin=1.7cm,top=1.6cm,bottom=1.8cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+\let\olditemize\itemize\renewcommand{\itemize}{\olditemize\setlength{\itemsep}{1pt}\setlength{\topsep}{2pt}\setlength{\parsep}{0pt}}
+\setlength{\parskip}{2pt}
+\newcommand{\Z}{\mathbb Z}\newcommand{\Q}{\mathbb Q}\newcommand{\F}{\mathbb F}
+\newcommand{\CP}{\mathbb{CP}}\newcommand{\CPb}{\overline{\mathbb{CP}}{}^2}
+\newcommand{\PD}{\operatorname{PD}}\newcommand{\CS}{\operatorname{CS}}
+\newcommand{\V}{\textsf{[V]}}\newcommand{\Pl}{\textsf{[P]}}\newcommand{\Sp}{\textsf{[S]}}
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+\title{The cosmetic-surgery manuscript in classical language}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2.2em}
+\noindent Labels: \V\ means checked by hand or by script; \Pl\ means plausible; \Sp\ means speculative.
+$Y_r=S^3_r(K)$, $g(K)=2$, and $\phi\colon Y_{-2}\to Y_2$ is orientation preserving.
+DLME means Daemi--Lidman--Miller Eismeier, arXiv:2410.21248.
+
+\section*{0. Summary}
+The manuscript is DLME's $\pm1$ argument transplanted to $\pm2$, with one substitution:
+\emph{Chern--Simons energy positivity is replaced by a spin-coupled positivity}.
+\begin{itemize}
+\item DLME. A filtered isomorphism $I(Y_1)\to I(Y_{-1})$ lowers $\ell=\min(\CS-\mathrm{gr}/8)$ by $\tfrac18+\eta$. Combined with $\phi$, this is a contradiction.
+\item The obstacle at $\pm2$. Every available map $Y_2\leftrightarrow Y_{-2}$ \emph{raises} that level (\S2), as DLME's closing remark predicts.
+\item The fix. Couple the level to a spin$^c$ structure. Each instanton $A$ carries the coupled Dirac index $n_D(A)=\Theta-E(A)+\rho(\alpha)-\rho(\alpha')$. The $\mathrm{PU}(2)$-monopole cobordism (Pidstrigach--Tyurin localization) shows that, when no Seiberg--Witten-type reducibles are present, instanton counts with $n_D\ge1$ vanish.
+\item The consequence. Maps are then filtered by $\sigma_t=\CS-\rho_t$, and $b^+=1$ pieces lower it.
+\end{itemize}
+The stack plus repetition is the closed-manifold form of ``iterate a level-lowering automorphism until the level gap is exceeded''. The manuscript works in closed form so that it never needs a $\mathrm{PU}(2)$ Floer theory on $Y_{\pm2}$.
+
+\section*{1. The ordinary layer is DLME/CDX surgery-triangle machinery}
+Theory: Floer's irreducible complex with determinant-one gauge. $C(S^3)=0$; $Y_{\pm1},Y_{\pm2}$ have only central reducibles; $Y_0$ carries $w$ with $w\cdot A$ odd.
+\begin{center}\small
+\begin{tabular}{@{}p{.28\textwidth}p{.40\textwidth}p{.24\textwidth}@{}}
+\toprule
+Manuscript & Classical counterpart & New \\ \midrule
+$f_+\colon Y_0\to Y_1\to Y_2$; mirror $f_-$ & Floer's triangle twice; the $S^3$ term is $0$ (DLME Prop.~3.6) & QHS ends with central reducibles \\
+$g_+\colon Y_2\to S^3\to Y_0$, interval to the $\mathbb{RP}^3$ split, two lifts & DLME's $g_1$ (Prop.~3.7, \S5.5) for the distance-two pair $\{2,0\}$ (that is, $\pm1$ for the framing $\lambda+\mu$). The middle term is $S^3\oplus S^3=0$; the $\mathbb{RP}^3$ ends cancel between lifts. & $Y_0$ admissible, not a ZHS \\
+pentagons, $f_+g_+\simeq\mathrm{id}$ & DLME/CDX $h$-maps and triangle detection & --- \\
+$B\colon Y_2\to Y_{-2}$, interval to the $L(4,1)$ split, sphere test $x(S)$ & distance-four analogue of $g_1$. Mod 2, $B\simeq g_-g_+=f_-^{-1}f_+^{-1}=H^{-1}$ \V. & \emph{integral} lift (lens signs) \\
+$H=f_+f_-$ & composite of Floer-triangle maps through $Y_0$, with $b^+(W_H)=1$ & --- \\
+\bottomrule
+\end{tabular}
+\end{center}
+Why $B$ must be integral, not just mod 2 \V. The conclusion is $2^\eta\Omega=0$, which is vacuous mod 2 once $\eta\ge1$. The cap pairing $q$ is only known to be a nonzero integer, possibly even. Hence the integral $B$ and the mod-$2^N$ repetition: every step is a unit of $L/2^NL$, where $L=I(Y_2;\Z)/\mathrm{Tor}$. Repetitions divisible by $\exp\mathrm{GL}_r(\Z/2^N)$ give $\Omega\equiv\pm q\ne0$.
+
+\section*{2. Why DLME's filtration stalls at $\pm2$}
+Notation: for a count of index $i_0=\mathrm{codim}-\dim G$, the degree is $D=-2c^2-3b^++\dim G-\mathrm{codim}$ and the level is $L=-c^2/4-\eta$. DLME's lemma then gives $\ell(Y')\le\ell(Y)+(L-D/8)$ for injective maps.
+\begin{center}\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+map & data & $L-D/8$ (CS) & $L_\sigma-D/8$ (spin, \S3)\\ \midrule
+DLME $g_1$ ($\pm1$) & $c^2=-1$, $\dim G=1$ & $-\tfrac18-\eta$ & $-\tfrac18$\\
+$B$ (either lift) & $c^2\in\{0,-4\}$, $\dim G=1$, codim $2$, $\Theta=0$ & $+\tfrac18-\eta$ & $+\tfrac18$\\
+$H$ & $b^+=1$, $\Theta=1$ & $+\tfrac38-\eta$ & $-\tfrac58$\\
+period: $k$ copies of $B$ and one $H$ & & $\tfrac{k+3}8-\eta_{\rm tot}$ & $\tfrac{k-5}8$\\
+\bottomrule
+\end{tabular}
+\end{center}
+These values are \V\ (formal index bookkeeping; script). With Chern--Simons alone, no combination is favourable without a quantitative bound on $\eta$. This agrees with DLME's closing remark on $\pm2$.
+
+\section*{3. The spin-coupled level, and where $\mathrm{PU}(2)$ enters}
+Fix a spin$^c$ structure with determinant $l$, put $\Lambda=l+c$, and let $\Theta=(\Lambda^2-\sigma)/4$. APS gives, for $A$ on $W$ from $\alpha$ to $\alpha'$, with $E(A)=-c^2/4+\CS(\alpha)-\CS(\alpha')$,
+\[
+n_D(A)=\Theta_W-E(A)+\rho_t(\alpha)-\rho_{t'}(\alpha'),
+\]
+where $\rho_t(\alpha)$ is the $(\eta+h)/2$-correction of the 3-dimensional Dirac operator coupled to $\alpha\otimes t$ \Pl.
+\begin{itemize}
+\item \emph{Spin monotonicity.} If every counted $A$ has $n_D(A)\le0$, then $\sigma_t:=\CS-\rho_t$ drops by at least $c^2/4+\Theta_W$, so the spin level is $L_\sigma=-c^2/4-\Theta_W$. This is DLME's mechanism with $\eta$ replaced by $\Theta$.
+\item \emph{The period.} By the table, the spin shift per period is $(k-5)/8$. This is exactly minus the manuscript's $\Delta n_D=(5-k)/8$, coming from $n_D=\frac{5m-n}8+$const \V. So the lower window bound $m/n>1/5$ is exactly ``the period strictly lowers the spin level''.
+\item \emph{What supplies the monotonicity.} $\mathrm{PU}(2)$ localization: the instanton links are $\CP^{n_D-1}$, and the $\eta=n_D-1$ phase cuts are $\mathcal O(2)$-sections, giving $2^\eta$. These links are cobordant to the reducible (SW-type) fixed strata plus face terms. With no reducibles in the window, the counts with $n_D\ge1$ vanish.
+\item \emph{This is a property of blocks, not of single maps} \V. Mod 2, $HB\simeq\mathrm{id}$, yet its spin shift is $-\tfrac12$. Per-map monotonicity would give $\ell_t(Y_2)<\ell_t(Y_2)$ for every nontrivial $K$. So the reducible exclusion must fail on short blocks. It holds only when each positive cell is surrounded by enough $(-4)$-spheres (\S4), and \emph{this is the only place $\phi$ is indispensable}: without $\phi$, every $B$ must be followed by $H$.
+\end{itemize}
+\emph{Floer-theoretic form (new theory, resembling predecessors)} \Sp. Define spin-filtered IP-modules $I^{t}_\bullet(Y)$, filtered by $\sigma_t-\mathrm{gr}/8$, with invariant $\ell_t$. This requires $\phi^*$-compatibility of $t$ on $Y_{\pm2}$, where $H^2=\Z/2$. The monotonicity input would be an $S^1$-equivariant $\mathrm{PU}(2)$-monopole Floer theory whose $u$-adic filtration is the $n_D$-level, with localization onto instanton plus SW fixed points. Compare Seidel--Smith/Hendricks--Lipshitz--Sarkar localization and Frøyshov- or Daemi-$\Gamma$-type invariants. The manuscript's closed stack is the device that avoids this theory: all $Y$-seams stay finite, and only the psc necks $S^3$ and $L(4,1)$ become infinite.
+
+\section*{4. The reducible exclusion as basic-class constraints}
+Type S is an SW solution for $K=\Lambda+v$, perturbed by $\beta^+\in2\pi\Lambda$. Type R is an Abelian ASD reducible, simultaneously an SW wall and a Donaldson/Kotschick--Morgan wall. The level condition $\kappa_i=-v_i^2/4+\ell_i$ with $\ell_i\ge0$ is Feehan--Leness's \V.
+\begin{center}\small
+\begin{tabular}{@{}p{.42\textwidth}p{.52\textwidth}@{}}
+\toprule
+Manuscript (family, local) & Classical counterpart \\ \midrule
+positive cell $P\cong S^2\times S^2\#4\CPb\cong\CP^2\#5\CPb$ for \emph{every} $K$ \V; $l|_P^2=4=2\chi+3\sigma$ & homological SW profile of a rational surface \\
+Weitzenb\"ock: $(vH)(KH)<0$; vertex classes $H_I=U+\tfrac14\sum_{i\in I}X_i$ & $b^+=1$ wall-crossing with $s\ge0$; $H_I$ is the period after rationally blowing down the $X_i$; the clamp is convexity over the period polygon \V \\
+long $S^2\times S^1$ tube forces $v\cdot U=0$ & neck-stretching proof of adjunction for a square-zero sphere \V \\
+reference fillings with $|K\cdot S_i|\le4$; lens Dirac table & adjunction for $(-4)$-spheres and its reflection pair $K\pm2\PD(S)$ (Fintushel--Stern) \Pl \\
+test costs: $v\cdot S_i\ne0$ or one unit of $\ell$ & $\mu(S_i)$ on a reducible link is proportional to $\langle v,S_i\rangle$ \Pl \\
+signed sum over $2^n$ bits, lens ends cancel & Fintushel--Stern rational-blowdown projection onto $K\cdot S_i\equiv2\pmod 4$ \Pl \\
+caps: no R; $v_W^2,K_W^2\le C_W$; large odd $\Lambda(E_{\rm exc})$ & generic periods; finiteness of basic classes; blow-up formula \\
+\bottomrule
+\end{tabular}
+\end{center}
+\emph{Window} \V, by recount. For a block of $k$ intervals with one bridge:
+\begin{itemize}
+\item $\Delta n_D=(5-k)/8$;
+\item the fixed-type (S/R) score is $\ge3k-7$, so $k\ge3$ suffices for it;
+\item the score of mixed P/R runs is $\ge k-4$, so $k\ge4$ is needed.
+\end{itemize}
+So spacing four is needed only for the mixed lemma (\texttt{indices:mixed-run}). Counting the forgotten R-wall condition might allow $k=3$ \Sp.
+
+\section*{5. Closed manifolds give nothing, and that is the point}
+\begin{itemize}
+\item The stack is a connected sum along the $J_i\cong S^3$:
+$X\cong Z_-\#\,N_\phi^{\#(n-1-m)}\#\,P^{\#m}\#Z_+$, with $N_\phi=X_{-2}(K)\cup_\phi(-X_2(K))\approx2\CPb$. Hence $D_X\equiv0$ \V.
+\item $\Omega$ is a \emph{secondary} family invariant. Its fixed-metric virtual dimension is $-n$, and the cube's faces are the connected-sum and lens degenerations \V.
+\item Rationally blowing down all $S_i$ removes the connected-sum structure. The bit signs become the Fintushel--Stern projection. But $B$ is not the blown-down cobordism map, and $D_{X_B}=0$ by Witten's conjecture \Pl.
+\end{itemize}
+So no closed-manifold Donaldson theorem replaces \S\S6--10. The needed input is the family/relative $\mathrm{PU}(2)$ localization of \S3 together with the exclusion of \S4.
+
+\section*{6. What is new, minimally stated}
+\begin{enumerate}
+\item The integral negative interval $B$, with the lens-wall sign comparison that carries over unchanged to the coupled problem.
+\item \emph{Family localization} (``Theorem R''). Take a cube of metrics whose faces stretch psc rational homology spheres, with $n_D\ge1$, and suppose the only fixed points are instantons and every mixed tuple has negative projected index. Then $2^{n_D-1}\Omega$ equals the sum of the face terms. Everything except the ``necessary projection'' for mixed P/R tuples (\texttt{analysis:projection}) adapts Feehan--Leness I/II, Morgan--Mrowka--Ruberman and Kotschick--Morgan \Pl.
+\item The lattice budget (\S8 of the paper), i.e.\ the window $\tfrac15<m/n\le\tfrac14$, which is $\phi$'s only essential use.
+\end{enumerate}
+\emph{Sanity test} \Pl. The argument seems to use $\phi$ only as a $b^+=0$ cobordism $Y_{-2}\to Y_2$ that is a mod-2 unit. If so, it also forbids any negative-definite $V\colon Y_{-2}\to Y_2$ inducing an $\F_2$-isomorphism on $I$ (for nontrivial $K$). That is a DLME-style ``no ribbon/definite cobordism'' statement and a natural standalone theorem. A single counterexample would refute the method.
+
+\end{document}
