@@ -1,0 +1,88 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,booktabs}
+% US letter with margins of about 1.8 cm, set by hand (no geometry package).
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150 \brokenpenalty=100
+\newcommand{\head}[1]{\par\vspace{2pt}\noindent\textbf{#1}\enspace}
+\newenvironment{tab}{\par\vspace{2pt}\centering\small}{\par\vspace{2pt}}
+\newcommand{\F}{\mathbb F}\newcommand{\CP}{\mathbb{CP}}\newcommand{\CPb}{\overline{\mathbb{CP}}{}^2}
+\newcommand{\PD}{\operatorname{PD}}\newcommand{\lab}[1]{\texttt{#1}}
+\begin{document}
+\begin{center}
+{\bfseries\large The numerology as two competing inequalities}\\[2pt]
+{\small Numbers checked against the manuscript; its labels are in typewriter.}
+\end{center}
+\vspace{-6pt}
+
+\head{1. The two quantities.}
+Let $X$ be the closed manifold of the manuscript. Between the caps $C_\pm$ it contains $n$ copies of $B$, the cobordism $W'=(-X_2(K))\cup_{S^3}X_{-2}(K)\colon Y_2\to Y_{-2}$, each with an interval of metrics, a $(-4)$-sphere $S_i$ and the insertion $\mu(S_i)$ of degree two. Each copy is followed by a return $Y_{-2}\to Y_2$: at $m$ places the positive cobordism $W_H$ of $H=f_+f_-$, which passes through $Y_0$, and elsewhere the cosmetic map $\phi$ or a negative-definite $V$ with $b_1=b^+=0$. Put $\Lambda=l+c$ with $l$ characteristic, $\Theta=(\Lambda^2-\sigma)/4$, the energy $\kappa=c_2-c^2/4$ and the coupled Dirac index $n_D=\Theta-\kappa$; the cut-down family has dimension zero when $8\kappa-3(1+b^+)=n+z$, $z$ the degree of the cap classes. Two quantities compete. \emph{(I) The coupled Dirac index must grow}: the $\mathrm{SO}(3)$-monopole relation needs $n_D\ge1$, and the caps contribute to $n_D$ a constant that is deliberately very negative. \emph{(II) The energy available to an abelian class must fall short of its cost}: a split configuration $E=L_1\oplus L_2$, $v=c_1(L_1)-c_1(L_2)\equiv c\pmod2$, with zero spinor or with Seiberg--Witten class $K=\Lambda+v$, has Feehan--Leness level $\ell=\kappa+v^2/4$, an integer at least the number $T(v)$ of insertions it meets only through ideal points; so it cannot occur once its \emph{energy cost} $-v^2/4+T(v)$ exceeds $\kappa$.
+
+\head{2. The building blocks.}
+The seams $Y_{\pm2}$ are rational homology spheres, so $b^+$, $\sigma$, $\Lambda^2$ and $v^2$ add over the blocks.
+\begin{tab}
+\begin{tabular}{@{}lccccl@{}}
+\toprule
+block & $b^+$ & $\Theta$ & energy & $n_D$ & least energy cost of an abelian class\\
+\midrule
+copy of $B$ & $0$ & $0$ & $\tfrac18$ & $-\tfrac18$ & $\tfrac12$, or Feehan--Leness level $\ge1$\\
+positive cobordism $W_H$ & $1$ & $1$ & $\tfrac38$ & $+\tfrac58$ & $\tfrac12$ together with both adjacent copies of $B$, so $-\tfrac12$ net\\
+definite $V$ (or $\phi$) & $0$ & $\le0$, best $0$ & $0$ & $\le0$, best $0$ & $\ge0$\\
+caps $C_\pm$ together & $b_0\ge2$ & $\Theta_0$ & $\tfrac{z+3+3b_0}8$ & $c_1$ & $\ge-C$, where $C=\frac14(C_{W_-}+C_{W_+})$\\
+\bottomrule
+\end{tabular}
+\end{tab}
+\emph{Copy of $B$.} Its parameter and $\mu(S)$ lower the cut-down dimension by one, so $8\kappa$ rises by one. The form is $\langle-2\rangle^2$ on $(F_l,F_r)$, $S=F_l-F_r$, and for both bundles $\Lambda_0+e\PD(S)$ evaluates as $(-2e,-2+2e)$, so $\Lambda^2=\sigma$ (the role of $\Lambda_0S=2$). As $v\equiv c$, the halves $h_l=vF_l$, $h_r=vF_r$ are even, and $v^2=-(h_l^2+h_r^2)/2$. At a reducible, $\mu(S)$ is met only if $vS=h_l-h_r\ne0$ (the holonomy sweep winds $vS/2$ times), and then $-v^2/4\ge\frac12$; otherwise only an ideal point on $S$ meets it, raising $\ell$ by one. \emph{Each $(-4)$-sphere forces $vS\ne0$ or an ideal point, costing energy $\frac12$, but supplies only $\frac18$.}
+
+\emph{Positive cobordism.} With the adjacent trace halves it fills to $P\cong\CP^2\#5\CPb$, with form $\left(\begin{smallmatrix}2&1\\1&0\end{smallmatrix}\right)\oplus(-I_4)$ on $(G,U;T_b)$, $F_r=G-\sum T_b$ and $F'_l=G-2U$. The lift $\Lambda_0=(-2,-1;0,1,0,-1)$ has $\Lambda_0^2=0$, so $\Theta=1$, while $b^+=1$ adds $\frac38$ to the energy: $n_D$ gains $\frac58$. For $v=(x,u;t_b)$, $v^2=2xu-2u^2-\sum t_b^2$ with $x$ even and exactly two $t_b$ odd ($w_2$ is odd on $T_2-T_1$). If $u=vU=0$, as is forced on the long $S^2\times S^1$ tube, then $v^2\le-2$ and $P$ costs $\frac12$. That one cost pays for both adjacent spheres: with bundle indices $0,1$ at its ends, $u=0$, $x=2$, $t=(1,0,-1,0)$ has $vF_r=vF'_l=2$ and meets $\mu(S_j)$ and $\mu(S_{j+1})$ at no further cost. If $u\ne0$, the chamber condition gives Lemma~\lab{indices:positive-square}: with the far halves of the two adjacent spheres the square is $\le-2$, or $\le2$ with an insertion missed and $\ell$ raised by one. So $P$ with its two neighbouring copies of $B$ costs $\frac12$ rather than $1$, provided no copy of $B$ is adjacent to two positive pieces.
+
+\emph{Definite $V$.} The filled piece $X_{-2}\cup V\cup(-X_2)$ is closed and negative definite, hence diagonal by Donaldson's theorem; characteristic classes have odd coordinates, so $\Lambda^2\le\sigma$, with equality for a suitable lift. There is no parameter or insertion, hence no energy, and $v^2\le0$. \emph{Caps.} $b^+(C_\pm)\ge1$, and the energy includes the $3$ in $3(1+b^+)$. $\Theta_0$ contains $(1-\Lambda(E)^2)/4$ for each extra exceptional class $E$, with $|\Lambda(E)|$ chosen large before the repetitions, so $c_1=\Theta_0-(z+3+3b_0)/8\ll0$. No zero-spinor component contains a cap, and Seiberg--Witten classes have $v_W^2,\,(\Lambda_W+v_W)^2\le C_W$ (Thm.~\lab{estimates:clamp}); so the caps lower the cost by at most $C$, independently of $n$, $m$ and $\Lambda(E)$.
+
+\head{3. The global inequalities.}
+Summing, $b^+=m+b_0$, $\Theta=m+\Theta_0$, $8\kappa=n+3m+z+3+3b_0$ and $n_D=(5m-n)/8+c_1$. If no copy of $B$ is adjacent to two positive pieces, $n-2m$ copies are adjacent to none, so $-v^2/4+T(v)\ge(n-2m)/2+m/2-C$, and $\ell-T(v)\le\kappa-(n-m)/2+C=(7m-3n+z+3+3b_0)/8+C$. (I) holds if and only if $5m-n\to\infty$, asymptotically $m/n>\frac15$; (II) holds once $3n-7m>z+3+3b_0+8C$, asymptotically $m/n<\frac37$. Multiplied by $8$, the changes in ($n_D$, bound on $\ell$) are $(-1,\,1-4)$ for a copy of $B$, $(+5,\,3+4)$ for a positive cobordism and $(0,0)$ for $V$: positive pieces help (I) and hurt (II), copies of $B$ the reverse, and the window $\frac15<m/n<\frac37$ is nonempty since $\frac73<5$. At spacing four with $p$ extra copies of $B$ at the ends, $n=4m+p$, so $n_D=(m-p)/8+c_1$ and $3n-7m=5m+3p$.
+
+\head{4. The local spacing conditions.}
+The faces of the cube of metrics stretch the $3$-spheres $J_i\subset W'_i$. Cutting at all of them leaves positive pieces $P$, negative pieces $N=X_{-2}\cup_\phi(-X_2)$ and two end pieces, and a limit may break along any subset of the $J_i$. An abelian limit can then occupy any segment of consecutive pieces, with anti-self-dual or free $\mathrm{SO}(3)$-monopole components elsewhere; its energy is limited not by the global inequality but by the dimension identities $\sum_i(q_i+4)=4$ and $\sum_ii_i-2\eta=2-4k_J$, where $q_i$ is the cut-down instanton index of the $i$-th component, $i_i=q_i+2n_{D,i}$, $k_J$ the number of broken spheres and $\eta=n_D-1$. So each segment needs its own inequality, and only the local spacing $k$ enters. A period ($k$ copies of $B$, one $W_H$, $k-1$ copies of $V$) supplies energy $(k+3)/8$, needs at least $(4k-4)/8$ (attained, $k\ge2$), and changes $n_D$ by $(5-k)/8$; the table lists the changes over one period.
+
+\emph{Limits without a free component.} A segment of $L$ pieces, $m$ positive, with $s$ assigned insertions has excess $\sum(q_i+4)=8\kappa-3m+L-2s$: the energy has weight $8$, each piece $+1$ (its interval parameter), each positive piece $-3$ and each insertion $-2$. A copy of $B$ away from positive pieces contributes $4+1-2=3$ and a positive piece with its neighbours $4+2-4-3=-1$, so the excess grows by $3k-7$ per period: this is (II) on a segment. Anti-self-dual components have $q+4\ge4$ and Seiberg--Witten components containing a cap $q+4\ge8$; in a broken limit $j\ge2$ of them enclose at most $j-1$ abelian segments, so $-3$ per segment suffices (the manuscript proves $-2$), whereas $-4$ allows $4-4+4=4$. The exact minimum over segments, $(3k-7)m-3k+5$, is $\ge-2$ for all $m$ if and only if $k\ge3$.
+
+\emph{Limits with a free component.} The projection forgets the zero-spinor fields but keeps their interval parameters, $p_i$ on the $i$-th component, and assigns to a segment of $r$ components $\sum(4+i_i-p_i)=r+6\kappa-m+e_a-e_b-2s$, $e_a,e_b$ the bundle indices at its ends: the energy has weight $6=8-2$, each positive piece $-3+2\Theta=-1$, each insertion $-2$, parameters $0$. A copy of $B$ away from positive pieces contributes $3-2=1$ and a positive piece with its neighbours $3-1-4=-2$: $k-4$ per period. The projected dimension is at most $5-4N-\sum(4+i-p)$, with $N\ge2$ components not of zero spinor and at most $N-1$ segments, so $-2$ per segment suffices ($3-2N<0$) and is sharp ($-3$ with $N=2$ gives $0$). The exact minimum, $(k-4)m-k+2$ (one more when $k$ and $m$ are both even), is $\ge-2$ for all $m$ if and only if $k\ge4$.
+\begin{tab}
+\begin{tabular}{@{}cccccl@{}}
+\toprule
+$k$ & $8\Delta n_D$ & $8\Delta(\text{bound on }\ell)$ & excess, no free component & excess, free component & fails\\
+\midrule
+$1$ & $+4$ & no bound & no bound & no bound & (II), both local conditions\\
+$2$ & $+3$ & $+1$ & $-1$ & $-2$ & (II), both local conditions, composition\\
+$3$ & $+2$ & $-2$ & $+2$ & $-1$ & limits with a free component\\
+$4$ & $+1$ & $-5$ & $+5$ & $0$ & nothing\\
+$5$ & $0$ & $-8$ & $+8$ & $+1$ & (I)\\
+$\ge6$ & $5-k$ & $7-3k$ & $3k-7$ & $k-4$ & (I)\\
+\bottomrule
+\end{tabular}
+\end{tab}
+Thus (I) needs $k\le4$, (II) and the first local condition $k\ge3$, the second $k\ge4$; only $k=4$ meets all four.
+
+\head{5. The other spacings.}
+\emph{$k=1$} (no $\phi$ or $V$). (I) holds, at $+\frac12$ per period, but (II) fails without bound. Each copy of $B$ lies between two positive pieces, so the halves that the square estimate reserves for one positive piece belong to the other, and nothing negative is left to absorb the indefinite square on $P$: the energy cost per positive piece is unbounded below. For instance, with all $e_i=0$ and $v=(-2N,-1;1,0,1,2)$ on every $P$, $N\ge2$, every insertion is met ($vS=6$), each piece has $v^2=4N-8$ and $K^2=8N-4$ (Seiberg--Witten dimension $2N-2$), the chamber condition holds, the class lies in the band $(vH)(KH)<0$ exactly when $\frac16<b-a<\frac14$, and $\ell=(N-\frac32)m+O(1)$.
+
+\emph{$k=2$.} (II) fails: a period supplies $\frac58$ and needs $\frac12$; the class with $u=0$, $x=2$, $\sum t_b=0$ on each $P$ and $v=0$ on each $N$ meets every insertion and has $\ell\approx m/8$. The first local condition fails: $PNPNP$ with both boundary insertions has $\kappa=\frac32$, $s=6$ and excess $12-9+5-12=-4$, so two rigid anti-self-dual components around it give $4-4+4=4$ ($PNP$ gives $-3$, still excluded). The second fails at $-2$ per period. Even the composition argument fails: the cobordisms $BHB$ around consecutive positive pieces share a seam, and a central limit there gives $(-2)+(-2)+3=-1$.
+
+\emph{$k=3$.} Only limits with a free component are not excluded. On $PNNP$ the zero-spinor class with $u=0$, $x=2$, $t=(1,0,-1,0)$ on both $P$, halves $(0,2)$ and $(0,0)$ on the two $N$, $e_a-e_b=-1$ and both boundary insertions has $\kappa=\frac32$, $s=5$ and $\sum(4+i-p)=1+9-2-1-10=-3$, so with $N=2$ the projected dimension bound is $5-8+3=0$; in general the minimum is $-m-1$. Explicit classes attain it, so the projection method needs $k\ge4$. But the projection counts a zero-spinor segment for all values of its parameters, although on a positive-width toric piece zero spinor forces $vH=0$, a wall in the adjacent interval parameter; one wall per positive piece would give $k-3$ per period, but needs an unproved transversality statement. Whether spacing three truly fails is open.
+
+\emph{$k\ge5$.} The abelian side has room, but at $k=5$, $n_D=\Theta_0-(p+z+3+3b_0)/8$ no longer depends on the number of periods and the end choices (large $|\Lambda(E)|$, long ends) make it $<1$; for $k\ge6$, $n_D$ falls by $(k-5)/8$ per period.
+
+\head{6. Why positive pieces, and why the cosmetic map.}
+Copies of $B$ lower $n_D$, and by Donaldson's theorem no negative-definite piece raises $\Theta$; so without pieces of positive $b^+$ the index tends to $-\infty$. Raising $b^+$ by one costs energy $\frac38$, so a piece helps only if $\Theta>\frac38b^+$; the positive piece has $\Theta=1$ for $b^+=1$, a net $\frac58$ that offsets five copies of $B$. This is the $\frac15$. The chamber, not the lattice, fixes $\Theta=1$: with the same trace values $\Lambda U=-3$ allows $\Theta(P)=4$, but then $|\lambda_1|=\frac72$ and the square estimate, whose proof needs $|\lambda_I|\le\frac32$, is no longer available.
+
+Composing copies of $B\colon Y_2\to Y_{-2}$ needs returns $Y_{-2}\to Y_2$. The positive cobordism has $b^+=1$, since it passes through $Y_0$, and the reversed $-W'$ has form $\operatorname{diag}(2,2)$. With $H$ as the only return, $k=1$, $m/n\to1>\frac37$, and (II) fails without bound. The map $\phi$, or $V$ with $b_1=b^+=0$ inducing an isomorphism mod $2$, is a return with zero in every column of the table: it dilutes the positive pieces into the window and provides the spacing four.
+
+Finally, \emph{$HB$ is the identity mod $2$}. Over $\F_2$, $f_+g_+\simeq J_2$, a continuation map (\lab{ordinary:two-step-identity}), the mirror gives the same for $g_-f_-$, and the four-step family identifies $B$ with $g_-g_+$ (Lemma~\lab{negative:four-topology}). Hence $B\equiv H^{-1}$ up to fixed Floer automorphisms (not stated in the manuscript). So positive pieces are invisible to the nonvanishing argument (period operator $(\phi_*B)^3HB$) and enter only through the indices. Consistency check: for caps with nonzero pairing not using $\phi^{-1}$ (the manuscript's do), $C_-(HB)^MC_+$ would have $\Omega\equiv\pm(\text{pairing})\bmod 2^N$ and $n_D\to\infty$ with no cosmetic hypothesis, so the exclusions must fail at $k=1$; they do.
+\end{document}
