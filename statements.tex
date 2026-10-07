@@ -1,0 +1,627 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+% US letter, margins of about 1.8 cm set by hand; compact section headings.
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}\raggedbottom % no stretched pages, hence no underfull pages
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+
+\numberwithin{equation}{section}
+\newtheoremstyle{compact}{4pt}{4pt}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{compact}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{mainthm}{Main Theorem}
+\makeatletter % the proof environment of amsthm, with the spacing of the theorems
+\renewenvironment{proof}[1][\proofname]{\par\pushQED{\qed}\normalfont
+  \topsep4\p@\relax\trivlist\item[\hskip\labelsep\itshape#1\@addpunct{.}]%
+  \ignorespaces}{\popQED\endtrivlist\@endpefalse}
+\makeatother
+
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\CPb}{\overline{\mathbb{CP}}{}^2}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\F}{\mathbb F}
+\newcommand{\PD}{\operatorname{PD}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\fs}{\mathfrak s}
+\newcommand{\ft}{\mathfrak t}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\hS}{\hat\Sigma}
+\newcommand{\step}[1]{\par\noindent\textit{#1}\enspace}
+\newcommand{\hyp}[1]{\par\noindent\textup{#1}\enspace}
+% labels of claims
+\newcommand{\ver}{\textsc{verified}}
+\newcommand{\pla}{\textsc{plausible}}
+\newcommand{\spe}{\textsc{speculative}}
+% References set as one paragraph, to keep the note within five pages.
+\makeatletter
+\renewenvironment{thebibliography}[1]{\par\footnotesize\noindent
+  \textbf{References.}\ignorespaces
+  \def\@lbibitem[##1]##2{\unskip\hskip.5em plus.3em minus.1em[##1]~\if@filesw\immediate
+    \write\@auxout{\string\bibcite{##2}{##1}}\fi\ignorespaces}%
+  \def\bysame{---}}{\par}
+\makeatother
+
+\begin{document}
+
+{\centering\bfseries FOUR STATEMENTS\par}
+
+\section*{Overview}
+
+Let $K\subset S^3$ be a knot, $Y_r=S^3_r(K)$, and suppose that
+$\phi\colon Y_{-2}\to Y_2$ is an orientation-preserving diffeomorphism. The
+Strategy computes one integer in two ways: a count $\Omega$ of instantons over
+a cube of metrics on a closed four-manifold $X(\Pi)$, assembled from two caps
+and the cobordisms of a composite $\Pi$ of the maps $\phi_*B$ and $HB$. The four
+statements below are its four steps. In \S1 (Steps~2 and~4 of the Strategy)
+the map $B$ of the negative-definite cobordism $W_B\colon Y_2\to Y_{-2}$, defined
+by an interval of metrics and cut down by a sphere of square $-4$, is an
+integral chain map; a relation for $(-4)$-spheres and a constraint on the
+gradings of a cosmetic pair come with it. In \S2 (Step~2), if $B$ is a rational
+isomorphism, the Floer pairing of two caps built from the symplectic manifold
+of Kronheimer and Mrowka is nonzero along infinitely many composites $\Pi_M$.
+In \S3 (Step~4) $\Omega(X(\Pi))$ equals that pairing. In \S4 (Steps~1, 3, 5
+and~6) $\Omega(X(\Pi_M))=0$ for large $M$, by Stokes' theorem on a cut-down
+moduli space of $\SO(3)$-monopoles over the cube. We assume:
+
+\hyp{(H1)} Floer's instanton homology of $Y_{\pm2}$, whose only reducible flat
+connections are the central ones $\theta$, $\chi\theta$, is defined over $\Z$
+with the absolute $\Z/8$-grading fixed by $\theta$; a cobordism with $b_1=0$
+carrying a class $c$ that vanishes on its ends induces a map of degree
+$-2c^2-3b^+\pmod 8$ \cite[proof of Prop.~3.4]{DLME}; Donaldson invariants glue
+along $Y_{\pm2}$ and along $(Y_0,w)$ as Floer pairings; and the meridional
+handle cobordisms $Y_{-2}\to Y_{-1}$, $Y_1\to Y_2$ induce isomorphisms over
+$\F_2$ (those through $Y_0$ do so over $\Z$ by Floer's exact triangle
+\cite[Prop.~3.8]{DLME}, as $I(S^3)=0$).
+\hyp{(H2)} $B\otimes\Q$ is an isomorphism (Conjecture~\ref{conj:B}).
+\hyp{(H3)} Witten's formula holds for the closed symplectic manifold $X_0$ of
+\cite[Prop.~15]{KM04}. This is \cite[Cor.~7]{KM04}, whose proof rests on
+\cite[Thm.~1.1]{FLM}, stated there under the gluing hypothesis
+\cite[Hyp.~7.8.1]{FLM}.
+\hyp{(H4)} Gluing in families of broken metrics at irreducible nondegenerate
+flat connections, and at the flat connection $\gamma$ of trace zero on
+$L(4,1)$ against the reducible of energy $\frac14$ on $\nu S$, with
+orientations over $\Z$; in particular the relative sign $\epsilon$ of
+Theorem~\ref{thm:B} is constant.
+\hyp{(H5)} The analytic foundations of Theorem~\ref{thm:family} listed in \S4,
+uniformly in the neck length.
+
+\begin{mainthm}
+Let $K\subset S^3$ be a knot of genus at least two, and assume
+\textup{(H1)--(H5)}. Then there is no orientation-preserving diffeomorphism
+$S^3_{-2}(K)\to S^3_2(K)$.
+\end{mainthm}
+
+\begin{proof}
+For the composites $\Pi_M$ of Corollary~\ref{cor:composites}, that corollary and
+Theorem~\ref{thm:glue} give $\Omega(X(\Pi_M))\ne0$ for infinitely many
+$M\in8\Z$, and Theorem~\ref{thm:noreducible} gives $\Omega(X(\Pi_M))=0$ for all
+large $M\in8\Z$, for the same manifolds, metrics and divisors.
+\end{proof}
+
+By Ni--Wu \cite{NW} and Hanselman \cite[Thm.~2]{Ha}, a cosmetic pair in $S^3$ is
+$\pm1/n$ or $\pm2$, and $\pm2$ forces genus two; Daemi, Lidman and Miller
+Eismeier exclude $\pm1/n$ \cite[Thm.~1.3, Cor.~1.4]{DLME}. So the Main Theorem
+would settle the cosmetic surgery conjecture in $S^3$ under (H1)--(H5)
+(\ver\ as logic). Three corrections to the Strategy are built in: rational
+invertibility of $B$ replaces the congruence $u^M\equiv1\pmod{2^N}$ of Step~2
+(Corollary~\ref{cor:composites}); as $HB$ has degree four
+(Proposition~\ref{prop:WH}), what is used, and expected, is only that $B$ is an
+isomorphism modulo two; and the Chern--Simons filtration is not known to be
+favourable for $B$, rather than known to be unfavourable (\S1).
+
+\section{The distance-four map}
+
+Let $X^\circ_r$ be the trace of $r$-surgery on $K$ with a ball removed, and
+$W_B=(-X^\circ_2)\cup_JX^\circ_{-2}\colon Y_2\to Y_{-2}$, $J\cong S^3$ (the $W'$
+of the Strategy). It is simply connected with form $\langle-2\rangle^2$ on the
+capped Seifert surfaces $F_l$, $F_r$. The cores of the two $2$-handles form a
+sphere $S$ with $[S]=F_l-F_r$, $S\cdot S=-4$, $S\cap J=K$ and $\partial\nu
+S\cong L(4,1)$ (\ver). Let $G=[-1,1]$ parametrize metrics broken along $J$ at $-1$ and
+along $\partial\nu S$ at $+1$ \cite[\S3.9]{KM11}. For a $\mathrm U(2)$-bundle $E$
+with $\langle c_1(E),S\rangle$ even, the jumping-line divisor $V_S$ is the set
+of connections $A$ for which the holomorphic bundle $(E|_S\otimes(\det
+E|_S)^{-1/2},\bar\partial_A)$ is $\cO(k)\oplus\cO(-k)$ with $k\ge1$: the zero
+set of the canonical section of the determinant line of $\bar\partial_A$ on its
+twist by $\cO(-1)$, of first Chern class $\pm\mu(S)$ \cite{D90}. On $Y_{\pm2}$,
+$\chi$ is the flat real line bundle of holonomy $-1$, and $\chi_*$ the
+involution it induces on Floer complexes (for $\chi$-invariant perturbations,
+\pla); it has degree $4$ and shifts the Chern--Simons functional by $\frac12$, so
+it fixes no generator (\ver).
+
+At a fixed metric, cutting the map of $W_B$ down by $V_S$ gives a chain map of
+degree $-2$. It is null-homotopic in two ways: by stretching $J$, since the
+only flat connection on $S^3$ is trivial, with a three-dimensional stabilizer;
+and, for the signed sum over the bundles with $c_1=c$ and $c+\PD(S)$, by
+stretching $L(4,1)$, since the two bundles agree off $\nu S$ and the reducible
+of energy $\frac14$ on $\nu S$ enters both with opposite signs. The difference
+of the two null-homotopies is a chain map:
+
+\begin{theorem}\label{thm:B}
+Assume \textup{(H1)} and \textup{(H4)}. For $c\in H^2(W_B;\Z)$ vanishing on
+$Y_{\pm2}$, let $m_{G,c}\colon C(Y_2;\Z)\to C(Y_{-2};\Z)$ count the pairs
+$(t,[A])$, $t\in\operatorname{int}G$, with $A$ a $g_t$-instanton of index one
+and irreducible limits on the bundle $E_c$ with $c_1(E_c)=c$, modulo
+determinant-one gauge, and $[A]\in V_S$. There is a sign $\epsilon$, depending
+only on orientation conventions, such that $B_c=m_{G,c}-\epsilon\,m_{G,c+\PD(S)}$
+is a chain map of degree $-1-2c^2\pmod 8$, whose chain homotopy class does not
+depend on the choices. Moreover $B_{c+2a}\simeq\pm\chi_*^{a(F_r)}B_c\,
+\chi_*^{a(F_l)}$; so up to sign and homotopy there are exactly two such maps,
+$B=B_0$ of degree $-1$ and $B'=B_{-\PD(F_l)}\simeq\pm B\chi_*$ of degree $3$.
+\end{theorem}
+
+\begin{proof}[Sketch]
+For $\dim G=1$ the boundary formula of \cite[\S3.9]{KM11} reads $\partial
+m_{G,c}+m_{G,c}\partial=\pm(m_{1,c}-m_{-1,c})$, where $m_{\pm1,c}$ counts
+index-two solutions in $V_S$ for the broken metric at $\pm1$; bubbles and
+breaking at $\theta$, $\chi\theta$ are excluded by index. By index additivity
+\cite[proof of Prop.~3.4]{DLME}, a solution broken along $J$ with irreducible
+halves has index $\operatorname{ind}A_l+3+\operatorname{ind}A_r\ge3$, and a
+reducible half has index at least $-3$ \cite[Lemma~5.6]{DLME} and forces a
+further central matching on $Y_{\pm2}$; so $m_{-1,c}=0$. On $\nu S$, with
+$\xi(S)=1$, the reducibles with $w_2=0$ have $v=2j\xi$, energy $j^2/4$ and
+framed index $8E=2j^2$; those with $j=0$ miss $V_S$, as they restrict to
+$\cO\oplus\cO$. As the index is $2=\operatorname{ind}(\text{exterior})+8E$, the
+solutions at $+1$ are rigid irreducible instantons on $W_B\setminus\nu S$ with
+limit $\gamma$, glued to the reducible with $j=\pm1$; it meets $V_S$ once, with
+local degree $\pm1$, for its decaying deformations are the extensions of
+$\cO(1)$ by $\cO(-1)$, trivial on $S$ unless split. Hence $m_{1,c}=\epsilon_c\,
+m_\circ$, where $m_\circ$ counts those instantons and does not depend on $c$, as
+$\PD(S)$ vanishes off $\nu S$; and (H4) gives $\epsilon_{c+\PD(S)}=
+\epsilon\,\epsilon_c$. Every $c$ is some $2a$, and $E_{c+2a}\cong E_c\otimes
+L_a$, $L_a$ flat near the ends with holonomy $\chi^{a(F_l)}$, $\chi^{a(F_r)}$. The
+degree is $-2c^2-(\operatorname{codim}V_S-\dim G)$.
+\end{proof}
+
+In the inequality of \cite[Lemma~2.7(b)]{DLME}, $B$ has $L-D/8=\frac18-\eta$,
+$\eta$ the least energy of a counted instanton \cite[Prop.~3.4]{DLME}; this is
+favourable only if $\eta>\frac18$, which is not known (\ver), and is why
+monopoles replace the Chern--Simons filtration. The closed counterpart of
+Theorem~\ref{thm:B} continues the relations of Kotschick, Ruberman and
+Fintushel--Stern for spheres of square $-1$, $-2$, $-3$ \cite[Lemma~2.3(6),
+Thms.~2.1, 2.4]{FS1}:
+
+\begin{proposition}\label{prop:minus4}
+Let $X$ be closed, oriented and simply connected with $b^+(X)\ge2$, let $S\subset
+X$ be an embedded sphere with $S\cdot S=-4$, and $w\in H^2(X;\Z)$ with $w\cdot S$
+even. Then $D^{w+\PD(S)}_X(Sz)=-D^w_X(Sz)$ for every $z$ in the algebra
+generated by the point class and $S^\perp$.
+\end{proposition}
+
+\begin{proof}[Proof for simple type]
+Write $\mathbf D^w_X=e^{Q_X/2}\sum_\beta(-1)^{(w^2+\beta\cdot w)/2}a_\beta e^\beta$,
+the sum over the basic classes \cite[Thm.~4.1]{FS2}. As $(w+\PD
+S)^2=w^2+2w\cdot S-4$ and $w\cdot S$ is even, replacing $w$ by $w+\PD(S)$
+multiplies the term of $\beta$ by $(-1)^{\beta\cdot S/2}$, and differentiating
+along $S$ at $h\in S^\perp$ multiplies it by $\beta\cdot S$. So
+$D^{w+\PD(S)}(S\,\cdot)+D^w(S\,\cdot)$ involves only classes with $\beta\cdot
+S\equiv0\pmod4$, $\beta\cdot S\ne0$; by \cite[Thm.~4.3]{FS2} these have
+$\beta\cdot S=\pm4$, and $\sum_{\beta\cdot S=4}a_\beta
+e^{\beta+S}=(-1)^{(1+b^+)/2}\sum_{\beta\cdot S=4}a_\beta e^{-\beta-S}$. With
+$a_{-\beta}=(-1)^{(1+b^+)/2}a_\beta$, which follows from the parity of the
+degrees in which $D^w$ is nonzero, this says that the classes with $\beta\cdot
+S=-4$ are the $\beta+2\PD(S)$ with $\beta\cdot S=4$, with $a_{\beta+2\PD
+S}=a_\beta$. Such a pair has the same sign and the same restriction to
+$S^\perp$, and opposite $\beta\cdot S$, so its terms cancel.
+\end{proof}
+
+\begin{proposition}\label{prop:WH}
+Let $W_H\colon Y_{-2}\to Y_2$ be the composite of the four meridional handle
+cobordisms through $Y_{-1}$, $Y_0$, $Y_1$. Every class $c$ on $W_H$ that
+vanishes on $Y_{\pm2}$ and is odd on the capped Seifert surface $F_0\subset Y_0$
+has $c^2\equiv0$ or $2\pmod4$, so $(W_H,c)_*$ has degree $-3$ or $+1$, the two
+cases differing by $\chi_*$ at one end. We fix $c_H$ with $c_H^2=0$ and put
+$H=(W_H,c_H)_*$. Then $HB$ has degree $4$, and is not chain homotopic to the
+identity if $I(Y_2)\ne0$.
+\end{proposition}
+
+\begin{proof}
+$H_2(W_H)$ has a basis $R_1,R_2,R_3,F_0$ with $R_i^2=-2$, $R_1\cdot
+R_2=R_2\cdot R_3=1$, $F_0\cdot R_2=-1$ and the other products zero. The class
+$c=\PD(x_1R_1+x_2R_2+x_3R_3+dF_0)$ is odd on $F_0$ iff $x_2$ is odd, and then
+$c^2\equiv2(1+d)\pmod 4$.
+\end{proof}
+
+\begin{corollary}\label{cor:grading}
+Assume \textup{(H1)}, and let $\F=\F_2$ or $\Q$. If a cobordism $V\colon
+Y_{-2}\to Y_2$ with $b_1(V)=b^+(V)=0$ induces an isomorphism on $I(\cdot\,;\F)$,
+for instance the mapping cylinder of $\phi$, then $\dim I_j(Y_2;\F)$ does not
+depend on $j\in\Z/8$. In particular $\dim I(Y_1;\F)\equiv0\pmod8$ and
+$\Delta''_K(1)=0$.
+\end{corollary}
+
+\begin{proof}
+By (H1), $V_*$ has even degree $-2c^2$ and $H$ odd degree, so $H\circ V_*^{-1}$
+is an automorphism of odd degree, and odd numbers generate $\Z/8$. The isomorphism
+$I(Y_1)\cong I(Y_2)$ of (H1) has even degree, $\chi(I(Y_1))=\pm2\lambda(Y_1)$
+\cite{T1}, and $2\lambda(Y_1)=\Delta''_K(1)$ by Casson's surgery formula.
+\end{proof}
+
+\begin{conjecture}\label{conj:B}
+Over $\F_2$, $B\simeq g_-\vartheta g_+$, where $g_+\colon C(Y_2)\to C(Y_0,w)$,
+$g_-\colon C(Y_0,w)\to C(Y_{-2})$ are the distance-two maps of
+\cite[Prop.~3.10]{DLME} for the triads $(Y_2,S^3,Y_0)$, $(Y_0,S^3,Y_{-2})$, both
+isomorphisms, and $\vartheta$ is the identification at $Y_0$ fixed by a family
+of metrics on $W_B\#(S^2\times S^2)$. So $B\otimes\F_2$ and $B\otimes\Q$ are
+isomorphisms.
+\end{conjecture}
+
+\step{Status.} \ver: the index counts behind Theorem~\ref{thm:B}, including the
+framed index $8E$ of the reducibles on $\nu S$ (close $\nu S$ up in $\CPb$), and
+its twisting and degrees; Proposition~\ref{prop:minus4} for simple type, given
+\cite[Thms.~4.1, 4.3]{FS2}, and on $K3\#4\CPb$ and $E(4)\#4\CPb$ by computer;
+Proposition~\ref{prop:WH}; Corollary~\ref{cor:grading} given (H1), which recovers
+the condition $\Delta''_K(1)=0$ of \cite{BL}; the step from $\F_2$ to $\Q$ in
+Conjecture~\ref{conj:B} (the cone of $B$ then has finite homology of odd order).
+\pla: the chain
+property, i.e.\ (H4) (80\%); Proposition~\ref{prop:minus4} in general, by
+stretching $L(4,1)$ (75\%). \spe: that the condition modulo $8$ is new. Open:
+Conjecture~\ref{conj:B} (85\% that $g_\pm$ are isomorphisms, 60\% that $B\simeq
+g_-\vartheta g_+$). Confidence for \S1: 75\%.
+
+\section{Nonvanishing}
+
+\begin{lemma}\label{lem:CH}
+Let $A$ be an automorphism of an $r$-dimensional rational vector space, and
+$\psi_-$, $\psi_+$ a vector and a covector with $\psi_+(\psi_-)\ne0$. For every
+$k\ge1$ the sequence $\psi_+(A^{kM}\psi_-)$, $M\ge0$, has no $r$ consecutive
+zeros.
+\end{lemma}
+
+\begin{proof}
+The characteristic polynomial of $A^k$ has nonzero constant term, so the
+sequence satisfies a recurrence of order $r$ that can be solved backwards; $r$
+consecutive zeros would propagate to $M=0$.
+\end{proof}
+
+Let $g(K)\ge2$. Then $Y_0$ carries a taut foliation with the capped Seifert
+surface $\hS$ of genus $g(K)$ as a leaf \cite{Ga}, and $X_0=X^-\cup_{Y_0}X^+$ is the closed
+symplectic manifold of \cite[Prop.~15]{KM04}: $H_1(X_0)=H_1(X^\pm)=0$,
+$b^+(X^\pm)>0$, and there is $w$ with $\langle w,\hS\rangle=1$. Let
+$f_+\colon I(Y_0,w)\to I(Y_2)$ and $f_-\colon I(Y_{-2})\to I(Y_0,w)$ be the maps
+of the cobordisms $W_{0\to2}$, $W_{-2\to0}$ of two meridional $2$-handles each,
+so that $H=f_+f_-$, and put $C_-=X^-\cup W_{0\to2}\colon\emptyset\to Y_2$ and
+$C_+=W_{-2\to0}\cup X^+\colon Y_{-2}\to\emptyset$; they have $H_1=0$ and
+$b^+\ge2$ (\ver).
+
+\begin{proposition}\label{prop:caps}
+Assume \textup{(H1)} and \textup{(H3)}. There are $z_\pm$ in the algebras
+generated by the point class and $H_2(X^\pm)$ with
+$\langle\Psi_{C_+}(z_+),H^{-1}\Psi_{C_-}(z_-)\rangle=\pm D^w_{X_0}(z_-z_+)\ne0$ in
+$\Q$.
+\end{proposition}
+
+\begin{proof}
+Gluing along $(Y_0,w)$ gives $\Psi_{C_-}=f_+\Psi_{X^-}$ and
+$\Psi_{C_+}=\Psi_{X^+}f_-$, hence the identity. By Mayer--Vietoris, $H_2(X^-)\oplus
+H_2(X^+)$ maps onto $\hS^\perp$, and as $H_1(X_0)=0$ and $\hS$ is primitive,
+two characteristic classes restrict equally to $\hS^\perp$ iff they differ by
+some $2t\PD(\hS)$. By (H3) the restriction of $\mathbf D^w_{X_0}$ to $\hS^\perp$ is
+$c\,e^{Q/2}$, $c\ne0$, times a combination of exponentials, one for each coset,
+whose coefficients are signed sums of Seiberg--Witten invariants over it. The leaf $\hS$ is symplectic for the form of
+\cite[Prop.~15]{KM04}, so the canonical class $\beta_\omega$ has
+$\beta_\omega\cdot\hS=2g-2$ and
+$(\beta_\omega+2t\PD\hS)^2=\beta_\omega^2+4t(2g-2)$. For $g\ge2$ its
+Seiberg--Witten moduli space has negative dimension if $t<0$ and positive
+dimension if $t>0$, where simple type kills it. So the coset of $\beta_\omega$
+contributes $\pm c\,SW(\beta_\omega)=\pm c\ne0$ \cite{T2}; expand multilinearly.
+\end{proof}
+
+\begin{corollary}\label{cor:composites}
+Assume \textup{(H1)--(H3)}, $g(K)\ge2$ and that $\phi$ exists, and put
+$u=(\phi_*B)^3HB$. For every $p_0$ there are a composite $\Pi_0$ of $\phi_*B$
+and $HB$ that begins and ends with at least $p_0$ factors $\phi_*B$ and has at
+least three factors $\phi_*B$ between consecutive factors $HB$, and $p'\in8\Z$
+with $p'\ge p_0$, such that $\Pi_M=B\,\Pi_0\,u^M(\phi_*B)^{p'}$ satisfies
+$\langle\Psi_{C_+}(z_+),\Pi_M\Psi_{C_-}(z_-)\rangle\ne0$ for infinitely many
+$M\in8\Z$.
+\end{corollary}
+
+\begin{proof}
+By (H1)--(H2), $HB$ and $\phi_*B$ are rational automorphisms. Cayley--Hamilton
+for $HB$ writes $H^{-1}=B(HB)^{-1}$ as a combination of the $B(HB)^j$, $j<r$, so
+by Proposition~\ref{prop:caps} some $B(HB)^j$ pairs nontrivially. As $1$ lies in
+the span of the powers $(\phi_*B)^\ell$, $\ell\ge L$, for every $L$, inserting
+such combinations between consecutive factors $HB$ and at both ends gives a
+composite $B\Pi_0$ of the required form that pairs nontrivially.
+Lemma~\ref{lem:CH} for $\phi_*B$ and then for $u$, with $k=8$, gives $p'$ and
+infinitely many $M$.
+\end{proof}
+
+\step{Status.} \ver: Lemma~\ref{lem:CH}; Proposition~\ref{prop:caps} given
+(H1), (H3) and Gabai's leaf (\pla, standard), the topology of $X_0$ and of the
+caps having been checked against \cite[Prop.~15]{KM04};
+Corollary~\ref{cor:composites} as a deduction. Nothing is known about the parity
+of $D^w_{X_0}(z_-z_+)$, so the nonvanishing must be carried over $\Q$, as here;
+integrality matters only because Theorem~\ref{thm:family} yields
+$2^{n_a-1}\Omega=0$, which is empty modulo two once $n_a\ge2$ (\ver). \pla: (H3)
+(85--90\%, conditional on \cite[Hyp.~7.8.1]{FLM}). Open: (H2) (about 65\%). The
+genus enters the argument only here, through $\beta_\omega\cdot\hS=2g-2$.
+Confidence: 95\% for the deductions, 85\% for Proposition~\ref{prop:caps} with
+(H3) as a theorem.
+
+\section{The composition law}
+
+Let $\Pi$ be a composite of $B$, $H$ and maps induced by orientation-preserving
+diffeomorphisms between copies of $Y_{\pm2}$, and $X=X(\Pi)$ the closed manifold
+obtained by gluing the corresponding copies of $W_B$ and $W_H$ along those
+diffeomorphisms and capping with caps $C_\pm$ of the two ends, with $H_1=0$,
+$b^+\ge1$ and fixed metrics, carrying classes $z_\pm$ (as in \S2). Let $J_i$, $S_i$ ($1\le i\le n$) be the three-spheres and spheres in
+the copies of $W_B$. Let $c_0$ restrict to the classes of the caps, to $c_H$ and to
+$0$, and let $E_e$, $e\in\{0,1\}^n$, have $c_1(E_e)=c_0+\sum_ie_i\PD(S_i)$; these
+bundles have the same $\kappa$ and pairwise distinct $w_2$ (\ver). Let $g^R_t$,
+$t\in Q=[-1,1]^n$, restrict on the $i$-th copy of $W_B$ to the interval $G$ of
+\S1 in $t_i$, with the necks along the gluing three-manifolds of length $R$,
+except the two inside each copy of $W_B\cup W_H\cup W_B$, which have fixed length
+and metric. With $\epsilon(e)=\prod_i(-\epsilon)^{e_i}$, put
+\[
+\Omega(X;g^R)=\sum_e\epsilon(e)\,\#\bigl\{(t,[A]):t\in\operatorname{int}Q,\
+A\text{ a $g^R_t$-instanton on }E_e,\
+[A]\in V_{S_1}\cap\dots\cap V_{S_n}\cap\cV(z_-)\cap\cV(z_+)\bigr\}.
+\]
+Each $J_i$ separates $X$ into two parts with $b^+\ge1$, so all Donaldson and
+Seiberg--Witten invariants of $X$ vanish \cite{D90}; at a fixed metric the
+problem cut down by $\mu(S_1)\cdots\mu(S_n)$ has virtual dimension $-n$, and the
+faces of the cube contribute nothing in total, for the two reasons of \S1.
+
+\begin{theorem}\label{thm:glue}
+Assume \textup{(H1)}, \textup{(H4)}, and that consecutive copies of $W_H$ are
+separated by at least three copies of $W_B$. For generic auxiliary data in
+which the moduli spaces of irreducible instantons on the two halves of each
+$W_B$ are transverse to the jumping-line divisors of the capped halves of $S_i$
+(Lemma~\ref{lem:nodal}), there is $R_0$ such that for $R\ge R_0$ the count
+$\Omega(X;g^R)$ is finite, independent of $R$ and of the data away from the
+caps, and $\Omega(X;g^R)=\pm\langle\Psi_{C_+}(z_+),\Pi\,\Psi_{C_-}(z_-)\rangle$. Both sides
+vanish unless $c_2(E_0)\in\Z$. If all necks are long, the condition on the
+copies of $W_H$ is not needed.
+\end{theorem}
+
+\begin{lemma}\label{lem:nodal}
+Let $[A_\nu]\in V_{S_i}$ for metrics with $t_i\to-1$ converge to $(A_l,A_r)$,
+matched at the trivial connection on $J_i$, with no concentration on $S_i$. Then
+$A_l$ or $A_r$ lies in the jumping-line divisor of its capped half of $S_i$.
+\end{lemma}
+
+\begin{proof}
+On the nodal curve the twist $\cO(-1)$ becomes $\cO(-1)$ on one component and
+$\cO$ on the other, and the limiting index-zero operator has kernel
+$\{(\sigma_l,\sigma_r)\in H^0(E_l(-1))\oplus H^0(E_r):\sigma_l(p)=g\,\sigma_r(p)\}$,
+which vanishes, for every gluing element $g$, iff $E_l\cong E_r\cong\cO\oplus\cO$.
+Invertibility passes to large $\nu$ by linear gluing of Cauchy--Riemann
+operators.
+\end{proof}
+
+\begin{proof}[Sketch of proof of Theorem~\ref{thm:glue}]
+Pass to ideal limits as $R\to\infty$ \cite[\S3.9]{KM11}. Index additivity gives
+$d=\sum_Pd_P+\sum_\tau\operatorname{ind}\tau+3c$: $d_P$ is the expected dimension
+of the cut-down problem on the piece $P$, with its parameters, $\tau$ ranges over
+the trajectories on the long necks, and $c$ is the number of matchings at
+central flat connections there. A reducible on a copy of $W_B$ lying in $V_S$ is
+even on both halves, so it has energy at least $\frac12$ and index $8E-3\ge1$
+(Proposition~\ref{prop:energy}); one with $\langle v,S\rangle=0$ meets $V_S$ only
+with a point of concentration on $S$; and by Lemma~\ref{lem:nodal} a copy split
+along $J_i$ carries the constraint on one half. With the transversality
+assumed, $d_P\ge0$ for every piece, except that a copy of $W_B\cup W_H\cup W_B$
+with fixed internal necks has $d_P\ge-1$ with one central limit and $d_P\ge-4$
+with two. As copies of $W_H$ are three copies of $W_B$ apart, a central neck
+borders at most one such piece, and $d\ge2$ once $c>0$. Hence in dimension zero
+$c=0$, and the limits are rigid irreducible solutions on the pieces, matched at
+irreducible flat connections; each glues uniquely by (H4). The weights factor,
+which gives the identity at chain level. Invariance follows from it, as each
+piece's map is invariant up to homotopy: $B$ by Theorem~\ref{thm:B}, and $H$
+because a reducible on a wall of $W_H$, with its two central matchings, raises
+the index by at least $5$.
+\end{proof}
+
+\step{Status.} \ver: the index arithmetic, by an exhaustive computation over the
+possible limits, and the need for each hypothesis. Without
+Lemma~\ref{lem:nodal}, $b$ copies of $W_B$ split along $J$ with trivial halves
+reach expected dimension $3-b$; with two copies of $W_B$ between copies of
+$W_H$, $k$ adjacent copies of $W_B\cup W_H\cup W_B$ reach $3-k$; without the
+transversality, a copy of $W_B\cup W_H\cup W_B$ with two central limits, between
+copies of $W_B$ split along $J$ with reducible halves facing it, reaches $0$
+(with all necks long, dimension zero needs no transversality). Also \ver: the
+algebra of Lemma~\ref{lem:nodal}; the distinct $w_2$. \pla: compactness and
+gluing for families of broken metrics whose cuts carry reducibles, excluded in
+\cite[\S3.9]{KM11} and handled by index bounds in \cite[\S5]{DLME}; the linear
+gluing in Lemma~\ref{lem:nodal}; the transversality, a genericity statement; the
+integral sign (85--90\%). Open, and not needed: invariance when the long necks
+are shortened. Confidence: 80\% with all necks long, 70\% as stated.
+
+\section{Vanishing in families}
+
+Let $X$ be closed and oriented with $H_1(X;\Z)=0$ and $b^+\ge1$, containing
+disjoint separating three-spheres $J_i$ and disjoint spheres $S_i$
+($1\le i\le n$) with $S_i\cdot S_i=-4$, $S_i\cap J_i$ a knot and $S_i\cap
+J_j=\emptyset$ for $j\ne i$; $[S_i]=F_{l,i}-F_{r,i}$, halves of square $-2$.
+Let $(g_t)_{t\in\bar Q}$ stretch $J_i$ as $t_i\to-1$, and $\partial\nu S_i$,
+with a metric of positive scalar curvature, as $t_i\to+1$. In the notation of
+\cite{FL2b}, let $\ft_e$ be spin$^u$ structures with $w_2(\ft_e)\equiv
+w_0+\sum_ie_i\PD[S_i]$, $\Lambda_e=c_1(\ft_e)$ and common $p_1=-4\kappa$, where
+$w_0$ is even on the halves and odd on a class orthogonal to the $S_i$, and
+$\langle\Lambda_0,S_i\rangle=2$, which is exactly the condition for
+$n_a=\frac14(p_1+\Lambda_e^2-\sigma)$ (the $n_D$ of the Strategy) to be
+independent of $e$ (\ver). Let $z=\mu(S_1)\cdots\mu(S_n)z'$ with $\deg
+z=d_a+n$, $d_a=8\kappa-3(1+b^+)$, and $\Omega=\sum_e\epsilon(e)\#(\bar\cV(z)\cap
+\bar M^{w_e}_\kappa(Q))$, as in \S3. Let $\cZ_e=\cV(z)\cap\mathcal
+W^{n_a-1}\cap\cM^{*,0}_{\ft_e}(Q)/S^1$ be the cut-down one-manifold of
+\cite[(3.62)]{FL2b}, where the sections defining $\mathcal W$, which represent
+$\mu_c$ \cite[(3.12)]{FL2b}, sample the spinor on every piece. (H5) consists of:
+compactness of $\cZ_e$ over $\bar Q$; transversality for single components, for
+the product problem at broken limits (modulo the gauge groups of the pieces and
+the diagonal circle, by multivalued perturbations) and for the problem obtained
+by forgetting the components that are abelian instantons;
+\cite[Prop.~3.29]{FL2b} with parameters; gluing at the lens faces with the sign
+$\epsilon$ of Theorem~\ref{thm:B}; and the control of Seiberg--Witten classes on
+the positive pieces and the caps used in Theorem~\ref{thm:noreducible}.
+
+\begin{theorem}\label{thm:family}
+Assume \textup{(H5)} and $n_a\ge1$, and that the cut-down instanton spaces
+defining $\Omega$ are finite sets of regular points over
+$\operatorname{int}Q$. Suppose that, for every $e$, no point of the closure of
+$\cZ_e$ over $\bar Q$ is reducible on one of the pieces into which the broken
+necks cut $X$, other than the $\nu S_i$; that is, the closure meets no stratum
+$\iota(M_\fs(\hat\Gamma))\times\Sym^\ell(\hat\Gamma)$ of such a piece
+$\hat\Gamma$, at any level $\ell\ge0$, its zero-spinor part included. Then
+$\Omega=0$.
+\end{theorem}
+
+\begin{proof}[Sketch]
+This is the proof of \cite[Thm.~3.33(a)]{FL2b} with faces. By
+\cite[Prop.~3.29]{FL2b} the link of the instanton stratum contributes
+$\pm2^{n_a-1}\#(\bar\cV(z)\cap\bar M^{w_e}_\kappa(Q))$ ends to $\cZ_e$. A lower
+level lowers the dimension by six, and a point of concentration frees
+conditions of degree at most four \cite[(3.25)]{FL2b}; a broken $J_i$ lowers it
+by four, three for the stabilizer of the trivial connection and one for the
+parameter, given the transversality of the product problem. At $t_i=+1$ only
+the reducible of energy $\frac14$ on $\nu S_i$ occurs; the exterior problems for
+$e$ and $e+e_i$ on $X\setminus\nu S_i$ coincide, since $\PD(S_i)$ vanishes
+there, and their ends cancel in the weighted sum. By hypothesis there are no
+other ends, and Stokes' theorem gives $2^{n_a-1}\Omega=0$ in $\Q$.
+\end{proof}
+
+For $n=0$ this is \cite[Thm.~3.33(a)]{FL2b}, with its hypothesis (3.68), no
+reducible at any level, weakened to ``none in the closure of $\cZ$''; at a fixed
+metric with spheres it is Theorem~2.1 of the Strategy. Nothing is glued along a
+Seiberg--Witten stratum (\ver\ as logic). Reducibles are excluded by energy:
+
+\begin{proposition}\label{prop:energy}
+Let the halves be pairwise orthogonal, $\pi$ the orthogonal projection to the
+complement of their span, and $v\equiv w_0\pmod2$. Then
+$-\frac14v^2\ge-\frac14(\pi v)^2+\frac12\#\{i:\langle v,S_i\rangle\ne0\}$.
+\end{proposition}
+
+\begin{proof}
+$-v^2=-(\pi v)^2+\frac12\sum_i(\langle v,F_{l,i}\rangle^2+\langle
+v,F_{r,i}\rangle^2)$, the evaluations are even as those of $w_0$ are, and one of
+them is nonzero if $\langle v,S_i\rangle\ne0$.
+\end{proof}
+
+A reducible limit of points of $V_{S_i}$ with $\langle v,S_i\rangle=0$ has a
+point of concentration on $S_i$; as the $S_i$ are disjoint, its level satisfies
+$\ell\ge T(v)=\#\{i:\langle v,S_i\rangle=0\}$ (\ver).
+
+\begin{theorem}\label{thm:noreducible}
+Let $X=X(\Pi_M)$ for the composites of Corollary~\ref{cor:composites}, with the
+caps blown up once, $\langle\Lambda_0,e_\pm\rangle$ odd and large, and the family
+$g^R$ of \S3, $R\ge R_0(M)$. Assume \textup{(H5)}, with constants independent of
+$R$. Then for all large $M\in8\Z$, $n_a\ge1$ and the hypotheses of
+Theorem~\ref{thm:family} hold, so $\Omega(X(\Pi_M);g^R)=0$.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Blowing up does not change $\Psi_{C_\pm}(z_\pm)$ \cite{FS1}, so \S\S2--3 apply,
+and Theorem~\ref{thm:glue} gives the finiteness. Let $m$ be the number of copies
+of $W_H$. Each copy of $W_B$, with one parameter and one condition of degree two,
+raises $8\kappa$ by $1$, and each positive piece $P=X_{-2}(K)\cup W_H\cup(-X_2(K))
+\cong\CP^2\#5\CPb$ raises $b^+$, hence $8\kappa$, by $3$. As
+$\langle\Lambda,S_i\rangle=2$, $\Lambda$ is even on the halves with difference
+two, so the negative pieces $X_{-2}(K)\cup_\phi(-X_2(K))$ add only a bounded
+amount to $\Theta=\frac14(\Lambda^2-\sigma)$, while $\Theta(P)=1$. So
+$n_a=\Theta-\kappa=\frac18(5m-n)+O(1)$. Proposition~\ref{prop:energy}, and on $P$
+the control of Seiberg--Witten classes (a class on the indefinite $P$ may pair
+nontrivially with both adjacent spheres at energy $\frac12$ rather than $1$),
+give $-\frac14v^2+T(v)\ge\frac12(n-m)-C$; so an unbroken reducible has
+$\ell-T(v)\le\frac18(7m-3n)+O(1)$. For $\Pi_M$, $n=4M+O(1)$ and $m=M+O(1)$, so
+$n_a\to\infty$ and $\ell-T(v)\to-\infty$. On a chain of reducible components
+between broken necks the same inequalities give expected dimension at least
+$-2$ (attained by one positive piece between two broken necks); the count of
+Theorem~\ref{thm:family} needs at least $-3$, and $-2$ next to a component with
+nonzero spinor, granted the transversality after forgetting the abelian
+instantons. The caps carry no abelian instanton, as $w$ is odd on $\hS$ and their
+periods are generic, and $\langle\Lambda_0,e_\pm\rangle$ large excludes their
+Seiberg--Witten classes.
+\end{proof}
+
+The same count shows why a family is needed. At a fixed metric
+$8\kappa=2n+3m+O(1)$, and $n_a\to\infty$ needs $m/n>\frac25$ while exclusion
+needs $m/n<\frac27$; over the cube the range is $\frac15<m/n<\frac37$, and $u$
+has $m/n=\frac14$ (\ver). Without $\phi$ only $(HB)^M$ is available, with
+$m/n=1$; its pairings are nonzero for infinitely many $M$, by the argument of
+Corollary~\ref{cor:composites}, and the exclusion fails, as it must (\ver).
+
+\step{Status.} \ver: Theorem~\ref{thm:family} as a deduction from (H5),
+following \cite[\S3]{FL2b}; Proposition~\ref{prop:energy}; the dimension counts
+and the ranges above; the energy bound on $P$, a lattice inequality checked by
+hand and exhaustively; the bounds on chains, with $-2$ attained;
+Theorem~\ref{thm:noreducible} as a deduction. \pla, routine: compactness,
+single components, the link with parameters, weighted Stokes. \pla, new: the
+transversality of the product problem and after forgetting the abelian
+instantons (50--55\%); the lens ends, whose sign must be that of
+Theorem~\ref{thm:B} (70\%); the control of Seiberg--Witten classes on $P$
+uniformly over $\bar Q$, and the cap estimates (65\%). The caps have $H_1=0$,
+which suffices where simple connectivity was assumed, as it enters only through
+the goodness of $w_e$ \cite[Def.~3.20]{FL2b} (\pla). Open: a proof of the transversality after forgetting the
+abelian instantons (below); gluing at abelian instantons in families, which is
+not needed. Confidence that $\Omega(X(\Pi_M))=0$ for large $M$ by this route:
+about 30\%.
+
+\section*{The hardest open point}
+
+It is the transversality of the problem obtained by forgetting the abelian
+instantons, at broken limits that contain both a component with nonzero spinor
+and a chain of abelian instantons. On negative pieces such instantons exist for
+every value of the parameters, and their own circle of stabilizers keeps a
+cokernel of negative index that no equivariant perturbation removes; so they
+can be neither made regular nor excluded by counting, and Feehan and Leness
+reach their closed analogue only through gluing hypotheses \cite[Hyps.~7.8.1,
+11.3.5]{FLM}. The remaining problem must be made transverse by multivalued
+perturbations coupling distant pieces through the phase of the spinor, with a
+margin of one dimension. Verdict: the four
+statements prove the Main Theorem from (H1)--(H5) (\ver\ as logic; 80\% that no
+further compatibility condition is missing). (H1) and (H3) at 85--90\%, (H2) at
+about 65\% and (H4) at 80\% are \pla; (H5), at about 30\%, is \spe\ as a whole.
+They are positively correlated, and the cosmetic conclusion by this route is
+\spe, at about 15\% (10--25\%).
+
+\begin{thebibliography}{DLME}
+\bibitem[BL]{BL} S.~Boyer and D.~Lines, \emph{Surgery formulae for Casson's
+invariant and extensions to homology lens spaces}, J. Reine Angew. Math.
+\textbf{405} (1990), 181--220.
+\bibitem[D]{D90} S.~K. Donaldson, \emph{Polynomial invariants for smooth
+four-manifolds}, Topology \textbf{29} (1990), 257--315.
+\bibitem[DLME]{DLME} A.~Daemi, T.~Lidman and M.~Miller Eismeier,
+\emph{Filtered instanton homology and cosmetic surgery},
+arXiv:\allowbreak2410.21248.
+\bibitem[FL2b]{FL2b} P.~M.~N. Feehan and T.~G. Leness, \emph{PU(2) monopoles.
+II}, J. Reine Angew. Math. \textbf{538} (2001), 135--212.
+\bibitem[FLM]{FLM} \bysame, \emph{An $\mathrm{SO}(3)$-monopole cobordism
+formula relating Donaldson and Seiberg--Witten invariants}, Mem. Amer. Math.
+Soc. \textbf{256} (2018), no.~1226.
+\bibitem[FS1]{FS1} R.~Fintushel and R.~J. Stern, \emph{The blowup formula for
+Donaldson invariants}, Ann. of Math. \textbf{143} (1996), 529--546.
+\bibitem[FS2]{FS2} \bysame, \emph{Rational blowdowns of smooth $4$-manifolds},
+J. Differential Geom. \textbf{46} (1997), 181--235.
+\bibitem[Ga]{Ga} D.~Gabai, \emph{Foliations and the topology of $3$-manifolds.
+III}, J. Differential Geom. \textbf{26} (1987), 479--536.
+\bibitem[Ha]{Ha} J.~Hanselman, \emph{Heegaard Floer homology and cosmetic
+surgeries in $S^3$}, arXiv:\allowbreak1906.06773.
+\bibitem[KM04]{KM04} P.~B. Kronheimer and T.~S. Mrowka, \emph{Witten's
+conjecture and Property P}, Geom. Topol. \textbf{8} (2004), 295--310.
+\bibitem[KM11]{KM11} \bysame, \emph{Khovanov homology is an unknot-detector},
+Publ. Math. IH\'ES \textbf{113} (2011), 97--208.
+\bibitem[NW]{NW} Y.~Ni and Z.~Wu, \emph{Cosmetic surgeries on knots in $S^3$},
+J. Reine Angew. Math. \textbf{706} (2015), 1--17.
+\bibitem[T1]{T1} C.~H. Taubes, \emph{Casson's invariant and gauge theory}, J.
+Differential Geom. \textbf{31} (1990), 547--599.
+\bibitem[T2]{T2} \bysame, \emph{The Seiberg--Witten invariants and symplectic
+forms}, Math. Res. Lett. \textbf{1} (1994), 809--822.
+\end{thebibliography}
+
+\end{document}
