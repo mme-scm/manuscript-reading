@@ -1,0 +1,747 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+% US letter, margins of about 1.8 cm set by hand; compact section headings.
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}\raggedbottom % no stretched pages, hence no underfull pages
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+
+\numberwithin{equation}{section}
+\newtheoremstyle{compact}{4pt}{4pt}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{compact}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\makeatletter % the proof environment of amsthm, with the spacing of the theorems
+\renewenvironment{proof}[1][\proofname]{\par\pushQED{\qed}\normalfont
+  \topsep4\p@\relax\trivlist\item[\hskip\labelsep\itshape#1\@addpunct{.}]%
+  \ignorespaces}{\popQED\endtrivlist\@endpefalse}
+\makeatother
+
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\CPb}{\overline{\mathbb{CP}}{}^2}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\PD}{\operatorname{PD}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\fs}{\mathfrak s}
+\newcommand{\ft}{\mathfrak t}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\Ms}{\cM^{*,0}}
+\newcommand{\step}[1]{\par\noindent\textit{#1}\enspace}
+\newcommand{\hyp}[1]{\par\noindent\textup{#1}\enspace}
+% labels of claims
+\newcommand{\ver}{\textsc{verified}}
+\newcommand{\pla}{\textsc{plausible}}
+\newcommand{\spe}{\textsc{speculative}}
+% References set as one paragraph, to keep the note within six pages.
+\makeatletter
+\renewenvironment{thebibliography}[1]{\par\footnotesize\noindent
+  \textbf{References.}\ignorespaces
+  \def\@lbibitem[##1]##2{\unskip\hskip.5em plus.3em minus.1em[##1]~\if@filesw\immediate
+    \write\@auxout{\string\bibcite{##2}{##1}}\fi\ignorespaces}%
+  \def\bysame{---}}{\par}
+\makeatother
+
+
+\begin{document}
+
+{\centering\bfseries NONCOMPACTNESS OF THE FAMILY SO(3)-MONOPOLE SPACES\par}
+
+\section*{Introduction}
+
+We use the notation of \cite[\S4]{FS}, which is that of Feehan and Leness
+\cite{FL2b}. Let $X=X(\Pi_M)$ be the closed manifold of \cite[\S3]{FS} for the
+composites $\Pi_M=B\,\Pi_0\,u^M(\phi_*B)^{p'}$ of \cite[Cor.~2.3]{FS},
+$u=(\phi_*B)^3HB$, with the caps $C_\pm$ blown up once, exceptional classes
+$e_\pm$ and $\lambda_\pm=\langle\Lambda_0,e_\pm\rangle$ odd and large. It
+contains $n=4M+O(1)$ copies of $W_B$, with three-spheres $J_i$ and spheres $S_i$
+of square $-4$, $[S_i]=F_{l,i}-F_{r,i}$, and $m=M+O(1)$ copies of $W_H$. The
+$J_i$ cut $X$ into \emph{pieces}: negative pieces $X_{-2}(K)\cup_\phi(-X_2(K))$,
+positive pieces $P\cong\CP^2\#5\CPb$, and two end pieces containing the caps.
+The metrics $g^R_t$, $t\in\bar Q=[-1,1]^n$, stretch the round $J_i$ as
+$t_i\to-1$ and $\partial\nu S_i\cong L(4,1)$, of positive scalar curvature, as
+$t_i\to+1$; the necks $[-R,R]\times Y_{\pm2}$ outside the \emph{blocks}, the
+copies of $W_B\cup W_H\cup W_B$, have a fixed length $R$. On a block the metric
+depends on $(t_j,t_{j+1})$ jointly, through the toric family of \cite[\S6]{MS}
+(\S5), not on each parameter separately as in \cite[\S3]{FS}; the composition
+law \cite[Thm.~3.1]{FS} must be proved for this family.
+
+Let $\ft_e$, $e\in\{0,1\}^n$, have $w_2(\ft_e)\equiv w_e=w_0+\sum_ie_i\PD[S_i]$,
+$\Lambda_e=c_1(\ft_e)$, $\langle\Lambda_0,S_i\rangle=2$ and $p_1(\ft_e)=-4\kappa$,
+so that $d_a=8\kappa-3(1+b^+)$, $\Theta=\frac14(\Lambda^2-\sigma)$ and
+$n_a=\Theta-\kappa$ do not depend on $e$. Represent
+$z=\mu(S_1)\cdots\mu(S_n)z'$, $\deg z=d_a+n$, by $\cV(z)$, the intersection of
+the jumping-line divisors $V_{S_i}$ with representatives of the cap classes
+$z'$, and $\mu_c$ by $n_a-1$ sections of $\mathbb L_\ft$ \cite[(3.10),
+(3.12)]{FL2b} that sample the spinor on every piece, the
+\emph{$\mu_c$-sections}. Then $\cZ_e=\cV(z)\cap\cW^{n_a-1}\cap
+\Ms_{\ft_e}(Q)/S^1$ \cite[(3.62)]{FL2b} has dimension
+$(d_a+2n_a+n-1)-(d_a+n)-2(n_a-1)=1$, and \cite[Thm.~4.1]{FS} gives
+$2^{n_a-1}\Omega=0$, $\Omega=\sum_e\epsilon(e)\#(\bar\cV(z)\cap\bar
+M^{w_e}_\kappa(Q))$, once the closure of $\cZ_e$ over $\bar Q$ has no ends but
+those at the link $\{\|\Phi\|^2_{L^2}=\varepsilon_0\}$ of the instanton stratum
+and ends over the faces $\{t_i=+1\}$ that cancel in $\sum_e\epsilon(e)$.
+Sections~1--6 list the strata of this closure at a fixed
+$R\ge\max(R_0(M),T_0(M))$, $R_0(M)$ from the composition law and $T_0(M)$ from
+\S4; \S7 revises (H5).
+
+Over a face on which $k$ three-spheres and $l$ lens spaces are stretched, an
+ideal limit \cite[Def.~4.19, Thm.~4.20]{FL1} has a main component on each of the
+pieces closed up by balls, $\hat\Gamma_0\supset C_-,\dots,\hat\Gamma_k\supset
+C_+$, with points of concentration, trajectories on the stretched necks, and
+connections on the caps $\hat\nu_i$ of the lens spaces. By the proof of
+\cite[Prop.~3.1]{FL2a}, which is local, a main component lies in $\Ms$
+(irreducible, $\Phi\not\equiv0$), or is \emph{anti-self-dual} (irreducible,
+$\Phi\equiv0$), \emph{Seiberg--Witten} (a point of $\iota(M_\fs)\times\Sym^\ell$
+of its piece) or an \emph{abelian instanton} (reducible, $\Phi\equiv0$). At a
+reducible, $E=L_1\oplus L_2$, $v=c_1(L_1)-c_1(L_2)\equiv w$, $c_1(\fs)=\Lambda+v$
+and $\ell=\kappa+\frac14v^2$ \cite[Lemma~3.32, (3.64)]{FL2b}. A component on
+$\hat\Gamma_j$ that retains $p_j$ parameters and carries the constraints
+$V_{S_i}$ of $s_j$ spheres and cap classes of degree $z_j$ has cut-down
+anti-self-dual and monopole indices $q_j=d_a(\hat\Gamma_j)+p_j-2s_j-z_j$ and
+$i_j=q_j+2n_a(\hat\Gamma_j)$, lens ends being filled by the reducibles of \S3 and
+the energy of trajectories and points of concentration counted in its $\kappa$.
+A \emph{chain} is a maximal set of consecutive reducible components, and
+$\delta(\Gamma)=\sum_{j\in\Gamma}(i_j+4)$. Claims are labelled \ver\ (proved
+here, or checked against the source or by an exact computation), \pla\ or \spe.
+
+\section{Interior parameters}
+
+\begin{proposition}\label{prop:bounds}
+With the choices of \textup{(H5a)} made before $R$, every solution has
+$|\Phi|^2\le K_3$ and $|F^{0,+}_A|\le C|\Phi|^2+|P_+|$, $P_+$ the perturbation
+of the curvature equation, with $K_3$, $C$ independent of $t\in\bar Q$ and $R$.
+If $\zeta=f^2$, $0\le f\le1$, has compact support, then $\frac12\int\zeta^2
+|\nabla_A\Phi|^2+\frac1{16}\int\zeta^2|\Phi|^4\le2\int\zeta^2|P_D|^2+4\int
+\zeta^2(h^2+|P_+|^2)+36\int|d\zeta|^4\zeta^{-2}$, with $P_D$ the perturbation of
+the Dirac equation and $h$ the negative part of the least eigenvalue of
+$\frac14\mathrm{Scal}+\frac12\rho(F^+_{A_\Lambda})$; and $h=0$ on the round and
+lens necks, $\int h^2=o(\epsilon^{-1})$ on the tubes of \S5.
+\end{proposition}
+
+\begin{proof}[Sketch]
+\cite[Lemma~4.4, Rem.~4.6]{FL1}, Floer's holonomy perturbation entering through
+its sup norm; then pair $D_A^*D_A\Phi=D_A^*P_D$ with $\zeta^2\Phi$, and use
+\cite[Lemma~4.1]{FL1}, $\langle(\Phi\Phi^*)_{00}\Phi,\Phi\rangle=
+\frac14(s^4+t^4)+\frac52s^2t^2\ge\frac14|\Phi|^4$ ($s$, $t$ the singular values
+of $\Phi$) and Young's inequality.
+\end{proof}
+
+\begin{proposition}\label{prop:interior}
+Assume \textup{(H5)}. Over $\operatorname{int}Q$ the closure of $\cZ_e$ consists
+of $\cZ_e$ and the finitely many points of $\cV(z)\cap M^{w_e}_\kappa(Q)$, near
+each of which $\cZ_e$ has $2^{n_a-1}$ ends, counted with the sign of the
+instanton for $o(\Omega,w_e)$ and a sign fixed by conventions. Precisely:
+\textup{(a)} strata at level $\ell\ge1$ with $\Phi\not\equiv0$ have expected
+dimension at most $1-2\ell$; \textup{(b)} those at level $\ell\ge1$ with
+$\Phi\equiv0$, at most $-4\ell$; \textup{(c)} no Seiberg--Witten stratum occurs
+\textup{(\S5)}; \textup{(d)} an abelian instanton would contain both caps, which
+\textup{(H5c)} excludes.
+\end{proposition}
+
+\begin{proof}[Sketch]
+A limit is an ideal monopole in $\cM_{\ft_e(\ell)}(g^R_t)\times\Sym^\ell(X)$
+\cite[Thm.~4.20]{FL1}, \cite[Thm.~2.12]{FL2a}. (a) At level $\ell$,
+$\dim\Ms_{\ft(\ell)}(Q)/S^1=d_a+2n_a+n-1-6\ell$ \cite[(3.20)]{FL2b}; constraints whose support meets no point of concentration
+persist, and a point releases constraints of degree at most $4$ minus the
+dimension of its allowed positions \cite[(3.25)]{FL2b}, e.g.\ $V_{S_i}$, of
+degree two, at a point moving on $S_i$. So the conditions left have degree at
+least $d_a+n+2(n_a-1)-4\ell$. Without (H5d) a point anywhere in $\nu S_i$ could
+release $V_{S_i}$, and level one would give $1-6+6=1$. (b) The background lies
+in $M^{w_e}_{\kappa-\ell}(Q)$, of dimension $d_a+n-8\ell$, under conditions of
+degree at least $d_a+n-4\ell$. At level $0$ a limit with $\Phi\equiv0$ lies in
+$\cV(z)\cap\iota(M^{w_e}_\kappa(Q))$ \cite[Lemma~3.15]{FL2b}, and on the link,
+as $|\Phi|$ is bounded and does not concentrate. The link is
+\cite[Lemmas~3.22--3.28, Prop.~3.29]{FL2b} over $Q$, the terms of the
+obstruction map involving $t$ being cubic on $\cV(z)$:
+$\langle(2h)^{n_a-1}h^c,[\CP^{n_a+c-1}]\rangle=2^{n_a-1}$, with a sign for each
+$e$ whose dependence on $e$ is the comparison of \S3.
+\end{proof}
+
+\step{Status.} \ver: the counts, and the failure of (a) without persistence.
+\pla: compactness and transversality in families (90\%), (H5d) (85\%), the link
+over $Q$ (85\%). Confidence for the interior: 80\%.
+
+\section{Faces broken along the three-spheres $J_i$}
+
+\begin{lemma}\label{lem:S3}
+On the round $S^3$ with flat background, $(\theta,0)$ is the only solution of
+the three-dimensional monopole equations; it has stabilizer $\SU(2)$, $H^1=0$
+and invertible twisted Dirac operator. A finite-energy solution on $\mathbb
+R\times S^3$ has $\Phi\equiv0$ and is anti-self-dual of charge $c\in\Z$, index
+$8c-3$ and Dirac index $-c$, with zero kernel. For an ideal limit over a face
+with $k$ stretched three-spheres,
+\begin{equation}\label{eq:id}
+\textstyle\sum_{j=0}^k(q_j+4)=4,\qquad\sum_{j=0}^ki_j-2(n_a-1)=2-4k.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Integrating \cite[Lemma~4.1]{FL1} gives $0=\|\nabla\Psi\|^2+\int\frac14
+\mathrm{Scal}|\Psi|^2+\|(\Psi\Psi^*)_{00}\|^2$, so $\Psi=0$, and $\pi_1(S^3)=1$.
+For \eqref{eq:id}: $\sum_jd_a(\hat\Gamma_j)=d_a-3k$, each stretched $J_i$
+contributing $h^0(\theta)=3$; $\sum_jn_a(\hat\Gamma_j)=n_a$, the Dirac operator
+of $S^3$ being invertible; $\sum_jp_j=n-k$, $\sum_js_j=n$ and $\sum_jz_j=\deg
+z'=d_a-n$.
+\end{proof}
+
+So each stretched three-sphere lowers the dimension by four, three for the
+stabilizer of $(\theta,0)$ and one for $t_i$. A gauge-invariant $f$ with
+$f(\zeta x)=\zeta^2f(x)$ vanishes at anti-self-dual, Seiberg--Witten and abelian
+components, as every scalar fixes $(A,0)$ and $\mathrm{diag}(\zeta,\zeta^{-1})$
+fixes $A_{L_1}\oplus A_{L_2}$ and multiplies $\Phi$ by $\zeta$; so at a broken
+limit the $\mu_c$-sections restrict to the components in $\Ms$.
+
+\begin{proposition}\label{prop:DF}
+Let the perturbations near a limit act on one piece at a time, and let $F$ be
+the set of its components in $\Ms$, $f=|F|\ge1$. The limit lies in
+$\cZ_F\times\prod_{j\notin F}M_j$, where $\cZ_F$ is the space of the components
+in $F$, cut down by their constraints and all $\mu_c$-sections, modulo the
+diagonal circle; if $\cZ_F$ is regular,
+\begin{equation}\label{eq:DF}
+\dim\cZ_F=D_F=5-4f-\textstyle\sum_{j\notin F}(i_j+4)-\lambda_F,
+\end{equation}
+where $\lambda_F\ge0$ is the codimension of the lens ends (at least $1$ each),
+trajectories (at least $4$ each) and points of concentration (at least $2a$ for
+charge $a$) on the components in $F$. If $D_F<0$ the limit does not exist.
+\end{proposition}
+
+\begin{proof}
+$D_F=\sum_{j\in F}i_j-\lambda_F-1-2(n_a-1)$; apply \eqref{eq:id} and
+$k+1=f+\#\{j\notin F\}$.
+\end{proof}
+
+The components outside $F$ enter only through the topological numbers $i_j$,
+and nothing analytic is asked of them. Regularity of the whole broken
+configuration cannot be had: a trajectory of charge $c$ has a Dirac cokernel of
+dimension $c$ on a neck where every perturbation vanishes. An anti-self-dual
+component is \emph{of low index} if $i\le-3$, or if it contains a cap, $k\ge2$
+and $i\le-1$; a Seiberg--Witten component containing a cap is of low index if
+its chain has $\delta\le1$.
+
+\begin{theorem}\label{thm:J}
+Assume \textup{(H5)}, and let $\zeta$ be a limit of points of $\cZ_e$ over a face
+with $k\ge1$ stretched three-spheres. \textup{(a)} If $\zeta$ has no component
+in $\Ms$, it does not exist. \textup{(b)} If $\zeta$ has a component in $\Ms$
+and none of low index, then $D_F\le-1$, and $\zeta$ does not exist; the
+thresholds are sharp. \textup{(c)} Components of low index lie in two unions of
+pieces fixed
+before $M$, the \emph{end regions}: the pieces within about
+$8\lambda_\pm^2+5p'$ copies of $W_B$ of $C_\pm$ for anti-self-dual components,
+within about $\frac12\lambda_\pm^2$ for Seiberg--Witten ones, together with
+$B\Pi_0$ and $(\phi_*B)^{p'}$.
+\end{theorem}
+
+\begin{proof}[Sketch]
+(a) In \eqref{eq:id} anti-self-dual components have $q+4\ge4$ by (H5e),
+Seiberg--Witten components containing a cap have $q+4\ge8$
+(Proposition~\ref{prop:caps}), and abelian instantons contain no cap. So the
+$N_0\ge2$ components of the first two kinds are separated by at most $N_0-1$
+chains without a cap, each with $\sum(q_j+4)\ge-2$ (\S5), and
+$\sum_j(q_j+4)\ge2N_0+2\ge6$. (b) The components outside $F$ form inner
+intervals, between two members of $F$, at most $f-1$ of them, and outer
+intervals, between a cap and the nearest member of $F$. In an inner interval,
+chains (with $\delta\ge-2$, \S\S5--6) alternate with anti-self-dual components
+($i+4\ge2$), so it contributes at least $-2$; an outer interval begins with an
+anti-self-dual cap component ($i+4\ge4$) or a Seiberg--Witten one with
+$\delta\ge2$, and contributes at least $2$. So
+$D_F\le5-4f+2(f-1)-2\#\{\text{outer}\}\le-1$; for $k=1$, $D_F=-3-i_c$. A cap
+anti-self-dual component of index $-1$ next to a chain with $\delta=-2$, or at
+$k=1$ one of index $-3$, gives $D_F=0$. (c) For
+an anti-self-dual component, $q\ge0$ and $n_a\in\Z$ give $i\ge
+Q-6\lfloor Q/8\rfloor$, $Q=8\Theta(\hat\Gamma)-3(1+b^+)+p-2s-z$, where
+$\Theta=0$ on a copy of $W_B$, $\Theta(W_H)=1$, and $\Theta$ has a term
+$\frac14(1-\lambda_\pm^2)$ at a cap; so $i\ge-2$ inside $u^M$, and $i\le-3$
+needs five consecutive negative pieces or a cap. For Seiberg--Witten components
+see Proposition~\ref{prop:caps}.
+\end{proof}
+
+So at $k=1$, where both pieces contain a cap, a Seiberg--Witten component next
+to one in $\Ms$ is excluded only if it is short. At the node,
+\cite[Lemma~3.2]{FS} holds verbatim for monopoles, as $V_{S_i}$ depends only on
+$A|_{S_i}$: a limit satisfies the constraint of a capped half of $S_i$, or has a
+point of concentration on $S_i$ or a trajectory with a jumping line on $\mathbb
+R\times K$.
+
+\begin{proposition}\label{prop:twovalued}
+At a limit with an anti-self-dual component $A_r$ on $\hat\Gamma_r$ and
+components in $\Ms$ elsewhere, a single-valued $\cG_r$-equivariant term in the
+Dirac equation on $\hat\Gamma_r$ depending on $A_r$ and on other pieces
+vanishes, as $-1\in\cG_r$ fixes its arguments and negates its value; terms
+linear in $\Phi_r$ are compact; and terms
+comparing frames across the neck bring in the gluing parameter, with ends over
+the face that nothing controls. With the terms $\pm\beta(|s_W|)s_W^{1/2}
+g_{W,\Gamma}(A|_\Gamma)$ of \textup{(H5f)}, $s_W$ of weight two in the spinor on
+a piece $W\not\subset\Gamma$, the Dirac equation at a stratum $M_\Gamma$ of low
+index is solvable only where a section of a bundle of rank
+$-2n_a(\hat\Gamma)>\dim M_\Gamma$ vanishes, a set of dimension $i<0$; and if
+$K\supset F$ adds the components of low index, $5-4|K|-\sum_{j\notin
+K}(i_j+4)\le-1$.
+\end{proposition}
+
+\step{Status.} \ver: Lemma~\ref{lem:S3}; the vanishing of the
+$\mu_c$-sections; \eqref{eq:DF}; Theorem~\ref{thm:J}, exhaustively over
+arrangements of up to ten components, and with (a) the exclusion part of the
+finiteness hypothesis of \cite[Thm.~4.1]{FS}; Proposition~\ref{prop:twovalued};
+the algebra at the node. \pla: additivity across $S^3$; (H5e) (85\%); the
+linear gluing at the node (85\%); (H5f), new (55--60\%). Confidence: 45\%.
+
+\section{Faces broken along the lens spaces $\partial\nu S_i$}
+
+\begin{lemma}\label{lem:lens}
+On $L(4,1)$ the flat $\SU(2)$ connections are $\pm\theta$, with stabilizer
+$\SU(2)$, and $\gamma=\mathrm{diag}(i,-i)$, with stabilizer $\mathrm U(1)$; all
+have $H^1=0$ and invertible Dirac operators. The metric
+$dr^2+A^2(\sigma_1^2+\sigma_2^2)+B^2\tanh^2(4r/B)\sigma_3^2$, $B<2A$, on the cap
+$\hat\nu_i$ has scalar curvature
+$64B^{-2}\operatorname{sech}^2(4r/B)+8A^{-2}-2B^2\tanh^2(4r/B)A^{-4}>0$, so with
+an anti-self-dual background no finite-energy spinor survives on $\hat\nu_i$.
+The reducibles on $\hat\nu_i$ have $v=2j\xi$, $\xi(S_i)=1$, energy $E=j^2/4$ and
+restriction $\cO(j)\oplus\cO(-j)$ to $S_i$, so lie in $V_{S_i}$ iff $j\ne0$, and
+limit $\gamma$ for $j$ odd, $\pm\theta$ for $j$ even ($\theta$ and $-\theta$
+exchanged between $e_i=0,1$). Their framed indices are $8E$, and $6E$ at
+$\pm\theta$, $2+6(E-\frac14)$ at $\gamma$ for monopoles, the complex Dirac index
+being $-E$, resp.\ $\frac14-E$. For $|j|=1$ the Dirac operators of the two
+lifts, of evaluations $(4,0)$ and $(0,-4)$, are invertible.
+\end{lemma}
+
+\begin{proposition}\label{prop:lensface}
+Assume \textup{(H5)}. Over an open face $\{t_i=+1\}$ the closure of $\cZ_e$
+consists of finitely many ends, each converging to a rigid solution in $\Ms$ on
+$X\setminus\nu S_i$ with limit $\gamma$, glued to the reducible of energy
+$\frac14$ on $\hat\nu_i$, one end for each such exterior solution.
+\end{proposition}
+
+\begin{proof}[Sketch]
+A cap of monopole framed index $d_c$ carries $V_{S_i}$, of degree two, and
+the face removes $t_i$, so an exterior component in $\Ms$ has dimension
+$2-d_c$: $0$ at energy $\frac14$, $-6h$ at energy $\frac14+h$ at $\gamma$, at
+most $-4$ at $\pm\theta$, where the least energy in $V_{S_i}$ is $1$, and at
+most $-2a$ with points of concentration of charge $a$. An irreducible cap of
+energy $\frac14$ in $V_{S_i}$ has framed index $2$ and a free action of
+$\mathrm{Stab}(\gamma)/\{\pm1\}$, so is absent for generic data. An
+anti-self-dual exterior gives $1-8E\le-1$, a Seiberg--Witten one is excluded by
+Theorem~\ref{thm:unbroken}, and an abelian one contains both caps. The gluing
+parameter lies in $\mathrm{Stab}(\gamma)/(\mathrm{Stab}\,x\cdot
+\mathrm{Stab}\,c)$, a point, and $V_{S_i}$ cuts the normal line of the cap
+transversely, the non-split extension of $\cO(1)$ by $\cO(-1)$ being
+$\cO\oplus\cO$.
+\end{proof}
+
+No coupled perturbation is needed here, no limit of the cut-down instanton
+spaces lies here, and at a corner two lens ends give $1-2=-1$; so lens ends lie
+over open faces only, and cancel face by face:
+
+\begin{theorem}\label{thm:cancel}
+Let $e_i=0$ and $e'=e+e_i$. The exterior problems for $e$ and $e'$ on
+$X\setminus\nu S_i$ coincide, and for each exterior solution $x$ the ends of
+$\cZ_e$ and $\cZ_{e'}$ at $x$ have signs with $\sigma_{e'}(x)=\epsilon\,
+\sigma_e(x)$, $\epsilon$ the sign of \cite[Thm.~1.1]{FS}; so they cancel in
+$\sum_e\epsilon(e)$.
+\end{theorem}
+
+\begin{proof}[Sketch]
+The orientation is $o_e\otimes$(the complex orientation of $\det
+D_{A,\vartheta}$) \cite[Def.~2.3, (2.5)]{FL2b}, $o_e$ glued along the necks
+along $Y_{\pm2}$ from the caps and the copies of $W_H$ and $W_B$. As $\PD[S_i]$
+vanishes on $X^\circ=X\setminus\nu S_i$ and $H^3(X^\circ)=0$,
+$E_e|_{X^\circ}\cong E_{e'}|_{X^\circ}$ canonically up to homotopy, and excision
+splits the determinant lines into a common exterior factor and cap factors.
+Tensoring by $L_{-2\xi}$ on $\hat\nu_i$, followed by a Weyl conjugation at
+$\gamma$, preserves $\operatorname{ad}E$ and $V_{S_i}$ with its complex
+coorientation; it does not act on the spinors, but both cap Dirac operators are
+invertible and the exterior one is common, so the spinor contributes $+1$. What
+remains is the comparison of $o_c$ and $o_{c+\PD(S)}$ at the lens face of $W_B$,
+which is $\epsilon$ by (H4). No line bundle on $X$ relates $E_e$ and $E_{e'}$:
+their $w_2$ differ by $\PD[S_i]$, odd on a class of an adjacent piece.
+\end{proof}
+
+\step{Status.} \ver: Lemma~\ref{lem:lens} (scalar curvature from the
+Christoffel symbols; Dirac indices by excision against $\mathbb F_4$ and
+$\mathbb P(1,1,4)$ and by $\eta$-invariants); the counts of
+Proposition~\ref{prop:lensface}; Theorem~\ref{thm:cancel} given excision and
+(H4). \pla: gluing at the reducible of energy $\frac14$ (80\%); excision with
+stabilizer $\mathrm U(1)$ (90\%); (H4) (80\%); the cap metrics (90\%).
+Confidence: 75\%.
+
+\section{The long necks along $Y_{\pm2}$}
+
+At a fixed $R$ no neck along $Y_{\pm2}$ is stretched and no stratum is broken
+there; the necks matter through the constants.
+
+\begin{proposition}\label{prop:Lspace}
+Let $g(K)\ge2$. \textup{(a)} $Y_{\pm2}$ is not an $L$-space. \textup{(b)} For
+every metric and small perturbation with nondegenerate reducibles, the
+three-dimensional Seiberg--Witten equations on $Y_{\pm2}$ have an irreducible
+solution. \textup{(c)} $Y_{\pm2}$ has no metric of nonnegative scalar
+curvature; so $\int_{[-R,R]\times Y_{\pm2}}h^2\ge cR$, and a solution near a
+critical point with nonzero spinor along an interval of length $L$ has
+$\int|\Phi|^4\ge cL$.
+\end{proposition}
+
+\begin{proof}
+(a) Otherwise $K$ would be an $L$-space knot, and the integer surgery formula
+\cite{OS} would give $\operatorname{rank}\widehat{HF}(S^3_2(K))=2+2(2g-3)>2$
+(the rational surgery bound gives only $g\le2$); and
+$S^3_{-2}(K)=-S^3_2(\bar K)$. (b) Otherwise monopole Floer homology,
+isomorphic to Heegaard Floer homology, would have rank $|H_1|=2$. (c) Such a
+metric, if not flat, admits no irreducible solution, and no flat orientable
+three-manifold has $H_1=\Z/2$.
+\end{proof}
+
+So the bounds of Proposition~\ref{prop:bounds} grow with $R$; what stays bounded
+is the drop of the Chern--Simons--Dirac functional. In temporal gauge on a neck
+write the equations as $\dot\Phi+D_a\Phi=e$, $\dot a+{*F_a}+\sigma\nabla\cW(a)=
+q(\Phi)+r$, $\langle q(\Phi),b\rangle=-c\langle\rho(b)\Phi,\Phi\rangle$, $c>0$,
+with $\cW$ the holonomy perturbation, $|\cW|\le M_\cW$, $\sigma=\pm1$, and $r$,
+$e$ the other perturbations, of total squared $L^2$ norm $\nu$.
+
+\begin{lemma}\label{lem:CSD}
+With $H(t)=\langle D_{a(t)}\Phi(t),\Phi(t)\rangle_{L^2(Y)}$ and $\kappa$
+normalized by $\|F^0\|^2=2\|F^{0,+}\|^2+8\pi^2\kappa$,
+\[
+4\pi^2\kappa_{[u,v]\times Y}=\int_u^v\bigl(\|\dot a\|^2+2c\|\dot\Phi\|^2
+-\langle r,\dot a\rangle-2c\langle e,\dot\Phi\rangle\bigr)dt
++c\bigl(H(v)-H(u)\bigr)+\sigma\bigl(\cW(a(v))-\cW(a(u))\bigr).
+\]
+Hence every neck middle has $\kappa\ge-C_Y(1+\nu)$, and every component $V$ of
+$X$ minus the neck middles has $\kappa_V\le\kappa+C(1+M)$ and
+$\|F^0_A\|^2_{L^2(V)}\le C(1+\kappa+M)$, with $C_Y$, $C$ independent of $R$ and
+$t$; an Uhlenbeck limit along any sequence $(t_\nu,R_\nu)$ has at most
+$C(1+\kappa+M)$ points of concentration.
+\end{lemma}
+
+\begin{proof}
+In temporal gauge $4\pi^2\kappa_{[u,v]}=-\int\langle{*F_a},\dot a\rangle$;
+substitute the curvature equation and $H'=\langle\rho(\dot a)\Phi,\Phi\rangle-
+2\|\dot\Phi\|^2+2\langle e,\dot\Phi\rangle$. Choose $u$, $v$ in unit strips at
+the ends of the neck where $|H|\le B_Y(1+\nu)^{3/4}$, as
+Proposition~\ref{prop:bounds} allows; the rest follows from additivity of
+$\kappa$ and Proposition~\ref{prop:bounds} on the components.
+\end{proof}
+
+By Lemma~\ref{lem:CSD} the inputs of (H5) that must not depend on $R$ (the cap
+constant $C_W$, the absence of abelian instantons containing a cap, and
+Theorem~\ref{thm:P}(f)) can be fixed before $R$, as the composition law
+requires: each is proved by contradiction along sequences with $R\to\infty$, on
+completed caps and toric pieces, where the critical points at the ends play no
+role. $R=\infty$ is not a face of the problem.
+
+\step{Status.} \ver: Lemma~\ref{lem:CSD}, also numerically on a
+finite-dimensional model (relative error $5\cdot10^{-10}$; for $c<0$ the
+integrand has no sign), and its consequences as deductions;
+Proposition~\ref{prop:Lspace}, given the surgery formula and the isomorphism of
+Floer theories. \pla: the inputs fixed before $R$ (70\%); compactness as
+$R\to\infty$ in their proofs (80\%). Confidence: 70\%.
+
+\section{Seiberg--Witten strata on $X$, on the positive pieces and on the caps}
+
+A reducible pair on a piece with $b_1=0$ and $w_2(\ft)\ne0$ solves the
+Seiberg--Witten equations of $c_1(\fs)=\Lambda+v$ with $\eta=F^+_{A_\Lambda}$
+\cite[Lemmas~3.12, 3.13]{FL2a}; its stratum $\iota(M_\fs)\times\Sym^\ell$ has
+tangential index $d_s=\frac14(c_1(\fs)^2-2\chi-3\sigma)=n_a+\ell+\frac12
+\Lambda\cdot v-(1+b^+)$ \cite[(2.63)]{FL2a}, the normal part completing it to
+$d_a+2n_a+6\ell$. The $\mu_c$-sections vanish there (\S2), so these strata are
+excluded by level on $X$ and by \eqref{eq:DF} at broken limits. There are no
+twisted reducibles, as $H_1=0$ on $X$, $X\setminus\nu S_i$ and the pieces.
+
+\emph{Incidence.} If points of $\cZ_e$ converge, off the faces $\{t_i=-1\}$, to
+a Seiberg--Witten point of class $v$, each $S_i$ with $\langle v,S_i\rangle=0$
+carries a point of concentration, by (H5d) and as the splitting type on $S_i$
+is $|\langle v,S_i\rangle|/2$; so $\ell\ge T(v)=\#\{i:\langle
+v,S_i\rangle=0\}$. On a positive piece $P_j$ between $J_j$ and $J_{j+1}$ let
+$h_1=\langle v,F_{l,j}\rangle$ and $h_2=\langle v,F_{r,j+1}\rangle$ be the
+evaluations on the halves adjacent to $P_j$ in the neighbouring pieces, and
+$Q_I=v_{P_j}^2-\frac12\sum_{i\in I}h_i^2$ for $I\subset\{1,2\}$.
+
+\begin{proposition}\label{prop:energy2}
+Suppose that on every positive piece $Q_I\le-2$ for some $I$, or $Q_I\le2$
+with one of $V_{S_j}$, $V_{S_{j+1}}$ not satisfied by $v$; that $v_{C_\pm}^2\le
+C_{W_\pm}$ on the caps; and that positive pieces are at distance at least two.
+Then $-\frac14v^2+T(v)\ge\frac12(n-m)-C$, $C=\frac14(C_{W_-}+C_{W_+})$.
+\end{proposition}
+
+\begin{proof}
+$H^2(X;\Z)$ splits orthogonally along the $J_i$. A negative piece contributes
+half the sum of the squares of its two even half evaluations to $-v^2$. Each
+positive piece, with the halves in $I$, contributes at least $2$ to
+$-v^2+4T(v)$; each of the $n-2m$ spheres not adjacent to a positive piece lies
+in $V_{S_i}$ through a nonzero half, contributing at least $2$ to $-v^2$, or
+adds $1$ to $T(v)$; at distance two no half is used twice.
+\end{proof}
+
+It is sharp on nine chains, and fails at distance one. It replaces
+\cite[Prop.~4.2]{FS}, which is true but does not suffice: on $P$, $(\pi v)_P^2$
+is unbounded on the classes allowed below ($80$, $360$, $1520$, \dots).
+
+\begin{theorem}\label{thm:P}
+Let the metric on the plumbing of $S_j$, the fibre class $U$ of $P_j$ and
+$S_{j+1}$, a chain of spheres of squares $-4$, $0$, $-4$, be conformal to the
+toric K\"ahler metric of \cite[\S6]{MS}, with period $\omega=U+aX_1+bX_2$,
+$X_1=-S_j$, $X_2=S_{j+1}$, $0\le a,b\le\frac14$; so $\omega=\sum_I\theta_IH_I$,
+$\theta_I\ge0$, $H_I=U+\frac14\sum_{i\in I}X_i$, and $\Lambda\cdot\omega<0$.
+\textup{(a)} On a complete piece with $\mathrm{Scal}\ge0$, positive somewhere,
+$b^+_{L^2}=1$, period $\omega$, ends of positive scalar curvature and harmonic
+background, a Seiberg--Witten solution has $(v\cdot\omega)(c_1(\fs)\cdot
+\omega)<0$, and an abelian instanton has $v\cdot\omega=0$.
+\textup{(b)} The toric metrics $\frac12M_{ij}d\mu_id\mu_j+2(M^{-1})_{ij}d
+\vartheta_id\vartheta_j$, $M=\mathrm{diag}(c,0)+\sum_\nu n_\nu n_\nu^t/l_\nu$,
+$c\ge0$, have $\mathrm{Scal}\ge0$.
+\textup{(c)} If $\omega\ne U$ and $v\cdot U\ne0$, a reduced class satisfies the
+hypothesis of Proposition~\ref{prop:energy2} for some $I\ne\emptyset$ with
+$\theta_I>0$; if $v\cdot U=0$, then $v_P^2\le-2$.
+\textup{(d)} Near the corner $t_j=t_{j+1}=-1$, $\omega$ is forced to $U$; there
+the block contains a tube $S^2\times S^1\times[0,L]$, $L\ge c/\epsilon$, on which
+$4\pi^2(v\cdot U)^2L\le2\|D^+\|^2+16\pi^2\kappa_V$, so $v\cdot U=0$ for small
+$\epsilon$.
+\textup{(e)} On the isolated $P$, for any metric of nonnegative scalar
+curvature, positive somewhere, every Seiberg--Witten class with
+$d_s=\frac14(c_1(\fs)^2-4)\ge0$ has $v_P^2\le-2$.
+\textup{(f)} For every $t\in\bar Q$ and $R\ge T_0(M)$, every reducible component
+containing $P_j$ of a limit of points of $\cZ_e$ satisfies the conclusion of
+\textup{(c)}, or $v\cdot U=0$.
+\end{theorem}
+
+\begin{proof}[Sketch]
+(a) Integrating the Weitzenböck formula gives $0=\int(|\nabla\psi|^2+\frac14
+\mathrm{Scal}|\psi|^2)+8\pi^2(v\cdot\omega)(c_1(\fs)\cdot\omega)/\omega^2+
+2\|D^+_\perp\|^2$, $D$ the curvature of the reduction. (b) By Abreu's formula
+\cite{Ab}, $\mathrm{Scal}=-2\partial_i\partial_jB_{ij}$, $B=M^{-1}$, and
+$-\partial_i\partial_jB_{ij}=q^t(I-P)q+z^t((I-P)\circ P\circ P)z$ with
+$P_{\nu\mu}=n_\nu^tBn_\mu/\sqrt{l_\nu l_\mu}$, $0\le P\le I$,
+$z_\nu=l_\nu^{-1/2}$, $q_\nu=z_\nu P_{\nu\nu}$; apply Schur's product theorem.
+(c) By (a), $\Lambda\cdot\omega<c_1(\fs)\cdot\omega<0$, and convexity gives
+$\theta_I>0$ with $\operatorname{sign}(u)\,v\cdot H_I<|\Lambda\cdot H_I|$,
+$u=v\cdot U$; identities such as
+$Q_{\{1\}}=8(v\cdot H_{\{1\}})u-4u^2-\sum_b(v\cdot T_b-u)^2-\frac12(h_1-2u)^2$,
+$T_b$ the exceptional classes, and parity give the bounds. (d)
+$\int_{S^2}D=2\pi\,v\cdot U$ on fibres of area $2\pi$. (e) If $v_P^2\ge0$, then
+$v$ is causal and $c_1(\fs)$ timelike, in opposite half-cones by (a), so
+$c_1(\fs)\cdot v\le0$ and $\Lambda_P^2=c_1(\fs)^2-2c_1(\fs)\cdot v+v^2\ge4$,
+whereas $\Lambda_P^2\le2$ for every $(e_j,e_{j+1})$. (f) By contradiction,
+letting the regularization tend to zero and the isolation lengths and $R$ to
+infinity, with Lemma~\ref{lem:CSD}: a limit is an unperturbed reduction on the
+completed toric piece, contrary to (a)--(d).
+\end{proof}
+
+\begin{theorem}\label{thm:unbroken}
+Assume \textup{(H5c)}. For all large $M$ no Seiberg--Witten stratum of $X$, at
+any level, meets the closure of $\cZ_e$ over $\operatorname{int}Q$ or over the
+faces $\{t_i=+1\}$.
+\end{theorem}
+
+\begin{proof}
+Incidence and Proposition~\ref{prop:energy2} give $\kappa=\ell-\frac14v^2\ge
+\frac12(n-m)-C$. As $8\kappa=n+3m+c_\kappa$, $c_\kappa=\deg z'+3+3b^+(C_-\sqcup
+C_+)$, this says $7m-3n+c_\kappa+8C\ge0$, which is false for $n=4M+O(1)$,
+$m=M+O(1)$ and $M$ large.
+\end{proof}
+
+\begin{proposition}\label{prop:caps}
+\textup{(a)} No abelian instanton contains a cap $C=C_\pm$, and Seiberg--Witten
+components have $v_C^2,c_1(\fs)_C^2\le C_W$, with $C_W$ depending only on $C$.
+\textup{(b)} A Seiberg--Witten component on an end piece made of fewer than
+$L_*$ pieces, regular in its $p$-parameter family, has $d_s+p\ge0$, hence
+$|c_1(\fs)\cdot e_\pm|\le B$ independently of $\lambda_\pm$, $|v\cdot
+e_\pm|\ge\lambda_\pm-B$, and $q+4\ge8$, $\delta\ge2$ for $\lambda_\pm$ large.
+\textup{(c)} On a longer end piece $q\ge4$, but $i$ can be as low as about
+$-\frac18\lambda_\pm^2$, for about $\frac9{64}\lambda_\pm^2$ negative pieces, or
+$L-\frac12\lambda_\pm^2$ when the $L$ pieces include positive ones near their
+corner $t_j=t_{j+1}=-1$ with $(e_j,e_{j+1})=(1,0)$, where only $v\cdot U=0$ is
+available and $c_1(\fs)_P^2$ is unbounded.
+\end{proposition}
+
+\begin{proof}[Sketch]
+(a) $w$ is odd on a square-zero class of the old cap, so $v_C\ne0$, and a
+generic cap metric avoids the finitely many relevant walls; the bound uses
+Weitzenböck estimates on unit strips and the decay of harmonic forms. (c)
+$\Theta$ contains $\frac14(1-\lambda^2)$ and $d_s+p\ge0$ allows $(c_1(\fs)\cdot
+e)^2\lesssim4L+C$, so $|v\cdot e|\gtrsim\lambda-2\sqrt L$ and
+$i\approx2L+\frac32(v\cdot e)^2-\frac12\lambda^2\ge-\frac18\lambda^2$.
+\end{proof}
+
+\emph{Broken limits.} Without a component in $\Ms$ they are excluded by
+Theorem~\ref{thm:J}(a), the least $\sum(q_j+4)=-2$ over chains without a cap
+being attained by an isolated $P$ with $(e_j,e_{j+1})=(0,1)$, $v\cdot U=0$,
+$\kappa=\frac12$. With one, interior chains ($\delta\ge-2$) and short cap
+chains ($\delta\ge2$) are excluded by \eqref{eq:DF} with (H5e) alone; long cap
+chains need (H5f): the joint isotropy of a Seiberg--Witten component and a
+component in $\Ms$ is the diagonal $\pm1$, so single-valued terms coupled to
+the phase reach the normal cokernel.
+
+\step{Status.} \ver: the reducible strata and indices;
+Proposition~\ref{prop:energy2} and its sharpness; Theorem~\ref{thm:P}(a)--(e),
+(c) also on $8.9\cdot10^6$ classes, (e) on $8.5\cdot10^5$, (b) against the
+Christoffel symbols; Theorem~\ref{thm:unbroken}; Proposition~\ref{prop:caps}(b),
+(c) as arithmetic; the counts at broken limits. \pla: Theorem~\ref{thm:P}(f)
+(65\%), the family of \cite[\S6]{MS} (75\%), Proposition~\ref{prop:caps}(a)
+(80--85\%), regularity on short end pieces (85\%). \spe: that the components of
+Proposition~\ref{prop:caps}(c) exist. Confidence: 40\%; 55\% if they do not.
+
+\section{Mixed limits with abelian instantons}
+
+\begin{proposition}\label{prop:mixed}
+Let $\zeta$ be a limit with a component in $\Ms$ and abelian components.
+\textup{(a)} The abelian components contain no cap, so $k\ge2$.
+\textup{(b)} The stabilizer of $\zeta$ in $\prod_j\cG_j\times S^1$ is
+$\{\pm1\}\times\prod_{\rm asd}\{\pm1\}\times\prod_{\rm abelian}\mathrm U(1)$,
+with $\SU(2)$ for $v=0$. \textup{(c)} At an abelian component with
+$\kappa_0=-\frac14v^2$ the deformation complex splits under $\mathrm
+U(1)_b\times S^1$ into complexes of weights $(0,0)$, $(2,0)$, $(1,1)$, $(-1,1)$
+and indices $p-(1+b^+)$ \textup{(}real\textup{)}, $4\kappa_0-(1+b^+)$,
+$\frac18((\Lambda+v)^2-\sigma)$, $\frac18((\Lambda-v)^2-\sigma)$
+\textup{(}complex\textup{)}, the last two summing to $\Theta-\kappa_0$.
+\textup{(d)} On a union of pieces with $b^+=0$ every class $v\equiv w$ carries
+an abelian instanton for every metric and equivariant perturbation, no
+equivariant perturbation changes the indices of nonzero weight, and $\mathrm
+U(1)_b$ is not fixed by the phase of a component in $\Ms$. \textup{(e)} $\mathrm
+U(1)_b$ acts freely on the gluing parameters at the two adjacent necks, with
+quotient $S^2\times\SU(2)$.
+\end{proposition}
+
+So abelian instantons can be neither removed nor made regular, as \cite{FS}
+says. They need not be:
+
+\begin{theorem}\label{thm:mixed}
+Assume \textup{(H5)}. A limit with a stretched three-sphere, a component in
+$\Ms$, abelian components and no component of low index has $D_F\le-1$; no
+regularity, gluing or obstruction statement about the abelian components is
+used. A chain of reducible components without a cap, abelian, Seiberg--Witten
+or mixed, has $\delta\ge-2$ when the positive pieces are at distance at least
+two, with equality, at distance at least three, only for a positive piece alone
+between two stretched three-spheres with $(e_j,e_{j+1})=(0,1)$,
+$\kappa=\frac12$, $v\cdot U=0$, carrying $V_{S_j}$ and $V_{S_{j+1}}$.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Theorem~\ref{thm:J}(b) uses only the numbers $i_j$ outside $F$. For a chain of
+$L$ pieces, $m$ of them positive, carrying $s$ constraints,
+$\delta=6\kappa_\Gamma-m+L-2s+(e_a-e_b)$, $e_a$, $e_b$ at its ends, and the
+bound $\kappa_\Gamma\ge\frac12(s^-+m)$ of Proposition~\ref{prop:energy2} and
+Theorem~\ref{thm:P} on the chain gives the claim; exact minimization over all
+chains at distances $2$ to $5$ confirms it.
+\end{proof}
+
+At a cap an abelian component would have $i\approx-\frac12\lambda^2$ and could
+not be made regular; Proposition~\ref{prop:caps}(a) excludes it. The bound
+$D_F\le-1$ is attained only by two components in $\Ms$ containing the caps,
+around the isolated $P$ of Theorem~\ref{thm:mixed}; its Seiberg--Witten version
+has $c_1(\fs)^2=-4$, so $d_s=-2$ with no parameter, and its abelian version
+needs $v\cdot\omega=0$ at the fixed corner period, so tangential regularity and
+a generic corner metric give a second dimension to spare, away from cap
+anti-self-dual components of index $-1$. So the transversality ``after forgetting the
+abelian instantons'' of \cite[\S4]{FS} is not needed, and the open point named
+there is misplaced. No choice of $w$, $\Lambda$ or holonomy perturbation removes
+abelian instantons; an Euler-class count would need an obstructed gluing
+theorem in families with faces \cite[Hyps.~7.8.1, 11.3.5]{FLM}; and further
+blow-ups of the caps cannot raise the least indices of anti-self-dual and
+Seiberg--Witten cap components together.
+
+\step{Status.} \ver: Proposition~\ref{prop:mixed}, also on $63\,410$
+configurations; Theorem~\ref{thm:mixed}, with exact chain minima; the statement
+on blow-ups. \pla: Proposition~\ref{prop:caps}(a) (85\%); the second dimension
+(75\%, not used). Confidence, given the inputs of \S\S2, 5: 90\% that abelian
+instantons need no analytic hypothesis, 85\% that these limits are excluded.
+
+\section{The hypothesis (H5), revised}
+
+(H5) of \cite{FS} consists of the following, for the family of the
+Introduction, the composites $\Pi_M$ and every $R\ge\max(R_0(M),T_0(M))$.
+\hyp{(H5a)} \emph{Order of choices; compactness.} Choose in order the cap
+metrics and $C_W$, the odd $\lambda_\pm$, $\Pi_0$ and $p'$, $M$, the scale
+$\epsilon$ of the tubes with the regularization and isolation lengths of the
+positive pieces, $R$, then the other perturbations, generically; the closure of
+$\cZ_e$ over $\bar Q$ is Uhlenbeck compact, with the bounds of
+Proposition~\ref{prop:bounds} and Lemma~\ref{lem:CSD}. (75\%)
+\hyp{(H5b)} \emph{The family.} Round necks along the $J_i$; on $\hat\nu_i$ the
+metric of Lemma~\ref{lem:lens} and anti-self-dual determinant connections, the
+same for both lifts; on the blocks the toric family and tube of
+Theorem~\ref{thm:P}; the composition law \cite[Thm.~3.1]{FS} for this family.
+(70\%)
+\hyp{(H5c)} \emph{Control of reducibles.} Proposition~\ref{prop:caps}(a) and
+Theorem~\ref{thm:P}(f), with constants independent of $R$. (65\%)
+\hyp{(H5d)} \emph{Representatives.} The transversality term of $V_{S_i}$ is
+continuous for Uhlenbeck convergence with no point of concentration on $S_i$
+and vanishes near reducible restrictions with $\langle v,S_i\rangle=0$; at
+$t_i=-1$, $V_{S_i}$ degenerates to the divisors of the capped halves,
+transverse to the moduli spaces of the completed halves; at $t_i=+1$ it is the
+same for both lifts. (85\%)
+\hyp{(H5e)} \emph{Regularity of single components}, by perturbations acting on
+one piece at a time: the strata in $\Ms$ at every level, with their
+constraints, parameters and the $\mu_c$-sections on products; anti-self-dual
+components; Seiberg--Witten components for their tangential problem. (85\%)
+\hyp{(H5f)} \emph{Transversality of the product problem in the end regions},
+through the phase of the spinor on another piece: two-valued terms in the Dirac
+equation at anti-self-dual components of low index, single-valued terms in the
+normal equations at long Seiberg--Witten cap components; compatible with
+Uhlenbeck compactness, the links, the lens collars and the equality of the data
+for $e$, $e+e_i$ off $\nu S_i$, with Stokes' theorem for the resulting weighted
+branched one-manifold. New, without precedent for $\SO(3)$-monopoles.
+(55--60\%)
+\hyp{(H5g)} \cite[Prop.~3.29]{FL2b} over $Q$, and gluing at the reducible of
+energy $\frac14$ on $\hat\nu_i$, one end per exterior solution, oriented as in
+Theorem~\ref{thm:cancel}. (85\%, 80\%)
+
+\noindent These replace transversality at all broken limits and after
+forgetting abelian instantons, and ``uniformly in the neck length''; in
+\cite[Thm.~4.3]{FS}, $R\ge\max(R_0(M),T_0(M))$, and
+Proposition~\ref{prop:energy2} replaces \cite[Prop.~4.2]{FS}.
+
+\section*{Verdict}
+
+Given (H5) as revised, the closure of $\cZ_e$ over $\bar Q$ consists of
+$\cZ_e$, the $2^{n_a-1}$ ends at each cut-down instanton
+(Proposition~\ref{prop:interior}) and the ends over the open faces
+$\{t_i=+1\}$ (Proposition~\ref{prop:lensface}), which cancel in
+$\sum_e\epsilon(e)$ (Theorem~\ref{thm:cancel}); nothing else occurs
+(Theorems~\ref{thm:J}, \ref{thm:unbroken}, \ref{thm:mixed}), and no neck along
+$Y_{\pm2}$ is stretched. So \cite[Thm.~4.1]{FS} gives
+$2^{n_a-1}\Omega(X(\Pi_M))=0$, hence $\Omega(X(\Pi_M))=0$, for all large $M$
+(\ver\ as logic), with nothing glued at a reducible. The main analytic
+difficulty is (H5f), already at faces of codimension one; abelian instantons
+play no part in it, and its part at long Seiberg--Witten cap components may be
+empty (\spe).
+
+Confidence: counts and lattice arithmetic 97\%; the six groups of strata 80\%,
+45\%, 75\%, 70\%, 40\%, 85\% (the last given the shared inputs). (H5) as a whole
+is \spe, at about 25\% (15--35\%), below the 30\% of \cite{FS}, as (H5f) now
+includes the long Seiberg--Witten cap components and the composition law must
+hold for the block family, which outweighs dropping the hypothesis at abelian
+instantons; so about 25\% that $\Omega(X(\Pi_M))=0$ for large $M$ by this argument.
+As (H1), (H2) and (H4) are known, and (H3) is at 85--90\%, the cosmetic
+conclusion by this argument is \spe, at about 20\% (12--30\%).
+
+\begin{thebibliography}{FL2b}
+\bibitem[Ab]{Ab} M.~Abreu, \emph{K\"ahler geometry of toric varieties and
+extremal metrics}, Internat. J. Math. \textbf{9} (1998), 641--651.
+\bibitem[FL1]{FL1} P.~M.~N. Feehan and T.~G. Leness, \emph{PU(2) monopoles.
+I}, J. Differential Geom. \textbf{49} (1998), 265--410.
+\bibitem[FL2a]{FL2a} \bysame, \emph{PU(2) monopoles and links of top-level
+Seiberg--Witten moduli spaces}, J. Reine Angew. Math. \textbf{538} (2001),
+57--133.
+\bibitem[FL2b]{FL2b} \bysame, \emph{PU(2) monopoles. II}, ibid., 135--212.
+\bibitem[FLM]{FLM} \bysame, \emph{An $\mathrm{SO}(3)$-monopole cobordism
+formula relating Donaldson and Seiberg--Witten invariants}, Mem. Amer. Math.
+Soc. \textbf{256} (2018), no.~1226.
+\bibitem[FS]{FS} \emph{Four statements}, companion note.
+\bibitem[MS]{MS} The manuscript under review, \S\S6--10.
+\bibitem[OS]{OS} P.~Ozsv\'ath and Z.~Szab\'o, \emph{Knot Floer homology and
+integer surgeries}, Algebr. Geom. Topol. \textbf{8} (2008), 101--153.
+\end{thebibliography}
+
+\end{document}
