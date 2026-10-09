@@ -1,0 +1,351 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}\raggedbottom
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+\numberwithin{equation}{section}
+\newtheoremstyle{compact}{4pt}{4pt}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{compact}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par\pushQED{\qed}\normalfont
+  \topsep4\p@\relax\trivlist\item[\hskip\labelsep\itshape#1\@addpunct{.}]%
+  \ignorespaces}{\popQED\endtrivlist\@endpefalse}
+\makeatother
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\CS}{\mathrm{CS}}
+\newcommand{\gr}{\mathrm{gr}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\st}[1]{\par\noindent\textit{#1}\enspace}
+
+\title{The \texorpdfstring{$\pm2$}{+-2} surgeries, adjoint \texorpdfstring{$\rho$}{rho}-invariants, and the shape of a proof}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-2.5em}
+
+\noindent\textit{Status of the claims.} ``Proof'' means a complete argument
+from standard facts. ``Computed'' means checked by exact computation, by
+two independent programs, on all torus knots with $pq\le120$ (both
+chiralities) and on the figure-eight knot; these checks have not yet been
+refereed. ``Conjecture'' means what we expect but cannot yet prove.
+
+\section{The question}
+
+Let $K\subset S^3$ be a nontrivial knot and $Y_N=S^3_N(K)$. By Ni--Wu,
+Hanselman and Daemi--Lidman--Miller Eismeier (DLME), the cosmetic surgery
+conjecture reduces to showing that $Y_2$ and $Y_{-2}$ are never
+orientation-preservingly diffeomorphic; one may assume $g(K)=2$ and
+$\Delta_K=1$, so in particular $\det K=|\Delta_K(-1)|=1$. DLME settled the
+slopes $\pm1/n$ with a real number $\ell(Y)$ extracted from Floer's instanton
+homology and its Chern--Simons values, by proving a strict inequality
+between $\ell(Y_{1/n})$ and $\ell(Y_{-1/n})$. For $\pm2$ no such
+inequality is known. The aim of this note is to say precisely what $\ell$
+is, where the constant $1/16$ comes from, and what we expect a proof to look
+like. The answer to the first two questions is: \emph{$\ell$ is an adjoint
+$\rho$-invariant, and $1/16$ is the $\rho$-invariant of one flat connection
+on the lens space $L(4,1)$.}
+
+\section{The invariant \texorpdfstring{$\ell$}{ell} is an adjoint \texorpdfstring{$\rho$}{rho}-invariant}
+
+\st{Instanton homology.} Let $Y$ be a rational homology sphere with
+$H_1(Y)=\Z/2$, as for $Y_{\pm2}$. There are two $\SO(3)$-bundles over $Y$:
+the trivial one $P_0$ and the one $P_1$ with $w_2\neq0$. For each, the
+irreducible flat connections (perturbed, if necessary, to be nondegenerate)
+generate a chain complex $C(Y,P_i)$, whose differential counts instantons on
+$\R\times Y$; its homology is $I(Y,P_i)$. A generator $\alpha$ carries two
+numbers: its Chern--Simons value $\CS(\alpha)\in\R/\Z$, and its grading
+$\gr(\alpha)\in\Z/8$, the index of the linearized instanton equation along a
+path from $\alpha$ to the trivial connection $\theta$. A choice of path lifts
+these to $\widetilde\CS(\alpha)\in\R$, $\widetilde\gr(\alpha)\in\Z$; another
+path changes the pair by $(k,8k)$, $k\in\Z$. Hence
+\[
+c(\alpha)=\widetilde\CS(\alpha)-\tfrac18\,\widetilde\gr(\alpha)\in\R
+\]
+is well defined. DLME's invariant is, in this language: for each degree $d$
+let $\kappa(d)$ be the least value of $\widetilde\CS$ at which a nonzero
+homology class of degree $d$ is represented, and
+$\ell(Y)=\inf_d\bigl(\kappa(d)-d/8\bigr)$.
+
+\st{The $\rho$-invariant.} For a flat $\SO(3)$-connection $\alpha$ on $Y$,
+let $\ad\alpha$ be the associated flat real vector bundle of rank three and
+\[
+\rho(\alpha)=\eta\bigl(B_{\ad\alpha}\bigr)-3\,\eta(B),
+\]
+where $B$ is the odd signature operator of $Y$ and $B_{\ad\alpha}$ its
+twist by $\ad\alpha$, and $\eta$ is the Atiyah--Patodi--Singer spectral
+asymmetry. Thus $\rho(\theta)=0$, $\rho$ does not depend on the metric, and
+$\rho_{-Y}(\alpha)=-\rho_Y(\alpha)$. Write $h(\alpha)=\dim H^0(Y;\ad\alpha)$:
+it is $3$ for central connections, $1$ for those with stabilizer a circle,
+and $0$ for irreducibles.
+
+\begin{proposition}[proof: Atiyah--Patodi--Singer]\label{prop:c}
+For every irreducible nondegenerate flat connection $\alpha$ on $(Y,P_0)$,
+\[
+c(\alpha)=\frac{3+\rho(\alpha)}{16}.
+\]
+\end{proposition}
+
+\begin{proof}
+The lifted grading is the index of the linearized instanton operator on a
+path from $\alpha$ to $\theta$, with small exponential decay imposed at
+$\theta$. The index theorem of Atiyah--Patodi--Singer computes it as eight
+times the lifted Chern--Simons difference, corrected by half the
+spectral asymmetry of the operators at the two ends and half the dimension
+of the kernel at $\theta$: $\widetilde\gr(\alpha)=8\widetilde\CS(\alpha)-
+\tfrac12\bigl(h(\theta)+\rho(\alpha)-\rho(\theta)\bigr)
+=8\widetilde\CS(\alpha)-\tfrac32-\tfrac12\rho(\alpha)$. Divide by $8$. The
+signs are those fixed by DLME's example: on the Poincar\'e sphere the two
+generators have $(\CS,\gr)=(1/120,1),(49/120,5)$, so $c=-7/60,-13/60$, and
+indeed $\rho=-73/15,-97/15$ there.
+\end{proof}
+
+\begin{definition}\label{def:rhostar}
+For a nonzero homology class $x$ of $I(Y,P_i)$ let $\rho(x)$ be the least
+value, over cycles representing $x$, of the largest $\rho(\alpha)$ among the
+generators $\alpha$ occurring in the cycle. Put
+$\rho_*(Y,P_i)=\min_x\rho(x)$, the minimum over all nonzero classes, and
+\[
+\lambda_i(Y)=\frac{3+\rho_*(Y,P_i)}{16}\qquad(i=0,1).
+\]
+\end{definition}
+
+\begin{corollary}[proof]\label{cor:ell}
+$\ell(Y)=\lambda_0(Y)$. In words: DLME's invariant is the adjoint
+$\rho$-invariant of the lowest nonzero homology class, divided by $16$ and
+shifted by $3/16$.
+\end{corollary}
+
+\begin{proof}
+Among generators of one lifted degree $d$, $\widetilde\CS=c+d/8=
+(3+\rho)/16+d/8$, so ordering by Chern--Simons value is ordering by $\rho$.
+Hence $\kappa(d)-d/8=(3+\min\rho(x))/16$, the minimum over classes of
+degree $d$; take the infimum over $d$.
+\end{proof}
+
+When the differential vanishes, as for every Seifert fibred $Y$, this reads
+$\lambda_i(Y)=\min_\alpha(3+\rho(\alpha))/16$, and $\lambda_i$ can be
+computed from the $\rho$-invariants of the flat connections alone. For $P_1$
+there is no trivial connection to fix lifts, and we \emph{define}
+$\lambda_1$ by the same formula; this is the normalization in which all
+maps below obey one rule, whatever their bundles. Since $\rho$ is
+intrinsic, $\lambda_0$ and $\lambda_1$ are invariants of the oriented
+manifold, and an orientation-preserving diffeomorphism
+$Y_{-2}\to Y_2$ would give $\lambda_i(Y_{-2})=\lambda_i(Y_2)$ for $i=0,1$
+(it carries $P_1$ to $P_1$, the only nontrivial bundle).
+
+\section{How cobordism maps move \texorpdfstring{$\rho$}{rho}}
+
+Let $W$ be a cobordism from $Y$ to $Y'$ with $b_1(W)=0$, carrying an
+$\SO(3)$-bundle. Maps $I(Y)\to I(Y')$ are defined by counting instantons on
+$W$ in zero-dimensional moduli spaces, possibly over a family of metrics of
+dimension $g$ and cut down by conditions of total degree $k$; put
+$i_0=k-g$. Some constructions use a $W$ with additional boundary
+components $M_j$ (``middle ends''), on which the instantons are asymptotic
+to flat connections $\gamma_j$.
+
+\begin{proposition}[proof: Atiyah--Patodi--Singer]\label{prop:move}
+If an instanton $A$ of energy $E(A)$ on $W$, counted by such a map, runs
+from $\alpha$ on $Y$ to $\beta$ on $Y'$, then
+\[
+\frac{\rho(\beta)-\rho(\alpha)}{16}=\frac{i_0+3b^+(W)}{8}-E(A)-
+\sum_j\frac{3-h(\gamma_j)+\rho(\gamma_j)}{16},
+\]
+with each $M_j$ oriented as an outgoing end.
+\end{proposition}
+
+\begin{proof}
+The index theorem gives the index of $A$ as $8E(A)-3(1+b^+(W))$ plus, for
+every end $N$ with limit $\gamma_N$, the term
+$\tfrac12(3-h(\gamma_N)+\rho_N(\gamma_N))$. For the incoming end this is
+$\tfrac12(3-\rho(\alpha))$, for the outgoing end $\tfrac12(3+\rho(\beta))$.
+Set the index equal to $i_0$ and divide by $8$.
+\end{proof}
+
+So, in the units $\rho/16$, every map moves levels by
+$(i_0+3b^+)/8$ minus the energy, minus a term for each middle end. Write
+$L$ for the largest value of the right side over the counted instantons and
+call it the \emph{level} of the map. Exactly as in DLME:
+
+\begin{corollary}[proof]\label{cor:compare}
+If a map of level $L$ is injective on homology, then
+$\lambda_i(Y')\le\lambda_j(Y)+L$, for the bundles $P_j$ on $Y$ and $P_i$ on
+$Y'$ that the map uses.
+\end{corollary}
+
+The first two terms lie in $\frac18\Z$, and energies are positive. So
+\emph{an odd multiple of $1/16$ can enter a level only through
+$\rho(\gamma_j)$ on a middle end}. Here are the values that occur
+(computed from the formula of Atiyah--Patodi--Singer for lens spaces,
+$\rho=\pm\frac4p\sum_{j=1}^{p-1}\cot\frac{\pi j}{p}\cot\frac{\pi qj}{p}
+\sin^2\frac{\pi kj}{p}$ for $L(p,q)$ and the circle character $k$, the sign
+depending on orientation):
+
+\begin{center}\small
+\begin{tabular}{llccc}
+end & flat connection $\gamma$ & $h(\gamma)$ & $\rho(\gamma)$ &
+$(3-h+\rho)/16$\\\hline
+$S^3$, $L(2,1)$, $L(4,1)$ & central & 3 & 0 & 0\\
+$L(2,1)=\R P^3$ & rotation by $\pi$ ($w_2\ne0$) & 1 & 0 & $1/8$\\
+$L(4,1)$ & rotation by $\pi$ ($w_2=0$) & 1 & $\pm2$ & $1/4$ or $0$\\
+$L(4,1)$ & rotation by $\pi/2$ ($w_2\ne0$) & 1 & $\pm1$ & $3/16$ or $1/16$
+\end{tabular}
+\end{center}
+
+The second row is DLME's constant: their argument for $\pm1$ surgery uses a
+sphere of square $-2$, whose neighbourhood has boundary $\R P^3$. The value
+$\rho=0$ there is forced: $\R P^3$ has an orientation-reversing
+diffeomorphism, so $\rho=-\rho$. For $\pm2$ surgery the corresponding sphere
+$S$ has square $-4$ (it is formed by the cores of the two $2$-handles of
+$-X_2(K)\cup_{S^3}X_{-2}(K)$), and its neighbourhood has boundary $L(4,1)$,
+which has no orientation-reversing diffeomorphism. So the last row splits
+the constant $1/8$ into $1/8\pm1/16$:
+\[
+\boxed{\ \tfrac1{16}=\tfrac18-\tfrac{|\rho(\gamma)|}{16},\qquad
+\gamma=\text{the flat connection of } L(4,1)\text{ with holonomy a rotation by }\pi/2.\ }
+\]
+Equivalently, $1/16$ is the energy of the least reducible instanton on the
+neighbourhood of $S$ asymptotic to $\gamma$: for a sphere of square $-e$
+this energy is $1/(4e)$, which is $1/8$ for $e=2$ and $1/16$ for $e=4$.
+Passing to the double cover branched along $S$ turns $e=4$ into $e=2$ and
+doubles energies, which is why $1/16$ is ``half of DLME's $1/8$''.
+
+Two consequences shape everything that follows. First, $\gamma$ has
+$w_2\neq0$, so it occurs only for bundles on
+$-X_2(K)\cup X_{-2}(K)$ that are odd on $S$; such a bundle is trivial on
+one of $Y_{\pm2}$ and nontrivial on the other. \emph{The maps that carry the
+constant $1/16$ always exchange $P_0$ and $P_1$.} Second, nothing forces
+a gap between $\lambda_0(Y_2)$ and $\lambda_0(Y_{-2})$ alone.
+
+\section{What the examples say}
+
+All quantities below are computed, in the normalization of
+Definition~\ref{def:rhostar}. Put
+\[
+m_1=\lambda_0(Y_2)-\lambda_1(Y_{-2}),\qquad
+m_2=\lambda_1(Y_2)-\lambda_0(Y_{-2}).
+\]
+
+\begin{center}\small
+\begin{tabular}{lccc}
+& $\lambda_0(Y_2)-\lambda_0(Y_{-2})$ & $\lambda_1(Y_2)-\lambda_1(Y_{-2})$ & $m_1$, $m_2$\\\hline
+positive $T(p,q)$, $n=pq$ & $-\frac18+\frac{2n-5}{n^2-4}$ (changes sign) & $\frac38-\frac4{n^2-4}$ & in $(\frac18,\frac3{16}]$\\
+negative $T(p,q)$ & in $[\frac3{32},\frac18]$ & in $[0.085,\frac18]$ & in $[\frac1{16},\frac5{32}]$\\
+figure-eight knot & $\frac1{10}$ & $\frac18$ & $\frac{13}{80}$, $\frac1{16}$
+\end{tabular}
+\end{center}
+
+So the same-bundle difference is not bounded below by $1/16$ (it fails for
+the eleven positive torus knots with $10\le pq\le29$), while the mixed
+differences $m_1,m_2$ lie in $[\frac1{16},\frac3{16}]$ in every case, with
+$1/16$ attained (figure-eight knot, mirror trefoil). The minimum over both
+bundles, $\min(\lambda_0,\lambda_1)(Y_2)-\min(\lambda_0,\lambda_1)(Y_{-2})$,
+is at least $\frac18-\frac1{884}$ in every case. A cosmetic pair would make
+all of these differences zero.
+
+\section{The expected theorem and the shape of its proof}
+
+\begin{conjecture}\label{conj:main}
+For every nontrivial knot $K$, $m_1\ge\frac1{16}$ and $m_2\ge\frac1{16}$;
+if $\det K=1$, both inequalities are strict.
+\end{conjecture}
+
+\begin{corollary}[proof, given the conjecture]
+$S^3_2(K)$ and $S^3_{-2}(K)$ are not orientation-preservingly
+diffeomorphic.
+\end{corollary}
+
+\begin{proof}
+A diffeomorphism gives $\lambda_i(Y_{-2})=\lambda_i(Y_2)$, so
+$m_1+m_2=0$, while the conjecture gives $m_1+m_2\ge\frac18$.
+\end{proof}
+
+We expect the proof to have four steps.
+
+\st{Step 1: two exact triangles that exchange bundles (conjecture).}
+Let $T(K)$ be the instanton homology of $S^3$ relative to $K$ whose
+generators are the representations of the knot group sending the meridian
+to a trace-zero element of $\SU(2)$ (Kronheimer--Mrowka's singular instanton
+homology). We expect long exact sequences
+\[
+\cdots\to I(Y_2,P_0)\xrightarrow{a}T(K)\xrightarrow{b}I(Y_{-2},P_1)
+\xrightarrow{c}I(Y_2,P_0)\to\cdots,
+\]
+and the same with $P_0,P_1$ exchanged. Here $a$ and $b$ come from the traces
+of the two surgeries, with the cores of the $2$-handles as singular surfaces;
+$c$ comes from a cobordism from $Y_{-2}$ to $Y_2$ with one positive
+direction and one further boundary component $L(4,1)$, along which the
+instantons are asymptotic to the connection $\gamma$ of the table. By
+Proposition~\ref{prop:move} the levels are: $a,b$ at most $0$; $c$ equal to
+$\frac38-\frac3{16}=\frac3{16}$ (one positive direction, and the
+$\gamma$-term); the null-homotopy of $b\circ a$, a count over a one-parameter
+family of metrics, at most $-\frac18-\eta$ with $\eta>0$. These are the two constructions that each
+failed on its own (the family on odd bundles, and the family singular
+along $S$): the conjecture is that they are the two halves of one triangle,
+with their $L(4,1)$-faces cancelling. Evidence (computed): the ranks satisfy
+$\operatorname{rk}I(Y_{-2},P_1)=\operatorname{rk}I(Y_2,P_0)+
+\#\{\text{traceless representations}\}$ for $29$ torus knots of both
+chiralities, maps of the predicted levels exist in all $58$ cases, and the
+same method reproduces DLME's $\pm1$ inequality in $25$ of $25$ cases.
+
+\st{Step 2: filtered algebra (proof, given Step 1).} Assume the
+differentials vanish, as in all examples. Let $x$ be a generator realizing
+$\lambda_0(Y_2)$. Either $a(x)=0$, or $a(x)\ne0$ in $T(K)$. In the first
+case, exactness and the level of the null-homotopy give
+$\lambda_1(Y_{-2})\le\lambda_0(Y_2)-\frac18-\eta$, that is $m_1>\frac18$; in
+the second, $T(K)$ has a class of level at most $\lambda_0(Y_2)-\eta_a$,
+where $\eta_a$ is the least energy counted by $a$. The same holds for $m_2$. (This is DLME's argument, with the vanishing group
+$I(S^3)=0$ replaced by $T(K)$.)
+
+\st{Step 3: the cosmetic case (proof, given Step 1).} If $Y_{-2}\cong Y_2$
+and no irreducible traceless representation sends the longitude to $\pm1$,
+Step~2 run around both triangles shows that $a$ is nonzero on the lowest
+classes of both bundles, and that
+\[
+\lambda(T(K))<\min(\lambda_0,\lambda_1)(Y_2)\le\max(\lambda_0,\lambda_1)(Y_2)
+<\lambda(T(K))+\tfrac1{16},
+\]
+where $\lambda(T(K))$ is the lowest level of $T(K)$, defined as in
+Definition~\ref{def:rhostar}. So a cosmetic pair needs both lowest classes to
+map into $T(K)$ at a cost in energy below $1/16$.
+
+\st{Step 4: the missing estimate (conjecture).} \emph{The map $a$ costs
+energy more than $1/16$ on the lowest class.} The examples locate the
+difficulty: the two cases with $m_2=1/16$ (figure-eight knot, mirror
+trefoil) are exactly those in which the lowest class maps to $T(K)$ at zero
+energy, through a binary dihedral representation; such representations do
+not exist when $\det K=1$. Locally, along the curve of representations of
+the knot group, the estimate holds where the curve crosses the trace-zero
+line with negative slope and can fail where it crosses with positive slope;
+a proof must use a global property of that curve when $\det K=1$.
+
+\st{What remains.} (i) The triangles of Step~1: gluing along $L(4,1)$ at
+$\gamma$ with a singular cap, exclusion of breaking at the reducible of
+$(S^3,K)$, and the degree argument of Culler--Daemi--Xie. (ii) The estimate
+of Step~4. (iii) When the differentials do not vanish, control of how far
+below the lowest class its boundaries can reach. Steps~2 and~3 are formal.
+The analysis in (i) is of the same kind as in DLME and in Kronheimer--Mrowka's
+singular theory; no $\SO(3)$-monopoles and no families beyond one parameter
+are needed. If (i) and (ii) hold, the remaining argument is comparable in
+length to DLME's.
+
+\end{document}
