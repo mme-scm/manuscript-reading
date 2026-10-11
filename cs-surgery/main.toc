@@ -16,5 +16,8 @@
 \contentsline {subsection}{\tocsubsection {}{4.4}{The theorem}}{6}{subsection.4.4}%
 \contentsline {subsection}{\tocsubsection {}{4.5}{Iteration, $Y=S^3$, negative slopes, slope $2$}}{7}{subsection.4.5}%
 \contentsline {section}{\tocsection {}{5}{Tests}}{7}{section.5}%
-\contentsline {section}{\tocsection {}{6}{Workflow}}{7}{section.6}%
-\contentsline {section}{\tocsection {}{}{References}}{8}{section*.2}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Right-handed trefoil: Proposition\nonbreakingspace \ref {prop:action} holds exactly}}{7}{subsection.5.1}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{Right-handed trefoil: the naive corner-offset identity is false}}{7}{subsection.5.2}%
+\contentsline {subsection}{\tocsubsection {}{5.3}{Figure-eight knot}}{8}{subsection.5.3}%
+\contentsline {section}{\tocsection {}{6}{Workflow}}{8}{section.6}%
+\contentsline {section}{\tocsection {}{}{References}}{9}{section*.2}%

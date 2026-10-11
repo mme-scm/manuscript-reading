@@ -1,4 +1,62 @@
 %======================================================================
 \section{Tests}\label{sec:tests}
 %======================================================================
-[To be filled from the numerics and referee reports.]
+Scripts, outputs and plots are in \texttt{numerics/}.  Ground truth: the Fintushel--Stern values
+$\cs=-e^2/(4a_1a_2a_3)$ on $\Sigma(a_1,a_2,a_3)$ oriented as the link of the singularity.  Orientations were fixed
+independently of $\cs$: $S^3_{1/n}(\text{RHT})=-\Sigma(2,3,6n-1)$, $S^3_{-1/n}(\text{RHT})=+\Sigma(2,3,6n+1)$, and
+$S^3_{+1}(4_1)=+\Sigma(2,3,7)$.  Throughout, $\cs_{\rm KK}(Z)=-\cs_{\rm FS}(Z)$: the Kirk--Klassen normalisation is the
+negative of Fintushel--Stern's on every manifold tested.
+
+\subsection{Right-handed trefoil: Proposition~\ref{prop:action} holds exactly}
+$\pi_1=\langle x,y\mid x^2=y^3\rangle$, $\mu=y^{-1}x$, $\lambda=x^2\mu^{-6}$.  The irreducible curve is the segment
+$b=\tfrac12-6a$, $a\in[\tfrac1{12},\tfrac5{12}]$, from the reducible point $(\tfrac1{12},0)$ to $(\tfrac5{12},-2)$, and
+$f_\Gamma(a)=6(a-\tfrac1{12})^2$ measured from the trivial connection along $b=0$.  On $S^3_{1/n}$ the formula gives
+the closed form $\cs=-(6m-6n+1)^2/(24(6n-1))$, which is $-e^2/(4P)$ in disguise.
+\begin{center}\small
+\begin{tabular}{llll}
+\toprule
+surgery & $\cs$ from Proposition~\ref{prop:action} & manifold & Fintushel--Stern\\
+\midrule
+$+1$ & $71/120,\ 119/120$ & $-\Sigma(2,3,5)$ & agrees with $-\cs_{\rm FS}$\\
+$+1/2$ & $95,167,215,263\ /264$ & $-\Sigma(2,3,11)$ & agrees\\
+$+1/3$ & $47,191,239,263,359,407\ /408$ & $-\Sigma(2,3,17)$ & agrees\\
+$-1$ & $25/168,\ 121/168$ & $+\Sigma(2,3,7)$ & agrees\\
+$-1/2$ & $25,121,217,289\ /312$ & $+\Sigma(2,3,13)$ & agrees\\
+$-1/3$ & $25,73,121,289,313,385\ /456$ & $+\Sigma(2,3,19)$ & agrees\\
+\bottomrule
+\end{tabular}
+\end{center}
+All $26$ points agree to $10^{-12}$, \emph{provided} the line term is read as the quadratic form $Q$ of
+Lemma~\ref{lem:basis} evaluated at the lifted endpoint (reading (I2) in \texttt{trefoil\_output.txt}); evaluating
+$pq\,s^2$ on the projection to $L_{p/q}$ fails whenever the lifted point lies on a translate $pa+qb=k\ne0$.
+
+\subsection{Right-handed trefoil: the naive corner-offset identity is false}
+$\Gamma\cap\{b=\tfrac12\}$ consists of $a=\tfrac16$ and $a=\tfrac13$.  No reading of the action, no sign, and no offset
+in $\{0,\tfrac14,\tfrac12,\tfrac34\}$ makes $\{\cs(S^3_{1/2})\}$ equal to $\{\cs(S^3_1)\}\cup\{A(x)+\text{offset}\}$:
+the denominators are $264$, $120$ and $24$.  This refutes the generator-level reading of the cone that the first
+draft of Theorem~\ref{thm:cone}(c) contained, and it is as expected: a filtered homotopy equivalence preserves the
+filtered homotopy type, not the levels of generators.  A side observation: on the line $b\in\tfrac12+\Z$ the action
+is only defined modulo $\tfrac14$ (changing the auxiliary $d$ in $Q$ shifts it by $b^2=\tfrac14$), which is the
+pillowcase form of the quarter-integer ambiguity of instanton energies on cobordisms with $w^2\ne0$.
+
+\subsection{Figure-eight knot}
+With $\pi_1=\langle x,y\mid wx=yw\rangle$, $w=x^{-1}yxy^{-1}$, Riley's parametrisation gives the irreducible circle
+$\Gamma$ over $a\in[\tfrac16,\tfrac13]$, symmetric under $b\mapsto-b$, with folds of $a$ at $(\tfrac16,\tfrac12)$ and
+$(\tfrac13,\tfrac12)$, one transverse double point at $(\tfrac14,0)$, and \emph{no branch points} (the restriction
+map is an immersion; $\min|(\dot a,\dot b)|=0.226$).  The lift of one circuit translates by $(0,\mp2)$ and
+$\oint2b\,da=\tfrac13$, so $f_\Gamma$ does \emph{not} descend to $\Gamma$: it is a section of the Kirk--Klassen circle
+bundle, and the transition term makes the corrected period $-1$ (Lemma~\ref{lem:period}).
+The absolute constant from the $SL(2,\C)$ path of Andersen--Hansen is $c=-\tfrac16$, and then
+\begin{center}\small
+\begin{tabular}{llll}
+\toprule
+surgery & relative $\cs$ & with $c=-1/6$ & manifold\\
+\midrule
+$+1$ & $53/168,\ 149/168$ & $25/168,\ 121/168$ & $+\Sigma(2,3,7)$\\
+$-1$ & $3/168,\ 75/168$ & $143/168,\ 47/168$ & $-\Sigma(2,3,7)$\\
+$\pm1/2$ & $\pm\{0.171883,0.946066,0.764840,0.485874\}$ & & hyperbolic, no ground truth\\
+\bottomrule
+\end{tabular}
+\end{center}
+$c=-\tfrac16$ is the unique constant placing both $\pm1$ surgeries in $\pm\Sigma(2,3,7)$; this confirms the
+procedure of \S\ref{sec:action} for the absolute constants.  The $\pm1/2$ values are predictions.

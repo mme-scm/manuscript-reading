@@ -1,0 +1,52 @@
+[checks] max |wx - yw| = 3.7e-12; max |lambda_21|,|[lambda,x]| = 1.6e-11; max ||lambda_11|-1| = 3.3e-12
+[checks] explicit SU(2) quaternion rep: max(relation residual, |a-theta|, |b-b_Riley|) = 3.4e-12
+[checks] lambda_11 vs A-H closed form L_+-(theta): max deviation = 3.7e-08
+         abelianisation: x,y -> t; lambda word exponent sums: x: -1+2-1=0, y: 1-1-1+1=0
+[curve] start point theta=0.166666666667 (1/6), b mod 1 = 0.500000000000 (expect 1/2)
+[curve] start (a,b)=(0.166667,0.500000);  at psi=pi+pi/2: (a,b)=(0.233944,0.072003)
+[curve] a_max = 0.33333333 (1/3) with lifted b = -0.500004;  end of loop (a,b)=(0.166667,-1.500000)
+[curve] lift translation after one circuit: Delta b = -2.000000  (Delta a = 0.0e+00)
+[immersion] min |(a',b')| over the circle = 2.2563e-01 at (a,b)=(0.29287,0.80385); max = 5.8219e-01
+   a' = 0 at (a,b mod 1) = (0.333333, 0.500011); there |b'| = 0.5008  (fold of a, not a branch point)
+
+[period] oint 2 b da around the circle (lift as above) = 0.333333333333  ~ 1/3 (exact value; not reduced mod 1)
+         the lift is not closed: end = start + (0, -2).  KK transition for (a,b)->(a,b+n): c -> c - 2 n a
+         consistency: oint(-2b da) + 2*Delta_b*a0 = -1.000000000000  (must be in Z)
+         oint (a db - b da) = -0.666666666667
+
+=== 4_1 surgeries S^3_{1/n}: CS via A-H (5.67)/Prop 4 (absolute constant -1/6 from the SL(2,C) path) ===
+
+-- 1/1: 2 points
+            a         b~   k    f (abs)     CS abs   ~ rational CS rel(no const)
+     0.205251  -1.205251  -1  -0.398562   0.148810       25/168         0.315476   (rat err 6.1e-12)
+     0.315663  -0.315663   0  -0.180119   0.720238      121/168         0.886905   (rat err 4.1e-12)
+   relative difference CS(2nd)-CS(1st) = 0.5714285714 ~ 4/7;  4/7 = 0.5714285714, 3/7 = 0.4285714286
+
+-- 1/-1: 2 points
+            a         b~   k    f (abs)     CS abs   ~ rational CS rel(no const)
+     0.205251   0.205251   0  -0.190937   0.851190      143/168         0.017857   (rat err 3.0e-12)
+     0.315663  -0.684337   1  -0.188555   0.279762       47/168         0.446429   (rat err 2.9e-12)
+   relative difference CS(2nd)-CS(1st) = 0.4285714286 ~ 3/7;  4/7 = 0.5714285714, 3/7 = 0.4285714286
+
+-- 1/2: 4 points
+            a         b~   k    f (abs)     CS abs   ~ rational CS rel(no const)
+     0.225016  -1.112508  -2  -0.352769   0.171883     335/1949         0.338550   (rat err 1.4e-07)
+     0.319618  -0.659809  -1  -0.183237   0.946066    1491/1576         0.112733   (rat err 4.3e-07)
+     0.281081  -0.140540   0  -0.195657   0.764840      335/438         0.931507   (rat err 5.1e-08)
+     0.170918   0.414541   1  -0.170437   0.485874       86/177         0.652541   (rat err 1.4e-06)
+
+-- 1/-2: 4 points
+            a         b~   k    f (abs)     CS abs   ~ rational CS rel(no const)
+     0.225016   0.112508   0  -0.197199   0.828117    1614/1949         0.994784   (rat err 1.4e-07)
+     0.319618  -0.340191   1  -0.177526   0.053934      85/1576         0.220600   (rat err 4.3e-07)
+     0.281081  -0.859460   2  -0.242182   0.235160      103/438         0.401826   (rat err 5.1e-08)
+     0.170918  -1.414541   3  -0.487728   0.514126       91/177         0.680792   (rat err 1.4e-06)
+
+   FS  Sigma(2,3,7) = ['47/168', '143/168'] ;  FS -Sigma(2,3,7) = ['121/168', '25/168']
+
+=== 4_1: Gamma ∩ {b = 1/2} ===
+   (a,b~)=(0.166667,-1.500000): f_abs=-0.500000; A_lit=f+a=0.666667; A_KK=f+2ab=1.000000 ~ 0 (mod 1/4)
+   (a,b~)=(0.333333,-0.499989): f_abs=-0.166667; A_lit=f+a=0.166667; A_KK=f+2ab=0.500008 ~ 1/2 (mod 1/4)
+   (a,b~)=(0.166667,0.500000): f_abs=-0.166667; A_lit=f+a=0.000000; A_KK=f+2ab=0.000000 ~ 0 (mod 1/4)
+
+wrote fig8_pillowcase.png

@@ -29,19 +29,25 @@ curve is the first basis element,
 Combining with Lemma~\ref{lem:basis}:
 
 \begin{proposition}[Chern--Simons is the action]\label{prop:action}
-Let $x,y\in r^{-1}(L_{p/q})$ lie on the same component $\gamma$ of $R^{\rm irr}(X)$, and lift a path in $\gamma$ from
-$x$ to $y$ to $\tilde\gamma\subset\R^2$.  Then
+Fix $(r,s)$ with $ps-qr=1$ and put $Q(a,b):=pr\,a^2+2qr\,ab+qs\,b^2$ (the $g$ of Lemma~\ref{lem:basis}).  Let
+$x,y\in r^{-1}(L_{p/q})$ lie on one component $\gamma$ of $R^{\rm irr}(X)$ and lift a path in $\gamma$ from $x$ to
+$y$ to $\tilde\gamma\subset\R^2$ with endpoints $\tilde x,\tilde y$.  Then
 \[
-\cs(y)-\cs(x)\equiv\big[f_{\tilde\gamma}(\tilde y)-f_{\tilde\gamma}(\tilde x)\big]-\big[f_{L}(\tilde y)-f_{L}(\tilde x)\big]
-\pmod{\Z},\qquad f_L(s)=pq\,s^2 \text{ on } (a,b)=s(q,-p),
+\cs(y)-\cs(x)\equiv\big[f_{\tilde\gamma}(\tilde y)-Q(\tilde y)\big]-\big[f_{\tilde\gamma}(\tilde x)-Q(\tilde x)\big]\pmod{\Z}.
 \]
-where $\tilde x,\tilde y$ are the lifted endpoints and $f_L$ is evaluated on the lifts of $L_{p/q}$ through them.
-The same holds for $L^w_0$ with $f_{L^w_0}(a,\tfrac12)=-a$ (base point $(0,\tfrac12)$).
+Changing $(r,s)$ changes $Q$ by $(pa+qb)^2\in\Z$ at the lifted points, so the right side is well defined.
+On $L_{p/q}$ itself, $Q=pq\,s^2$ in the parametrisation $(a,b)=s(q,-p)$; but the lifted endpoints lie on
+translates $pa+qb=k$, and $Q$ must be evaluated there, not on the projection to $L_{p/q}$.  For $L_0^w$
+take $(p,q)=(0,1)$: $Q=2r\,ab+s\,b^2$ with $s=1$, defined modulo $b^2=\tfrac14$ on $b\in\tfrac12+\Z$.
 \end{proposition}
 \begin{proof}
-Apply Kirk--Klassen in the adapted basis $(a',b')$ and rewrite by Lemma~\ref{lem:basis}: the primitive
-$g$ evaluated at the endpoints is $f_L$ up to sign.  For $L_0^w$ use the basis $(b,-a)$ and the shift $b=\tfrac12$.
+Kirk--Klassen in the adapted basis $(a',b')=(pa+qb,\,ra+sb)$, in which the filling curve is the first basis
+element and the formula is $-\int2b'\,da'$; rewrite by Lemma~\ref{lem:basis}.  This is the form
+given by Andersen--Hansen \cite[eq.~(5.67)]{AH}, who correct a sign in \cite{KK90}.
 \end{proof}
+The right-hand side is the symplectic action $A(x):=f_{\tilde\gamma}(\tilde x)-Q(\tilde x)$ of the intersection point.
+\emph{Numerically verified on all $26$ flat connections of the six homology-sphere surgeries $\pm1,\pm1/2,\pm1/3$ on the
+trefoil, and on $\pm1$ surgeries on the figure-eight} (\S\ref{sec:tests}).
 
 \begin{remark}
 For $p/q=1/n$ the formula reads $\cs(y)-\cs(x)\equiv-\int 2b\,da+n\,(b(y)^2-b(x)^2)$, which is the form used by
@@ -50,22 +56,17 @@ lift of the Kirk--Klassen formula, which is what the filtered complex needs, is 
 \cite[Thm.~5.5]{BHKK}: $\cs(A_1)=-c+2\int n\,\dot m\,dt$ with $c$ a linking number of an explicit loop.
 \end{remark}
 
-The right-hand side is the symplectic action of the intersection point of the two Lagrangians $\tilde\gamma$ and $L$
-in $\R^2$: $A(x):=f_{\tilde\gamma}(\tilde x)-f_L(\tilde x)$.  So \emph{the Chern--Simons filtration on the generators of
-$\CI(Y_{p/q})$ coming from one component of $R^{\rm irr}(X)$ is the action filtration of the pillowcase Floer complex}.
+So \emph{the Chern--Simons filtration on the generators of $\CI(Y_{p/q})$ coming from one component of
+$R^{\rm irr}(X)$ is the action filtration of the pillowcase Floer complex}.
 
 \begin{lemma}[periods]\label{lem:period}
-For a component $\gamma$ with lift $\tilde\gamma$ (a path in $\R^2$ from $\tilde x$ to $\tilde x+(m,k)$),
-$\oint_\gamma\lambda:=f_{\tilde\gamma}(\tilde x+(m,k))-f_{\tilde\gamma}(\tilde x)\in\tfrac12\Z$, and it lies in $\Z$ when
-$(m,k)=0$.
+$f_\gamma$ does not in general descend to $\gamma$.  By \cite{KK93}, $\cs_X$ is a section over $R(X)$ of the circle bundle
+$E(\partial X)=\big(\R^2\times U(1)\big)/\!\approx$ with $(a,b;z)\approx(a+1,b;z e^{-8\pi ib})\approx(a,b+1;z e^{8\pi ia})\approx(-a,-b;z)$,
+and $e^{2\pi i f_\gamma}$ is the pull-back of that section to the lift.  Hence if one circuit of $\gamma$ translates the lift by
+$(m,k)\in\Z^2$, the period $\oint_\gamma 2b\,da$ is an integer only after adding the transition terms of $E(\partial X)$.
 \end{lemma}
-\begin{proof}
-Apply the Kirk--Klassen formula to the loop, with $\rho_1=\rho_0$: the left side is $0$ modulo $\Z$ (for $(m,k)=0$).
-For $(m,k)\neq0$ the lifted endpoints differ by a deck transformation, and $\lambda$ changes by $2k\,da$ under
-$b\mapsto b+k$, contributing $2km\in2\Z$; the Weyl ambiguity $(a,b)\mapsto(-a,-b)$ can contribute $\tfrac12$.
-\end{proof}
-So $f_\gamma$ descends to a function $\gamma\to\R/\tfrac12\Z$; on the double cover $\tilde\gamma\subset T^2$ it descends
-to $\R/\Z$.  This is the correct level of ambiguity: $\CI$ is $\Z/8$-graded with $\cs\in\R/\Z$.
+For the figure-eight knot the lift translates by $(0,\mp2)$ and $\oint2b\,da=\tfrac13$; with the transition term the
+corrected period is $-1$ (\S\ref{sec:tests}).  The first draft of this lemma claimed $\oint2b\,da\in\tfrac12\Z$; that is false.
 
 \subsection{Absolute constants: the first correction terms}
 Proposition~\ref{prop:action} determines $\cs$ on the generators coming from one component $\gamma_i$ only up to a
