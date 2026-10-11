@@ -1,0 +1,11 @@
+chains 3300
+pairs with equal ell (bottom): 0
+examples: []
+pairs with equal bottom AND top: 0 []
+top goes up at step k->k+1, counts by k: [(0, 3032)]
+non-torus pairs tested 203940  pairs where neither bottom nor top drops: 0
+[]
+[]
+steps 1  min max-drop all: 1/968 0.0010330578512396695 (7, 17, 2, 0, 1)  non-torus: 1/968 0.0010330578512396695 (7, 17, 2, 0, 1)
+steps 2  min max-drop all: 1/8 0.125 (3, 5, 1, -5, -3)  non-torus: 1/8 0.125 (3, 5, 2, 0, 2)
+steps 3  min max-drop all: 479/2872 0.16678272980501394 (7, 17, 2, 0, 3)  non-torus: 479/2872 0.16678272980501394 (7, 17, 2, 0, 3)
