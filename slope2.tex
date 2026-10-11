@@ -1,0 +1,135 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}\raggedbottom
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+\newtheorem{prop}{Proposition}
+\newtheorem{cor}[prop]{Corollary}
+\newcommand{\st}[1]{\par\noindent\textit{#1}\enspace}
+
+\title{What Section 6 gives at slope $\pm2$}
+\date{}
+\begin{document}\sloppy
+\maketitle
+\vspace{-2.5em}
+
+\noindent\textbf{Outcome.} I could not derive $S^3_2(K)\not\cong S^3_{-2}(K)$ from
+Section~6, even with nondegeneracy hypotheses. Section~6 does give an exact
+formula for every drop, with the window ends as corollaries. The formula shows
+precisely what is missing: the position of the class realising the spectral
+invariant. I see no hypothesis of transversality type that controls this position,
+and the data show that it is not controlled for free.
+
+\section{Set-up}
+
+$K\subset S^3$ satisfies (H1)--(H3) and $\Delta_K''(1)=0$. The latter is forced by a
+cosmetic pair through the Casson--Walker invariant. Let
+$U=(0,\frac12)_a\times(\mathbb R/\mathbb Z)_b$ be the pillowcase minus the edges
+$a\in\{0,\frac12\}$, with $\omega=2\,da\wedge db$. By Proposition~1.1(b),
+$\Gamma=\Gamma_K\subset U$. The surgery lines $L_N^\varepsilon=\{Na+b\equiv\varepsilon/2\}$
+are arcs crossing $U$. Since $\Gamma$ misses the edges, all these arcs are
+interchangeable as far as $\Gamma$ is concerned.
+
+\begin{prop}[from Corollary 6.4; minimal position assumed]
+$CI(Y_{\pm2},\varepsilon)\cong CI(Y_{\pm1})\cong CI(Y_0,w)$ as $\mathbb Z/8$-graded
+complexes, up to grading shifts, for both $\varepsilon$. The $S^3$ terms vanish. In
+particular there is no unfiltered obstruction: the problem lives entirely in the
+Chern--Simons data. Moreover $\Gamma$ has total winding $0$ around $U$. By Herald's formula (\S3.1),
+the algebraic count of $\Gamma\cap L_{1/n}$ is $2\lambda(Y_{1/n})=n\Delta''_K(1)=0$.
+\end{prop}
+
+\section{The exact drop formula}
+
+Let $\lambda_{1/4}=2(a-\frac14)\,db$. This primitive of $\omega$ is invariant under
+$\chi(a,b)=(\frac12-a,-b)$. Let $\Phi$ be its primitive along $\Gamma$, which is
+$d\Phi=2(a-\frac14)db$ of \texttt{status.pdf}. On $L_N$ the restriction of
+$\lambda_{1/4}$ is $d\bigl(-N(a-\frac14)^2\bigr)$. With the line primitive normalised to
+vanish at its traceless point $a=\frac14$, the pillowcase level formula reads
+\[
+c(Y_N,x)=A_N(x)+\tfrac3{16}\operatorname{sgn}N-\tfrac N{16}-\tfrac18\iota_N(x),\qquad
+A_N(x)=\Phi(x)+N\bigl(a(x)-\tfrac14\bigr)^2 .
+\]
+This is exact for torus knots and checked numerically for $4_1$. For $N=\pm2$ the
+constant is $\pm\frac1{16}$: this is where the sixteenth comes from.
+
+\begin{prop}[rotation identity]
+Let $P=(a_P,b_P)$ be a common point of $L_2^\varepsilon$ and $L_{-2}^{\varepsilon'}$. Let
+$L_t$, $t\in[-2,2]$, be the lines through $P$ of slope $-t$, and let $x_t\in\Gamma\cap L_t$
+move continuously, with no birth or death. Then the level moves at the rate
+$-(a_t-a_P)^2-a_P(\frac12-a_P)$. Hence
+\[
+c(Y_2,x_2)-c(Y_{-2},x_{-2})=g_P-\int_{-2}^{2}\bigl(a(x_t)-a_P\bigr)^2dt-\tfrac18\Delta\iota,
+\]
+where $g_P=\frac18$ for the same bundle ($P=(\frac14,\frac{\varepsilon-1}2)$) and
+$g_P=\frac3{16}$ for mixed bundles ($a_P\in\{\frac18,\frac38\}$).
+\end{prop}
+
+\noindent\emph{Proof.} On $\{t(a-a_P)+b-b_P=0\}$ we have
+$\dot b=-(a-a_P)-t\dot a$. Hence $\frac d{dt}A_t=2(a-\frac14)\dot b+(a-\frac14)^2+2t(a-\frac14)\dot a$.
+The terms in $\dot a$ cancel, leaving $(a-\frac14)(2a_P-a-\frac14)$. Adding the
+$-\frac1{16}$ of the constant gives the stated rate. The constant jumps by
+$\frac38$ at $t=0$. At $x=P$ the integral vanishes and the gap is $g_P$. $\square$
+
+\noindent This is Section~6's $\delta(x)$ written as a swept area. For a corner
+pivot it is literally Theorem~6.3: the triad $(1,\frac10,2)$ has midpoint
+$m_1=(\frac12,\frac12)$, a corner. \emph{Check:} for $T(2,3)$ the identity
+the level formula gives $u=\frac3{32}$ and $w=\frac14$, as in the tables.
+Here $\Gamma$ is the segment $b=\frac12-6a$ and $\Phi=-6(a-\frac14)^2$.
+This is a weak check: the formula was calibrated on torus knots.
+
+\begin{cor}[windows]
+Assume continuity of spectral invariants along the family (standard for the
+holonomy perturbations of \S5.3), and that the grading term $\Delta\iota$
+vanishes along it, as in every example. Then every drop equals $g_P$ minus the integrated
+squared distance of the \emph{spectral carrier} from $P$. Hence the same-bundle
+drop lies in $(-\frac18,\frac18]$ and the mixed drop in $(-\frac38,\frac3{16}]$. The
+upper ends are attained exactly when the carrier sits at the common point.
+\end{cor}
+
+\noindent These are the known windows: DLME's map $H$ and the map $B$ for the same
+bundle, and the third map for mixed bundles. The equality cases are the
+common-point cases already seen in the data.
+
+\section{Why this does not prove the theorem}
+
+A cosmetic pair needs every drop to vanish: bottom and top, both bundles. By the
+identity this means that each carrier's integrated squared distance from its
+pivot equals $g_P$. For the same bundle, $\int_{-2}^2(a_t-\frac14)^2dt=\frac18$:
+an RMS distance of $\frac1{4\sqrt2}$ from traceless. Nothing in Section~6 excludes
+this:
+\begin{itemize}
+\item $\Gamma$ is an arbitrary exact, $\chi$-invariant multicurve of winding $0$ in $U$;
+\item the cone isomorphisms only transport generators along such rotations;
+\item transversality, minimal position and distinct levels say nothing about
+where the carrier sits.
+\end{itemize}
+The data show that it is not controlled for free. For positive torus knots the
+trivial-bundle drop $u$ is negative, so that carrier's deficit exceeds $\frac18$.
+
+A hypothesis bounding the carrier's distance from $P$ does suffice. For example,
+if $\Gamma\subset\{|a-\frac14|<\frac{\sqrt2}8\}$, every same-bundle drop is positive.
+But such a bound is a bound on the Hamiltonian along the carrier, i.e.\ an energy
+hypothesis in disguise. This is the input the no-go theorem said was missing:
+\emph{where the surviving class sits.}
+
+\section{Where a lower bound can come from}
+
+Lower bounds do not come from rotations through the horizontal, i.e.\ through
+$Y_{\pm1}$, $Y_0$ and the cones of Section~6. They can only come from the other
+route, through the traceless circle $\{a=\frac14\}$: the bundle-exchanging triangle
+with the theory of $(S^3,K)$, which is not a Farey triad. There a class that is not
+absorbed has mixed drop greater than $\frac18$ (the kernel criterion of
+\texttt{triangle-1}, conditional on its hypotheses). Absorption
+is the only failure mode, and Section~6 says nothing about it. Zero-energy
+absorption needs a common traceless point with $\lambda\mapsto\pm1$. For
+$\Delta_K=1$ these are not binary dihedral and occur only degenerately, as for
+$P(-3,5,7)$.
+\end{document}
