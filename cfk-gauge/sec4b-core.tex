@@ -1,0 +1,189 @@
+%----------------------------------------------------------------------
+\subsection{What a gauge theory must supply}\label{subsec:requirements}
+%----------------------------------------------------------------------
+\begin{lemma}[$\CFK$ is $\CF^-(Y)$ plus one function and one inequality]\label{lem:reform}
+Let $\mathcal H$ be doubly pointed, and let $\CF^-(\mathcal H,w)$ be the free $\F[U]$-module on generators with
+$\partial x=\sum_\phi\#\big(\cM(\phi)/\R\big)\,U^{n_w(\phi)}y$.  Then $\CFK_{\F[U,V]}(\mathcal H)$ is obtained by
+replacing each $U^{n_w(\phi)}$ with $U^{n_w(\phi)}V^{\,n_w(\phi)-A(x)+A(y)}$.  The knot is thus encoded by:
+\begin{enumerate}[label=(\roman*)]
+\item a function $A$ from generators to $\Z$, and
+\item the inequality $n_w(\phi)\ge A(x)-A(y)$ whenever $\cM(\phi)\ne\emptyset$, which is $n_z(\phi)\ge0$.
+\end{enumerate}
+Moreover $\CFK_{\F[U,V]}\otimes\F[U,V]/(U-1,V-1)\cong\CF^-(\mathcal H,w)\otimes\F[U]/(U-1)$, so this specialisation does
+not depend on $K$.
+\end{lemma}
+\begin{proof}
+$n_z=n_w-(A(x)-A(y))$ (\S\ref{sec:cfk}); the last claim is immediate from the substitution.
+\end{proof}
+
+Read as a specification, Lemma~\ref{lem:reform} gives three requirements.
+\begin{enumerate}[label=(Q\arabic*),leftmargin=2.6em]
+\item\label{Q:base} The generators and moduli spaces are those of a Floer theory of \emph{the closed manifold} $Y$,
+for auxiliary data adapted to $K$.  The knot enters only through weights.  This excludes the singular theories
+(they change the generators), and is why \S\ref{subsec:symp} is only a variant.
+\item\label{Q:alex} An integer Alexander function on generators.
+\item\label{Q:pos} One-sided positivity of a $z$-charge $n_z$ whose difference from the $w$-charge is
+$A(x)-A(y)$.
+\end{enumerate}
+In monopole and instanton theory, $U$ comes from equivariance at the reducible, not from a weight on
+trajectories.  The natural gauge-theoretic form is therefore the \emph{dual} one: keep $\CF^-(Y)$ as Floer theory
+already produces it, an $S^1$- or $SO(3)$-equivariant complex whose $U$ is the point class at $w$, and add a single
+variable $V$ weighting trajectories by a non-negative $z$-charge.  The Heegaard Floer statement corresponding to
+this is literally Lemma~\ref{lem:reform}.
+
+%----------------------------------------------------------------------
+\subsection{The monopole model}\label{subsec:monopole}
+%----------------------------------------------------------------------
+\paragraph{Data.}
+Take a doubly pointed Heegaard splitting with $K=\gamma_w\cup\overline{\gamma_z}$ as in \S\ref{sec:mech}, and a metric
+$g_T$ that is a product on a neck $N_T=[-T,T]_s\times\Sigma$.  Then $K\cap N_T=[-T,T]\times\{w,z\}$, with $\dot K=\partial_s$ at $w$
+and $\dot K=-\partial_s$ at $z$.  Use Kronheimer--Mrowka perturbations \cite{KM-book} supported in the handlebodies, plus the standard
+neck perturbation (an area form on $\Sigma$, playing the role of the vortex parameter).  Write
+$\gamma_z^T=\{z\}\times[-T,T]$ and $\gamma_w^T=\{w\}\times[-T,T]$.
+
+\paragraph{Charges.}
+For a configuration $\gamma=(A,s,\phi)$ on $\R\times Y$ in the blown-up model ($\|\phi(t)\|_{L^2}=1$), let
+\[
+\phi^-_z:=\pi_{E_-(\dot K)}\big(\phi|_{\R\times\gamma_z^T}\big),\qquad
+\phi^+_w:=\pi_{E_+(\dot K)}\big(\phi|_{\R\times\gamma_w^T}\big),
+\]
+the vortex components of \S\ref{sec:mech}.  They are sections of complex line bundles over the strips
+$\R\times\gamma^T_{z}$ and $\R\times\gamma^T_{w}$; trivialise these bundles by pulling back from the arcs.
+
+\begin{definition}[charges]
+Say $\gamma$ is \emph{admissible} if $\phi^\pm$ do not vanish on $\R\times\{\pm T\}$, nor at the limiting critical points along
+the arcs.  For admissible $\gamma$, set $n_z(\gamma):=\frac1{2\pi}\Delta\arg\phi^-_z$ around $\partial\big([-R,R]\times\gamma^T_z\big)$
+as $R\to\infty$, and define $n_w$ likewise.  Equivalently, these are the signed zero counts on the strips.
+\end{definition}
+On admissible moduli spaces $n_z$ is locally constant and additive under breaking and gluing: the contributions of the
+ends $t=\pm R$ cancel in pairs.  Admissibility is the gauge-theoretic shadow of $V_z\cap(\mathbb T_\alpha\cup\mathbb T_\beta)=\emptyset$.
+At $s=\pm T$ the configuration is close to a handlebody boundary value whose vortex divisor lies on the $\alpha$- or
+$\beta$-curves, and $z$ does not.
+
+\begin{definition}[monopole knot complex; conditional on Conjecture~\ref{conj:Mpos}]\label{def:CFKHM}
+$\CFK^{\HM}_T(Y,K):=\widehat{CM}(Y;g_T,\mathfrak q)\otimes_\F\F[V]$.  Each matrix entry of the Kronheimer--Mrowka
+differential, including the boundary-obstructed components $\bar\partial^s_u$ and so on, is replaced by its count weighted
+by $V^{n_z}$.  The checked and barred versions are defined similarly.
+\end{definition}
+
+\begin{conjecture}[admissibility and positivity in the adiabatic regime]\label{conj:Mpos}
+For every $E$ there is $T(E)$ such that, for $T\ge T(E)$ and generic $\mathfrak q$, every trajectory of energy $\le E$ in the
+moduli spaces of dimension $\le1$ is admissible, and satisfies $n_z\ge0$, $n_w\ge0$ and
+$n_w-n_z=A(a)-A(b)$ for an integer function $A$ on critical points.
+\end{conjecture}
+Strategy: the adiabatic limit $T\to\infty$ (\S\ref{sec:analysis}) presents a trajectory as a vortex strip in
+$\mathrm{Sym}^g\Sigma$ glued to handlebody solutions.  On the neck, $\phi^-_z$ converges, after rescaling, to the
+holomorphic section whose zeros are the intersections with $V_z$.  Positivity of zeros of a nearly holomorphic
+section (Lemma~\ref{lem:posvortex}) and the integrality bootstrap (Lemma~\ref{lem:bootstrap}) then give the
+inequalities, and avoidance at $s=\pm T$ gives admissibility.
+
+\begin{theorem}[structure, assuming Conjecture~\ref{conj:Mpos}]\label{thm:Mstructure}
+\begin{enumerate}[label=(\alph*)]
+\item $\partial_V^2=0$.  The ends of $1$-dimensional moduli spaces, including boundary-obstructed ones, are exactly
+those used by Kronheimer--Mrowka, and $n_z$ is additive over them.  No new ends appear, because admissibility is
+uniform.
+\item $\CFK^{\HM}_T\otimes\F[V]/(V-1)=\widehat{CM}(Y)$, so $V=1$ recovers $\widehat{\HM}(Y)\cong\HF^-(Y)$ (localisation \ref{M:loc}
+is built in).
+\item The $U$-map, defined by the codimension-two condition $\phi^+_w(0,w)=0$, i.e.\ a vortex at $w$, commutes with
+$\partial_V$ up to $V$-weighted homotopy.  So $H_*(\CFK^{\HM}_T)$ is an $\F[U,V]$-module.
+\end{enumerate}
+\end{theorem}
+\begin{proof}[Proof sketch]
+(a) Because $n_z$ is a locally constant integer on admissible moduli spaces, and additive under gluing, each end of a
+compactified $1$-dimensional space contributes $V^{n_z}$ times the corresponding product.  Kronheimer--Mrowka's
+identities among the components then hold verbatim over $\F[V]$.  Positivity makes all exponents non-negative.
+(b) is immediate.  (c) The usual proof that $U$ is a chain map uses $1$-dimensional moduli cut down by a codimension-$2$
+condition; weighting by $V^{n_z}$ commutes with that argument.
+\end{proof}
+
+\begin{conjecture}[knot Atiyah--Floer, monopole form]\label{conj:MAF}
+For $T\ge T(E)$, and after the direct limit over $E$, $\CFK^{\HM}_T(Y,K)\simeq\CFK_{\F[U,V]}(\mathcal H)$ as complexes over $\F[V]$,
+with $U$ corresponding to the point-class map at $w$.  The homotopy type is independent of the doubly pointed splitting,
+$T$ and $\mathfrak q$.  In particular it is an invariant of $(Y,K)$.
+\end{conjecture}
+Independence of $\mathfrak q$ and $T$ comes from continuation maps that are $V$-weighted.  These are well defined as soon
+as admissibility holds along $1$-parameter families, which is again uniform positivity.  Independence of the splitting
+is the gauge-theoretic counterpart of invariance under moves avoiding $w,z$.  Stabilisation and handleslides away from
+$K$ are handled by neck-stretching along the extra surfaces (\S\ref{subsec:inv}).
+
+\paragraph{The $U$-localisation is a real prediction.}
+In Heegaard Floer, inverting $U$ gives $\CF^\infty$ with the $j$-filtration, whose $j\le0$ part is $\CF^-(Y,z)$.
+In the monopole model, inverting $U$ passes to $\overline{CM}(Y)$, which is generated by the reducible's eigenvectors.
+The prediction is that $\overline{CM}(Y)\otimes\F[V]$ with $V$-weights recovers $\widehat{\HM}(Y)$ with $V$ in the role of $U$.  The
+$V$-weight of a reducible flow from $\psi_\lambda$ to $\psi_\mu$ is the difference of windings of the $E_-(\dot K)$-components of the
+Dirac eigenvectors along $\gamma_z$.  So the conjecture predicts that \emph{edge windings of Dirac eigenvectors along an arc
+of $K$ encode $\HM(Y)$ seen from $z$}.  For $(S^3,\text{unknot})$ with the round metric and $K$ a great circle, the
+$T^2$-symmetry of $S^3\subset\C^2$ makes this an explicit separation-of-variables computation (\S\ref{sec:tests}).
+
+%----------------------------------------------------------------------
+\subsection{The instanton model}\label{subsec:instanton}
+%----------------------------------------------------------------------
+\paragraph{Symplectic side.}
+Atiyah--Floer replaces $\mathrm{Sym}^g\Sigma$ with $\mathcal R(\Sigma)$, the $SU(2)$ moduli space of the \emph{unpunctured} Heegaard surface.
+Requirement \ref{Q:base} forbids punctures.  Framing at a point in a handlebody, or extended moduli spaces as in
+Manolescu--Woodward \cite{MW}, removes the reducible singularities.  The handlebody Lagrangians are $L_\alpha,L_\beta$.  The
+analogue of $V_p$ is a \emph{theta divisor attached to the point $p$}.  Under the Abel--Jacobi map,
+$V_p=\{D\ge p\}\subset\mathrm{Sym}^g\Sigma$ is the translate of $W_{g-1}$ by $p$, and the rank-two analogue is the generalised
+theta divisor
+\[
+D_p:=\Theta_{F_0(p)}=\{E:\ H^0(E\otimes F_0(p))\ne0\},\qquad \deg F_0=g-2,
+\]
+on the moduli of semistable bundles, transported to $\mathcal R(\Sigma)$ by Narasimhan--Seshadri.  Then $[D_w]=[D_z]=\theta$, the
+positive generator of $H^2(\mathcal R(\Sigma))$, as $[V_w]=[V_z]$ in Heegaard Floer, and $D_w-D_z$ is the twist by
+$\mathcal O(w-z)$: a unit $U(1)$-flux through $\Sigma$ at $w$ and $-1$ at $z$.  That is exactly the flux of a line bundle
+whose curvature is Poincaré dual to $K$.  Since $c_1(T\mathcal R(\Sigma))=2\theta$, a disc with $u\cdot D_w=1$ changes the grading by $4$
+in instanton units, which is $2$ in Heegaard Floer units.  This matches $\deg U=4$ for the $SO(3)$-equivariant
+theory \cite{ME,DME} under the usual doubling of instanton gradings.
+
+\paragraph{Where the knot enters.}
+There is one point where the instanton picture differs essentially from $\mathrm{Sym}^g\Sigma$.  In $\mathcal R(\Sigma)$ the
+Lagrangian $L_\alpha$ is canonical: it depends on the handlebody, not on the $\alpha$-curves.  In Heegaard Floer, by contrast,
+$\mathbb T_\alpha$ depends on the curves up to isotopy \emph{in the complement of $V_w,V_z$}, and that dependence carries the
+knot (moving an $\alpha$-curve across $w$ changes $K$).  So the arcs $a_\alpha,a_\beta$ cannot enter through $L_\alpha,L_\beta$.  They
+enter through the \emph{trivialisations} of the determinant line $\mathcal D_p=\det\bar\partial_{\,\cdot\,\otimes F_0(p)}$ over $L_\alpha$ and $L_\beta$.
+Along $L_\alpha$ the line $\mathcal D_z$ is trivialised by the three-dimensional Dirac operator on $U_\alpha$ coupled to the flat
+connection and to a $U(1)$-connection whose curvature is the Thom form of the part of $\gamma_z$ inside $U_\alpha$.  That
+connection has a Dirac-monopole source at $p_0$.  The charge of a strip $u$ is the relative degree
+\[
+c_z(u):=\big\langle c_1(\mathcal D_z;\ \tau_\alpha,\tau_\beta),\,[u]\big\rangle\in\Z,
+\]
+which is topological and knot-dependent.  $D_z$ enters only as a device for positivity.
+
+\begin{problem}[compatible divisors]\label{prob:avoid}
+Find holomorphic sections of $\mathcal D_z^{\otimes k}$ (and $\mathcal D_w^{\otimes k}$) over the extended $\mathcal R(\Sigma)$ that do not vanish on
+$L_\alpha\cup L_\beta$ and are homotopic there, through non-vanishing sections, to $\tau_\alpha^{\otimes k}$ and $\tau_\beta^{\otimes k}$.
+Their zero sets $D_z$ then satisfy $c_z(u)=\tfrac1k\,u\cdot D_z\ge0$ for holomorphic strips.  (A necessary condition, $\theta|_{L}=0$,
+holds because handlebody Lagrangians are Bohr--Sommerfeld for the Chern--Simons bundle.)  Failing an explicit
+construction, use Donaldson divisors in the complement of $L_\alpha\cup L_\beta$ in the prescribed relative class, following \cite{AGM,CW}.
+\end{problem}
+
+\paragraph{Gauge side: the $z$-charge as a determinant-line crossing number.}
+For an $SU(2)$ connection $\mathbb A$ on $\R\times Y$ with neck $N_T$, the slices $\mathbb A|_{\{(t,s)\}\times\Sigma}$ define a map from the strip
+$\R_t\times[-T,T]_s$ to the space of connections on $\Sigma$, and the twisted Dolbeault operators
+$\bar\partial_{\mathbb A(t,s)\otimes F_0(z)}$ form a family of index zero.  Their Quillen determinant line carries the canonical
+section $\det\bar\partial$, whose zero set over $\mathcal R(\Sigma)$ is $D_z$.  Define $c_z(\mathbb A)$ as the relative degree of the pulled-back line $\mathcal D_z$ over the strip, with respect to the handlebody
+trivialisations $\tau_\alpha,\tau_\beta$ at $s=\mp T$ and the critical points at $t=\pm\infty$.  When a compatible section exists, it is
+the number of $(t,s)$ with $\ker\bar\partial_{\mathbb A(t,s)\otimes F_0(z)}\ne0$, counted with orientation: a \emph{spectral crossing count},
+the instanton analogue of $n_z$.
+By the families index theorem in the adiabatic limit it equals a relative index of the four-dimensional Dirac operator
+coupled to $\mathbb A\otimes\lambda_z$, where $\lambda_z$ is a $U(1)$-connection with curvature the Thom form of $\R\times\gamma_z$.  This
+connection has Dirac-monopole sources on the lines $\R\times\{p_0\}$ and $\R\times\{p_3\}$, where the two arcs of $K$ meet.
+The difference $c_w-c_z$ then corresponds to the source-free connection with curvature Thom$(\R\times K)$, so it is an
+endpoint quantity.  This is \ref{Q:alex}: an \emph{Alexander function given by a relative spectral flow of the Dirac
+operator twisted by unit flux along $K$}.
+
+\begin{definition}[instanton knot complex; conditional on positivity, e.g.\ via Problem~\ref{prob:avoid}]
+$\CFK^{I}_T(Y,K):=$ the $SO(3)$-equivariant instanton complex of $Y$ (Miller Eismeier; Daemi--Miller Eismeier), with its
+equivariant variable $U$, for the metric $g_T$, tensored with $\F[V]$ and with trajectories weighted by $V^{c_z}$.  Its
+symplectic counterpart is $CF(L_\alpha,L_\beta)$ in the extended $\mathcal R(\Sigma)$ with weights $U^{u\cdot D_w}V^{u\cdot D_z}$.
+\end{definition}
+The analogues of Conjectures~\ref{conj:Mpos} and~\ref{conj:MAF} are stated in the same way.  Two features are specific
+to instantons and are worth flagging:
+\begin{itemize}[leftmargin=2em]
+\item \emph{Deck versus equivariant variable.}  In Heegaard Floer, $U$ is both the deck transformation by $[\Sigma]$ and the
+point-class map.  In instanton theory the deck generator (degree $8$) and the equivariant class (degree $4$) are
+different, so the analogue of ``the $U$-map equals multiplication by $U$'' is a theorem to prove.  The prediction is that
+$U_{\rm eq}^2$ is homotopic to the deck transformation on the equivariant complex.
+\item \emph{Bubbling.}  Uhlenbeck bubbles have $c_w=c_z=$ instanton number.  They are $UV$-type and occur in codimension
+$\ge2$ in the monotone setting, which matches the sphere bubbles $k[\Sigma]$ in Heegaard Floer.
+\end{itemize}

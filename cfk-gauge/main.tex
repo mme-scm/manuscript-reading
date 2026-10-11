@@ -1,0 +1,87 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=green!40!black,urlcolor=blue!60!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{heuristic}[theorem]{Heuristic}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\CFK}{\mathit{CFK}}
+\newcommand{\HFK}{\mathit{HFK}}
+\newcommand{\CF}{\mathit{CF}}
+\newcommand{\HF}{\mathit{HF}}
+\newcommand{\HM}{\mathit{HM}}
+\newcommand{\Spinc}{\mathrm{Spin}^c}
+\newcommand{\CSD}{\mathcal{L}}
+\newcommand{\Tdual}{T^{\vee}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\gr}{\mathrm{gr}}
+\DeclareMathOperator{\Cone}{Cone}
+
+\title[Towards a gauge-theoretic $\CFK^\infty$]{Towards a gauge-theoretic $\CFK^{\infty}$:\\
+anatomy of the knot Floer complex and an Atiyah--Floer proposal}
+\date{October 2026}
+
+\begin{document}
+\begin{abstract}
+No instanton or monopole theory currently produces a complex over $\F[U,V]$, or an analogue of $\CFK^\infty$.
+We propose one, built on Atiyah--Floer principles.
+
+We first take the full knot Floer complex $\CFK^\infty$ apart into the mechanisms that produce it.  This yields a
+specification: $\CFK_{\F[U,V]}$ is the Floer complex of the closed manifold $Y$, with $U$ given, plus an integer Alexander
+function and a one-sided positivity of a $z$-charge.
+
+On the gauge side, the base is the monopole complex (or the $SO(3)$-equivariant instanton complex) of $Y$, for a metric
+stretched along a doubly pointed Heegaard surface, and trajectories are weighted by $V^{n_z}$.
+\begin{itemize}
+\item For monopoles, $n_z$ counts zeros of the vortex component of the spinor along the strip swept by the $z$-arc of $K$.
+That component is the $E_-(\dot K)$-eigenline of Clifford multiplication by the tangent of $K$.
+\item For instantons, $n_z$ is a relative index of the Dirac operator coupled to the instanton and to a unit $U(1)$ flux
+string along the $z$-arc.  In the Atiyah--Floer limit it becomes intersection with a theta-type divisor in the moduli
+space of the Heegaard surface, and the knot enters through how its determinant line is trivialised over the handlebody
+Lagrangians.
+\end{itemize}
+Positivity is inherited from holomorphicity in the adiabatic limit, through an integrality bootstrap.
+
+We describe a neck-free local model at critical Aharonov--Bohm holonomy $\beta=\tfrac12$.  There the two
+$r^{-1/2}$ edge modes are the components seen by $w$ and $z$, the two arcs of $K$ meet at ``creases'', and the creases
+become Zemke's dividing sets on cobordisms.  A separate singular variant is also treated.  Its two variables are the
+nef ends of the segment of Kähler classes of parabolic moduli spaces (with $t=4\alpha$), and it is a Khovanov-side
+theory, not $\CFK$.
+
+We isolate the analytic problems: the adiabatic limit with a transverse knot, admissibility, edge calculus, a
+failing $C^0$ bound and crease bubbles, and compatible divisors.  Genus-one splittings (pillowcase with two marked
+points; $\mathrm{Sym}^1T^2$) are proposed as the first rigorous test.  Statements labelled Theorem, Proposition or Lemma
+are proved here or standard; everything else is labelled Conjecture, Heuristic or Problem.
+\end{abstract}
+\maketitle
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+\input{sec1-cfk}
+\input{sec2-mechanisms}
+\input{sec3-landscape}
+\input{sec4-proposal}
+\input{sec5-analysis}
+\input{sec6-instanton-tests}
+\input{refs}
+\end{document}

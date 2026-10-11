@@ -1,0 +1,151 @@
+%======================================================================
+\section{Analytic details}\label{sec:analysis}
+%======================================================================
+The proposal reduces to analytic statements of four kinds:
+\begin{enumerate}[label=(\alph*)]
+\item an adiabatic limit with a knot transverse to the neck;
+\item positivity and admissibility of the charges in that limit;
+\item an intrinsic, neck-free description of the charges near $K$;
+\item reducibles, compactness and invariance with the new weights.
+\end{enumerate}
+We take them in turn and say what is standard, what is new, and where the difficulty lies.
+
+\subsection{The adiabatic limit with a transverse knot}
+\emph{Monopoles.}  Use the metric $dt^2+ds^2+\varepsilon^2g_\Sigma$ on $\R\times N_T$, with an area-form perturbation of strength
+$\tau$ satisfying the Bradlow condition for degree-$g$ vortices.  As $\varepsilon\to0$, solutions on the neck converge, away from
+a finite bubbling set, to holomorphic maps $\R\times[-T,T]\to\mathrm{Sym}^g\Sigma$, the space of degree-$g$ $\tau$-vortices.  This is
+Salamon's analysis for mapping tori \cite{Salamon-SW}, transplanted to a neck with Lagrangian ends.  What is new is
+\emph{matching at the ends of the neck}.  One must show that the boundary values at $s=\pm T$ of finite-energy solutions
+on the handlebody pieces $U_\alpha^\circ,U_\beta^\circ$ (cylindrical ends $[0,\infty)\times\Sigma$) converge to $\mathbb T_\alpha,\mathbb T_\beta$.  The model
+statement is: \emph{the vortex boundary values of $\tau$-perturbed SW solutions on a handlebody with product end are the
+divisors supported on the $\alpha$-curves, for a suitable choice of $\alpha$-curves determined by the metric}.  This is
+the SW counterpart of ``flat connections on a handlebody form $L_\alpha$''.  It is the hardest single input and amounts
+to the Atiyah--Floer conjecture for Seiberg--Witten.  The knot adds nothing to it: away from $s=\pm T$ the knot is the
+pair of lines $\{w,z\}\times[-T,T]$, which are complex curves for the product structure.
+
+\emph{Instantons.}  The analysis here is more advanced: Dostoglou--Salamon for mapping tori \cite{DoSa}, Salamon--Wehrheim for
+Lagrangian boundary conditions \cite{SW-lag}, Daemi--Fukaya--Lipyanskiy for the $SO(3)$ Atiyah--Floer conjecture
+\cite{DFL}.  The new ingredient is the determinant-line section along the strips, which is a smooth function of the
+connection on the slices and so passes to the limit with the connection.  In its four-dimensional form, $c_z$ is the relative index of the Dirac
+operator on $\R\times Y$ coupled to $\mathbb A\otimes\lambda_z$, with APS conditions at the ends.  It is therefore defined, additive and
+locally constant for \emph{every} configuration.  This is cleaner than the monopole case: no admissibility is needed, and
+only positivity remains, via Problem~\ref{prob:avoid}.  The analytic input is a gluing/adiabatic formula for this relative
+index under neck-stretching, identifying it with the relative degree of $\mathcal D_z$ on the limiting strip plus bubble
+contributions.  This is a families-index computation of Bismut--Freed/Dai type.
+
+\subsection{Positivity in the limit}
+\begin{lemma}[stability of non-negative zero counts]\label{lem:posvortex}
+Let $\Omega=\R\times[-T,T]$, and let $s_\varepsilon$ be sections of a trivialised line bundle over $\Omega$ that converge in $C^0_{\rm loc}$ to a
+holomorphic section $s_0$, uniformly on $\R\times\{\pm T\}$ and on $\{|t|\ge R_0\}\times[-T,T]$, where $|s_0|\ge c>0$.  Then the
+signed zero count of $s_\varepsilon$ equals that of $s_0$ for $\varepsilon$ small, and it is $\ge0$.
+\end{lemma}
+\begin{proof}
+On $\partial([-R_0,R_0]\times[-T,T])$ we have $|s_\varepsilon-s_0|<c\le|s_0|$ for small $\varepsilon$, so the winding numbers agree (Rouché).  The
+zeros of $s_0$ are isolated and positive.
+\end{proof}
+The analytic work is in the hypotheses.  The first, $C^0$ convergence of the vortex component $\phi^-_z$ \emph{at the
+specific point} $z$, needs elliptic estimates along $\Sigma$ that are uniform in $\varepsilon$.  These are available away from
+bubbling points.  At a bubbling point lying on $\R\times\gamma^T_z$ one needs the bubble's own zero count.  In
+$\mathrm{Sym}^g\Sigma$, sphere bubbles meet $V_w$ and $V_z$ equally and positively, and boundary degenerations carry $UV$.  The
+gauge-theoretic statement to prove is that the energy-concentration profiles in the $\varepsilon\to0$ limit are vortex bubbles
+of this type, and never configurations in which $\phi^-_z$ winds negatively.  The second hypothesis, uniformity in
+$t$, is exponential convergence to critical points with constants independent of $\varepsilon$.  Since the
+neck-stretched critical points correspond to transverse intersections of $\mathbb T_\alpha,\mathbb T_\beta$, this is a spectral-gap statement
+for the Hessian, uniform in $\varepsilon$, of Dostoglou--Salamon type.
+
+With Lemma~\ref{lem:bootstrap} these give Conjecture~\ref{conj:Mpos} for $T\ge T(E)$.  The energy window is essential:
+there is no reason for positivity to hold uniformly over all energies at a fixed neck length.  The invariant is defined
+as a direct limit (\S\ref{subsec:inv}).
+
+\subsection{The intrinsic picture near $K$: critical holonomy and creases}\label{subsec:edge}
+The neck is a scaffold.  For an invariant of $(Y,K)$ one wants to know what the charges are near $K$ when no splitting
+is present.  The neck description says that along $\gamma_w$ the relevant component is $E_+(\dot K)$, and along $\gamma_z$ it is
+$E_-(\dot K)$, switching at $p_0,p_3$.  Here is a local model in which this switching is built into the equations.
+
+\paragraph{Aharonov--Bohm holonomy.}  Couple the spin$^c$ connection to a flat $U(1)$ connection on $Y\setminus K$ with
+meridional holonomy $e^{2\pi i\beta}$.  For $U(1)$ this is the limit of an \emph{exact} perturbation, since the Thom form of a
+null-homologous $K$ is exact.  So $\HM$ is unchanged for smooth smearings, which is \ref{Q:base}.  In the singular limit,
+transversally to $K$ the Dirac operator is the Aharonov--Bohm operator on $\C$ with flux $\beta\in(0,1)$.  Its local
+solutions near $r=0$ have leading terms
+\[
+\Phi\sim c_+\,r^{-\beta}\,\mathbf e_+ +c_-\,r^{\beta-1}\,\mathbf e_-+O(r^{\min(1-\beta,\beta)}),\qquad \mathbf e_\pm\in E_\pm(\dot K),
+\]
+and both singular terms are in $L^2$.  The operator therefore has a family of closed extensions, parametrised by
+Lagrangians in the space of edge data $(c_+,c_-)\in\Gamma(K;E_+\oplus E_-)$, with the symplectic form coming from Green's formula,
+which pairs $c_+$ with $c_-$.  Two extensions are distinguished: $\mathcal E_w=\{c_-=0\}$, which tends to the smooth theory as
+$\beta\to0$, and $\mathcal E_z=\{c_+=0\}$, which tends to the smooth theory after the singular gauge transformation $e^{i\theta}$ as
+$\beta\to1$.  At the \emph{critical holonomy} $\beta=\tfrac12$ both singular terms are $r^{-1/2}$, and the two extensions are
+exchanged by the reflection $\theta\mapsto-\theta$.
+
+\paragraph{Creases.}  The proposal is to use $\beta=\tfrac12$ with the boundary condition $\mathcal E_w$ along $\gamma_w$ and $\mathcal E_z$ along
+$\gamma_z$.  The condition switches at the two \emph{creases} $p_0,p_3$, and the surviving edge coefficient is the section
+$c=(c_+|_{\gamma_w},c_-|_{\gamma_z})$.  This is precisely the neck description, now intrinsic, and the charges become
+\[
+n_w=\#\,c_+^{-1}(0)\cap(\R\times\gamma_w),\qquad n_z=\#\,c_-^{-1}(0)\cap(\R\times\gamma_z).
+\]
+Their difference is a topological count for the glued line bundle over $\R\times K$, which gives \ref{M:alex}.  Positivity on
+both arcs is what prevents zeros from crossing a crease: a positive zero of $c_+$ on the $\gamma_w$ side would arrive as a
+negative zero of $c_-$ on the $\gamma_z$ side.  So the creases behave like the Lagrangian walls of the cylindrical
+reformulation of Heegaard Floer.  On a cobordism with surface $F$, the boundary condition can switch along curves on
+$F$.  These \emph{crease curves are Zemke's dividing arcs} \ref{M:cob}, and the index contributions of the
+$\mathcal E_w$- and $\mathcal E_z$-regions should reproduce the $\tilde\chi(F_w)$ and $\tilde\chi(F_z)$ terms of his grading formula.
+
+\paragraph{What fails, and what must be proved.}
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item \emph{Edge calculus.}  The linearised operators are edge operators in Mazzeo's sense \cite{Mazzeo} along $K$ (in $3$d) and
+$\R\times K$ (in $4$d), with indicial roots $\pm\frac12+\Z$ for the Dirac part at $\beta=\frac12$.  Fredholmness on weighted spaces with
+the mixed boundary condition, and an index formula, are standard in principle.  The crease is a codimension-$3$
+stratum in $4$d where the boundary condition jumps.  Its local model is a two-dimensional problem with corner-type
+indicial roots.  It must be shown that the index jumps by an amount independent of the configuration, which is the
+analogue of the fixed Maslov contribution of a basepoint region.
+\item \emph{$C^0$ bound.}  The standard bound $|\Phi|^2\le\max(-s_g,0)$ fails, since $|\Phi|\sim r^{-1/2}$ near $K$.  Replace it by a
+weighted maximum principle for $r|\Phi|^2$, using the Weitzenböck formula on $Y\setminus K$ together with the boundary term from
+Green's formula.  That boundary term is $\mathrm{Re}\int_K\langle c_+,c_-\rangle$ up to constants, and it \emph{vanishes} for $\mathcal E_w$ and for
+$\mathcal E_z$.
+\item \emph{Edge bubbling.}  The SW equations are scale-invariant on $\R^4$, and only the $C^0$ bound prevents bubbling.
+Near $K$, rescaled limits are finite-energy solutions on $\R^4$ with Aharonov--Bohm flux $\frac12$ along $\R^2$.  For a
+one-sided condition the Weitzenböck identity $\int|\nabla\Phi|^2+\frac14|\Phi|^4=(\text{edge term})=0$ makes them trivial.  At a crease
+the edge term need not vanish, so nontrivial \emph{crease bubbles} may exist.  The prediction is that they exist and
+carry weight $UV$, cancel in pairs, and are the gauge-theoretic boundary degenerations of
+Proposition~\ref{prop:d2}.  Classifying finite-energy solutions of this local model is a concrete,
+finite-dimensional-symmetry problem.  By $\mathrm{SO}(2)\times\mathrm{SO}(2)$-invariance it reduces to ODE.
+\item \emph{Positivity without a neck.}  Unlike in the neck limit, the edge coefficients satisfy no local
+$\bar\partial$-equation: leading edge data are free boundary data.  Intrinsic positivity of $n_w,n_z$ therefore requires a
+global argument, for instance a Kähler-type model metric on a tubular neighbourhood of $\R\times K$ combined with a
+large perturbation localised there, in Taubes' style.  We regard the neck construction as primary and this as its
+eventual intrinsic replacement.
+\end{enumerate}
+
+\paragraph{Bordered consistency check.}  If one cuts along $T^2=\partial\nu K$ instead of $\Sigma$, the boundary phase space is the
+dual torus $\Tdual=H^1(T^2;\R/\Z)$ of flat $U(1)$ connections.  The flat-torus Dirac operator has kernel at exactly one point
+$\theta_0\in\Tdual$ for a fixed spin structure, and there the kernel is $\C\oplus\C$, one constant spinor of each chirality.  Three
+facts can be checked directly:
+\begin{enumerate}[label=(\arabic*)]
+\item the solid-torus Lagrangian avoids $\theta_0$;
+\item the reducible locus of the knot complement, $\{\mathrm{hol}_\lambda=1\}$, avoids $\theta_0$;
+\item the Aharonov--Bohm filling at $\beta=\frac12$ passes through $\theta_0$.
+\end{enumerate}
+This matches the Hanselman--Rasmussen--Watson picture.  Fillings miss the marked point, $\widehat{\HFK}$ is computed by a meridian
+through it, the essential component of the curve is the reducible line, and the two chiral kernels at $\theta_0$ are the two
+sides of the marking that carry $w$ and $z$.  It is an independent check that critical holonomy is the right local
+model.
+
+\subsection{Reducibles, compactness and invariance}\label{subsec:inv}
+\begin{itemize}[leftmargin=2em]
+\item \emph{Blow-up.}  In Kronheimer--Mrowka's $\sigma$-model the charges are defined with the normalised spinor $\phi$, so they
+make sense on reducible trajectories.  For a flow from eigenvector $\psi_\lambda$ to eigenvector $\psi_\mu$, $n_z$ is the difference of the
+windings of $\pi_{E_-}\psi_\lambda$ and $\pi_{E_-}\psi_\mu$ along $\gamma_z^T$, or of the edge coefficients in the intrinsic model.  Genericity of
+eigenvectors, meaning non-vanishing of a section of a real rank-$2$ bundle along an arc, is a codimension-one condition
+in $1$-parameter families.  It must be arranged by perturbations that preserve the structure near $K$.
+\item \emph{Energy windows and direct limits.}  Take $C_{T,E}$ to be the subquotient generated in energy $\le E$.  For
+$T'\ge T\ge T(E')$ the continuation maps $C_{T,E}\to C_{T',E'}$ are $V$-weighted and positive, and the invariant is
+$\varinjlim_E H_*(C_{T(E),E})$.  This copies Taubes' passage from $\HM$ to ECH via action-filtered complexes.  The point to
+check is that continuation trajectories also satisfy positivity once $T$ is large relative to the energy.  That is the
+1-parameter version of Lemma~\ref{lem:posvortex}.
+\item \emph{Splitting independence.}  Stabilisations and handleslides away from $w,z$ are realised by stretching along
+the extra surfaces of a Heegaard triple.  The corresponding triangle counts are $V$-weighted by the same charges on the
+triangle's neck strips.  Moves across $z$ are exactly those along which admissibility fails, as in Heegaard Floer.
+\item \emph{Orientations.}  Work over $\F$ first.  Over $\Z$, Kronheimer--Mrowka's orientation of the determinant line is
+unaffected by the weights, but crease bubbles (if they exist) must be shown to cancel with signs.  In Heegaard Floer
+the two boundary degenerations do cancel with signs.
+\end{itemize}

@@ -1,0 +1,67 @@
+%======================================================================
+\section{Anatomy: what actually produces $\CFK_{\F[U,V]}$}\label{sec:mech}
+%======================================================================
+
+Heegaard Floer homology is itself the output of an Atiyah--Floer heuristic: stretch the
+Seiberg--Witten equations on $Y=U_\alpha\cup_\Sigma U_\beta$ along a neck $[-T,T]\times\Sigma$; on
+$\R_t\times[-T,T]_s\times\Sigma\cong \C\times\Sigma$ solutions become vortices, the vortex moduli space of
+degree $g$ is $\mathrm{Sym}^g\Sigma$, the handlebodies contribute Lagrangians $\mathbb T_\alpha,\mathbb T_\beta$, and
+four-dimensional trajectories become holomorphic strips.  We read every ingredient of
+\S\ref{sec:cfk} through this lens, because a gauge-theoretic $\CFK^\infty$ should be designed so that
+its adiabatic limit \emph{is} a complex of the shape of \S\ref{sec:cfk}.
+
+\subsection{Mechanisms}
+\begin{enumerate}[label=(M\arabic*),leftmargin=2.6em]
+\item\label{M:charges} \textbf{Two non-negative charges.}  $n_w(\phi),n_z(\phi)\in\Z_{\ge0}$, from positivity
+of intersections with complex divisors $V_w,V_z$ disjoint from $\mathbb T_\alpha\cup\mathbb T_\beta$.
+In vortex language, $V_w$ is the set of vortex configurations with a vortex at $w$; for a
+four-dimensional trajectory in the neck, $n_w$ counts zeros of the \emph{vortex component} $\alpha$
+of the spinor on the strip $\R_t\times[-T,T]_s\times\{w\}$, which is a complex curve in $\C\times\Sigma$.
+\item\label{M:alex} \textbf{One of the charges is topological.} $n_w-n_z$ depends only on endpoints
+($=A(x)-A(y)$), because $V_w-V_z$ is null-homologous in $\mathrm{Sym}^g\Sigma$ relative to the Lagrangians
+(\S\ref{sec:cfk}).  The other combination $n_w+n_z$ is energy-like.
+\item\label{M:quadrant} \textbf{Positivity on a quadrant.} Equivalently, positivity of every member of
+the $t$-family of energies $(2-t)n_w+tn_z$, $t\in[0,2]$.
+\item\label{M:degen} \textbf{Codimension-one degenerations carry $UV$ and cancel} (Proposition~\ref{prop:d2}).
+\item\label{M:loc} \textbf{Two localisations}, each recovering the closed $3$-manifold invariant
+(Proposition~\ref{prop:loc}).  Forgetting $z$ allows Heegaard moves across $z$, which is why
+$V=1$ gives an invariant of $Y$ alone.
+\item\label{M:flip} \textbf{A flip map} identifying the two localisations, and the Sarkar map
+$\varsigma\simeq 1+\Phi\Psi$ as its square (monodromy of the basepoints once around $K$).
+\item\label{M:cob} \textbf{Cobordisms with dividing sets}, with grading shifts additive in
+$\tilde\chi(F_w)$, $\tilde\chi(F_z)$.
+\item\label{M:surg} \textbf{Large surgery and the mapping cone}, which use \ref{M:loc} and \ref{M:flip}.
+\end{enumerate}
+
+\subsection{The geometric position of the knot}
+In the neck picture the knot meets $\Sigma$ transversally at $w$ (upward) and $z$ (downward), and
+$K=\gamma_w\cup\overline{\gamma_z}$ with $\gamma_w,\gamma_z$ the upward flow arcs from $p_0$ to $p_3$.
+On $[-T,T]\times\Sigma$ the vortex splitting $S=E\oplus EK_\Sigma^{-1}$ is the $\pm i$ eigenspace splitting
+of Clifford multiplication by the neck direction $\partial_s$.  Along $K$ one has the intrinsic splitting
+\[
+S|_K=E_+(\dot K)\oplus E_-(\dot K),\qquad E_\pm(\dot K)=\ker\big(\rho(\dot K)\mp i\big),
+\]
+and since $\dot K=\partial_s$ at $w$ and $\dot K=-\partial_s$ at $z$, \emph{the vortex component is the
+$E_+(\dot K)$ part of $\Phi$ near $w$ and the $E_-(\dot K)$ part near $z$}.  So $n_w$ and $n_z$ count zeros of
+\emph{opposite} chiral components of the spinor along the two arcs of $K$, with the switch occurring at
+$p_0,p_3$, where the two arcs meet.  This is the first concrete clue to what the gauge-theoretic charges
+must be (\S\ref{subsec:monopole}), and it explains why $U$ and $V$ are exchanged by reversing $K$.
+
+\subsection{Dictionary}
+\begin{center}
+\small
+\begin{tabular}{p{4.3cm}p{4.5cm}p{4.9cm}}
+\toprule
+Heegaard Floer & Atiyah--Floer intermediary & Gauge theory (proposed)\\
+\midrule
+$\mathrm{Sym}^g\Sigma$; $\mathbb T_\alpha,\mathbb T_\beta$ & moduli of the Heegaard surface; Lagrangians of handlebody boundary values & configuration space of $Y$ with a neck of length $T$\\
+basepoints $w,z\in\Sigma$ & two punctures with meridional holonomy & codimension-two singular locus $K$ (holonomy parameter)\\
+$V_w,V_z$ & two divisors/nef classes $\xi_w,\xi_z$ & two topological charges (\S\ref{sec:proposal})\\
+$n_w-n_z$ topological & $\xi_w-\xi_z$ relatively trivial (monopole); flag classes (instanton) & flux of curvature through $\R\times K$; monopole number $l$\\
+$t$-family, $t\in[0,2]$ & Kähler classes $[\omega_\alpha]$, $\alpha\in(0,\tfrac12)$ & holonomy parameter; $t=4\alpha$\\
+boundary degenerations ($UV$) & Maslov-$2$ discs on $L_\alpha,L_\beta$ & bubbles at $\R\times K$ and instanton bubbles\\
+moves avoiding $w,z$ & Lagrangian correspondences of handle attachments & metric/perturbation changes fixed near $K$\\
+dividing arcs on $F$ & changes of puncture type & creases of the edge boundary condition\\
+\bottomrule
+\end{tabular}
+\end{center}

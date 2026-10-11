@@ -1,0 +1,102 @@
+%======================================================================
+\section{Tests, first cases, and a roadmap}\label{sec:tests}
+%======================================================================
+
+\subsection{Monopole versus instanton}
+\begin{center}\small
+\begin{tabular}{p{3.3cm}p{5.2cm}p{5.2cm}}
+\toprule
+& monopole model (\S\ref{subsec:monopole}) & instanton model (\S\ref{subsec:instanton})\\
+\midrule
+base theory & $\widehat{CM}(Y)$, $U$ from $S^1$-equivariance & $SO(3)$-equivariant $I^-(Y)$, $U$ of degree $4$\\
+$z$-charge & zeros of the vortex component $\pi_{E_-(\dot K)}\phi$ on $\R\times\gamma_z^T$ & relative index of Dirac coupled to $\mathbb A\otimes\lambda_z$\\
+always defined? & no: admissibility needed & yes\\
+Atiyah--Floer target & $\mathrm{Sym}^g\Sigma$, $V_z$ (this \emph{is} $\CFK$) & extended $\mathcal R(\Sigma)$, theta-type $D_z$\\
+how $K$ enters & handlebody metrics select $\alpha,\beta$; position of $z$ & trivialisations of $\mathcal D_z$ via the arc strings\\
+positivity from & vortex holomorphicity (Lemma~\ref{lem:posvortex}) & compatible divisors (Problem~\ref{prob:avoid})\\
+extra subtlety & reducible tower carries $V$-weights & deck (deg $8$) vs.\ equivariant (deg $4$) variable\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Consistency checks a construction must pass}
+\begin{enumerate}[label=(C\arabic*),leftmargin=2.6em]
+\item \emph{Hat level.}  $H_*\big(\CFK^{\HM}\otimes\F[U,V]/(U,V)\big)\cong KHM(Y,K)$ and
+$H_*\big(\CFK^{I}\otimes\F[U,V]/(U,V)\big)\cong KHI(Y,K)$.  The first is a known group, isomorphic to $\widehat{\HFK}$
+\cite{Lekili,BS-equiv,CGH-sutured}.  A direct gauge-theoretic proof would compare the $V=0$, framed theory on $g_T$ with the
+sutured closure by excision along the tori $\partial\nu\gamma_z$.  This is the most accessible nontrivial theorem.
+\item \emph{$V=1$.}  Built in (Theorem~\ref{thm:Mstructure}(b)).
+\item \emph{$U$ inverted.}  Must give $\HM(Y)$ seen from $z$.  This is a statement about edge windings of Dirac
+eigenvectors (\S\ref{subsec:monopole}), and it is genuinely nontrivial.
+\item \emph{Gradings.}  $\gr_w$ is Kronheimer--Mrowka's absolute $\mathbb Q$-grading, and $\gr_z=\gr_w-2A$.  The Alexander function
+must agree with $\frac12\langle c_1,\hat S\rangle$ for relative spin$^c$ structures; in the instanton model, with the generalised
+eigenvalues of $\mu(\hat S)$ on $KHI$.
+\item \emph{Reversal and flip.}  Reversing $K$ exchanges $\gamma_w,\gamma_z$ and $E_\pm(\dot K)$, hence $U\leftrightarrow V$.  Moving the creases
+$p_0,p_3$ once around $K$ should give a monodromy $\varsigma\simeq1+\Phi\Psi$, where $\Phi$ and $\Psi$ count trajectories weighted by
+$n_w$ and $n_z$.  This is Sarkar's formula, now as the monodromy of a family of gauge-theoretic data.
+\item \emph{Surgery.}  The $2$-handle cobordism $W_N$ with its core surface carries $V$-weighted maps.  The large surgery
+statement $\widehat{\HM}(Y_N(K),[s])\cong H_*(A^-_s)$ for $N\gg0$ is a cobordism-map computation in which the core disc is cut by
+the arcs $\gamma_w,\gamma_z$, so that its two halves are Zemke's $F_w,F_z$.  The mapping cone then needs only the flip, (C5).
+\end{enumerate}
+
+\subsection{First cases}
+\paragraph{Unknot, round $S^3$.}  Put $K=\{z_2=0\}\subset S^3\subset\C^2$.  The torus $T^2$ acting on $(z_1,z_2)$ preserves $K$, the round
+metric, the reducible, and (in the intrinsic model of \S\ref{subsec:edge}) the Aharonov--Bohm data.  Dirac eigenvectors
+are $T^2$-weight vectors $e^{i(m_1\varphi_1+m_2\varphi_2)}f(\rho)$, with $z_1=\cos\rho\,e^{i\varphi_1}$, $z_2=\sin\rho\,e^{i\varphi_2}$, and the
+eigenvalue problem separates into ODEs in $\rho$.  Along $K=\{\rho=0\}$ the winding of an eigenvector is its longitudinal
+weight $m_1$, up to a framing shift.  The edge exponents are governed by the meridional weight $m_2\in\Z+\tfrac12$ at critical
+holonomy.  The prediction $\CFK=\F[U,V]$ becomes an explicit statement about the joint ordering of eigenvalues and
+weights $(m_1,m_2)$.  This is the cleanest first computation, and it tests (C3), (C4) and the critical-holonomy
+model at once.
+
+\paragraph{Genus one: $(1,1)$-knots.}  Every $(1,1)$-knot, in particular every torus knot in $S^3$, has a genus-one doubly
+pointed diagram.
+\begin{itemize}[leftmargin=2em]
+\item \emph{Monopole.}  The vortex moduli space is $\mathrm{Sym}^1T^2=T^2$, the strips are immersed bigons, and the neck is
+$\R\times[-T,T]\times T^2$, flat.  The required adiabatic analysis is closest to the product formulae along tori of
+Morgan--Mrowka--Szab\'o \cite{MMS} and Taubes.
+\item \emph{Instanton.}  $\mathcal R(T^2)$ is the pillowcase, $L_\alpha,L_\beta$ are arcs between corners (the reducibles, resolved by
+framing or holonomy perturbation as in Hedden--Herald--Kirk \cite{HHK1}), and $\mathcal D_p$ has a single compatible zero.  So
+$D_w,D_z$ are \emph{two marked points of the pillowcase}, separated by the image of $w-z$ under $\Sigma\to\mathrm{Jac}(\Sigma)$.  The knot is
+recorded by the isotopy class of the pair of marked points relative to the arcs.  The conjecture is that
+\[
+\CFK^{I}_{\F[U,V]}(K)\simeq CF\big(L_\alpha,L_\beta;\ \text{pillowcase},\ U^{\#D_w}V^{\#D_z}\big),
+\]
+which is the instanton counterpart of the genus-one combinatorics of $\CFK$.  Its $U=V=0$ part should reproduce
+Li--Ye's computation of $KHI$ for $(1,1)$-knots \cite{LY-heegaard}.  This is an explicit, finite check, and the genus-one
+case is the natural place to make the proposal rigorous first.
+\end{itemize}
+
+\paragraph{Trefoil.}  $\CFK(T_{2,3})=\langle a,b,c\rangle$ with $\partial b=Ua+Vc$.  In the pillowcase model there must be exactly two bigons
+from $b$: one covering $D_w$ once and one covering $D_z$ once.  In the monopole model, one trajectory from $b$ has $n_z=1$ and
+the other has $n_z=0$, with the $U$ coming from the reducible tower.
+
+\subsection{Roadmap}
+\begin{enumerate}[leftmargin=2em]
+\item Algebra: Theorem~\ref{thm:Mstructure} and its instanton analogue, assuming positivity.  This is routine.
+\item Instanton charges: define $c_w,c_z$ as relative Dirac indices for all configurations, prove additivity, and
+compute them on bubbles ($UV$-type).  This needs index theory but no adiabatic limit.
+\item Genus one, instanton: solve Problem~\ref{prob:avoid} on the pillowcase, which is a $2$-dimensional problem, prove
+positivity by the adiabatic limit for $T^2$-necks, and verify (C1) for torus knots.
+\item Genus one, monopole: the same with $\mathrm{Sym}^1T^2=T^2$.  Compare with $\widehat{\HFK}$ via $KHM$.
+\item The intrinsic critical-holonomy model: edge calculus, the weighted $C^0$ bound, and classification of crease
+bubbles (\S\ref{subsec:edge}(i)--(iii)).  Prove that the neck and intrinsic charges agree.
+\item Higher genus: the general Atiyah--Floer comparison (Conjecture~\ref{conj:MAF}), large surgery, flip, and
+mapping cone.
+\end{enumerate}
+
+\subsection{What is new here, in one paragraph}
+On the Heegaard Floer side, $\CFK$ is $\CF^-(Y)$ together with an Alexander function and a one-sided positivity
+(Lemma~\ref{lem:reform}).  On the gauge side, the proposal supplies these as follows.
+\begin{itemize}[leftmargin=2em]
+\item \emph{Charges.}  The $z$-charge is a topological count of vortex zeros (monopoles) or a relative Dirac index with a
+unit flux string along the $z$-arc of $K$ (instantons).  The Alexander function is the source-free difference of the
+$w$- and $z$-charges.
+\item \emph{Positivity.}  It comes from the Atiyah--Floer limit, by holomorphicity together with integrality.
+\item \emph{Arcs and creases.}  The two arcs of $K$ meet at creases, which are the gauge-theoretic home of the Heegaard
+Floer basepoint walls and of Zemke's dividing sets.
+\item \emph{Local model at $K$.}  Critical Aharonov--Bohm holonomy $\beta=\frac12$, whose two edge modes are the two chiral
+components that $w$ and $z$ see.
+\item \emph{Singular variant.}  It gives a separate, Khovanov-side two-variable theory, in which positivity is nefness of
+the two ends of the parabolic Kähler segment and $t=4\alpha$.
+\end{itemize}

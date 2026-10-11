@@ -1,0 +1,141 @@
+%======================================================================
+\section{The object: $\CFK^\infty$ and $\CFK_{\F[U,V]}$}\label{sec:cfk}
+%======================================================================
+
+Throughout, $Y$ is a rational homology sphere, $K\subset Y$ is an oriented null-homologous knot,
+$\F=\Z/2$, and $\mathfrak s\in\Spinc(Y)$ is suppressed when it plays no role.
+
+\subsection{Definition}
+A \emph{doubly pointed Heegaard diagram} $\mathcal H=(\Sigma,\boldsymbol\alpha,\boldsymbol\beta,w,z)$ for
+$(Y,K)$ is a Heegaard diagram for $Y$ with two basepoints in $\Sigma\setminus(\boldsymbol\alpha\cup\boldsymbol\beta)$
+such that $K$ is the union of an arc from $w$ to $z$ in $\Sigma\setminus\boldsymbol\alpha$ pushed into
+$U_\alpha$ and an arc from $z$ to $w$ in $\Sigma\setminus\boldsymbol\beta$ pushed into $U_\beta$.
+Equivalently (and this is the description that matters below): if $f$ is a self-indexing Morse
+function with one minimum $p_0$ and one maximum $p_3$, then $K=\gamma_w\cup\overline{\gamma_z}$
+where $\gamma_w,\gamma_z$ are the two \emph{upward} gradient flow lines from $p_0$ to $p_3$ through
+$w$ and $z$.  The orientation of $K$ agrees with the flow on $\gamma_w$ and disagrees with it on $\gamma_z$.
+
+\begin{definition}[\cite{OS-knots,Rasmussen}]
+$\CFK_{\F[U,V]}(\mathcal H)$ is the free $\F[U,V]$-module on $\mathbb T_\alpha\cap\mathbb T_\beta\subset\mathrm{Sym}^g(\Sigma)$ with
+\[
+\partial x=\sum_{y}\ \sum_{\substack{\phi\in\pi_2(x,y)\\ \mu(\phi)=1}} \#\big(\cM(\phi)/\R\big)\, U^{n_w(\phi)}V^{n_z(\phi)}\, y .
+\]
+It carries two Maslov gradings with
+$\gr_w(x)-\gr_w(y)=\mu(\phi)-2n_w(\phi)$, $\gr_z(x)-\gr_z(y)=\mu(\phi)-2n_z(\phi)$,
+$U$ of bidegree $(-2,0)$, $V$ of bidegree $(0,-2)$, and the Alexander grading
+$A=\tfrac12(\gr_w-\gr_z)$, for which $U$, $V$ have degree $-1$, $+1$ and $\partial$ has degree $0$.
+\end{definition}
+
+$A$ is well defined because two classes in $\pi_2(x,y)$ differ by $k[\Sigma]+\mathcal P$ with
+$\mathcal P$ a periodic domain, $n_w(\Sigma)=n_z(\Sigma)=1$, and, normalising $n_w(\mathcal P)=0$,
+$n_z(\mathcal P)=[K]\cdot H(\mathcal P)=0$ since $[K]=0\in H_1(Y;\mathbb Q)$.
+
+\emph{Positivity} is what makes $\partial$ polynomial rather than Laurent: a holomorphic disc meets the
+complex hypersurfaces $V_w=\{w\}\times\mathrm{Sym}^{g-1}\Sigma$ and $V_z$ non-negatively, so
+$n_w(\phi),n_z(\phi)\ge0$ whenever $\cM(\phi)\ne\emptyset$.
+
+\begin{proposition}[$\partial^2=0$]\label{prop:d2}
+For a knot (one $w$, one $z$) $\partial^2=0$ on $\CFK_{\F[U,V]}$.
+\end{proposition}
+\begin{proof}[Sketch]
+Ends of the $1$-dimensional spaces $\cM(\phi)/\R$, $\mu(\phi)=2$, are broken flows and boundary
+degenerations.  An $\alpha$-degeneration has domain a component of $\Sigma\setminus\boldsymbol\alpha$; since the
+$g$ $\alpha$-curves are linearly independent in $H_1(\Sigma)$ there is exactly one, it contains both
+$w$ and $z$, and it contributes $UV\cdot x$ (Ozsv\'ath--Szab\'o: the signed count of degenerations
+through a point is $1$).  The same holds for $\beta$, so the two contributions cancel.  For links with
+$n$ components the analogous count gives
+$\partial^2=\sum_i(U_{w_i}V_{z_i}-U_{w_{i+1}}V_{z_i})$-type curvature, which is why Zemke works with
+curved complexes \cite{Zemke-link}.
+\end{proof}
+This point is worth isolating, because it will recur: \emph{the only codimension-one degenerations
+other than breaking carry weight $UV$, and the theory is a complex (rather than a curved one)
+because two such contributions cancel.}
+
+\subsection{$\CFK^\infty$ and its subquotients}
+Write $[x,i,j]:=U^{-i}V^{-j}x$ for $j-i=A(x)$; these span the $A=0$ part of
+$\CFK_{\F[U,V]}\otimes\F[U^{\pm1},V^{\pm1}]$, which is $\CFK^\infty$:
+\[
+\partial[x,i,j]=\sum \#\big(\cM(\phi)/\R\big)\,[y,\,i-n_w(\phi),\,j-n_z(\phi)],
+\]
+a $\Z\oplus\Z$-filtered complex of free $\F[U,U^{-1}]$-modules ($U$ acting by $[x,i,j]\mapsto[x,i-1,j-1]$).
+Its subquotients recover everything:
+\begin{center}\small
+\begin{tabular}{ll}
+\toprule
+$C\{i\le0\}$, $C\{i\ge0\}$, $C\{i=0\}$ & $\CF^-(Y)$, $\CF^+(Y)$, $\widehat{\CF}(Y)$ (basepoint $w$)\\
+$C\{j\le0\}$, $C\{j=0\}$ & $\CF^-(Y)$, $\widehat\CF(Y)$ (basepoint $z$)\\
+$C\{i=0,j=0\}$, $H_*$ of $C\{i\le 0,\ j=0\}$ & $\widehat{\CFK}$; $\HFK^-$ ($=H_*(\CFK_{\F[U,V]}/V)$)\\
+$A^+_s=C\{\max(i,j-s)\ge0\}$, $A^-_s=C\{\min(i,j-s)\le0\}$ & large surgery complexes\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{proposition}[the two localisations]\label{prop:loc}
+$\CFK_{\F[U,V]}\otimes_{\F[V]}\F[V^{\pm1}]\simeq \CF^-(Y,w)\otimes_{\F}\F[V^{\pm1}]$ and
+$\CFK_{\F[U,V]}\otimes_{\F[U]}\F[U^{\pm1}]\simeq \CF^-(Y,z)\otimes_{\F}\F[U^{\pm1}]$.
+\end{proposition}
+\begin{proof}
+Rescale generators $x\mapsto V^{A(x)}x$; the differential becomes $\sum U^{n_w}V^{n_z-n_w+A(x)-A(y)}=\sum U^{n_w}$
+times a unit-free factor $V^0$, which is the differential of $\CF^-(Y,w)$ tensored with $\F[V^{\pm1}]$.
+\end{proof}
+So $\CFK$ is a single complex sitting over two copies of $\CF^-(Y)$, one for each basepoint, and the
+knot is the \emph{relative position} of these two copies inside $\CF^\infty$.
+
+\subsection{Structure and invariants}
+For $K\subset S^3$, $\CFK_{\F[U,V]}$ is a \emph{knot-like complex}: free, finitely generated, with
+$H_*(C\otimes\F[U,V^{\pm1}])\cong\F[U,V^{\pm1}]$ supported in $\gr_w=0$ (and symmetrically).
+Concordance and surgery invariants are read off from it:
+\begin{itemize}[leftmargin=2em]
+\item $\tau(K)=-\max\{A(x): x\in \HFK^-(K)\ \text{homogeneous},\ U^nx\neq0\ \forall n\}$;
+for $T_{2,3}$ (generators $a,b,c$, $A=1,0,-1$, $\partial b=Ua+Vc$) this gives $\tau=1$.
+\item $V_s$ = the $U$-tower drop of $H_*(A^+_s)\to H_*(B^+)$, $\nu^+(K)=\min\{s\ge0:V_s=0\}$, and
+for $n>0$, $d(S^3_n(K),i)=d(L(n,1),i)-2\max(V_i,V_{n-i})$ (Ni--Wu \cite{NiWu}).
+\item Hom's $\varepsilon$ \cite{Hom}, the local-equivalence group and its homomorphisms $\varphi_j$
+(Dai--Hom--Stoffregen--Truong \cite{DHST}), Hendricks--Manolescu's involutive $\iota_K$ \cite{HM-inv} (a skew-filtered map with
+$\iota_K^2\simeq\varsigma$, the Sarkar map).
+\item The $t$-modified complex (Ozsv\'ath--Stipsicz--Szab\'o \cite{OSS}): over $\F[v^{1/n}]$, $t\in[0,2]\cap\frac1n\Z$,
+\[
+\partial_t x=\sum \#\big(\cM(\phi)/\R\big)\, v^{\,t\,n_z(\phi)+(2-t)\,n_w(\phi)}\,y,\qquad \gr_t=\gr_w-tA,
+\]
+and $\Upsilon_K(t)$ = the maximal $\gr_t$ of a $v$-nontorsion class.  $\Upsilon_K(t)=\Upsilon_K(2-t)$,
+$\Upsilon_K'(0)=-\tau(K)$, and $\Upsilon_K(t)=(1-|1-t|)\,\sigma(K)/2$ for alternating $K$.
+At $t=0$ and $t=2$ one recovers $\CF^-(Y,w)$, $\CF^-(Y,z)$ with $U=v^2$; $t=1$ uses the
+$\delta$-type grading $\gr_w-A=\frac12(\gr_w+\gr_z)$.
+\end{itemize}
+The $t$-family is a one-parameter interpolation between the two basepoints: the exponent is the
+pairing of $(n_w,n_z)$ with the covector $(2-t,t)$.  Since $n_w,n_z\ge0$ for all discs, every
+$\partial_t$ is defined; conversely, a family of complexes with weights $v^{(2-t)a+tb}$ defined for all
+$t\in[0,2]$ forces $(a,b)$ into $\bigcap_t\{(2-t)a+tb\ge0\}=\{a\ge0,b\ge0\}$.  \emph{Positivity on the
+quadrant is equivalent to positivity on every ray of the $t$-family.}  This is the form in which
+positivity will reappear in gauge theory (\S\ref{sec:proposal}).
+
+\subsection{Surgery}
+\emph{Large surgery}: for $n\ge2g(K)-1$ and $|s|\le n/2$, $\CF^\pm(S^3_n(K),[s])\simeq A^\pm_s$.
+\emph{Mapping cone}: $\CF^+(S^3_n(K))\simeq\Cone\big(\bigoplus_sA^+_s\xrightarrow{v+h}\bigoplus_sB^+_s\big)$,
+with $v_s:A^+_s\to B^+_s=C\{i\ge0\}$ the projection and $h_s:A^+_s\to C\{j\ge s\}\cong C\{j\ge0\}\simeq B^+_{s+n}$,
+the last equivalence being induced by the Heegaard moves that carry $z$ to $w$: the \emph{flip map}.
+Its existence uses naturality (Juh\'asz--Thurston--Zemke \cite{JTZ}); in the mapping cone it is the only place where
+the two basepoints are identified.
+
+\subsection{Functoriality}
+Zemke \cite{Zemke-link} assigns $\F[U,V]$-equivariant maps to decorated link cobordisms $(W,F,\mathcal A)$:
+$F\subset W$ is an embedded surface and $\mathcal A\subset F$ a collection of arcs dividing $F$ into
+$F_w\sqcup F_z$.  With $\tilde\chi(F_w)=\chi(F_w)-\frac12(|\mathbf w_{\rm in}|+|\mathbf w_{\rm out}|)$,
+\begin{align*}
+\gr_w(F(x))-\gr_w(x)&=\tfrac14\big(c_1(\mathfrak s)^2-2\chi(W)-3\sigma(W)\big)+\tilde\chi(F_w),\\
+\gr_z(F(x))-\gr_z(x)&=\tfrac14\big(c_1(\mathfrak s-PD[F])^2-2\chi(W)-3\sigma(W)\big)+\tilde\chi(F_z),\\
+A(F(x))-A(x)&=\tfrac12\big(\langle c_1(\mathfrak s),[F]\rangle-[F]\cdot[F]\big)+\tfrac12\big(\tilde\chi(F_w)-\tilde\chi(F_z)\big)
+\end{align*}
+\cite{Zemke-grading}.  The maps $\Phi=\partial_U\partial$ and $\Psi=\partial_V\partial$ (formal derivatives)
+are the maps of the elementary dividing-arc moves, and Sarkar's formula says that moving the basepoints
+once around $K$ acts by $\varsigma\simeq\mathrm{id}+\Phi\Psi$ \cite{Sarkar}.
+
+\subsection{Bordered reading}
+For $M=Y\setminus\nu K$, Hanselman--Rasmussen--Watson \cite{HRW} encode $\widehat{\CF}(M)$ as an immersed
+multicurve $\gamma_M$ in the \emph{marked torus} $\partial M\setminus\{z\}$; Dehn filling is Lagrangian
+Floer homology with a line of the filling slope, and $\widehat{\HFK}$ is obtained by pairing with a
+meridian placed \emph{at} the marked point so that the two regions adjacent to the marking carry $w$ and
+$z$.  For $K\subset S^3$, $\gamma_M$ is determined by $\CFK_{\F[U,V]}/(UV)$; the $UV$-information
+(discs covering the marking) is recovered by Hanselman's decorated curves with a bounding chain
+\cite{Hanselman}.  The essential component of $\gamma_M$ (homotopic to the longitude, passing between
+the lifts of the marking) carries $\tau$ and $\varepsilon$.

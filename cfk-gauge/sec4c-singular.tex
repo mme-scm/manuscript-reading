@@ -1,0 +1,57 @@
+%----------------------------------------------------------------------
+\subsection{The singular variant on the gauge side: two charges and a quadrant}\label{subsec:gauge-inst}
+%----------------------------------------------------------------------
+For singular connections on $\R\times(Y,K)$ with holonomy parameter $\tfrac14$, homotopy classes of paths between
+lifted critical points form a torsor over $\Z^2\ni(k,l)$, the instanton and monopole numbers \cite{KM-knothom}.  The
+index changes by $8k+4l$.  The topological energy at parameter $t\in[0,\tfrac12]$ of the configuration shifted by the
+singular model, $B\mapsto B+(t-\tfrac14)\eta$, is $\kappa_t=k+2tl$ in Kronheimer--Mrowka's normalisation.  It is affine in
+$t$, since the quadratic term $\int\mathrm{tr}(\eta\wedge d\eta)$ does not depend on $B$ and cancels in differences.  Set
+\[
+c_w:=\kappa_0=k,\qquad c_z:=\kappa_{1/2}=k+l,\qquad \kappa_{1/4}=\tfrac12(c_w+c_z),\qquad \mathrm{ind}=4(c_w+c_z).
+\]
+$(k,l)\mapsto(c_w,c_z)$ is an isomorphism $\Z^2\to\Z^2$.  The deck ring is $\F[U^{\pm1},V^{\pm1}]$, with $U=(k,l)=(1,-1)$ and
+$V=(0,1)$: both have index $4$ and energy $\tfrac12$, and $T=V/U$ has index $0$ and energy $0$.  This is Daemi--Scaduto's
+universal ring $\Z[U^{\pm1},T^{\pm1}]$ \cite{DS-equiv} in different coordinates.  What is new is the pair of real
+functionals
+\[
+F_w:=\mathrm{CS}_0,\qquad F_z:=\mathrm{CS}_{1/2}\qquad\text{on the $\Z^2$-cover of }\cB(Y,K),
+\]
+whose differences along a trajectory are $c_w$ and $c_z$ up to the endpoint values.  Deck transformations translate
+$(F_w,F_z)$ by $\Z^2$.  Every critical point therefore has a unique \emph{canonical lift} $\tilde a$ with
+$(F_w,F_z)(\tilde a)\in[0,1)^2$.
+
+\begin{lemma}\label{lem:quadrant}
+If the differential of the universal complex (framed, with coefficients in $\F[U^{\pm1},V^{\pm1}]$) does not increase
+$F_w$ or $F_z$ along any contributing trajectory, then the $\F[U,V]$-span of the canonical lifts is a subcomplex.  It is
+free over $\F[U,V]$, and its localisation is the universal complex.
+\end{lemma}
+\begin{proof}
+A trajectory from $\tilde a$ ends at $U^pV^q\tilde b$, with $F_w(U^pV^q\tilde b)=F_w(\tilde b)-p\le F_w(\tilde a)<1$, so $p>F_w(\tilde b)-1\ge-1$.
+Likewise $q\ge0$.
+\end{proof}
+
+\begin{conjecture}[quadrant positivity]\label{conj:quadrant}
+For metrics stretched along a doubly pointed Heegaard surface ($T\ge T(E)$, energy $\le E$), every index-$\le1$ singular
+trajectory satisfies $c_w\ge0$ and $c_z\ge0$.
+\end{conjecture}
+In the adiabatic limit a trajectory becomes a strip in $\mathcal M_{1/4}$ together with bubbles.
+\begin{itemize}[leftmargin=2em]
+\item \emph{Strips.} $c_w,c_z\to\xi_w(u),\xi_z(u)$.  These are non-negative on spheres by Proposition~\ref{prop:nef}, and on
+strips modulo Problem~\ref{prob:relative}.
+\item \emph{Uhlenbeck bubbles} away from $\R\times K$ have $(k,l)=(m,0)$, so $(c_w,c_z)=(m,m)$: $UV$-type.
+\item \emph{Singular bubbles} on $(\R^4,\R^2)$, conformally $(S^4,S^2)$.  Positivity is equivalent to
+$|l|\le2\kappa_{1/4}$.  The minimal ones, $(k,l)=(0,1)$ and $(1,-1)$ with $\kappa=\tfrac12$, are exactly the pure-$V$ and pure-$U$
+classes.  Heuristic proof: identify $(\C^2,\C\times0)$ with the complement of a line $\ell_\infty$ in
+$(\mathbb P^2,\text{line})$.  Singular instantons framed at infinity should correspond to framed parabolic bundles
+(Biquard \cite{Biquard}).  Then $\kappa_0=c_2(E)$ and $\kappa_{1/2}=c_2(E')$ for the elementary transform $E'$ along the line, and both are
+$\ge0$ for framed sheaves (they are dimensions of ADHM data).  One must check that the elementary transform is
+compatible with the framing at $\ell_\infty\cap\text{line}$.
+\end{itemize}
+
+\paragraph{An instanton $\Upsilon$.}
+For $t\in[0,2]$ put $F_t:=(1-\frac t2)F_w+\frac t2F_z=\mathrm{CS}_{t/4}$.  If Conjecture~\ref{conj:quadrant} holds, every $F_t$ is a
+filtration, and the spectral invariant of the distinguished (special-cycle) class defines $\Upsilon^\natural_K(t)$.  It
+satisfies $\Upsilon^\natural_K(t)=\Upsilon^\natural_K(2-t)$ by the Hecke symmetry.  At $t=1$ it is a Chern--Simons-filtered invariant of
+Daemi--Scaduto and Daemi--Imori--Sato--Scaduto--Taniguchi type \cite{DS-clasp,DISST}.  The other values of $t$ are the
+content of positivity.  In this variant the structure belongs to the Khovanov/branched-cover side of the dictionary.
+It is the singular analogue of the $t$-family, not of $\CFK$ itself.

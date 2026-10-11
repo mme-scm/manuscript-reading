@@ -1,0 +1,151 @@
+%======================================================================
+\section{The proposal: an Atiyah--Floer construction of the quadrant}\label{sec:proposal}
+%======================================================================
+
+\subsection{Principle}
+The construction has three layers.
+\begin{enumerate}[label=(\Roman*),leftmargin=2.4em]
+\item A \textbf{symplectic target}: the moduli space $\mathcal M$ of the Heegaard surface punctured at
+$K\cap\Sigma=\{w,z\}$, Lagrangians $L_\alpha,L_\beta$ from the two handlebody--arc pairs, and two
+\emph{nef} classes $\xi_w,\xi_z$ whose positive combinations are the symplectic classes.  This is the
+analogue of $(\mathrm{Sym}^g\Sigma,\mathbb T_\alpha,\mathbb T_\beta,V_w,V_z)$.
+\item A \textbf{gauge complex} on $\R\times(Y,K)$ whose trajectories are weighted by
+$U^{c_w(A)}V^{c_z(A)}$ for two \emph{topological charges} $c_w,c_z$ that are defined for every
+configuration, without reference to a splitting.
+\item An \textbf{adiabatic comparison}: for a metric with neck length $T$ along $\Sigma$ and energy
+$\le E$, trajectories converge to holomorphic strips in $\mathcal M$ and $c_w,c_z$ converge to
+$\xi_w,\xi_z$ evaluated on the limit.  Since $c_w,c_z$ are integers, approximate positivity becomes exact
+positivity:
+\end{enumerate}
+
+\begin{lemma}[integrality bootstrap]\label{lem:bootstrap}
+Let $c$ be a $\Z$-valued function on trajectories that is locally constant on moduli spaces.  Suppose that
+for every $E$ there is $T(E)$ such that for $T\ge T(E)$ every trajectory $A$ of energy $\le E$ satisfies
+$c(A)\ge \xi(u_A)-\epsilon(T)$, where $u_A$ is a (possibly broken, bubbled) holomorphic limit, $\xi(u_A)\ge0$
+and $\epsilon(T)\to0$.  Then $c(A)\ge0$ for all such $A$ once $\epsilon(T)<1$.
+\end{lemma}
+The proof is one line, but the lemma fixes the architecture.  The complex is defined at finite $T$, with
+an energy truncation, and the full complex is the direct limit over $E\to\infty$ with $T\ge T(E)$,
+as in Taubes' passage from $\HM$ to ECH through action-filtered complexes.  All the analysis is in the
+hypothesis: uniform convergence of the charges in the adiabatic limit, including over bubbles.
+
+\input{sec4b-core}
+
+\subsection{A singular variant: parabolic moduli and the nef segment}\label{subsec:symp}
+This subsection and the next develop a \emph{different} two-variable theory, built on singular
+instantons.  It is not the analogue of $\CFK$.  Its specialisation $U=V=1$ is $I^\natural(K)$, which
+depends on the knot, whereas $\CFK_{\F[U,V]}\otimes\F[U,V]/(U-1,V-1)$ does not (\S\ref{subsec:requirements}).
+It is a bivariant refinement of the Kronheimer--Mrowka and Daemi--Scaduto local systems, on the Khovanov
+side of the dictionary.  It is included because its positivity mechanism, nefness of the two ends of a
+segment of Kähler classes, is the cleanest instance of \ref{M:quadrant}, and because it yields an
+instanton analogue of the $t$-family.
+Fix a doubly pointed Heegaard splitting of genus $g\ge1$: $K\cap\Sigma=\{w,z\}$ and $K\cap U_\alpha=a_\alpha$,
+$K\cap U_\beta=a_\beta$ are boundary-parallel arcs.  For $\alpha\in(0,\tfrac12)$ let
+\[
+\mathcal M_\alpha=\big\{\text{flat }SU(2)\text{ connections on }\Sigma\setminus\{w,z\},\ \mathrm{hol}_w,\mathrm{hol}_z\sim e^{2\pi i\,\mathrm{diag}(\alpha,-\alpha)}\big\}/\cG,
+\]
+of dimension $6g-6+2\cdot2=6g-2$, with its Goldman form $\omega_\alpha$.  Let
+$L_\alpha^{(\alpha)}\subset\mathcal M_\alpha$ be the connections extending flatly over $U_\alpha\setminus a_\alpha$ with
+meridional holonomy in the same class.  Since $U_\alpha\setminus a_\alpha$ is a genus-$(g+1)$ handlebody, its
+representation space is $SU(2)^g\times C_\alpha/SU(2)$, of dimension $3g+2-3=3g-1=\tfrac12\dim\mathcal M_\alpha$:
+it is Lagrangian.  Define $L_\beta^{(\alpha)}$ likewise.  At $\alpha=\tfrac14$ this is the traceless
+setting, which is monotone \cite{KM-knothom}; Horton's symplectic instanton homology of knots works with
+traceless character varieties in this spirit \cite{Horton}.
+
+By Mehta--Seshadri \cite{MS}, $\mathcal M_\alpha$ is the moduli space of rank-$2$, trivial-determinant
+parabolic bundles on $(\Sigma,\{w,z\})$ with weights $\pm\alpha$ at both points that are stable for the
+weight $\alpha$.
+
+\begin{proposition}[no walls for two punctures]\label{prop:nowalls}
+For $\alpha\in(0,\tfrac12)$ the $\alpha$-(semi)stability of a parabolic bundle with two marked points is
+independent of $\alpha$.  Hence the stable loci $\mathcal M^s_\alpha$ are a single complex manifold $\mathcal M^s$,
+and the $\omega_\alpha$ are Kähler forms on it for one fixed complex structure $J$.
+\end{proposition}
+\begin{proof}
+For a line subbundle $L\subset E$ of degree $d$, $\mathrm{pardeg}(L)=d+\alpha(\varepsilon_w+\varepsilon_z)$ with
+$\varepsilon_p=+1$ if $L_p$ is the flag at $p$ and $-1$ otherwise.  Stability is $\mathrm{pardeg}(L)<0$ for all $L$.
+Since $|\alpha(\varepsilon_w+\varepsilon_z)|\le2\alpha<1$, $\mathrm{pardeg}(L)<0$ iff $d<0$, or $d=0$ and
+$\varepsilon_w+\varepsilon_z=-2$; semistability adds $d=0,\ \varepsilon_w+\varepsilon_z=0$.  Neither condition involves $\alpha$.
+\end{proof}
+\begin{remark}\label{rem:walls}
+For a bridge sphere with $2n\ge4$ punctures this fails.  With $n=2$, a degree $-1$ subbundle through all four
+flags has $\mathrm{pardeg}=-1+4\alpha$, so $\alpha=\tfrac14$ is itself a wall.  This is the pillowcase, whose
+corners are the reducibles \cite{HHK1}.  It is consistent with Heegaard Floer, where multi-pointed diagrams
+need one pair of variables per pair of basepoints.  In the present proposal the doubly pointed genus-$g$
+splitting is the correct Atiyah--Floer setting, \emph{because} it is the one without walls.
+\end{remark}
+
+Through the parabolic theta bundle \cite{Pauly}, the classes $[\omega_\alpha]$ on $\mathcal M^s$ are affine in $\alpha$
+(equivalently, Duistermaat--Heckman for the residual torus at the punctures):
+\[
+[\omega_\alpha]=(1-2\alpha)\,\xi_w+2\alpha\,\xi_z,\qquad \xi_w=\lim_{\alpha\to0}[\omega_\alpha],\quad \xi_z=\lim_{\alpha\to1/2}[\omega_\alpha].
+\]
+Here $\xi_w$ is pulled back from the moduli space of the underlying bundle (forget the flags; Mehta--Seshadri
+at $\alpha\to0$), and $\xi_z$ is pulled back along the double Hecke modification at $w,z$ (at $\alpha\to\tfrac12$
+the meridional holonomy tends to $-1$).  Then $\xi_z-\xi_w$ is a combination of the flag classes
+$e_w=c_1(\mathcal L_w)$, $e_z=c_1(\mathcal L_z)$, where $\mathcal L_p$ is the eigenline bundle of $\mathrm{hol}_p$.  With
+$t:=4\alpha\in(0,2)$,
+\[
+[\omega_\alpha]=\tfrac12\big((2-t)\,\xi_w+t\,\xi_z\big),
+\]
+which is the exponent of the Ozsv\'ath--Stipsicz--Szab\'o $t$-modified differential with $(n_w,n_z)$
+replaced by $(\xi_w,\xi_z)$.  The monotone traceless value $\alpha=\tfrac14$ is $t=1$, the $\delta$-graded
+point of the $t$-family.
+
+\begin{proposition}[nef boundary classes]\label{prop:nef}
+For every non-constant $J$-holomorphic sphere $u$ in $\mathcal M^s$, $\xi_w(u)\ge0$ and $\xi_z(u)\ge0$.
+\end{proposition}
+\begin{proof}
+$u$ is holomorphic for $J$, which is compatible with every $\omega_\alpha$ (Proposition~\ref{prop:nowalls}), so
+$0<\omega_\alpha(u)=(1-2\alpha)\xi_w(u)+2\alpha\xi_z(u)$ for all $\alpha\in(0,\tfrac12)$.  Let $\alpha\to0$ and $\alpha\to\tfrac12$.
+\end{proof}
+
+This is the singular incarnation of \ref{M:quadrant}: \emph{the two variables are the two ends of the segment of
+Kähler classes swept out by the holonomy parameter, and positivity of $n_w,n_z$ is nefness of its endpoints.}
+Positivity is automatic in Heegaard Floer because $V_w,V_z$ are complex divisors.  Here it is a theorem about
+the Kähler cone, and it holds only because there are no walls (Remark~\ref{rem:walls}).
+
+\paragraph{A genuine difference from Heegaard Floer.}
+In $\mathrm{Sym}^g\Sigma$, $[V_w]=[V_z]$, so $n_w-n_z$ is topological \ref{M:alex}.  In $\mathcal M^s$, $\xi_z-\xi_w\neq0$:
+for a stable underlying bundle $E$, the sphere $P_w=\mathbb P(E_w)$ obtained by moving the flag at $w$ has
+$\xi_w(P_w)=0<\xi_z(P_w)$.  Symmetrically, a flag sphere $Q$ on the Hecke side has $\xi_z(Q)=0<\xi_w(Q)$.  By
+monotonicity $c_1$ is a positive multiple of $[\omega_{1/4}]=\frac12(\xi_w+\xi_z)$ on spheres.  So if
+$m\,\xi_z(P_w)=n\,\xi_w(Q)=N$, the class $m[P_w]-n[Q]$ has $c_1=0$, zero $\omega_{1/4}$-energy, and weight
+$U^{-N}V^{N}$.  The instanton complex is therefore homogeneous for the $\delta$-type grading
+$\tfrac12(\gr_w+\gr_z)$ but \emph{not} for the Alexander grading, and the index-zero, energy-zero deck classes
+are generated by a power of $T:=V/U$.  This matches the extra holonomy variable of Daemi--Scaduto's local system and the rank-two lattice
+$(k,l)$ of instanton and monopole numbers (\S\ref{subsec:gauge-inst}).  Alexander homogeneity has to be recovered
+separately, for instance from the eigenspace decomposition of $\mu(\hat S)$ as for $KHI$ \cite{KM-sutures}.
+
+\begin{problem}[relative positivity]\label{prob:relative}
+Construct closed $2$-forms, or complex divisors $D_w,D_z$, representing $\xi_w,\xi_z$ in
+$H^2(\mathcal M,L_\alpha\cup L_\beta)$ (with $L_\bullet=L_\bullet^{(1/4)}$), disjoint from $L_\alpha\cup L_\beta$ and positive on
+$J$-holomorphic strips.
+\end{problem}
+Here is a route.  Handlebody Lagrangians are Bohr--Sommerfeld for the Chern--Simons prequantum bundle: the
+Chern--Simons invariant of the flat extension is a covariantly constant section over $L$.  Show the same for the line bundles of $\xi_w$ (extension
+over $U_\alpha$ with the arc erased) and $\xi_z$ (extension with holonomy $-1$ around the arc).  Then take
+Donaldson hypersurfaces in the complement of the Lagrangians, in the manner of Auroux--Gayet--Mohnke \cite{AGM} and
+Charest--Woodward \cite{CW}, and set $c_w(u)=\frac1k\,u\cdot D_w$.
+
+\begin{definition}[singular symplectic complex; conditional on Problem~\ref{prob:relative}]
+$C^{\rm par}_{\F[U,V]}(\mathcal H):=$ the Lagrangian Floer complex of $(L_\alpha,L_\beta)$ in $\mathcal M_{1/4}$, framed at a
+point to remove reducibles (extended moduli spaces as in Manolescu--Woodward \cite{MW}), with
+$\partial x=\sum\#\big(\cM(u)/\R\big)\,U^{c_w(u)}V^{c_z(u)}y$ over index-one strips.
+\end{definition}
+
+\begin{conjecture}[shape of the singular variant]\label{conj:symp}
+\begin{enumerate}[label=(\alph*)]
+\item $\partial^2=m_0(L_\beta)-m_0(L_\alpha)$, where $m_0(L)\in\F[U,V]$ counts Maslov-$2$ discs through a point weighted
+by $U^{c_w}V^{c_z}$.  The complex is honest if these agree, and a matrix factorisation of
+$W=m_0(L_\beta)-m_0(L_\alpha)$ otherwise.  (Compare Proposition~\ref{prop:d2}, where both equal $UV$.)
+\item \textup{(No localisation to $Y$.)}  Inverting $V$ does \emph{not} return an invariant of $Y$.  The punctures are
+built into $\mathcal M_\alpha$; they are not divisors in a space that knows only $Y$.  At $\alpha\to0$, $\mathcal M_\alpha$ is a
+$\mathbb P^1\times\mathbb P^1$ flag bundle over the moduli of the underlying bundle, not that space with a
+divisor removed.  The correct statement is a spectral sequence from the bivariant theory to $I^\natural(K)$
+($U=V=1$).
+\item \textup{(Symmetry)} The Hecke involution $\alpha\leftrightarrow\tfrac12-\alpha$ exchanges $\xi_w,\xi_z$ and hence $U,V$.
+\end{enumerate}
+\end{conjecture}
+
+\input{sec4c-singular}
