@@ -1,0 +1,108 @@
+%======================================================================
+\section{All slopes: Farey triads}\label{sec:allslopes}
+%======================================================================
+Theorem~\ref{thm:cone} and Theorems~\ref{thm:exact}--\ref{thm:exact-inst} were stated for the triads
+$(1/(n-1),\,0^w,\,1/n)$.  Nothing in their proofs uses these slopes beyond two facts: the three lines are pairwise at
+distance one, and the complexes involved are irreducible-only complexes that are defined.  Under \ref{H:alex} the
+second fact holds for every slope.
+
+\subsection{Reducibles for every slope}
+Write $\varepsilon\in\{0,1\}$ for the two $\SO(3)$ bundles on $Y_{p/q}$ when $p$ is even ($\varepsilon=1$ nontrivial), and
+$\varepsilon=0$ when $p$ is odd.  Flat connections on $(Y_{p/q},\varepsilon)$ are the $\rho\in R(X)$ with
+$\rho(\mu^p\lambda^q)=(-1)^\varepsilon$, i.e.\ $r(\rho)\in L^{\varepsilon}_{p/q}:=\{pa+qb\equiv\varepsilon/2\}$; for $p$ odd the two
+lines are exchanged by $\chi$ and describe the same $\SO(3)$ connections (Proposition~\ref{prop:basic}(c)).
+
+\begin{lemma}\label{lem:red}
+Assume \ref{H:alex}.  For every $p/q$ and $\varepsilon$: (a) the reducible flat connections on $(Y_{p/q},\varepsilon)$ are the
+abelian $\rho$ with $\rho(\mu)^p=(-1)^\varepsilon$, i.e.\ the points $(a,0)$ with $pa\in\varepsilon/2+\Z$; (b) each is
+nondegenerate; (c) the irreducible flat connections form a compact set at positive distance from the reducibles,
+uniformly in the slope, namely $r^{-1}(L^\varepsilon_{p/q})\subset R^{\rm irr}(X)$.
+\end{lemma}
+\begin{proof}
+(a) Abelian representations have $\rho(\lambda)=1$.  (b) For $\rho(\mu)=\pm1$ (central) nondegeneracy is
+$H^1(Y_{p/q};\R)=0$.  Otherwise $\mathrm{ad}\,\rho=\R\oplus\C_\chi$ with $\chi(\mu)=\rho(\mu)^2=e^{2\pi i\cdot2a}$,
+$\chi\ne1$, and $H^1(Y_{p/q};\C_\chi)$ sits in the Mayer--Vietoris sequence with $H^1(X;\C_\chi)$, which vanishes iff
+$\Delta_K(e^{4\pi ia})\neq0$, and $H^1(S^1\times D^2;\C_\chi)=0=H^0(T^2;\C_\chi)$; so $H^1(Y_{p/q};\mathrm{ad}\,\rho)=0$ by
+\ref{H:alex}.  (c) is Proposition~\ref{prop:basic}(a): $R^{\rm irr}(X)$ is compact and disjoint from the abelian locus.
+\end{proof}
+We take as given (it is the premise of this section) that for a rational homology sphere all of whose reducible
+flat connections are nondegenerate, the irreducible-only instanton complex $\CI(Y_{p/q},\varepsilon)$ is defined, with
+the usual $\Z/8$ grading and Chern--Simons filtration; by Lemma~\ref{lem:red}(c) no perturbation near the reducibles
+is ever needed, and the generators are $r^{-1}(L^\varepsilon_{p/q})$ by Proposition~\ref{prop:gens}, whose proof is
+slope-independent.  Proposition~\ref{prop:action} is already stated for arbitrary $p/q$.
+
+\subsection{Farey triads and the bundle parity rule}
+Let $\alpha=p/q$ and $\beta=r/s$ be Farey neighbours, $ps-qr=\pm1$, with direction vectors $v_\alpha=(q,-p)$,
+$v_\beta=(s,-r)$, and let $\gamma=\alpha\oplus\beta=(p+r)/(q+s)$ be the mediant, $v_\gamma=v_\alpha+v_\beta$.  Any
+rational slope is reached from $1/0,0/1$ by iterated mediants (the Stern--Brocot tree).  For a half-lattice point
+$c\in\tfrac12\Z^2$ and a primitive direction $v$, the line $c+\R v$ is $L^{\varepsilon}_v$ with
+$\varepsilon(c,v)=2\det(c,v)\bmod2$.
+
+\begin{lemma}[parity rule and zero flux]\label{lem:parity}
+Let $L^{\varepsilon_\alpha}_\alpha$ and $L^{\varepsilon_\beta}_\beta$ meet at $\mathsf p\in\tfrac12\Z^2$ (a corner of $P$).  The
+Lagrangian surgery $Z=L_\alpha\#_{\mathsf p}L_\beta$ is Hamiltonian isotopic in $T^2$ to the line of direction $v_\gamma$
+through the midpoints $m_1=\mathsf p+\tfrac12v_\alpha$, $m_2=\mathsf p+v_\alpha+\tfrac12v_\beta$, which is $L^{\varepsilon_\gamma}_\gamma$ with
+\[
+\varepsilon_\gamma\equiv\varepsilon_\alpha+\varepsilon_\beta+1\pmod 2 .
+\]
+\end{lemma}
+\begin{proof}
+Zero flux as in Lemma~\ref{lem:flux}, with $v_1=v_\alpha$, $v_2=v_\beta$ (which only used $\det(v_1,v_2)=\pm1$).
+Then $2\det(m_1,v_\gamma)=2\det(\mathsf p,v_\alpha)+2\det(\mathsf p,v_\beta)+\det(v_\alpha,v_\beta)\equiv\varepsilon_\alpha+\varepsilon_\beta\pm1$,
+using $\mathsf p\in L_\alpha\cap L_\beta$.
+\end{proof}
+Checks: $(1/0,\,0^w)\mapsto\varepsilon=0+1+1=0$, the line $L_1$ through the origin (Floer's triangle, as verified in
+\S\ref{sec:tests}); $(1/0,\,0^0)\mapsto L^w_1$; $(1/1,\,1/0)\mapsto L^w_{2}$, i.e.\ $Y_2$ with its \emph{nontrivial}
+bundle, while $L^0_2$ arises from $(1/1^{w},1/0)$.  This is the pillowcase form of the bundle bookkeeping in a
+surgery triad.
+
+\subsection{The theorem for all slopes}
+Fix a Farey triad $(\alpha,\beta,\gamma)$ with bundle classes satisfying the parity rule, and put
+$Q_\alpha,Q_\beta,Q_\gamma$ for the quadratic forms of Proposition~\ref{prop:action} (any choice of complementary
+basis; the choice changes nothing modulo $\Z$).  Define the \emph{cone actions} on the two legs by
+\[
+A_{\rm cone}(x)=\begin{cases}
+f_\Gamma(\tilde x)-Q_\alpha(\tilde x)+\kappa_\alpha, & x\in\Gam\cap L_\alpha,\quad \kappa_\alpha:=Q_\alpha(m_1)-Q_\gamma(m_1),\\[2pt]
+f_\Gamma(\tilde x)-Q_\beta(\tilde x)+\kappa_\beta, & x\in\Gam\cap L_\beta,\quad\ \kappa_\beta:=Q_\beta(m_2)-Q_\gamma(m_2),
+\end{cases}
+\]
+so that the primitives on the two legs of $Z$ agree with the primitive of $L_\gamma$ at the points $m_1,m_2$ where
+$Z$ meets $L_\gamma$.  Since the $Q$'s have integer coefficients and $m_i\in\tfrac12\Z^2$, $\kappa_\alpha,\kappa_\beta\in\tfrac14\Z$;
+for the triad $(1/(n-1),0^w,1/n)$ they are $0$ and $\tfrac n4$ (\S\ref{sec:tests}).
+
+\begin{theorem}[mapping cone for an arbitrary slope]\label{thm:allslopes}
+Assume \ref{H:alex}--\ref{H:Y}, that $\Gam$ is transverse to $L_\alpha,L_\beta,L_\gamma$, and that $\Gam$ is in minimal
+position with respect to the triad ($|\Gam\cap L_\gamma|=|\Gam\cap L_\alpha|+|\Gam\cap L_\beta|$; for $K\subset S^3$,
+where $\Gam$ has homology class $(0,k)$, this holds whenever $\Gam$ meets each of the three lines minimally,
+because $q_\gamma=q_\alpha+q_\beta$).  Then, with $F$ the map of the $2$-handle cobordism,
+\[
+\CI(Y_\gamma,\varepsilon_\gamma)\ \cong\ \Cone\big(F\colon\CI(Y_\alpha,\varepsilon_\alpha)\to\CI(Y_\beta,\varepsilon_\beta)\big)
+\]
+as $\Z/8$-graded complexes, and the Chern--Simons value of the generator of $\CI(Y_\gamma)$ corresponding to a
+cone generator $x$ is
+\[
+\cs(x')=A_{\rm cone}(x)+\delta(x)+c_i,\qquad \delta(x)=\int_{R(x)}\omega,
+\]
+with $R(x)$ the region bounded by the arc of $\tilde\Gam$ from $\tilde x$ to $\tilde x'$, the leg of $Z$ from $\tilde x$ to
+its midpoint $m$, and the segment of $L_\gamma$ from $m$ to $\tilde x'$.  Modulo the same ingredients as
+Theorem~\ref{thm:exact-inst} (Floer's filtration argument for the perturbed complex, now on rational homology
+spheres with nondegenerate reducibles, and the perturbed action formula of Appendix~\ref{app:collar}).
+\end{theorem}
+\begin{proof}[Proof sketch]
+Identical to Theorems \ref{thm:exact} and \ref{thm:exact-inst} with Lemma~\ref{lem:parity} in place of
+Lemma~\ref{lem:flux}.  The perturbed critical set on $Y_\gamma$ is $r^{-1}(L_\alpha)\sqcup r^{-1}(L_\beta)$ together with the
+reducibles $Z\cap\{b=0\}=(L_\alpha\cup L_\beta)\cap\{b=0\}$, i.e.\ the reducibles of $Y_\alpha$ and of $Y_\beta$ ($p_\gamma=p_\alpha+p_\beta$
+of them, consistent with $H_1$); by Lemma~\ref{lem:red} they are nondegenerate and isolated from the
+irreducibles throughout the perturbation, so the irreducible-only complexes are defined along the whole family.
+\end{proof}
+
+\begin{corollary}[Stern--Brocot recursion]\label{cor:SB}
+For $K\subset S^3$ and any $p/q$, $\CI(S^3_{p/q}(K),\varepsilon)$ is an iterated cone over the complexes
+$\CI(S^3_0(K),w)$ and $\CI(S^3_1(K))$ ($\CI(S^3)=0$ and $\CI(S^3_0,0)$ never occur, since the Stern--Brocot path
+from $\{1/0,0/1\}$ can be routed through $(1/0,0^w)\to1$ first), with all Chern--Simons values given by the
+formula of Theorem~\ref{thm:allslopes} applied along the path.  In particular $\pm2$: $L^w_2=\Cone(L_1\to L_{1/0})$ and
+$L^0_2=\Cone(L^w_1\to L_{1/0})$, where $L^w_1=\chi(L_1)$; both bundles on $Y_{\pm2}$ are covered.
+\end{corollary}
+The counting version (Theorem~\ref{thm:cone}(a)) is the surgery exact triangle for the triad, and the bound
+version (Theorem~\ref{thm:cone}(b)) holds with the levels of the triad's cobordism maps; neither is exact, for the
+reason given at the start of \S\ref{sec:exact}.
