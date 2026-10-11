@@ -1,0 +1,8 @@
+(2, 3, 1) holds for j=0..40: True [(Fraction(31, 96), 3), (Fraction(31, 96), 3)]
+(2, 3, 5) holds for j=0..40: True [(Fraction(-7, 32), 1), (Fraction(-7, 32), 5)]
+(3, 5, 7) holds for j=0..40: True [(Fraction(-7, 16), 1), (Fraction(-7, 16), 14)]
+(3, 5, 11) holds for j=0..40: True [(Fraction(-19, 80), 1), (Fraction(-19, 80), 14)]
+(3, 5, 14) holds for j=0..40: True [(Fraction(-49, 60), 0), (Fraction(-49, 60), 15)]
+(3, 5, 8) holds for j=0..40: True [(Fraction(5, 24), 6), (Fraction(5, 24), 9)]
+(3, 5, 2) holds for j=0..40: True [(Fraction(-13, 60), 0), (Fraction(-13, 60), 15)]
+chains tested: 77  closed form exact up to j=40 in: 77

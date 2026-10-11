@@ -1,0 +1,7 @@
+1/2. Sigma(2, 3, 5): (c: CS, gr) = {'-7/60': ('1/120', 1), '-13/60': ('49/120', 5)} OK
+1/2. Sigma(2, 3, 7): (c: CS, gr) = {'29/84': ('121/168', 3), '23/84': ('25/168', 7)} OK
+     ell(Sigma(2,3,5)) = -13/60  ell(Sigma(2,3,7)) = 23/84
+3. torus knots (regular fibre of +-Sigma(p,q,1)) vs drops.md table: 140 entries, 0 mismatches
+4. full c-multisets vs check-code/fs.py: 113 Brieskorn spheres (a<=420), 2030 generators, 0 mismatches; one grading parity in each
+4b. full c-multisets vs drops-code/brieskorn.py (mpmath) for 6 non-torus spheres x 2 orientations: OK
+    time 0.8s

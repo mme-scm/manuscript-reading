@@ -1,0 +1,4 @@
+chain (3,77;211) j=1: #Z_j=7562  #Z_j+2=15466  matched 7562  -> INJECTION EXISTS
+  generators of Z_j with no candidate at all: 0
+chain (3,7;2) j=3: #Z_j=98  #Z_j+2=162  matched 98  -> INJECTION EXISTS
+  generators of Z_j with no candidate at all: 0

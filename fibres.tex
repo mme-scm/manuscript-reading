@@ -1,0 +1,138 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}\raggedbottom
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+\newcommand{\st}[1]{\par\noindent\textit{#1}\enspace}
+
+\title{$\ell$ along the $-1/n$ surgeries on a fibre of a Brieskorn sphere}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2.5em}
+
+\noindent Labels as in \texttt{status.pdf}. Records: \texttt{notes/R6/brieskorn.md},
+code and tables in \texttt{notes/R6/brieskorn-code/}. An independent recheck is running.
+
+\section{Question and conventions}
+
+$\Sigma=\Sigma(a_1,a_2,a_3)$ with its link orientation (boundary of the negative
+definite plumbing); $K$ the singular fibre of order $a_K$; $P$ the product of the
+other two orders. The $-1$ slope is the homology-sphere slope whose surgery
+cobordism is negative definite ($-1$ on the right-handed trefoil gives
+$\Sigma(2,3,7)$). Levels are $c=(3+\rho)/16$; on Brieskorn spheres the
+differential vanishes, so $\ell=\min c$. Question: do
+$\ell(Y_{-1}),\ell(Y_{-1/2}),\ell(Y_{-1/3})$ decrease, and is
+$T_1=\ell(Y_{-1})-\ell(Y_{-1/3})\ge\frac18$?
+
+\st{Topology (proved; checked by Casson's surgery formula on every manifold).}
+$\Sigma_{-1/n}(K)=\Sigma(\dots,a_K+nP,\dots)$ and
+$(-\Sigma)_{-1/n}(K)=\operatorname{sgn}(nP-a_K)\,\Sigma(\dots,|nP-a_K|,\dots)$.
+More invariantly: the homology-sphere fillings of the exterior of $K$ form one
+chain $Z_k=\operatorname{sgn}(r+kP)\,\Sigma(a_j,a_k,|r+kP|)$, $r\equiv a_K\bmod P$,
+each obtained from the previous one by $-1$ surgery on the core. $Z_k$ is
+link-oriented for $k\ge0$ and reversed for $k\le-1$. Torus knots in $S^3$ are
+the chains with $r=1$ or $r=P-1$; the base $S^3$ sits at $Z_0$ or $Z_{-1}$.
+
+\section{Answers (computed)}
+
+Range: all $3122$ triples with $a_1a_2a_3\le5000$ that are not torus-knot
+surgeries ($18{,}732$ families: each fibre, both orientations), $3036$
+torus-knot families, and all $3300$ exteriors with $P\le120$ followed along
+$Z_{-6},\dots,Z_{10}$ (77 of them to $Z_{40}$).
+
+\begin{center}\small
+\begin{tabular}{lccc}
+base & decreasing & $\min T_1$ & $T_1=\frac18$\\\hline
+$\Sigma$ (9366 families) & always & $\frac18$ & 77\\
+$-\Sigma$, $a_K<P$ (7739) & always & $\frac18$ & 539\\
+$-\Sigma$, $a_K>P$ (1627) & fails for $2P<a_K<4P$ & $-\frac98$ & 0
+\end{tabular}
+\end{center}
+
+\noindent\emph{So: yes on the link-oriented side, with $\frac18$ sharp.} In the
+first two rows every $Y_{-1/n}$ is link-oriented. In the third row the first
+surgeries are reversed: $T_1\ge\frac18$ exactly when $a_K<3P$; for
+$3P<a_K<4P$, $T_1$ is mostly $\le0$; for $a_K>4P$, $0<T_1<\frac18$ and
+$T_1\to0$. First failure: $K=23\subset-\Sigma(2,5,23)$, where $Y_{-1},Y_{-1/2},
+Y_{-1/3}=-\Sigma(2,5,13),\,-\Sigma(2,3,5),\,\Sigma(2,5,7)$ have
+$\ell=\frac{209}{520}<\frac{59}{120}>\frac{11}{70}$. Along every chain $\ell$
+goes down at each step except $Z_{-2}\to Z_{-1}$, which goes up in $3032$ of
+$3090$ non-torus chains: $Z_{-1}$ occupies the slot that $S^3$ ($\ell=\infty$)
+occupies in a torus-knot chain. Negative definiteness of the cobordisms alone
+therefore does not give the $\frac18$.
+
+\st{Equality.} $T_1=\frac18$ exactly when the minimisers at both ends have
+traceless holonomy along the surgered fibre ($5067$ equality windows, none of
+the $75{,}828$ others). Examples: $K=17\subset\Sigma(3,5,17)$;
+$\ell(\Sigma(p,q,2+2jpq))=\ell(\Sigma(2,p,q))-\frac j8$ for odd coprime $p,q$.
+This is the mechanism already seen for odd--odd mirror torus knots: a
+sphere of square $-2$ in the two-step cobordism, with boundary $\mathbb RP^3$
+and the rotation by $\pi$ there, contributing $\frac18$.
+
+\section{The exact form (conjecture)}
+
+On the link-oriented part of a chain, with $m$ the order of the surgered fibre
+and $\alpha\in[0,\frac12)$ the holonomy of the $\ell$-minimiser along it
+(eigenvalue $e^{\pm2\pi i\alpha}$, so $\alpha=\frac14$ is traceless),
+\[
+\ell\bigl(\Sigma(a_j,a_k,m)\bigr)=A^*-\frac mP\,\alpha\bigl(\tfrac12-\alpha\bigr),
+\qquad A^*\ \text{constant on the chain}.
+\]
+Writing $\beta=4m|\alpha-\frac14|$ (an integer, constant on each parity class
+of the chain), this is $\ell=A^*-(m^2-\beta^2)/(16Pm)$. It holds exactly in
+$80{,}894$ of $80{,}895$ windows; in the remaining one a tied pair of generators
+undercuts it and $T=0.141$. For $T(p,q)\subset S^3$:
+$\ell(S^3_{-1/n})=\frac38-\frac5{16pq}-\frac n{16}+\frac{\beta_n^2}{16pq(pqn+1)}$
+with $\beta_n=3$ ($n$ even), $pq-3$ ($n$ odd). The identification of $\beta$
+with the holonomy is checked on $14$ parity classes. Consequences:
+\[
+\ell(Y_{-1/n})-\ell(Y_{-1/(n+2)})=\frac18+\frac{\beta^2}{8\,m_nm_{n+2}},\qquad
+\ell(Y_{-1/n})-\ell(Y_{-1/(n+1)})\ge\frac{m_n}{16\,m_{n+1}}.
+\]
+
+\st{Remark.} This is the slope term of the integral-surgery level formula,
+$-N\alpha(\frac12-\alpha)=-\frac N{16}+N(\alpha-\frac14)^2$, with $N=m/P$. Each
+step adds $1$ to $N$. So the asymptotic drop per step is $\frac1{16}$, its value
+at traceless holonomy, and the excess is a perfect square that vanishes exactly
+there. At generator level the same holds: there is an injection
+$\varphi$ from the generators of $Z_k$ to those of $Z_{k+2}$ with
+$c(\varphi x)=c(x)-\frac18-\beta(x)^2/(8m_km_{k+2})$ in every case tested; so the
+two-step bound holds generator by generator.
+
+\st{One step.} No positive universal bound: $\ell(Y_{-1})-\ell(Y_{-1/2})$ reaches
+$\frac1{8(P+2)}$ (e.g.\ $\frac1{568}$) for $-\Sigma$ with $a_K<P$. For a
+link-oriented base every one-step drop exceeds $\frac1{24}$ (minimum seen
+$\frac{625}{14998}$, $K=2\subset\Sigma(2,17,147)$).
+
+\st{Reversed side.} There $\ell(Z_k)=A'-\gamma^2/(4P|m_k|)$: $\ell$ is governed
+by the top of the spectrum of $\Sigma$, which is bounded. There is no term
+linear in $k$, so two-step drops are $\gamma^2/(2mm'')\to0$, with no
+$\frac18$.
+
+\section{Conjectures suggested}
+
+\st{1 (two-step).} If $Y_{-1/(n+2)}$ is link-oriented, then
+$\ell(Y_{-1/n})-\ell(Y_{-1/(n+2)})\ge\frac18$, with equality iff the minimisers
+are traceless along the surgered fibre. Equality forces $P$ odd, $m_n$ even, and
+$m_n\bmod 2P$ in a set of residues that always contains $2$ and $P-1$.
+\st{2 (exact form).} The displayed formula, with $A^*$ constant on the chain.
+\st{3 (one step).} $\ell(Y_{-1/n})-\ell(Y_{-1/(n+1)})\ge m_n/(16m_{n+1})$ on the
+link-oriented side.
+
+\st{What is open.} For a knot in a general homology sphere there is no evident
+replacement for ``link-oriented''. For knots in $S^3$ all $-1/n$ surgeries lie
+on the correct side, and Conjecture~1 is consistent with all torus-knot data.
+The two-step drop has the shape sought for $\pm2$: a fixed term from a
+rotation-by-$\pi$ end, plus a square. Here, however, it is realised by an
+explicit continuation of generators along a fixed exterior, which the general
+case lacks.
+\end{document}

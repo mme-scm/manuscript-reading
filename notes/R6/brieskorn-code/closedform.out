@@ -1,0 +1,19 @@
+closed form ell(Z_j) = A - j/16 + B/m_j on parity classes; first j from which it holds exactly:
+    ('holds from j0=0', 'nontorus') 3090
+    ('holds from j0=0', 'torus') 105
+    ('holds from j0=1', 'nontorus') 3090
+    ('holds from j0=1', 'torus') 210
+    ('holds from j0=2', 'torus') 105
+classes with B < 0: 0 []
+classes with B = 0: 216
+   B = 0  <=>  traceless minimisers on that class: True
+(16PB is a square integer, 64PB is a square integer) -> {(True, True): 6600}
+  chain (2, 3, 1)    A0=31/96        B0=3/32       (16PB0=9, j0=2)  A1=31/96        B1=3/32       (16PB1=9, j0=1)
+  chain (2, 3, 5)    A0=-7/32        B0=1/96       (16PB0=1, j0=0)  A1=-7/32        B1=25/96      (16PB1=25, j0=1)
+  chain (3, 5, 2)    A0=-13/60       B0=0          (16PB0=0, j0=0)  A1=-13/60       B1=15/16      (16PB1=225, j0=1)
+  chain (3, 5, 14)   A0=-49/60       B0=0          (16PB0=0, j0=0)  A1=-49/60       B1=15/16      (16PB1=225, j0=1)
+  chain (3, 5, 7)    A0=-7/16        B0=1/240      (16PB0=1, j0=0)  A1=-7/16        B1=49/60      (16PB1=196, j0=1)
+  chain (2, 5, 7)    A0=5/32         B0=1/160      (16PB0=1, j0=0)  A1=5/32         B1=49/160     (16PB1=49, j0=1)
+  chain (3, 4, 5)    A0=5/64         B0=1/192      (16PB0=1, j0=0)  A1=5/64         B1=121/192    (16PB1=121, j0=1)
+  chain (7, 17, 2)   A0=121/476      B0=0          (16PB0=0, j0=0)  A1=121/476      B1=119/16     (16PB1=14161, j0=1)
+  chain (3, 7, 2)    A0=23/84        B0=0          (16PB0=0, j0=0)  A1=23/84        B1=21/16      (16PB1=441, j0=1)

@@ -1,0 +1,2 @@
+{('beta<=P', True): 3300, ('beta_even<=beta_odd', True): 3300}
+{('D >= m_n/(16 m_n+1)', True): 102071, 'equality': 5784}

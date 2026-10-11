@@ -1,0 +1,139 @@
+(3, 5) P=15
+   r=  1  r^-1 mod P=  1  beta(even j, odd j)=[3, 12]  A=17/48 
+   r=  2  r^-1 mod P=  8  beta(even j, odd j)=[0, 15]  A=-13/60 ZERO(m even class)
+   r=  4  r^-1 mod P=  4  beta(even j, odd j)=[2, 13]  A=3/40 
+   r=  7  r^-1 mod P= 13  beta(even j, odd j)=[1, 14]  A=-7/16 
+   r=  8  r^-1 mod P=  2  beta(even j, odd j)=[6, 9]  A=5/24 
+   r= 11  r^-1 mod P= 11  beta(even j, odd j)=[1, 14]  A=-19/80 
+   r= 13  r^-1 mod P=  7  beta(even j, odd j)=[1, 14]  A=-13/80 
+   r= 14  r^-1 mod P= 14  beta(even j, odd j)=[0, 15]  A=-49/60 ZERO(m even class)
+(3, 7) P=21
+   r=  1  r^-1 mod P=  1  beta(even j, odd j)=[3, 18]  A=121/336 
+   r=  2  r^-1 mod P= 11  beta(even j, odd j)=[0, 21]  A=23/84 ZERO(m even class)
+   r=  4  r^-1 mod P= 16  beta(even j, odd j)=[0, 21]  A=-31/168 ZERO(m even class)
+   r=  5  r^-1 mod P= 17  beta(even j, odd j)=[1, 20]  A=-7/16 
+   r=  8  r^-1 mod P=  8  beta(even j, odd j)=[4, 17]  A=1/56 
+   r= 10  r^-1 mod P= 19  beta(even j, odd j)=[0, 21]  A=-53/84 ZERO(m even class)
+   r= 11  r^-1 mod P=  2  beta(even j, odd j)=[9, 12]  A=71/336 
+   r= 13  r^-1 mod P= 13  beta(even j, odd j)=[5, 16]  A=-25/112 
+   r= 16  r^-1 mod P=  4  beta(even j, odd j)=[2, 17]  A=1/8 
+   r= 17  r^-1 mod P=  5  beta(even j, odd j)=[1, 20]  A=-3/16 
+   r= 19  r^-1 mod P= 10  beta(even j, odd j)=[1, 20]  A=-13/16 
+   r= 20  r^-1 mod P= 20  beta(even j, odd j)=[0, 21]  A=-197/168 ZERO(m even class)
+(5, 7) P=35
+   r=  1  r^-1 mod P=  1  beta(even j, odd j)=[3, 32]  A=41/112 
+   r=  2  r^-1 mod P= 18  beta(even j, odd j)=[0, 35]  A=11/70 ZERO(m even class)
+   r=  3  r^-1 mod P= 12  beta(even j, odd j)=[1, 34]  A=-7/16 
+   r=  4  r^-1 mod P=  9  beta(even j, odd j)=[2, 33]  A=7/40 
+   r=  6  r^-1 mod P=  6  beta(even j, odd j)=[4, 31]  A=-1/28 
+   r=  8  r^-1 mod P= 22  beta(even j, odd j)=[0, 35]  A=-89/280 ZERO(m even class)
+   r=  9  r^-1 mod P=  4  beta(even j, odd j)=[7, 28]  A=53/560 
+   r= 11  r^-1 mod P= 16  beta(even j, odd j)=[1, 34]  A=-17/112 
+   r= 12  r^-1 mod P=  3  beta(even j, odd j)=[10, 25]  A=7/40 
+   r= 13  r^-1 mod P= 27  beta(even j, odd j)=[9, 26]  A=-47/112 
+   r= 16  r^-1 mod P= 11  beta(even j, odd j)=[2, 33]  A=-69/280 
+   r= 17  r^-1 mod P= 33  beta(even j, odd j)=[1, 34]  A=-93/80 
+   r= 18  r^-1 mod P=  2  beta(even j, odd j)=[16, 19]  A=3/14 
+   r= 19  r^-1 mod P= 24  beta(even j, odd j)=[15, 20]  A=-109/560 
+   r= 22  r^-1 mod P=  8  beta(even j, odd j)=[12, 23]  A=1/14 
+   r= 23  r^-1 mod P= 32  beta(even j, odd j)=[11, 24]  A=-89/112 
+   r= 24  r^-1 mod P= 19  beta(even j, odd j)=[0, 35]  A=-127/280 ZERO(m even class)
+   r= 26  r^-1 mod P= 31  beta(even j, odd j)=[0, 35]  A=-43/70 ZERO(m even class)
+   r= 27  r^-1 mod P= 13  beta(even j, odd j)=[7, 28]  A=-17/112 
+   r= 29  r^-1 mod P= 29  beta(even j, odd j)=[1, 34]  A=-263/560 
+   r= 31  r^-1 mod P= 26  beta(even j, odd j)=[3, 32]  A=-453/560 
+   r= 32  r^-1 mod P= 23  beta(even j, odd j)=[2, 33]  A=-3/8 
+   r= 33  r^-1 mod P= 17  beta(even j, odd j)=[1, 34]  A=-131/112 
+   r= 34  r^-1 mod P= 34  beta(even j, odd j)=[0, 35]  A=-74/35 ZERO(m even class)
+(3, 11) P=33
+   r=  1  r^-1 mod P=  1  beta(even j, odd j)=[3, 30]  A=193/528 
+   r=  2  r^-1 mod P= 17  beta(even j, odd j)=[0, 33]  A=-17/66 ZERO(m even class)
+   r=  4  r^-1 mod P= 25  beta(even j, odd j)=[0, 33]  A=-169/264 ZERO(m even class)
+   r=  5  r^-1 mod P= 20  beta(even j, odd j)=[3, 30]  A=-127/528 
+   r=  7  r^-1 mod P= 19  beta(even j, odd j)=[1, 32]  A=41/176 
+   r=  8  r^-1 mod P= 29  beta(even j, odd j)=[0, 33]  A=-167/264 ZERO(m even class)
+   r= 10  r^-1 mod P= 10  beta(even j, odd j)=[2, 31]  A=-1/44 
+   r= 13  r^-1 mod P= 28  beta(even j, odd j)=[7, 26]  A=-81/176 
+   r= 14  r^-1 mod P= 26  beta(even j, odd j)=[0, 33]  A=-10/33 ZERO(m even class)
+   r= 16  r^-1 mod P= 31  beta(even j, odd j)=[0, 33]  A=-265/264 ZERO(m even class)
+   r= 17  r^-1 mod P=  2  beta(even j, odd j)=[15, 18]  A=113/528 
+   r= 19  r^-1 mod P=  7  beta(even j, odd j)=[11, 22]  A=-27/176 
+   r= 20  r^-1 mod P=  5  beta(even j, odd j)=[8, 23]  A=1/8 
+   r= 23  r^-1 mod P= 23  beta(even j, odd j)=[1, 32]  A=-67/176 
+   r= 25  r^-1 mod P=  4  beta(even j, odd j)=[7, 26]  A=23/176 
+   r= 26  r^-1 mod P= 14  beta(even j, odd j)=[6, 27]  A=-53/66 
+   r= 28  r^-1 mod P= 13  beta(even j, odd j)=[4, 29]  A=-19/88 
+   r= 29  r^-1 mod P=  8  beta(even j, odd j)=[1, 32]  A=-25/176 
+   r= 31  r^-1 mod P= 16  beta(even j, odd j)=[1, 32]  A=-13/16 
+   r= 32  r^-1 mod P= 32  beta(even j, odd j)=[0, 33]  A=-503/264 ZERO(m even class)
+(3, 13) P=39
+   r=  1  r^-1 mod P=  1  beta(even j, odd j)=[3, 36]  A=229/624 
+   r=  2  r^-1 mod P= 20  beta(even j, odd j)=[0, 39]  A=8/39 ZERO(m even class)
+   r=  4  r^-1 mod P= 10  beta(even j, odd j)=[2, 37]  A=33/104 
+   r=  5  r^-1 mod P=  8  beta(even j, odd j)=[3, 36]  A=-103/624 
+   r=  7  r^-1 mod P= 28  beta(even j, odd j)=[3, 36]  A=-137/624 
+   r=  8  r^-1 mod P=  5  beta(even j, odd j)=[4, 35]  A=29/104 
+   r= 10  r^-1 mod P=  4  beta(even j, odd j)=[8, 31]  A=5/52 
+   r= 11  r^-1 mod P= 32  beta(even j, odd j)=[5, 34]  A=-95/208 
+   r= 14  r^-1 mod P= 14  beta(even j, odd j)=[10, 29]  A=-5/52 
+   r= 16  r^-1 mod P= 22  beta(even j, odd j)=[0, 39]  A=-97/312 ZERO(m even class)
+   r= 17  r^-1 mod P= 23  beta(even j, odd j)=[1, 38]  A=23/208 
+   r= 19  r^-1 mod P= 37  beta(even j, odd j)=[1, 38]  A=-19/16 
+   r= 20  r^-1 mod P=  2  beta(even j, odd j)=[18, 21]  A=67/312 
+   r= 22  r^-1 mod P= 16  beta(even j, odd j)=[16, 23]  A=-41/52 
+   r= 23  r^-1 mod P= 17  beta(even j, odd j)=[15, 24]  A=-97/624 
+   r= 25  r^-1 mod P= 25  beta(even j, odd j)=[11, 28]  A=-69/208 
+   r= 28  r^-1 mod P=  7  beta(even j, odd j)=[2, 37]  A=3/104 
+   r= 29  r^-1 mod P= 35  beta(even j, odd j)=[1, 38]  A=-137/208 
+   r= 31  r^-1 mod P= 34  beta(even j, odd j)=[7, 32]  A=-167/208 
+   r= 32  r^-1 mod P= 11  beta(even j, odd j)=[2, 37]  A=-25/104 
+   r= 34  r^-1 mod P= 31  beta(even j, odd j)=[0, 39]  A=-43/78 ZERO(m even class)
+   r= 35  r^-1 mod P= 29  beta(even j, odd j)=[1, 38]  A=-19/16 
+   r= 37  r^-1 mod P= 19  beta(even j, odd j)=[1, 38]  A=-281/208 
+   r= 38  r^-1 mod P= 38  beta(even j, odd j)=[0, 39]  A=-355/156 ZERO(m even class)
+(5, 9) P=45
+   r=  1  r^-1 mod P=  1  beta(even j, odd j)=[3, 42]  A=53/144 
+   r=  2  r^-1 mod P= 23  beta(even j, odd j)=[0, 45]  A=-41/90 ZERO(m even class)
+   r=  4  r^-1 mod P= 34  beta(even j, odd j)=[0, 45]  A=-163/360 ZERO(m even class)
+   r=  7  r^-1 mod P= 13  beta(even j, odd j)=[1, 44]  A=5/48 
+   r=  8  r^-1 mod P= 17  beta(even j, odd j)=[4, 41]  A=-1/24 
+   r= 11  r^-1 mod P= 41  beta(even j, odd j)=[1, 44]  A=-73/80 
+   r= 13  r^-1 mod P=  7  beta(even j, odd j)=[1, 44]  A=-3/16 
+   r= 14  r^-1 mod P= 29  beta(even j, odd j)=[0, 45]  A=-79/180 ZERO(m even class)
+   r= 16  r^-1 mod P= 31  beta(even j, odd j)=[12, 33]  A=71/360 
+   r= 17  r^-1 mod P=  8  beta(even j, odd j)=[7, 38]  A=7/240 
+   r= 19  r^-1 mod P= 19  beta(even j, odd j)=[1, 44]  A=-23/48 
+   r= 22  r^-1 mod P= 43  beta(even j, odd j)=[0, 45]  A=-257/180 ZERO(m even class)
+   r= 23  r^-1 mod P=  2  beta(even j, odd j)=[21, 24]  A=31/144 
+   r= 26  r^-1 mod P= 26  beta(even j, odd j)=[16, 29]  A=1/15 
+   r= 28  r^-1 mod P= 37  beta(even j, odd j)=[12, 33]  A=-163/360 
+   r= 29  r^-1 mod P= 14  beta(even j, odd j)=[15, 30]  A=-571/720 
+   r= 31  r^-1 mod P= 16  beta(even j, odd j)=[1, 44]  A=-13/80 
+   r= 32  r^-1 mod P= 38  beta(even j, odd j)=[0, 45]  A=-149/360 ZERO(m even class)
+   r= 34  r^-1 mod P=  4  beta(even j, odd j)=[10, 35]  A=2/15 
+   r= 37  r^-1 mod P= 28  beta(even j, odd j)=[3, 42]  A=-67/144 
+   r= 38  r^-1 mod P= 32  beta(even j, odd j)=[6, 39]  A=-29/36 
+   r= 41  r^-1 mod P= 11  beta(even j, odd j)=[1, 44]  A=-89/240 
+   r= 43  r^-1 mod P= 22  beta(even j, odd j)=[1, 44]  A=-55/48 
+   r= 44  r^-1 mod P= 44  beta(even j, odd j)=[0, 45]  A=-1013/360 ZERO(m even class)
+(3, 4) P=12
+   r=  1  r^-1 mod P=  1  beta(even j, odd j)=[3, 9]  A=67/192 
+   r=  5  r^-1 mod P=  5  beta(even j, odd j)=[1, 11]  A=5/64 
+   r=  7  r^-1 mod P=  7  beta(even j, odd j)=[5, 7]  A=-13/64 
+   r= 11  r^-1 mod P= 11  beta(even j, odd j)=[1, 11]  A=-41/64 
+(4, 5) P=20
+   r=  1  r^-1 mod P=  1  beta(even j, odd j)=[3, 17]  A=23/64 
+   r=  3  r^-1 mod P=  7  beta(even j, odd j)=[1, 19]  A=5/64 
+   r=  7  r^-1 mod P=  3  beta(even j, odd j)=[5, 15]  A=53/320 
+   r=  9  r^-1 mod P=  9  beta(even j, odd j)=[1, 19]  A=-29/64 
+   r= 11  r^-1 mod P= 11  beta(even j, odd j)=[9, 11]  A=53/320 
+   r= 13  r^-1 mod P= 17  beta(even j, odd j)=[7, 13]  A=-141/320 
+   r= 17  r^-1 mod P= 13  beta(even j, odd j)=[3, 17]  A=-29/64 
+   r= 19  r^-1 mod P= 19  beta(even j, odd j)=[1, 19]  A=-75/64 
+(2, 9) P=18
+   r=  1  r^-1 mod P=  1  beta(even j, odd j)=[3, 15]  A=103/288 
+   r=  5  r^-1 mod P= 11  beta(even j, odd j)=[3, 15]  A=-133/288 
+   r=  7  r^-1 mod P= 13  beta(even j, odd j)=[3, 15]  A=-71/288 
+   r= 11  r^-1 mod P=  5  beta(even j, odd j)=[7, 11]  A=7/96 
+   r= 13  r^-1 mod P=  7  beta(even j, odd j)=[1, 13]  A=17/96 
+   r= 17  r^-1 mod P= 17  beta(even j, odd j)=[1, 17]  A=-91/96 
