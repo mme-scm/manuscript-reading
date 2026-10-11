@@ -13,9 +13,13 @@ Contents:
   lemma; the per-component absolute constants c_i as the first correction terms.
 * §3 The complex C(K): an A_∞-module over the two-line algebra of the pillowcase with underlying complexes CI(Y) and
   CI(Y_0(K), w); rigorous part (exact-triangle maps and homotopies) separated from the conjectural pillowcase model.
-* §4 Filtered mapping cone: CI(Y_{1/n}) ≃ Cone(CI(Y_{1/(n−1)}) → CI(Y_0,w)) with filtration offset (n−1)/4 mod Z
-  (action of the corner morphism), iterated twisted-complex form for Y = S^3, remarks on −1/n and ±2.
-* §5 Tests: trefoil (Σ(2,3,5), Σ(2,3,7), Σ(2,3,11)) and figure-eight (Σ(2,3,7)) numerics.
-* §6 Workflow: agent tasks with models, effort levels and acceptance criteria.
+* §4 The bound-type cone (levels as in Daemi–Lidman–Miller Eismeier); shown non-exact by the figure-eight.
+* §5 The exact statement: Lagrangian surgery (zigzag) + collar perturbation; generators and CS values exact
+  (A_cone + area correction δ), the chain-level cone conditional on (N1)–(N3) of Appendix B.
+* §6 All slopes: Farey triads, bundle parity rule ε_γ = ε_α + ε_β + 1, Stern–Brocot recursion.
+* §7 Tests: trefoil (Σ(2,3,5), Σ(2,3,7), Σ(2,3,11), …), figure-eight (±1, ±1/2, exact cone for n = 1,2,3,
+  twelve Farey-triad bundle combinations); scripts and outputs in `numerics/`.
+* §8 Workflow. Appendix A: collar perturbations and the perturbed action. Appendix B: Floer's perturbation at
+  chain level, conditions (N1)–(N3), gaps.
 
 Build: `pdflatex main.tex && pdflatex main.tex`.
