@@ -24,19 +24,24 @@ and $\tilde p_n+v_1+\tfrac12v_2$ of the two legs, i.e.\ for $c=0$.
 \end{proof}
 This is the pillowcase form of the fact that $Y_{1/n}$ carries the trivial bundle.
 
-\begin{proposition}[exact cone for the zigzag]\label{prop:zigzag}
-As $\epsilon\to0$, $CF(\tilde\Gam,Z_n)$ with its action filtration is isomorphic, as a filtered complex, to
+\begin{proposition}[cone for the zigzag, with its wrong-way block]\label{prop:zigzag}
+As $\epsilon\to0$, $CF(\tilde\Gam,Z_n)$ with its action filtration has the same generators and actions as
 \[
 \Cone\big(CF(\tilde\Gam,L_{1/(n-1)})\xrightarrow{\ \mu^2(-,p_n)\ }CF(\tilde\Gam,L^w_0)\big),
 \]
+and its differential is the cone differential plus a block $\beta$ from the $L^w_0$-generators to the
+$L_{1/(n-1)}$-generators, counting bigons whose boundary passes through the neck along the \emph{reflex} arc (a
+corner of angle $>\pi$ at $p_n$ in the limit).  It is the cone exactly when $\beta=0$.
 the first summand carrying the line action $A(x)=f_\Gamma(\tilde x)-(n-1)\tilde b^2$ of Proposition~\ref{prop:action},
 the second the action $f_\Gamma(\tilde x)+2\tilde a\tilde b+\tfrac n4$ (the Kirk--Klassen primitive on $b\in\tfrac12+\Z$,
 offset by $\tfrac n4$).
 \end{proposition}
 \begin{proof}
 Generators of $CF(\tilde\Gam,Z_n)$ are those of the two summands.  Bigons between points of the same summand are
-bigons for that line.  A bigon from a point of $L_{1/(n-1)}$ to a point of $L^w_0$ must pass through the surgery
-region, and for $\epsilon\to0$ it is a triangle with a corner at $p_n$: this is $\mu^2(-,p_n)$.  The primitive of
+bigons for that line.  A bigon between the two summands passes through the surgery region along one of the two
+resolved arcs; through the convex arc it is, for $\epsilon\to0$, a triangle with a convex corner at $p_n$, which is
+$\mu^2(-,p_n)$; through the reflex arc it is an immersed bigon with a reflex corner at $p_n$, which is not a Floer
+triangle and is the block $\beta$.  Neither area nor local geometry excludes $\beta$ in general.  The primitive of
 $\lambda$ on $Z_n$ restricts to the two line primitives, offset by a constant, up to $O(\epsilon)$.  The constant is fixed by requiring both to be primitives of $\lambda$
 on $Z_n$ agreeing at the points where $Z_n$ meets $L_{1/n}$: these are the midpoints $m_1=\tilde p_n+\tfrac12v_1$,
 $m_2=\tilde p_n+v_1+\tfrac12v_2$ of the two legs (Lemma~\ref{lem:flux}), not the vertex $\tilde p_n$, and the
@@ -55,8 +60,11 @@ $n$ (counts $2|n|=2|n-1|+2$).
 \begin{theorem}[exact filtered cone, pillowcase side]\label{thm:exact}
 Assume \ref{H:alex}--\ref{H:Y} and minimal position.  Then
 \begin{enumerate}[label=(\alph*)]
-\item the isotopy induces a bijection $x\mapsto x'$ from the generators of the cone to $\Gam\cap L_{1/n}$ and an
-isomorphism of complexes $\Cone(\mu^2(-,p_n))\cong CF(\tilde\Gam,L_{1/n})$;
+\item the isotopy induces a bijection $x\mapsto x'$ from the generators of the cone to $\Gam\cap L_{1/n}$, and
+an isomorphism of complexes $CF(\tilde\Gam,Z_n)\cong CF(\tilde\Gam,L_{1/n})$ which is the identity on generators
+up to handle-slides (bigon counts change only at birth--death and handle-slide moments, and the latter act by
+unitriangular changes of basis); if moreover $\beta=0$ in Proposition~\ref{prop:zigzag}, then
+$\Cone(\mu^2(-,p_n))\cong CF(\tilde\Gam,L_{1/n})$;
 \item the action of $x'$ is $A_{\rm cone}(x)+\delta_n(x)$, where $A_{\rm cone}$ is the cone action of
 Proposition~\ref{prop:zigzag} and $\delta_n(x)=\int_{R_n(x)}\omega$ is the signed area of the region in $\R^2$
 bounded by the arc of $\tilde\Gam$ from $\tilde x$ to $\tilde x'$, the segment of $Z_n$ from $\tilde x$ to the
@@ -65,7 +73,8 @@ midpoint $m$ of the leg containing $\tilde x$, and the segment of $L_{1/n}$ from
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-(a) Between birth--death moments the bigon counts of $CF(\tilde\Gam,\phi_t(Z_n))$ are locally constant.
+(a) Between birth--death and handle-slide moments the bigon counts of $CF(\tilde\Gam,\phi_t(Z_n))$ are locally
+constant; a handle-slide changes the complex by an isomorphism that is unitriangular for the action order.
 (b) is Stokes' theorem for $\lambda$ along the boundary of $R_n(x)$, the two primitives agreeing at $m$ by
 construction.  (c) is Proposition~\ref{prop:action}.  Numerically verified for the figure-eight, $n=1,2,3$, to
 $2\cdot10^{-10}$ (\S\ref{sec:tests}).
@@ -89,28 +98,41 @@ $S=H(\ell)-\tfrac12\ell H'(\ell)$ of the shear, so that
 $\cs_\pi(\rho_1)-\cs_\pi(\rho_0)\equiv\int_\gamma\lambda_0-\big[f_{L^\pi}\big]$ with $f_{L^\pi}$ the primitive of
 $\lambda_0=a\,db-b\,da$ along the perturbed line: the difference is twice the signed area between $\gamma$ and $L^\pi$.
 (The naive guess ``add $h(\rho_1)-h(\rho_0)$'' is wrong: the curvature in the collar contributes $-\tfrac12\ell H'(\ell)$.)
-\item Floer's argument gives a two-step filtration of $\CI(Y_{1/n};\pi_n)$ by the two halves of the critical set,
-with associated graded $\CI(Y_{1/(n-1)})$ and $\CI(Y_0,w)$ and connecting map $F_n$; this is an
-\emph{isomorphism} of complexes $\CI(Y_{1/n};\pi_n)\cong\Cone(F_n)$, not merely a quasi-isomorphism.
+\item The perturbed differential has four blocks with respect to the two halves of the critical set.  The
+\emph{literal} two-step filtration (vanishing of the wrong-way block, from $Y_0$-type to $Y_{1/(n-1)}$-type
+generators) is not in Floer's or Braam--Donaldson's argument as reported by later sources, and is not implied by
+energy or index (Appendix~\ref{fp:sec}, Proposition~\ref{fp:prop:crux}): it is the instanton form of the reflex
+block $\beta$.  What holds (Theorem~\ref{fp:thm:cone}): unconditionally $\CI(Y_{1/n};\pi_n)\simeq\Cone(F_n)$ by
+triangle detection; under (N1) (the two cobordism maps are the identity on the diagonal blocks for small neck
+parameter) there is a unitriangular isomorphism of complexes onto a cone whose connecting map is the
+$A\to B$ block of the perturbed differential; under (N1)--(N3) that cone is $\Cone(F_n)$.
 \item The family $\cs+t\pi_n$, $t\in[0,1]$, gives a continuation map $\CI(Y_{1/n};\pi_n)\to\CI(Y_{1/n})$; when the
 critical points move without birth--death (the instanton form of minimal position), it is an isomorphism of
-complexes sending each generator $x$ to $x'$ with
+complexes, equal to $x\mapsto x'$ up to handle-slides, and the critical values satisfy
 $\cs(x')=\cs_{\pi_n}(x)+\int_0^1\big(\partial_t\cs_{t\pi_n}\big)(x_t)\,dt$, the integral being $\delta_n(x)$.
 \end{enumerate}
 \begin{theorem}[exact filtered cone, instanton side]\label{thm:exact-inst}
 Assume \ref{H:alex}--\ref{H:Y}, transversality of $\Gam$ to $L_{1/(n-1)},L^w_0,L_{1/n}$, and minimal position.
-Then $\CI(Y_{1/n})\cong\Cone(F_n)$ as $\Z/8$-graded complexes, with the Chern--Simons value of the generator
-corresponding to $x$ equal to $A(x)+\delta_n(x)+c_i$.  The differential of $\CI(Y_{1/n})$ is \emph{not} assumed to
-be a bigon count; only its generators and levels are identified.
+\begin{enumerate}[label=(\alph*)]
+\item \textup{(exact, unconditional)} The generators of $\CI(Y_{1/n})$ are in bijection with those of
+$\Cone(F_n)$, and the Chern--Simons value of the generator corresponding to $x$ is $A_{\rm cone}(x)+\delta_n(x)+c_i$.
+\item \textup{(conditional on (N1)--(N3) of Appendix~\ref{fp:sec})} $\CI(Y_{1/n})\cong\Cone(F_n)$ as
+$\Z/8$-graded complexes, the isomorphism being the generator bijection composed with a unitriangular change of
+basis.
+\end{enumerate}
+The differential of $\CI(Y_{1/n})$ is not assumed to be a bigon count.  Since the differential of $\CI(Y_{1/n})$
+strictly decreases $\cs$, (a) already constrains it: with (b), the filtered complex is the cone differential
+written in the basis $x'$, conjugated by a unitriangular matrix that the levels in (a) bound.
 \end{theorem}
 \begin{proof}[Proof sketch]
-(i), (ii) are Propositions \ref{prop:gens}, \ref{prop:action} with the perturbation term; (iii) is Floer's
-filtration argument, which we take from \cite{BD}; (iv) is the standard continuation argument together with the
-first-variation formula for the perturbed functional; the integral equals $\delta_n(x)$ by (ii) and Stokes.
+(i), (ii) are Propositions \ref{prop:gens}, \ref{prop:action} with the perturbation term (Appendix~\ref{app:collar});
+(iii) is Appendix~\ref{fp:sec}; (iv) is the continuation argument with the first-variation formula; the integral
+equals $\delta_n(x)$ by (ii) and Stokes.  The zero-flux condition is automatic in Floer's construction: the
+perturbed line is the graph $a+nb=-g(b)$ with $g$ odd, so $\int g=0$.
 \end{proof}
-What remains to be checked for a complete proof: that Floer's filtration argument identifies the connecting map
-with the cobordism map $F_n$ (it does up to homotopy; exactness at the level of filtered complexes needs the
-chain-level identification, which is what the perturbation picture provides), and the approximation of $Z_n$ by
+What remains for a complete proof of (b): conditions (N1)--(N3) of Appendix~\ref{fp:sec} (diagonal blocks of the
+two cobordism maps equal to the identity for a small neck; $f_C\circ f_B=0$ on chains, not just up to homotopy;
+the connecting block homotopic to $F_n$), which the sources give only up to homotopy; and the approximation of $Z_n$ by
 shearing isotopies with control of the perturbed Chern--Simons values.  For the latter, Appendix~\ref{app:collar}
 shows: Sivek--Zentner's approximation is $C^r$ for every fixed $r$ (not $C^\infty$), a diagonal argument (round
 the corners of $Z_n$, then approximate in $C^1$) makes the actions converge, but the perturbations themselves do

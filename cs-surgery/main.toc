@@ -19,16 +19,17 @@
 \contentsline {subsection}{\tocsubsection {}{5.1}{The zigzag}}{7}{subsection.5.1}%
 \contentsline {subsection}{\tocsubsection {}{5.2}{From the zigzag to the straight line}}{8}{subsection.5.2}%
 \contentsline {subsection}{\tocsubsection {}{5.3}{The instanton side: Floer's perturbation}}{9}{subsection.5.3}%
-\contentsline {section}{\tocsection {}{6}{All slopes: Farey triads}}{9}{section.6}%
+\contentsline {section}{\tocsection {}{6}{All slopes: Farey triads}}{10}{section.6}%
 \contentsline {subsection}{\tocsubsection {}{6.1}{Reducibles for every slope}}{10}{subsection.6.1}%
 \contentsline {subsection}{\tocsubsection {}{6.2}{Farey triads and the bundle parity rule}}{10}{subsection.6.2}%
-\contentsline {subsection}{\tocsubsection {}{6.3}{The theorem for all slopes}}{10}{subsection.6.3}%
-\contentsline {section}{\tocsection {}{7}{Tests}}{11}{section.7}%
-\contentsline {subsection}{\tocsubsection {}{7.1}{Right-handed trefoil: Proposition\nonbreakingspace \ref {prop:action} holds exactly}}{11}{subsection.7.1}%
+\contentsline {subsection}{\tocsubsection {}{6.3}{The theorem for all slopes}}{11}{subsection.6.3}%
+\contentsline {section}{\tocsection {}{7}{Tests}}{12}{section.7}%
+\contentsline {subsection}{\tocsubsection {}{7.1}{Right-handed trefoil: Proposition\nonbreakingspace \ref {prop:action} holds exactly}}{12}{subsection.7.1}%
 \contentsline {subsection}{\tocsubsection {}{7.2}{Right-handed trefoil: the naive corner-offset identity is false}}{12}{subsection.7.2}%
 \contentsline {subsection}{\tocsubsection {}{7.3}{Figure-eight knot}}{12}{subsection.7.3}%
-\contentsline {subsection}{\tocsubsection {}{7.4}{Figure-eight knot: the exact cone (Theorem\nonbreakingspace \ref {thm:exact})}}{12}{subsection.7.4}%
+\contentsline {subsection}{\tocsubsection {}{7.4}{Figure-eight knot: the exact cone (Theorem\nonbreakingspace \ref {thm:exact})}}{13}{subsection.7.4}%
 \contentsline {subsection}{\tocsubsection {}{7.5}{Figure-eight knot: Farey triads (Theorem\nonbreakingspace \ref {thm:allslopes})}}{13}{subsection.7.5}%
 \contentsline {section}{\tocsection {}{8}{Workflow}}{13}{section.8}%
 \contentsline {section}{\tocsection {Appendix}{A}{Appendix: collar holonomy perturbations, shears, and the perturbed action}}{14}{appendix.A}%
-\contentsline {section}{\tocsection {Appendix}{}{References}}{15}{section*.2}%
+\contentsline {section}{\tocsection {Appendix}{B}{Appendix: Floer's collar perturbation and the cone at chain level}}{15}{appendix.B}%
+\contentsline {section}{\tocsection {Appendix}{}{References}}{17}{section*.2}%

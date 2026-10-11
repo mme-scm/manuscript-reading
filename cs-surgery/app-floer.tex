@@ -1,0 +1,131 @@
+%======================================================================
+% Floer's collar perturbation and the cone at chain level.
+% Self-contained fragment (amsart); uses only amsmath/amssymb and the
+% environments theorem, proposition, lemma, remark, proof.
+%======================================================================
+\section{Appendix: Floer's collar perturbation and the cone at chain level}\label{fp:sec}
+\emph{Prepared by the chain-level agent (Task~8).  Its conclusion: the literal two-step filtration by generator type is not in the sources and is probably false in general; the chain-level cone holds under conditions (N1)--(N3) stated here, which are open for instantons.}
+
+
+\noindent\emph{Tags.} \textbf{[V]} verified in an arXiv source; \textbf{[P]} plausible/standard, not written out in an
+accessible source; \textbf{[O]} open.  Braam--Donaldson [BD] (Progr.\ Math.\ 133 (1995) 195--256) and Floer [Fl2]
+(\emph{ibid.}\ 77--97) are not on arXiv.  What is said about them is quoted from [KM1] math/0312322, [KM2] 1005.4346,
+[SZ] 1710.01957, [Sc] 1401.2093, [Bh] 2311.04242, [DLME] 2410.21248, and [MW] math/9907080, math/0009157 (the
+Seiberg--Witten transcription of Floer's argument).
+
+\smallskip\noindent\emph{Setup.} $X=Y\setminus\nu K$, $r\colon R(X)\to T^2/\pm$ (angles $(a,b)$ of $\mu,\lambda$),
+$\Gamma=r(R^{\rm irr}X)$, $L_{p/q}=\{pa+qb\equiv0\}$, $L^w_0=\{b\equiv\frac12\}$, $n\ge1$.  Write $Y_{1/n}=X\cup U\cup N$, where
+$U\cong T^2\times[0,1]$ is a collar and $N$ is the filling torus (meridian $\mu\lambda^n$, longitude $\lambda$).  Let
+$\mathsf A=R^{\rm irr}(Y_{1/(n-1)})$ and $\mathsf B=R(Y_0,w)$ (via $r^{-1}L_{1/(n-1)}$, $r^{-1}L^w_0$), and
+$p_n=L_{1/(n-1)}\cap L^w_0=(-\frac{n-1}2,\frac12)$.  The triangle cobordisms $W_A\colon Y_{1/(n-1)}\to(Y_0,w)$,
+$W_B\colon(Y_0,w)\to Y_{1/n}$ and $W_C\colon Y_{1/n}\to Y_{1/(n-1)}$ are $2$-handles attached along cores of filling tori, so
+they miss $X\cup U$.  Their chain maps are $F$, $f_B$ and $f_C$.
+
+\smallskip\noindent\emph{The perturbation} \textbf{[V]}.  Let $\phi$ be a class function,
+$f(t)=\phi(\mathrm{diag}(e^{2\pi it},e^{-2\pi it}))$, $\nu$ a $2$-form of integral $1$ on the annulus factor of $U$, and
+$\pi_\phi(A)=\int\phi(\mathrm{Hol}_{\lambda_z}A)\,\nu(z)$ over the $\lambda$-parallel circles $\lambda_z\subset U$.
+\emph{Floer's lemma} [BD, Lemma~5] $=$ [KM1, Lemma~7]: restriction to $X$ is a bijection
+$\mathrm{Crit}(\mathrm{cs}+\pi_\phi)/\mathcal G\to\{\rho:r(\rho)\in Z_g\}$, where $Z_g=\{a+nb=-g(b)\}$ and $g=f'$ (normalised).
+Every odd $1$-periodic $g$ occurs [KM1, Lemma~8].  [KM1, Prop.~9] uses such graphs to approximate piecewise-linear arcs
+made of surgery lines, and [KM1, \S1] calls this ``the technique that forms just the first step of Floer's proof''.
+By [SZ, Def.~4.4, Thm.~4.5, Lemma~4.6], nested collars realise equivariant area-preserving isotopies $C^r$-approximately,
+with $r_N=\phi_t\circ r_X$; see also [HHK, 1301.0164, \S7] for $2$-tangles.  Take $g_\epsilon$ odd and $1$-periodic, with
+$g_\epsilon(b)=-b$ for $|b|\le\frac12-\epsilon$ and monotone for $|b-\frac12|\le\epsilon$.  Then
+$Z_\epsilon:=Z_{g_\epsilon}=\big(L_{1/(n-1)}\cap\{|b|\le\frac12-\epsilon\}\big)\cup S_\epsilon$, where $S_\epsilon$ is $C^1$-close to
+$L^w_0$ away from $p_n$.  So $Z_\epsilon$ is the smoothed surgery $L_{1/(n-1)}\#_{p_n}L^w_0$ (the zigzag).  Its flux is
+zero ($\int g_\epsilon=0$), and $-g_\epsilon$ gives $L_{1/(n+1)}\#L^w_0$ instead.  The perturbation
+$\pi=\pi_{\phi_\epsilon}$ is \emph{large}, as in Floer's proof [SZ, remark after Thm.~4.8].
+
+\begin{lemma}[critical set]\label{fp:lem:crit}
+Assume (H1)--(H3), $\Gamma\pitchfork L_{1/(n-1)}$, $\Gamma\pitchfork L^w_0$ and $p_n\notin\Gamma$, and let $\epsilon$ be small.
+(i)~\textbf{[V]} $\mathrm{Crit}(\mathrm{cs}+\pi)/\mathcal G=\{\theta\}\sqcup A_\epsilon\sqcup B_\epsilon$.  Here $A_\epsilon|_X=\mathsf A$
+exactly, $B_\epsilon\leftrightarrow\mathsf B$ by $S_\epsilon\to L^w_0$, only $\theta$ is reducible, and all are nondegenerate.
+(ii)~\textbf{[P]} Along $\pi_t=\pi_{t\phi_\epsilon}$ the only reducible is $\theta$, and it stays nondegenerate; hence
+$H_*(\mathit{CI}(Y_{1/n};\pi))\cong I_*(Y_{1/n})$.
+\end{lemma}
+\begin{proof}
+The reducibles of $X$ lie over $\{b=0\}$, and $Z_{tg}\cap\{b=0\}=\{0\}$.  The compact set $\Gamma$ misses a neighbourhood
+of $p_n$, and away from it $Z_\epsilon$ is $L_{1/(n-1)}$ or $C^1$-close to $L^w_0$.  For nondegeneracy, use
+Mayer--Vietoris over $X\cup_{T^2}(U\cup N)$.  Restriction from the perturbed collar is an isomorphism on $H^1$
+[SZ, proof of Thm.~4.8], so $H^1_\pi(U\cup N)\to TZ_\epsilon$, while $H^1(X)=T_\rho R(X)$ injects.  Hence $H^1_\pi=0$ if and only
+if $\Gamma\pitchfork Z_\epsilon$.  At $\theta$, the lines $T\{b=0\}$ and $\mathbb R(t-n,1)$ are transverse.
+\end{proof}
+
+\begin{remark}[levels]\label{fp:rem:levels}
+\textbf{[V]} On a $C^1$ path $x_t$ of nondegenerate critical points, $\frac{d}{dt}(\mathrm{cs}+\pi_t)(x_t)=f_\epsilon(b(x_t))$, so
+$\mathrm{cs}_\pi(x_1)=\mathrm{cs}(x_0)+\int_0^1f_\epsilon(b(x_t))\,dt$.  \textbf{[P]} By Kirk--Klassen this is the pillowcase action
+on $Z_\epsilon$.  By the KKR splitting, $A_\epsilon$ and $B_\epsilon$ carry the gradings of $\mathsf A$ and $\mathsf B$ up to constants.
+\end{remark}
+
+\begin{proposition}[the filtration question]\label{fp:prop:crux}
+(i)~\textbf{[V]} $\sigma:=\widetilde{\mathrm{gr}}-8\,\widetilde{\mathrm{cs}}_\pi$ is lift-independent, since lifts shift by $(8,1)$
+[DLME, \S1.2].  Every path class $z$ from $x$ to $y$ has $\mathrm{ind}(z)-8E(z)=\sigma(x)-\sigma(y)$.  Hence an
+index-one trajectory from $y\in B_\epsilon$ to $x\in A_\epsilon$ needs $\sigma(y)-\sigma(x)<1$.
+(ii)~\textbf{[O]} No gap $\sigma(B_\epsilon)\ge\sigma(A_\epsilon)+1$ is known.  In the pillowcase, strips through the
+non-convex side of the neck of $Z_\epsilon$ are excluded by neither area nor local geometry; they limit to polygons with
+a $\frac{3\pi}2$-corner at $p_n$.  For the SW analogue, [MW, math/0009157, \S1] states that the generator inclusion and
+projection ``need not commute with the boundary operators''.
+(iii)~Floer's architecture needs (N1)--(N3) instead.  [MW] proves the SW versions by stretching $T^2$-necks in
+punctured cobordisms $W\setminus\{x\}$ with a long $S^3$-neck, and by gluing thin triangles in $\chi(T^2)$ bounded by a
+surgery line and the graph of $f'$.  [MW] takes the punctured cobordisms and $S^3$-necks ``as in [BD]'', and cites
+[BD, p.~234] for the torus character variety.
+(N1)~For small $\epsilon$, $\langle f_By,y'\rangle=\delta_{yy'}$ ($y\in\mathsf B$, $y'\in B_\epsilon$) and
+$\langle f_Cx',x\rangle=\delta_{xx'}$ ($x'\in A_\epsilon$, $x\in\mathsf A$).
+(N2)~$f_Cf_B=0$ on chains.
+(N3)~$\Delta\simeq F$, with $\Delta$ as in Theorem~\ref{fp:thm:cone}.
+(iv)~\textbf{[V, algebra]} Assume (N1), write $f_By=y'+\beta y$ with $\beta y\in\mathbb Z\langle A_\epsilon\rangle$, and split
+$\partial=(\partial_{IJ})$ into blocks.  Since $f_B$ is a chain map, $\partial_{AB}=\beta\partial_{Y_0}-\partial_{AA}\beta$ and
+$\partial_{BB}=\partial_{Y_0}-\partial_{BA}\beta$.  Under (N2), also $\partial_{AA}=\partial_{Y_{1/(n-1)}}+\beta\partial_{BA}$.
+So the $B\!\to\!A$ block vanishes if $\beta=0$.  Here $\beta$ counts index-$0$ instantons on $W_B$ from $\mathsf B$ to $A_\epsilon$.
+The perturbation $\pi$ extends $\mathbb R$-invariantly over $W_B$, and on the end $(Y_0,w)$ it leaves the critical set
+unchanged, because the shear fixes $L^w_0$ setwise.  Hence $\beta$ obeys the energy identity of [Bh, \S3.9] and
+vanishes under a $\sigma$-gap.  This fails over $W_C$: the shear moves $L_{1/(n-1)}$, so it would change the outgoing
+critical set.
+\end{proposition}
+
+\begin{theorem}[cone]\label{fp:thm:cone}
+(a)~\textbf{[V]} By triangle detection, $T=(f_C,h_C)\colon\mathit{CI}(Y_{1/n};\pi)\to\mathrm{Cone}(F)$ is a
+quasi-isomorphism [KM2, \S7.1; Sc, Lemma~5.1].  By [Sc, \S5], its $h$-maps are ``essentially part of Floer's original proof, see
+[BD, \S4]''.
+(b)~\textbf{[given (N1)]} Let $s(x)=x'$.  Then $f_B$ is injective, and as groups
+$\mathit{CI}(Y_{1/n};\pi)=s\,\mathbb Z\langle A_\epsilon\rangle\oplus\operatorname{im}f_B$.  Let $Q=\operatorname{coker}f_B$, with basis $A_\epsilon$ and $d_Q=\partial_{AA}-\beta\partial_{BA}$.  Then
+\[\Phi\colon\mathrm{Cone}\big(Q\xrightarrow{\Delta=\partial_{BA}}\mathit{CI}(Y_0,w)\big)\to\mathit{CI}(Y_{1/n};\pi),\qquad
+(x,y)\mapsto s(x)+f_B(y),\]
+is a unitriangular isomorphism of complexes.  The filtration is $\operatorname{im}f_B=\langle y'+\beta y\rangle$, which is
+spanned by $B_\epsilon$ only if $\beta=0$.  The connecting map is the $A\!\to\!B$ block of $\partial$.
+(c)~\textbf{[given (N1),(N2)]} $Q=\mathit{CI}(Y_{1/(n-1)})$ on the nose.  Moreover $F\simeq M\Delta$ with
+$M=h_Cf_B$ a quasi-automorphism, so $\mathit{CI}(Y_{1/n};\pi)\cong\mathrm{Cone}(\Delta)\simeq\mathrm{Cone}(F)$.  With (N3)
+as well, $\mathit{CI}(Y_{1/n};\pi)\cong\mathrm{Cone}(F)$ as complexes.
+\end{theorem}
+\begin{proof}
+Work over $\mathbb F_2$.  (b) The $B$-block of $f_B$ is $1$, so $\Phi$ is unitriangular.  $\Delta=f_B^{-1}(\partial s-s\,d_Q)$ is
+the connecting map of $0\to\mathit{CI}(Y_0,w)\to\mathit{CI}(Y_{1/n};\pi)\to Q\to0$ split by $s$, and its $B$-part is $\partial_{BA}$.
+Then $\partial\Phi(x,y)=s\,d_Qx+f_B(\Delta x+\partial y)=\Phi D(x,y)$.  (c) By (N1) and (N2), $f_C=(1,\beta)$ kills
+$\operatorname{im}f_B$ and induces the identity on bases, so $d_Q=\partial_{Y_{1/(n-1)}}$.  Moreover
+$T\Phi=\big(\begin{smallmatrix}1&0\\K&M\end{smallmatrix}\big)$ with $K=h_Cs$, so $M\partial=\partial M$ and $F+M\Delta=\partial K+K\partial$.
+By the five lemma, $M$ is a quasi-isomorphism.  If $F-\Delta=\partial K'+K'\partial$, then $(x,y)\mapsto(x,y+K'x)$ is an
+isomorphism of the two cones.
+\end{proof}
+
+\begin{remark}[sources and gaps]\label{fp:rem:gaps}
+No accessible source states that $B_\epsilon$ spans a subcomplex, or that $\mathit{CI}(Y_{1/n};\pi)\cong\mathrm{Cone}(F)$.
+About Floer and [BD], the arXiv sources verify: Floer's lemma and graph perturbations [KM1]; large perturbations
+[SZ]; the null-homotopies $h$ of [BD, \S4] [Sc]; an energy filtration via punctured $4$-manifolds [Bh, \S1]; punctured
+cobordisms and the torus character-variety picture of [BD, p.~234] [MW].  [MW, math/0009157] proves the SW analogue of (N1)--(N3) and of Theorem~\ref{fp:thm:cone}(b),(c).  It has $\delta$-relations,
+$w^0w^1=0$, a short exact sequence \emph{of complexes}, and a connecting map equal to a surgery cobordism map.
+[DLME, Props.~3.4, 3.8, \S5] and [KM2] do not use the perturbation picture: levels come from cobordism energies,
+exactness from triangle detection.
+
+\emph{Gaps.}
+\begin{itemize}
+\item (G1)~\textbf{[O]} (N1) for instantons: gluing near $p_n$, the orbifold corners, and $\theta$ on both ends.  Check
+[BD, \S\S3--4], [Fl2], and H.~Y.~Wang, Publ.\ RIMS 33 (1997).
+\item (G2)~\textbf{[O]} (N2) on chains, and (N3).  [BD, \S4] and [Sc] give only $f_Cf_B\simeq0$; without (N2),
+$Q\simeq\mathit{CI}(Y_{1/(n-1)})$ only.
+\item (G3)~\textbf{[O, likely false in general]} the literal filtration by $B_\epsilon$, i.e.\ $\partial_{AB}=0$, for instance via $\beta=0$.  The pillowcase zigzag
+cone has the same gap.
+\item (G4)~\textbf{[P]} Signs over $\mathbb Z$, large-perturbation invariance with $\theta$, grading constants.
+\item (G5)~\textbf{[O]} Exact levels: $\Phi$ is filtered only up to the levels of $\beta$ and $f_C$.  The continuation
+$\pi\to0$ is an isomorphism only up to handle-slides, not $x\mapsto x'$.
+\end{itemize}
+\end{remark}
