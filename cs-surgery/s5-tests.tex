@@ -60,3 +60,30 @@ $\pm1/2$ & $\pm\{0.171883,0.946066,0.764840,0.485874\}$ & & hyperbolic, no groun
 \end{center}
 $c=-\tfrac16$ is the unique constant placing both $\pm1$ surgeries in $\pm\Sigma(2,3,7)$; this confirms the
 procedure of \S\ref{sec:action} for the absolute constants.  The $\pm1/2$ values are predictions.
+
+\subsection{Figure-eight knot: the exact cone (Theorem~\ref{thm:exact})}
+Zero flux (Lemma~\ref{lem:flux}): the two triangles between one period of $Z_n$ and $L_{1/n}$ have $\omega$-areas
+$\pm\tfrac14$, for $n=1,2,3$.  Minimal position: $2=0+2$, $4=2+2$, $6=4+2$.  An explicit equivariant isotopy
+(vertex moving linearly to the midpoint of $m_1m_2$) keeps the count constant through $400$ steps; no
+birth--death.  With $A_{\rm cone}$ as in Proposition~\ref{prop:zigzag},
+$A(x')-A_{\rm cone}(x)=\int_{R_n(x)}\omega$ holds to $2\cdot10^{-10}$ for all generators, $n=1,2,3$:
+\begin{center}\small
+\begin{tabular}{llllll}
+\toprule
+$n$ & $\tilde x$ (leg) & $\tilde x'$ & $A_{\rm cone}$ & $A(x')$ & $\delta_n=$ area\\
+\midrule
+1 & $(\tfrac16,\tfrac12)$ ($L^w_0$) & $(0.205251,0.794749)$ & $\tfrac16+\tfrac14$ & $53/168$ & $-17/168$\\
+1 & $(\tfrac13,-\tfrac12)$ ($L^w_0$) & $(0.315663,-0.315663)$ & $\tfrac23+\tfrac14$ & $149/168$ & $-5/168$\\
+2 & $(\tfrac16,\tfrac12)$ ($L^w_0$) & $(0.170918,0.414541)$ & $0.166667+\tfrac12$ & $0.652541$ & $-0.014126$\\
+2 & $(0.315663,-0.315663)$ ($L_1$) & $(0.281081,-0.140540)$ & $0.886905$ & $0.931507$ & $+0.044602$\\
+2 & $(\tfrac13,-\tfrac12)$ ($L^w_0$) & $(0.319618,-0.659809)$ & $0.666667+\tfrac12$ & $0.112733$ & $-0.053934$\\
+2 & $(0.205251,-1.205251)$ ($L_1$) & $(0.225016,-1.112508)$ & $0.315476$ & $0.338550$ & $+0.023073$\\
+\bottomrule
+\end{tabular}
+\end{center}
+(actions relative to $f_\Gamma(\tfrac16,\tfrac12)=0$; add $c=-\tfrac16$ for absolute values).  For $n=1$ the cone
+actions $\{0,\tfrac12\}+\tfrac14$ plus the areas $\{-\tfrac{17}{168},-\tfrac5{168}\}$ give exactly
+$\{\tfrac{25}{168},\tfrac{121}{168}\}$, the Chern--Simons invariants of $-\Sigma(2,3,7)$; no constant shift could
+(the cone actions differ by $\tfrac12$, the targets by $\tfrac47$).  The normalisation of the $w$-leg was
+discovered here: the vertex offset $(n-1)/4$ fails, the midpoint-matched offset $\tfrac n4$ passes.
+Files: \texttt{numerics/fig8\_cone.py}, \texttt{fig8\_cone\_n1.png}.

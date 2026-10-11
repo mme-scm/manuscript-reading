@@ -29,14 +29,20 @@ As $\epsilon\to0$, $CF(\tilde\Gam,Z_n)$ with its action filtration is isomorphic
 \[
 \Cone\big(CF(\tilde\Gam,L_{1/(n-1)})\xrightarrow{\ \mu^2(-,p_n)\ }CF(\tilde\Gam,L^w_0)\big),
 \]
-the first summand carrying the action $A$ of Proposition~\ref{prop:action} shifted by the corner action
-$A(p_n)$ of Lemma~\ref{lem:corner}, the second its own action.
+the first summand carrying the line action $A(x)=f_\Gamma(\tilde x)-(n-1)\tilde b^2$ of Proposition~\ref{prop:action},
+the second the action $f_\Gamma(\tilde x)+2\tilde a\tilde b+\tfrac n4$ (the Kirk--Klassen primitive on $b\in\tfrac12+\Z$,
+offset by $\tfrac n4$).
 \end{proposition}
 \begin{proof}
 Generators of $CF(\tilde\Gam,Z_n)$ are those of the two summands.  Bigons between points of the same summand are
 bigons for that line.  A bigon from a point of $L_{1/(n-1)}$ to a point of $L^w_0$ must pass through the surgery
 region, and for $\epsilon\to0$ it is a triangle with a corner at $p_n$: this is $\mu^2(-,p_n)$.  The primitive of
-$\lambda$ on $Z_n$ restricts to the two line primitives, offset by $A(p_n)$, up to $O(\epsilon)$.
+$\lambda$ on $Z_n$ restricts to the two line primitives, offset by a constant, up to $O(\epsilon)$.  The constant is fixed by requiring both to be primitives of $\lambda$
+on $Z_n$ agreeing at the points where $Z_n$ meets $L_{1/n}$: these are the midpoints $m_1=\tilde p_n+\tfrac12v_1$,
+$m_2=\tilde p_n+v_1+\tfrac12v_2$ of the two legs (Lemma~\ref{lem:flux}), not the vertex $\tilde p_n$, and the
+mismatch of the two line primitives at $m_2$ (where $b\in\tfrac12+\Z$) is $n\,b^2\equiv\tfrac n4$.  The vertex offset
+$(n-1)/4$ of Lemma~\ref{lem:corner} is the wrong normalisation for the cone; the numerics confirm $\tfrac n4$ on the
+$w$-leg and $0$ on the other (\S\ref{sec:tests}).
 \end{proof}
 
 \subsection{From the zigzag to the straight line}
@@ -51,15 +57,18 @@ Assume \ref{H:alex}--\ref{H:Y} and minimal position.  Then
 \begin{enumerate}[label=(\alph*)]
 \item the isotopy induces a bijection $x\mapsto x'$ from the generators of the cone to $\Gam\cap L_{1/n}$ and an
 isomorphism of complexes $\Cone(\mu^2(-,p_n))\cong CF(\tilde\Gam,L_{1/n})$;
-\item the action of $x'$ is $A(x)+\delta_n(x)$, where $\delta_n(x)=\int_{R_n(x)}\omega$ is the signed area of the
-region in $\R^2$ bounded by the arc of $\tilde\Gam$ from $\tilde x$ to $\tilde x'$, the segment of $Z_n$ from
-$\tilde x$ back to the lift of the corner, and the segment of $L_{1/n}$ from there to $\tilde x'$;
+\item the action of $x'$ is $A_{\rm cone}(x)+\delta_n(x)$, where $A_{\rm cone}$ is the cone action of
+Proposition~\ref{prop:zigzag} and $\delta_n(x)=\int_{R_n(x)}\omega$ is the signed area of the region in $\R^2$
+bounded by the arc of $\tilde\Gam$ from $\tilde x$ to $\tilde x'$, the segment of $Z_n$ from $\tilde x$ to the
+midpoint $m$ of the leg containing $\tilde x$, and the segment of $L_{1/n}$ from $m$ to $\tilde x'$;
 \item $\cs$ on the generators of $\CI(Y_{1/n})$ is $A(x')+c_i$, exactly (Proposition~\ref{prop:action}).
 \end{enumerate}
 \end{theorem}
 \begin{proof}
 (a) Between birth--death moments the bigon counts of $CF(\tilde\Gam,\phi_t(Z_n))$ are locally constant.
-(b) is Stokes' theorem for $\lambda$ along the boundary of $R_n(x)$.  (c) is Proposition~\ref{prop:action}.
+(b) is Stokes' theorem for $\lambda$ along the boundary of $R_n(x)$, the two primitives agreeing at $m$ by
+construction.  (c) is Proposition~\ref{prop:action}.  Numerically verified for the figure-eight, $n=1,2,3$, to
+$2\cdot10^{-10}$ (\S\ref{sec:tests}).
 \end{proof}
 Without minimal position, (a) holds after cancelling the birth--death pairs, each of which is an explicit bigon
 of explicit area.  The DLME-type level bounds follow from $|\delta_n(x)|\le\operatorname{area}$ swept; the exact
