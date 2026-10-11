@@ -1,0 +1,133 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}\raggedbottom
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newcommand{\st}[1]{\par\noindent\textit{#1}\enspace}
+
+\title{The $\pm1$ case from a one-parameter family}
+\date{}
+\begin{document}\sloppy
+\maketitle
+\vspace{-2.5em}
+
+\noindent The argument is DLME's (arXiv:2410.21248, Props.~3.9--3.10 and \S5). It is
+restated here so that the role of each ingredient is visible, and read in the
+pillowcase language of the uploaded paper.
+
+\section{Statement}
+
+For a homology sphere $Y$, $I_\bullet(Y)$ is the $\mathbb Z$-graded, Chern--Simons
+filtered irreducible complex. $\kappa(d)$ is the least filtration level of a
+nonzero class in degree $d$, and $\ell(Y)=\inf_d(\kappa(d)-d/8)$. In the
+normalisation used throughout, this is the least $(3+\rho)/16$ of a nonzero class.
+
+\begin{thm}[DLME]\label{t}
+Let $K\subset S^3$ be nontrivial. Then $\ell(S^3_{-1}(K))\le\ell(S^3_1(K))-\frac18-\eta(K)$ with
+$\eta(K)>0$. In particular $S^3_1(K)\not\cong S^3_{-1}(K)$ as oriented manifolds.
+\end{thm}
+
+\section{Ingredients}
+
+\st{(1) The triangle.} For $K\subset Y$ there is a distance-two exact triangle
+(CDX; DLME Prop.~3.9, over $\mathbb F_2$)
+\[
+\cdots\to I(Y_1)\xrightarrow{\;W_*\oplus(W,c)_*\;}I(Y)\oplus I(Y)\xrightarrow{\;(W',c')_*\oplus W'_*\;}I(Y_{-1})\to\cdots .
+\]
+\emph{Pillowcase reading} (heuristic: it uses the paper's Conjecture~3.2). $L_{-1}$ is obtained from $L_1$ by one Dehn twist along
+each edge $\{a=0\}$ and $\{a=\frac12\}$. Both edges are the line of $Y=S^3$: they are
+$L_{1/0}$ and its $\chi$-translate, which is why $I(Y)$ appears twice. Each twist
+contributes one Seidel triangle whose third term is the edge. $\Gamma_K$ misses
+both edges (Prop.~1.1(b)), so for $Y=S^3$ the third term contributes nothing.
+This is the distance-two analogue of the uploaded paper's \S4.2.
+
+\st{(2) The one-parameter family map.} Triangle detection produces a null-homotopy
+$g_1\colon I_\bullet(Y_1)\to I_\bullet(Y_{-1})$ of the composite through the middle
+term. It counts instantons with irreducible ends over a one-parameter family of
+metrics $G\cong[-1,1]$ on the composite cobordism $W^1_{-1}=W(Y_1\to S^3)\cup_{S^3}W(S^3\to Y_{-1})$.
+At one end the family breaks along the middle $S^3$. At the other it breaks along a
+hypersurface with $\mathbb RP^3$ components (DLME \S5). The $\mathbb RP^3$ bounds the $(-2)$-sphere
+formed by the cocore of the first handle and the core of the second. When the middle term is $0$, as for $Y=S^3$, $g_1$ is a
+chain map and a quasi-isomorphism (DLME Prop.~3.10, \S5).
+
+\st{(3) Its level.} $W^1_{-1}$ has $b_1=b^+=0$ and $\pi_1=1$: each piece is a
+$2$-handle attached to $S^3\times I$. An instanton counted over a $d$-parameter
+family has index $i_0=-d$. The level formula
+$c(\beta)-c(\alpha)=\frac{i_0+3b^+}8-E$ then gives
+\[
+c(\beta)-c(\alpha)=-\tfrac18-E .
+\]
+The bundle drops out. In DLME's terms, with $c^2=-1$: degree $D=1-2c^2=3$, level
+$L=-c^2/4-E$, and $L-D/8=-\frac18-E$.
+
+\st{(4) Positivity.} $E>0$, because a flat connection on the simply connected $W^1_{-1}$
+is trivial and cannot have irreducible limits. Compactness gives finitely many
+counted instantons, so $\eta(K):=\min E>0$.
+
+\st{(5) Nonvanishing.} $I(S^3_{\pm1}(K))\cong I^w(S^3_0(K))\ne0$ by Floer's triangle and
+Kronheimer--Mrowka. Hence $\ell$ is finite.
+
+\begin{lem}[DLME Lemma 2.7]
+Let $f$ be a filtered chain map of degree $D$ and level $L$ that is injective on
+homology in every degree. Then $\ell(\text{target})\le\ell(\text{source})+L-D/8$.
+\end{lem}
+\noindent\emph{Proof.} A class at level $\kappa(d)+\epsilon$ maps to a nonzero class at
+level $\kappa(d)+L+\epsilon$ in degree $d+D$. Subtract $(d+D)/8$ and take infima. $\square$
+
+\noindent\emph{Proof of Theorem \ref{t}.} Apply the lemma to $g_1$, using (2), (3), (4)
+and (5). $\square$
+
+\section{What each ingredient contributes}
+
+\begin{itemize}
+\item \emph{The $\frac18$ is the family dimension, and nothing else.} One parameter means
+one unit of index, which is $\frac18$ of level. No $\rho$-term from a middle end
+enters the counted maps. The $\mathbb RP^3$ appears only at the boundary of the
+family.
+\item \emph{Strictness is positivity of energy} on a simply connected cobordism, which
+is an allowed input.
+\item \emph{What the cones of the uploaded paper's \S6 cannot supply} is the direction
+of the inequality. Those cones join $Y_{\pm1}$ through $(Y_0,w)$; that is the
+horizontal rotation, and it gives only
+$\ell(Y_1)-\ell(Y_{-1})=\frac38-\operatorname{Area}(T)-\frac18\Delta\iota$. For
+a pair $x\mapsto y$ counted by $g_1$, Stokes and the level formula (exact for torus
+knots, plausible in general) give
+\[
+E=\tfrac14-\operatorname{Area}(T_{xy})-\tfrac18\Delta\iota .
+\]
+So $E>0$ is precisely the area bound that the cones cannot see. For the
+right-handed trefoil, $\ell(Y_1)-\ell(Y_{-1})=\frac{61}{280}=\frac18+\frac{13}{140}$.
+\end{itemize}
+
+\section{Why the same proof does not give $\pm2$}
+
+$L_{-2}$ is obtained from $L_2$ by \emph{two} twists along each edge. The relevant
+composite $W'=(-X_2)\cup_{S^3}X_{-2}$ contains a $(-4)$-sphere bounded by $L(4,1)$. The
+analogous family map has the same index count, so the same level $-\frac18-E$, and $E>0$
+holds again because $W'$ is simply connected. What fails is one of the two
+structural properties:
+\begin{itemize}
+\item \emph{Bundle even on the sphere:} flat caps on the $(-4)$-disk bundle with central
+$L(4,1)$ boundary give uncancelled lens faces. The middle term is not $0$, and the
+family map is not a chain map. This matches the uploaded paper's \S4.5 remark that $(\frac12,0)$
+is a central flat connection on $Y_{\pm2}$; the identification is my reading.
+\item \emph{Bundle odd on the sphere (mixed bundles):} the family map is plausibly a chain
+map, but it is not injective in general. It would force $m\ge\frac18$, whereas
+$m_2=\frac1{16}$ for $T(2,-3)$: the class is absorbed.
+\end{itemize}
+These are DLME's two ``inadequate variations''. The map that is a quasi-isomorphism,
+$B$, has level $+\frac18$, because the insertion $\mu(S)$ costs $\frac14$. So the
+$\pm2$ problem is exactly to find a replacement for $g_1$ that is injective with
+level below $0$. The $\pm1$ argument needs nothing beyond the family dimension and
+positivity because there the middle term vanishes on the nose.
+\end{document}
