@@ -1,0 +1,36 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,enumitem,booktabs,xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=green!40!black,urlcolor=blue!60!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{task}[theorem]{Task}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\F}{\mathbb{F}}\newcommand{\Z}{\mathbb{Z}}\newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathbb{C}}
+\newcommand{\CI}{\mathit{CI}}\newcommand{\cs}{\mathrm{cs}}\newcommand{\gr}{\mathrm{gr}}
+\newcommand{\cA}{\mathcal{A}}\newcommand{\cM}{\mathcal{M}}\newcommand{\Gam}{\Gamma_K}
+\DeclareMathOperator{\Cone}{Cone}\DeclareMathOperator{\Hom}{Hom}\DeclareMathOperator{\SU}{SU}\DeclareMathOperator{\SO}{SO}
+\title[A pillowcase action complex for surgeries]{A pillowcase action complex $C(K)$ and a filtered mapping cone\\ for the Chern--Simons filtered instanton homology of $1/n$ surgeries}
+\date{October 2026}
+\begin{document}
+\begin{abstract}
+Let $K$ be a knot in an integer homology sphere $Y$ whose Alexander polynomial has no roots on the unit circle and whose irreducible $\SU(2)$ representation variety is a smooth compact $1$-manifold.  We define a complex $C(K)$ from the image $\Gam$ of this variety in the pillowcase, together with a Chern--Simons action, a grading, and the two instanton complexes $\CI(Y)$ and $\CI(Y_0(K),w)$ as an $A_\infty$-module over the two-line algebra of the pillowcase.  We give a mapping cone formula expressing the Chern--Simons filtered irreducible instanton complex of $Y_{1/n}(K)$ as an iterated cone, with the filtration offsets $(n-1)/4$ computed as the symplectic action of the corner morphisms, and the generator-level data (Chern--Simons values, gradings) computed by Kirk--Klassen integrals along $\Gam$.  The parts that are proved are separated from the parts that are conjectural (the identification of differentials with pillowcase bigons).  A workflow with concrete numerical tests is specified.
+\end{abstract}
+\maketitle
+\setcounter{tocdepth}{1}\tableofcontents
+\input{s1-setting}
+\input{s2-action}
+\input{s3-complex}
+\input{s4-cone}
+\input{s5-tests}
+\input{s6-workflow}
+\input{refs}
+\end{document}

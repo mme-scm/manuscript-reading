@@ -1,0 +1,58 @@
+%======================================================================
+\section{The complex $C(K)$}\label{sec:complex}
+%======================================================================
+\subsection{Gradings}
+Floer's $\Z/8$ grading of a flat connection on $Y_{p/q}$ is a spectral flow.  Kirk--Klassen--Ruberman
+\cite{KKR} split it along $T^2$: for $x,y\in r^{-1}(L_{p/q})$ on one component $\gamma$,
+\[
+\gr(y)-\gr(x)\equiv\mathrm{Mas}\big(\tilde\gamma|_{x\to y},\,L\big)+\text{(branch-point corrections)}\pmod 8,
+\]
+where $\mathrm{Mas}$ is the Maslov index of the path of tangent lines of $\tilde\gamma$ against the fixed line
+$L$ in $(\R^2,\omega)$, and each branch point crossed contributes a fixed term determined by the local model.
+Within a component this is computable from the picture.  Across components there are constants
+$d_i\in\Z/8$, again fixed by one known filling.  The $\Z/2$ reduction is Herald's sign \cite{Herald}, and
+$\sum_x(-1)^{\gr(x)}$ over $\Gam\cap L_{1/n}$ is the Casson invariant of $Y_{1/n}$ (Herald's formula).
+
+\subsection{Two instanton complexes and the two-line algebra}
+Let $A:=\CI(Y)$ and $B:=\CI(Y_0(K),w)$, both $\Z/8$-graded, with the Chern--Simons filtrations of \S\ref{sec:action}
+(generators $r^{-1}(L_{1/0})$ and $r^{-1}(L_0^w)$).  For $Y=S^3$, $A=0$.
+
+In the pillowcase, $L_{1/0}=\{a=0\}$ and $L_0^w=\{b=\tfrac12\}$ meet in exactly one point of $T^2$, the corner
+$c=(0,\tfrac12)$.  Their endomorphism algebra in the Fukaya category of $T^2$ is the path algebra
+\[
+\cA=\F\langle e_A,e_B,\ \mathsf p\colon A\to B,\ \mathsf q\colon B\to A,\ \varepsilon_A,\varepsilon_B\rangle/
+(\mathsf q\mathsf p=\varepsilon_A,\ \mathsf p\mathsf q=\varepsilon_B,\ \varepsilon^2=0,\ \varepsilon\mathsf p=\mathsf p\varepsilon,\ \ldots),
+\]
+$\mathsf p,\mathsf q$ the corner point in the two directions, $\varepsilon$ the degree-one generator of
+$H^*(S^1)=\Hom(L,L)$.  This is the instanton counterpart of the bordered torus algebra.
+
+\begin{definition}[the complex $C(K)$]\label{def:CK}
+$C(K)$ is the filtered, $\Z/8$-graded $A_\infty$-module over $\cA$ with underlying filtered complex $A\oplus B$
+and structure maps
+\begin{align*}
+m_2(-,\mathsf p)&=F_W\colon A\to B, &&\text{the $2$-handle cobordism }W\colon Y\to Y_0\ (\text{bundle }w),\\
+m_2(-,\mathsf q)&=F_{W'}\colon B\to A, &&\text{the reverse cobordism }Y_0\to Y,\\
+m_2(-,\varepsilon_A)&=u_A,\quad m_2(-,\varepsilon_B)=u_B, &&\text{the point-class (degree $-4$) operators},
+\end{align*}
+and higher maps $m_k$ given by counts on the composite cobordisms with the corresponding handle decompositions,
+e.g.\ $m_3(-,\mathsf p,\mathsf q)$ the homotopy $F_{W'}F_W\simeq u_A$ on the composite $Y\to Y_0\to Y$.
+Together with the generator data $(\Gam,f_{\gamma_i},c_i,\gr,d_i)$ of \S\ref{sec:action}.
+\end{definition}
+
+\emph{Status.}  The underlying complexes, $m_2(-,\mathsf p)$, $m_2(-,\mathsf q)$, $u_A,u_B$ and the homotopy
+$m_3(-,\mathsf p,\mathsf q)$ exist rigorously: they are the maps and homotopies of the surgery exact triangle
+(Floer; Braam--Donaldson \cite{BD}; Kronheimer--Mrowka's triangle detection \cite{KM-unknot}), and the energy
+of an instanton on a cobordism is nonnegative, so each is filtered after an explicit shift (\S\ref{sec:cone}).
+The full $A_\infty$-structure is the content of a bordered/Atiyah--Floer theory for the torus boundary, which is
+conjectural.  For $1/n$ surgeries only the listed maps are needed (Theorem~\ref{thm:cone}).
+
+\begin{conjecture}[pillowcase model]\label{conj:pillow}
+Under \ref{H:alex}--\ref{H:Y}, $C(K)$ is $A_\infty$-quasi-isomorphic, as a filtered module, to the Fukaya module
+$\Hom(\tilde\Gam,\ L_{1/0}\oplus L_0^w)$ in the $\Z/2$-equivariant Fukaya category of $T^2$, with $\tilde\Gam$
+equipped with a bounding cochain supported at the branch points and the action/grading data of
+\S\ref{sec:action}--\ref{sec:complex}.  Differentials are counts of immersed bigons in $T^2$ avoiding the corners.
+\end{conjecture}
+Evidence: generators, nondegeneracy, Chern--Simons values and gradings match (Propositions \ref{prop:gens},
+\ref{prop:action}, and \cite{KKR,Herald}); the Euler characteristic matches by Herald's formula; the exact
+triangle matches the Dehn-twist triangle (\S\ref{sec:cone}).  What is missing is the identification of
+instantons on $\R\times Y_{1/n}$ with bigons, the analogue of the Atiyah--Floer conjecture for torus boundary.

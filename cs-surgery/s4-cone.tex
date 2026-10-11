@@ -1,0 +1,86 @@
+%======================================================================
+\section{The filtered mapping cone}\label{sec:cone}
+%======================================================================
+\subsection{The corner offsets}
+For $n\ge1$ let $p_n\in T^2$ be the intersection point of $L_{1/(n-1)}=\{a+(n-1)b=0\}$ (for $n=1$: $L_{1/0}$) with
+$L^w_0=\{b=\tfrac12\}$; it is the corner $(0,\tfrac12)$ for $n$ odd and $(\tfrac12,\tfrac12)$ for $n$ even.
+
+\begin{lemma}[corner action]\label{lem:corner}
+With the primitives of \S\ref{sec:action} ($f_{L_{1/(n-1)}}(s)=-(n-1)s^2$ on $(a,b)=s(n-1,-1)$, base point the
+origin; $f_{L^w_0}(a,\tfrac12)=-a$, base point $(0,\tfrac12)$),
+\[
+A(p_n):=f_{L_{1/(n-1)}}(\tilde p_n)-f_{L^w_0}(\tilde p_n)\equiv\frac{n-1}{4}\pmod{\Z},
+\]
+independently of the lift $\tilde p_n$.
+\end{lemma}
+\begin{proof}
+At $b=\tfrac12$: $s=-\tfrac12$, $a=-(n-1)/2$, so $f_{L_{1/(n-1)}}=-(n-1)/4$ and $f_{L^w_0}=(n-1)/2$; the difference is
+$-(n-1)/4+\ldots$; with the sign conventions fixed so that $A=f_\Gamma-f_L$ decreases along differentials, one gets
+$(n-1)/4$ modulo $\Z$.  Changing the lift by $k(-(n-1),1)$ changes $f_{L_{1/(n-1)}}$ by $-(n-1)(k^2-k)\in2\Z$ and
+$f_{L^w_0}$ by $(n-1)k\in\Z$.
+\end{proof}
+The sign of the $\tfrac14$ (i.e.\ whether the offset is $(n-1)/4$ or $-(n-1)/4$ in the energy convention) is the
+first thing the numerical test of \S\ref{sec:tests} fixes.
+
+\subsection{The Dehn-twist triangle}
+In $T^2$ the Dehn twist along $\{b=\tfrac12\}$ carries $L_{1/(n-1)}$ to $L^w_{1/n}=\{a+nb=\tfrac12\}$, and by
+Proposition~\ref{prop:basic}(c) the translation $a\mapsto a+\tfrac12$ identifies $\Gam\cap L^w_{1/n}$ with
+$\Gam\cap L_{1/n}$ (both are the flat $\SO(3)$ connections on $Y_{1/n}$).  Seidel's exact triangle for the Dehn
+twist along $L^w_0$ reads, in the Fukaya category of $T^2$,
+\[
+L_{1/(n-1)}\xrightarrow{\ \cdot p_n\ }L^w_0\longrightarrow L^w_{1/n}\longrightarrow L_{1/(n-1)}[1],
+\]
+and applying $\Hom(\tilde\Gam,-)$ gives $\Hom(\tilde\Gam,L^w_{1/n})\simeq\Cone\big(\Hom(\tilde\Gam,L_{1/(n-1)})\xrightarrow{m_2(-,p_n)}\Hom(\tilde\Gam,L^w_0)\big)$.
+This is the pillowcase shadow of Floer's exact triangle for the triple $(Y_{1/(n-1)},\ (Y_0,w),\ Y_{1/n})$.
+
+\subsection{The theorem}
+\begin{theorem}[filtered mapping cone for $1/n$ surgery]\label{thm:cone}
+Assume \ref{H:alex}--\ref{H:Y}, $n\ge1$, and that $L_{1/(n-1)}$ and $L_{1/n}$ are transverse to $\Gam$ (after collar
+perturbation).  Let $F_n\colon\CI(Y_{1/(n-1)})\to\CI(Y_0,w)$ be the map of the $2$-handle cobordism $W_n$.
+\begin{enumerate}[label=(\alph*)]
+\item \textup{(Floer, Braam--Donaldson)} $\CI(Y_{1/n})\simeq\Cone(F_n)$ as $\Z/8$-graded complexes, the grading on
+$\Cone$ being $\gr_{\CI(Y_{1/(n-1)})}+\delta_n$ on the first summand and $\gr_{\CI(Y_0,w)}$ on the second, for a
+constant $\delta_n\in\Z/8$ determined by the index of $W_n$ \textup{(}computed in \S\ref{sec:tests}\textup{)}.
+\item \textup{(filtration)} Give $\Cone(F_n)$ the filtration $\cs$ on $\CI(Y_0,w)$ and $\cs+\tfrac{n-1}{4}+k_n$ on
+$\CI(Y_{1/(n-1)})$, with $k_n\in\Z$ the unique integer for which $F_n$ is filtered and some instanton of $W_n$ has
+energy $<1$.  Then there are filtered chain maps $\Cone(F_n)\rightleftarrows\CI(Y_{1/n})$ that are homotopy
+inverses through filtered homotopies.  Hence the Chern--Simons filtered homotopy type of $\CI(Y_{1/n})$, and in
+particular Daemi's $\Gamma_{Y_{1/n}}$ and the Nozaki--Sato--Taniguchi $r_s$, are determined by $\CI(Y_{1/(n-1)})$,
+$\CI(Y_0,w)$, $F_n$ and the offset $(n-1)/4$.
+\item \textup{(generator level)} The generators of all three complexes, their $\cs$ values and gradings are the
+intersection data of \S\ref{sec:action}--\ref{sec:complex}; in particular, the multiset of $\cs$ values of the
+irreducible flat connections on $Y_{1/n}$ is $\{A(x)\}_{x\in\Gam\cap L_{1/(n-1)}}\cup\{A(y)+\tfrac{n-1}{4}\}_{y\in\Gam\cap L^w_0}$
+modulo $\Z$, up to cancelling pairs.
+\end{enumerate}
+\end{theorem}
+\begin{proof}[Proof sketch]
+(a) is the surgery exact triangle for the three fillings of slope $1/(n-1)$, $0$ (bundle $w$) and $1/n$, which
+are pairwise at distance one.  (b) The maps of the triangle detection lemma (Kronheimer--Mrowka
+\cite[\S7]{KM-unknot}) count instantons on $W_n$, on the second cobordism $W'_n\colon Y_0\to Y_{1/n}$, and on the
+composites with up to four handles; each shifts $\cs$ by the energy, which is nonnegative, plus a topological
+constant fixed by the bundle on the cobordism.  So every map is filtered once the summands are shifted by these
+constants, and the constants for the two inclusions and projections of the cone are forced to be equal by the
+homotopy identities.  The constant is the action of the corner morphism in the pillowcase (Lemma~\ref{lem:corner});
+its instanton-theoretic computation is the topological energy of the connection on $W_n$ restricting to the flat
+connections $x$ and $y$, which, by the Kirk--Klassen gluing formula applied to $W_n=(X\times I)\cup(\text{handle})$,
+is the same integral.  (c) follows from Propositions \ref{prop:gens} and \ref{prop:action} and (b).
+\end{proof}
+What is not proved by this argument: the \emph{integer} $k_n$ (it is determined by the topology of $W_n$ but we
+have not computed it; the numerical test determines it in examples), and the differential of $\CI(Y_0,w)$ itself
+(an instanton count, Conjecture~\ref{conj:pillow}).
+
+\subsection{Iteration, $Y=S^3$, negative slopes, slope $2$}
+\begin{corollary}\label{cor:iter}
+For $Y=S^3$ (so $\CI(Y)=0$): $\CI(S^3_1(K))\simeq\CI(S^3_0(K),w)$ with a grading shift and no filtration shift,
+and for $n\ge2$ the filtered complex $\CI(S^3_{1/n}(K))$ is filtered homotopy equivalent to a twisted complex
+\[
+\Big(\bigoplus_{j=1}^{n}B[\delta^{(j)}]\{\tfrac{j-1}{4}+k^{(j)}\},\ \ D=\partial_B+\sum_{i<j}D_{ij}\Big),\qquad B=\CI(S^3_0(K),w),
+\]
+where $D_{j,j+1}$ is the Dehn-twist endomorphism $T_j=F_{j+1}\circ(\text{the equivalence }B\simeq\CI(S^3_{1/j}))$
+and the $D_{ij}$, $j>i+1$, are the higher homotopies of the iterated cones.
+\end{corollary}
+Negative slopes $-1/n$ follow by applying the theorem to the mirror.  For slope $\pm2$ the triple
+$(1/0,\ 1/1,\ 2/1)$ is at pairwise distance one, but $Y_{2}$ has a nontrivial central flat connection
+(the corner $(\tfrac12,0)$ lies on $L_2$), so the irreducible-only complex must be replaced by the
+$\SO(3)$-equivariant one at that corner; the pillowcase picture predicts a single extra generator with
+$\cs=0$ and a corner bigon correction.  We leave $\pm2$ as a stated problem.

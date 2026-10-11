@@ -1,0 +1,36 @@
+%======================================================================
+\section{Workflow}\label{sec:workflow}
+%======================================================================
+The orchestration is one coordinator and specialised agents.  Each task lists the model, the reasoning effort,
+its inputs, and an acceptance criterion.  Tasks 1--3 ran during the preparation of this document; their outputs
+are summarised in \S\ref{sec:tests}.
+
+\begin{enumerate}[leftmargin=2em]
+\item \textbf{Numerics (Opus, high).}  Explicit $\SU(2)$ representation curves for the trefoil and the figure-eight,
+pillowcase images, primitives $f_\gamma$, intersection points with $L_{1/n}$ ($n=\pm1,\pm2,\pm3$) and $L^w_0$, the
+periods of Lemma~\ref{lem:period}, and the comparison with the tabulated Chern--Simons invariants of
+$\Sigma(2,3,5)$, $\Sigma(2,3,7)$, $\Sigma(2,3,11)$.  Acceptance: the sign convention of
+Proposition~\ref{prop:action} is fixed, and the offset $(n-1)/4$ of Lemma~\ref{lem:corner} is confirmed or refuted
+on $S^3_{1/2}(\text{trefoil})$.
+\item \textbf{Literature precision (Opus, medium).}  Exact statements of Kirk--Klassen, Klassen, Herald,
+Kirk--Klassen--Ruberman, Braam--Donaldson, Daemi, Nozaki--Sato--Taniguchi, Fintushel--Stern.  Acceptance: every
+citation in this document carries a verified statement.
+\item \textbf{Adversarial referee (Opus, extra-high).}  Independent check of Lemmas \ref{lem:basis},
+\ref{lem:period}, \ref{lem:corner}, Propositions \ref{prop:basic}, \ref{prop:gens}, and the Dehn-twist triangle.
+Acceptance: each claim marked correct, corrected, or given a counterexample.
+\item \textbf{Gradings (Opus, high).}  Derive the branch-point corrections and the constants $\delta_n$ from
+\cite{KKR}, and verify on $\Sigma(2,3,5)\to\Sigma(2,3,11)$ with the Fintushel--Stern gradings.
+\item \textbf{Integer offsets $k_n$ (Opus, high).}  Compute the minimal topological energy on $W_n$ via the
+Kirk--Klassen gluing formula for $W_n=(X\times I)\cup\text{handle}$, and compare with the numerical multiset
+identity of Theorem~\ref{thm:cone}(c).
+\item \textbf{Absolute constants $c_i$ (Opus, high).}  Implement the $SL(2,\C)$ path integral for the figure-eight
+knot and compare with the Fintushel--Stern values for $\Sigma(2,3,7)$.
+\item \textbf{Filtered triangle detection (Opus, extra-high).}  Write out the triangle-detection maps with their
+energy offsets and prove the filtered statement in Theorem~\ref{thm:cone}(b), including the orientation
+(sign) bookkeeping over $\Z$.
+\item \textbf{Bigons versus instantons for $(1,1)$-type examples (Opus, extra-high).}  Formulate the adiabatic
+limit along $T^2$ for $Y_{1/n}$ and identify the obstructions, as in the companion notes
+\texttt{cfk-gauge/}.
+\end{enumerate}
+Routing rule: any agent that finds a sign or normalisation conflict stops and reports; the coordinator updates
+the conventions in \S\ref{sec:action} before downstream tasks resume.

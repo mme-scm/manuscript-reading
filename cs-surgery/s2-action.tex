@@ -1,0 +1,74 @@
+%======================================================================
+\section{Chern--Simons as symplectic action in the pillowcase}\label{sec:action}
+%======================================================================
+Normalise $\cs\colon\mathcal B(Z)\to\R/\Z$ so that the energy of an instanton on $\R\times Z$ from $\alpha$ to
+$\beta$ is $\cs(\alpha)-\cs(\beta)$ (lifted to $\R$), and so that the trivial connection has $\cs=0$.
+
+\subsection{Forms and primitives}
+On $\R^2\ni(a,b)$ let $\omega=2\,da\wedge db$ and $\lambda=2b\,da$.  The factor $2$ makes $\omega$ descend to $P$ with
+total area $1$, matching the $\Z$-periodicity of $\cs$.  For an oriented curve $C\subset\R^2$ with a base point
+$c_0$, set $f_C(x):=-\int_{c_0}^{x}\lambda$ along $C$.
+
+\begin{lemma}[change of basis]\label{lem:basis}
+For $\begin{psmallmatrix}p&q\\r&s\end{psmallmatrix}\in SL(2,\Z)$ and $a'=pa+qb$, $b'=ra+sb$:
+$2b'\,da'-2b\,da=dg$ with $g=2qr\,ab+pr\,a^2+qs\,b^2$.  On $L_{p/q}=\{a'=0\}$ parametrised by $(a,b)=s(q,-p)$ one
+has $g=pq\,s^2$.
+\end{lemma}
+\begin{proof}
+Expand $b'\,da'=(ra+sb)(p\,da+q\,db)$ and use $ps-qr=1$; the terms regroup as $b\,da+d(qr\,ab+\tfrac12pr\,a^2+\tfrac12qs\,b^2)$.
+On the line, substitute.
+\end{proof}
+
+\subsection{The Kirk--Klassen formula}
+Kirk--Klassen \cite{KK90}: if $\rho_t$ is a path in $R(X)$ with boundary angles $(a(t),b(t))$ lifted continuously to
+$\R^2$, and $\rho_0,\rho_1$ extend over the same Dehn filling $Z$, then, in a basis of $H_1(T^2)$ in which the filling
+curve is the first basis element,
+\[
+\cs(\rho_1)-\cs(\rho_0)\equiv-\int_0^1 2b\,\dot a\,dt\pmod{\Z}.
+\]
+Combining with Lemma~\ref{lem:basis}:
+
+\begin{proposition}[Chern--Simons is the action]\label{prop:action}
+Let $x,y\in r^{-1}(L_{p/q})$ lie on the same component $\gamma$ of $R^{\rm irr}(X)$, and lift a path in $\gamma$ from
+$x$ to $y$ to $\tilde\gamma\subset\R^2$.  Then
+\[
+\cs(y)-\cs(x)\equiv\big[f_{\tilde\gamma}(\tilde y)-f_{\tilde\gamma}(\tilde x)\big]-\big[f_{L}(\tilde y)-f_{L}(\tilde x)\big]
+\pmod{\Z},\qquad f_L(s)=pq\,s^2 \text{ on } (a,b)=s(q,-p),
+\]
+where $\tilde x,\tilde y$ are the lifted endpoints and $f_L$ is evaluated on the lifts of $L_{p/q}$ through them.
+The same holds for $L^w_0$ with $f_{L^w_0}(a,\tfrac12)=-a$ (base point $(0,\tfrac12)$).
+\end{proposition}
+\begin{proof}
+Apply Kirk--Klassen in the adapted basis $(a',b')$ and rewrite by Lemma~\ref{lem:basis}: the primitive
+$g$ evaluated at the endpoints is $f_L$ up to sign.  For $L_0^w$ use the basis $(b,-a)$ and the shift $b=\tfrac12$.
+\end{proof}
+
+The right-hand side is the symplectic action of the intersection point of the two Lagrangians $\tilde\gamma$ and $L$
+in $\R^2$: $A(x):=f_{\tilde\gamma}(\tilde x)-f_L(\tilde x)$.  So \emph{the Chern--Simons filtration on the generators of
+$\CI(Y_{p/q})$ coming from one component of $R^{\rm irr}(X)$ is the action filtration of the pillowcase Floer complex}.
+
+\begin{lemma}[periods]\label{lem:period}
+For a component $\gamma$ with lift $\tilde\gamma$ (a path in $\R^2$ from $\tilde x$ to $\tilde x+(m,k)$),
+$\oint_\gamma\lambda:=f_{\tilde\gamma}(\tilde x+(m,k))-f_{\tilde\gamma}(\tilde x)\in\tfrac12\Z$, and it lies in $\Z$ when
+$(m,k)=0$.
+\end{lemma}
+\begin{proof}
+Apply the Kirk--Klassen formula to the loop, with $\rho_1=\rho_0$: the left side is $0$ modulo $\Z$ (for $(m,k)=0$).
+For $(m,k)\neq0$ the lifted endpoints differ by a deck transformation, and $\lambda$ changes by $2k\,da$ under
+$b\mapsto b+k$, contributing $2km\in2\Z$; the Weyl ambiguity $(a,b)\mapsto(-a,-b)$ can contribute $\tfrac12$.
+\end{proof}
+So $f_\gamma$ descends to a function $\gamma\to\R/\tfrac12\Z$; on the double cover $\tilde\gamma\subset T^2$ it descends
+to $\R/\Z$.  This is the correct level of ambiguity: $\CI$ is $\Z/8$-graded with $\cs\in\R/\Z$.
+
+\subsection{Absolute constants: the first correction terms}
+Proposition~\ref{prop:action} determines $\cs$ on the generators coming from one component $\gamma_i$ only up to a
+constant $c_i\in\R/\Z$: there is no path in $R(X)$ from the trivial connection to $\gamma_i$, precisely because of
+\ref{H:alex}.  These constants are genuine knot invariants (they are the Chern--Simons invariants of flat connections
+on fillings), and they are computable:
+\begin{enumerate}[label=(\roman*)]
+\item through the $SL(2,\C)$ character variety, where the Kirk--Klassen formula holds with complex $(a,b)$
+\cite{KK93} and the irreducible curve containing $\gamma_i$ reaches the abelian locus at roots of $\Delta_K$ off the
+unit circle; the imaginary part of the integral must vanish at the end, which is a check;
+\item or from one known filling (e.g.\ a Brieskorn sphere), which calibrates $c_i$ for every slope at once.
+\end{enumerate}
+Thus the Chern--Simons data of $K$ is: the curve $\Gam$, the primitives $f_{\gamma_i}$, and the constants $c_i$.
