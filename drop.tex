@@ -1,0 +1,558 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}\raggedbottom
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+\numberwithin{equation}{section}
+\newtheoremstyle{compact}{4pt}{4pt}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{compact}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par\pushQED{\qed}\normalfont
+  \topsep4\p@\relax\trivlist\item[\hskip\labelsep\itshape#1\@addpunct{.}]%
+  \ignorespaces}{\popQED\endtrivlist\@endpefalse}
+\makeatother
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\F}{\mathbb F}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\CS}{\mathrm{CS}}
+\newcommand{\gr}{\mathrm{gr}}
+\newcommand{\lev}{\operatorname{lev}}
+\newcommand{\Cone}{\operatorname{Cone}}
+\newcommand{\tl}{\mathrm{tl}}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\st}[1]{\par\noindent\textit{#1}\enspace}
+
+\title{A strategy for the drop}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-2.5em}
+
+\noindent\textit{Status of the claims.} Every claim is labelled.
+\emph{Proved}: a complete argument from the stated inputs; when these
+include the exact triangles of \S\ref{sec:setting}, we say so.
+\emph{Computed}: an exact machine computation, checked by an independent
+program unless said otherwise. \emph{Plausible}: an argument with a named
+gap. \emph{Conjecture}: expected, with no argument. The only facts about
+energy used anywhere are $E\ge0$, and $E>0$ for the instantons counted by a
+map to which no flat connection can contribute.
+
+Let $K\subset S^3$ be a knot with $\Delta_K=1$, let $Y_N=S^3_N(K)$, and let
+$P_0,P_1$ be the $\SO(3)$-bundles on $Y_{\pm2}$ with $w_2=0$ and $w_2\ne0$.
+A cosmetic pair $Y_2\cong Y_{-2}$ is excluded by a \emph{drop} of consistent
+sign: either $D=\min(\lambda_0,\lambda_1)(Y_2)-\min(\lambda_0,\lambda_1)(Y_{-2})>0$,
+or $m_1=\lambda_0(Y_2)-\lambda_1(Y_{-2})>0$ and
+$m_2=\lambda_1(Y_2)-\lambda_0(Y_{-2})>0$ ($\lambda_i$ as in
+\S\ref{sec:setting}). We explain what was wrong with the previous note
+(rho.pdf), prove that the formal Floer-theoretic inputs cannot give any
+drop, record what they do give, and propose a replacement: a statement
+about where the flat connections sit, read off one curve in the
+pillowcase, which needs neither energy nor differentials.
+
+\section{What was wrong with rho.pdf}
+
+\st{Step 2 assumed that the differentials vanish.} Its dichotomy
+``$a(x)=0$, or $a(x)\ne0$ in $T(K)$'' omits the case that $a(x)$ is a
+nonzero boundary. Then Lemma~\ref{lem:vertex} gives only
+$\Lambda(Y_{-2})\le\max\bigl(\Lambda(Y_2)-\frac18-E,\,R(ax)-E'\bigr)$, where
+$R(ax)$ is the least level of a primitive of $a(x)$, and this may exceed
+$\Lambda(Y_2)$. Computed: a triangle obeying every identity and every level
+of Table~\ref{tab:levels}, with all energies positive and with
+\emph{acyclic} middle term (one finite bar of Chern--Simons length
+$37/200$), has drop $-1/50$.
+
+\st{Step 4 was an energy estimate equivalent to the conclusion.} It
+asserted that $a$ costs energy more than $1/16$ on the lowest class. In a
+cosmetic pair the triangles force the lowest classes of both bundles to lie
+within $1/16$ above the lowest traceless class, for perfect complexes
+(Proposition~\ref{prop:window}). Step~4 is the negation of this, so it
+assumes that there is no cosmetic pair. Positivity of energy cannot replace
+it: the model of \S\ref{sec:nogo} realises every cost in $(0,\frac1{16}]$.
+
+\st{The level $c$ is not a filtration (proved).} By \eqref{eq:level} with
+$i_0=1$, an index-one trajectory of energy $E$ from $\alpha$ to $\beta$ has
+$c(\beta)-c(\alpha)=\frac18-E$: the differential lowers $\widetilde\CS$ but
+\emph{raises} $c$ whenever $E<\frac18$. So levels are meaningful only for
+homogeneous chains; $\lambda_i$ and DLME's injectivity lemma are
+unaffected, but boundary depth $\beta(C)$ must be measured in
+$\widetilde\CS$ within one degree. A boundary $z$ then has a primitive of
+level at most $c(z)+\beta(C)-\frac18$, since the primitive has degree one
+higher; the earlier bound without the $-\frac18$ loses exactly the margin
+that DLME's argument needs.
+
+\st{Two smaller points.} Step~3 needs that no irreducible traceless
+representation sends the longitude to $\pm1$; $\det K=1$ excludes only
+the binary dihedral ones, so this is an extra hypothesis. And ``the
+differential vanishes for every Seifert fibred $Y$'' was checked, by
+parity, only for the computed examples.
+
+\section{The setting}\label{sec:setting}
+
+\st{Levels.} Work over $\F_2$ with DLME's $\Z$-graded lifts, filtered by
+$\widetilde\CS$ in each degree. A generator has level
+$c(\alpha)=\widetilde\CS-\widetilde\gr/8=(3+\rho(\alpha))/16$, with $\rho$
+the adjoint $\rho$-invariant (proved: rho.pdf, Proposition~2.1), in this
+normalisation for both bundles. A homogeneous chain has the largest level
+of its generators, a homogeneous class the least level of a representing
+cycle, and $\ell(C)$ is the least level of a nonzero homogeneous class of
+$H(C)$. Then $\lambda_i(Y)=\ell(C(Y,P_i))$ (so $\lambda_0$ is DLME's $\ell$), $\lambda_i^+(Y)$ is the
+largest level at which an infinite bar is born,
+$\Lambda=\min(\lambda_0,\lambda_1)$, and $\mu,\mu^+$ are the same invariants
+of the traceless complex. Reversing orientation sends $c$ to $\frac38-c$
+(proved: $\rho$ changes sign).
+
+\st{Level formula (proved: Atiyah--Patodi--Singer).} If an instanton of
+energy $E$ on a cobordism $W$, counted over a family of dimension $g$ with
+insertions of degree $k$, runs from $\alpha$ to $\beta$, then, with
+$i_0=k-g$,
+\begin{equation}\label{eq:level}
+c(\beta)-c(\alpha)=\frac{i_0+3b^+(W)}8-E-\sum_j\frac{3-h(\gamma_j)+\rho(\gamma_j)}{16},
+\end{equation}
+summed over the middle ends with limits $\gamma_j$ (singular maps along a
+surface $F$ carry an extra $-(\chi(F)+F\cdot F/2)/8$, which is $0$ for all
+surfaces below). The \emph{level} $\lev(f)$ of a map is the supremum of the
+right side over counted instantons. On $L(4,1)$ the flat connection
+$\gamma_1$ (rotation by $\pi/2$, $w_2\ne0$) contributes $\frac3{16}$ or
+$\frac1{16}$ according to orientation, so the maps carrying a sixteenth
+exchange $P_0$ and $P_1$.
+
+\st{The triangles (assumed; their construction is plausible, and is not
+the difficulty).} Let $W'=(-X_2^\circ)\cup_{S^3}X_{-2}^\circ\colon Y_2\to
+Y_{-2}$, and $S\subset W'$ the sphere of square $-4$ formed by the cores,
+with $\partial\nu S=L(4,1)$. Let $C^\tl(K)$ be the irreducible complex of
+Kronheimer--Mrowka's singular theory of $(S^3,K)$ with traceless meridian.
+We use
+\[
+\text{(I)}\ \ C(Y_2,P_0)\xrightarrow{a}C^\tl\xrightarrow{b}C(Y_{-2},P_1)\xrightarrow{c}C(Y_2,P_0),\qquad
+\text{(II)}\ \ C(Y_2,P_1)\xrightarrow{a'}C^\tl\xrightarrow{b'}C(Y_{-2},P_0)\xrightarrow{c'}C(Y_2,P_1),
+\]
+with homotopies $g_A$ (from $Y_2$ to $Y_{-2}$), $g_M$, $g_B$ satisfying
+$dg+gd=f'f$ for consecutive maps $f,f'$, and $fg+gf\simeq\mathrm{id}$ at each
+vertex (DLME's triangle detection). Their sum is the triangle obtained
+invariantly on the double cover branched along $S$. The two lifts of the
+involution to the bundle give $P_0$ and $P_1$, so the outer terms are
+$A=\bigoplus_iC(Y_2,P_i)$ and $B=\bigoplus_iC(Y_{-2},P_i)$. The two
+isotropy types along the fixed knot (trivial, rotation by $\pi$) give the
+middle term $M$, a copy of $C(S^3)\oplus C^\tl(K)$ for each triangle;
+$C(S^3)=0$ in the irreducible theory, and it enters only by excluding
+breaking at the trivial connection. The levels, from \eqref{eq:level}, are:
+
+\begin{table}[h]\small
+\begin{tabular}{llll}
+map & cobordism & terms of \eqref{eq:level} & level\\\hline
+$a,a',b,b'$ & $(-X_2^\circ,D_l)$, $(X_{-2}^\circ,D_r)$, singular along the cores & none & $-E$\\
+$c,c'$ & $-(W'\setminus\nu S)$, limit $\gamma_1$ & $b^+=1$; $\gamma_1$: $\frac3{16}$ & $\frac3{16}-E$\\
+$g_A,g_A'$ & $W'$, interval of metrics & $i_0=-1$ & $-\frac18-E$, with $E>0$\\
+$g_M,g_B$ & composites through $-(W'\setminus\nu S)$, interval & $b^+=1$, $i_0=-1$; $\frac3{16}$ & $\frac1{16}-E$\\
+pentagon maps & the same, two parameters & $b^+=1$, $i_0=-2$; $\frac3{16}$ & $-\frac1{16}-E$
+\end{tabular}
+\caption{Levels (proved, as bookkeeping).}\label{tab:levels}
+\end{table}
+\vspace{-1em}
+\noindent For $g_A$, $E>0$ because $W'$ is simply connected and a flat
+singular contribution would need the longitude to go to $-1$ and to $+1$ at
+once. For $a,b'$ (resp.\ $a',b$), $E=0$ only at a flat singular connection,
+i.e.\ a traceless representation sending the longitude to $-1$ (resp.\
+$+1$).
+
+\st{Filtered algebra (proved; arbitrary differentials).} For a boundary $z$
+let $R(z)$ be the least level of a primitive; by \S1,
+$R(z)\le c(z)+\beta(C)-\frac18$.
+
+\begin{lemma}[DLME]\label{lem:inj}
+If a chain map $f\colon C\to C'$ is injective on homology, then
+$\ell(C')\le\ell(C)+\lev(f)$.
+\end{lemma}
+
+\begin{lemma}\label{lem:vertex}
+Let $C\xrightarrow{f}C'\xrightarrow{f'}C''\xrightarrow{f''}C$ come with
+triangle-detection data, $g\colon C\to C''$, $g'\colon C'\to C$. Then
+$(f,g)\colon C\to\Cone(f')$ is injective on homology. If $x$ is a
+homogeneous cycle with $[x]\ne0$, then either $[fx]\ne0$, a class of level
+at most $c(x)+\lev(f)$; or $fx=dy$, and for every such $y$ the cycle
+$gx+f'y$ is not a boundary, so
+$\ell(C'')\le\max\bigl(c(x)+\lev(g),\,R(fx)+\lev(f')\bigr)$. If $fx=0$,
+then $\ell(C'')\le c(x)+\lev(g)$.
+\end{lemma}
+
+\begin{proof}
+$\psi(m,z)=g'm+f''z$ is a chain map $\Cone(f')\to C$ with
+$\psi\circ(f,g)=g'f+f''g\simeq\mathrm{id}$. In the cone,
+$(fx,gx)-d(y,0)=(0,gx+f'y)$ represents the nonzero class of $x$.
+\end{proof}
+
+\noindent The term $R(fx)$ cannot be dropped (the example of \S1).
+
+\section{The no-go theorem}\label{sec:nogo}
+
+\begin{theorem}[proved, by explicit models verified by five independent programs]\label{thm:nogo}
+There are finite filtered complexes over $\F_2$ for $(Y_{\pm2},P_i)$ and
+for the middle term, with maps and homotopies, such that: (a) both
+triangles satisfy triangle detection, hence are exact, and every level of
+Table~\ref{tab:levels} holds, strictly where energy is positive, and even
+with $a,a',b,b'$ strictly negative, so that no flat connection contributes
+anywhere; (b) the differentials have positive energy, and may be zero or
+nonzero; (c) the maps have the actual degrees mod $4$; the twist by the
+character of $H_1(Y_{\pm2})=\Z/2$ acts freely with its actual degrees and
+commutes with everything; Euler characteristics vanish, ranks are equal in
+all degrees, the traceless homology is nonzero, and $b'a=0=ba'$; (d) the
+data are dual to those of the mirror knot, carry the odd-degree
+automorphisms that a cosmetic pair would provide, and lift to the branched
+double cover with DLME's levels; (e) the complexes of $Y_2$ and $Y_{-2}$
+coincide bundle by bundle. In all of them $\lambda_i(Y_2)=\lambda_i(Y_{-2})$
+and $\lambda_i^+(Y_2)=\lambda^+_i(Y_{-2})$, so every drop, at the bottom and
+at the top, is $0$. Hence no argument whose inputs are (a)--(e), the two
+energy facts, and filtered algebra with arbitrary differentials can prove
+$D>0$, $m_1>0$ or $m_2>0$.
+\end{theorem}
+
+The simplest model has zero differentials. Each bundle of $Y_2$ and of
+$Y_{-2}$ has one generator, at level $0$; in each triangle the middle term
+has generators $y$ at level $-\varepsilon$ and $y'$ at level $t$, with
+$0<\varepsilon,t\le\frac1{16}$. The map $a$ sends the generator of $Y_2$ to
+$y$, $b$ sends $y'$ to the generator of $Y_{-2}$, $g_M$ and $g_B$ invert
+these, and $c=g_A=0$. Variants with nonzero differentials send the lowest
+class of $Y_2$ to a boundary in the middle complex; doubling and tensoring
+give (c) and (d).
+
+\st{What escapes the theorem.} (i) The \emph{positions} of the generators,
+that is, their $\rho$-values: in the models the levels are free
+parameters, while in Floer theory they are values of one function along one
+curve (\S\ref{sec:pillow}). (ii) Which generators survive in homology.
+(iii) Structure not listed: the action of the point class, the reducibles,
+triangles through other slopes. (Through $Y_0$ nothing is gained: the
+composites are families on $W'$ whose levels are already in
+Table~\ref{tab:levels}; plausible.) (iv) Energy estimates, which are
+excluded.
+
+\section{What the Floer layer does give}\label{sec:floer}
+
+For a filtered complex $X$ and $t\in\R$, let $N_X(t)$ be the number of
+infinite bars born at level $\le t$, and $P_X(t)$ the number of bars, finite
+or infinite, alive at level $t$; both are summed over one period of
+degrees, a degree-$d$ chain having level $\le t$ when its $\widetilde\CS$
+is $\le t+d/8$, so that everything below is homology of genuine
+subcomplexes. Put $\bar P_X(t)=\sup_{s\le t}P_X(s)$.
+
+\begin{proposition}[proved, given the triangles; arbitrary differentials]\label{prop:count}
+$N_B(t-\frac18)\ge N_A(t)-P_M(t)$ for every $t$. Hence, with
+$t_*=\inf\{t:N_A(t)>\bar P_M(t)\}$,
+\[
+\Lambda(Y_{-2})\le t_*-\tfrac18,\qquad D\ge\tfrac18-\bigl(t_*-\Lambda(Y_2)\bigr).
+\]
+\end{proposition}
+
+\begin{proof}
+$\Phi=(a,g_A)\colon A\to\Cone(b)$ is injective on homology
+(Lemma~\ref{lem:vertex}). Filter the cone so that $m\in M$ sits at level
+$c(m)-\frac18$; this is a filtered complex since $\lev(b)\le0$, and $\Phi$
+lowers levels by at least $\frac18$. Let $V$ be a lift to the filtered
+homology at level $t$ of the classes of $A$ born by $t$, and $U$ the kernel
+of $x\mapsto[ax]$ from $V$ to the filtered homology of $M$ at level $t$;
+$\dim U\ge N_A(t)-P_M(t)$. By the filtered exact sequence $0\to
+B\to\Cone(b)\to M[1]\to0$, $\Phi_*(U)$ comes from classes of $B$ born by
+$t-\frac18$, and these are independent because $\Phi_*$ is injective.
+\end{proof}
+
+\noindent Computed: $t_*-\Lambda(Y_2)\le\frac1{32}$ for the $80$ torus
+knots with $pq\le60$, and $\le0.0294$ for the $54$ cases with $\det K=1$,
+$pq\le120$. But the hypothesis $t_*<\Lambda(Y_2)+\frac18$ fails for the
+figure-eight knot, whose drop is $\frac18$, and it never holds in the
+$\pm1/n$ analogue (\S\ref{sec:data}). It needs a lower bound on the number
+of \emph{homology classes} of $Y_2$ near its bottom, which nothing
+available supplies. In a cosmetic pair $A\cong B$, so
+$N_Y(t-\frac18)\ge N_Y(t)-P_M(t)$ for all $t$; for perfect complexes this
+says that spectral values of $Y$ that are $r$ apart differ by more than
+$\frac18$, where $r$ is the rank of the traceless homology modulo the twist
+(proved). Every computed $Y_{\pm2}$ with $\det K=1$ has $r+1$ consecutive
+spectral values within $0.013$ (computed).
+
+\begin{proposition}[proved, given the triangles for $K$ and its mirror]\label{prop:window}
+Suppose $Y_2\cong Y_{-2}=Y$ and no irreducible traceless representation
+sends the longitude to $\pm1$. If the complexes are perfect, then
+\[
+\mu<\Lambda(Y)\le\max(\lambda_0,\lambda_1)(Y)\le\mu+\tfrac1{16},\qquad
+\mu^+-\tfrac1{16}\le\min(\lambda^+_0,\lambda^+_1)(Y)\le\max(\lambda^+_0,\lambda^+_1)(Y)<\mu^+ .
+\]
+In general either this holds with $\frac1{16}$ replaced by
+$\frac1{16}+\beta(Y)$, or the traceless complex has a finite bar of
+$\widetilde\CS$-length at least $\frac18$ alive at level $\Lambda(Y)$.
+\end{proposition}
+
+\begin{proof}[Sketch]
+Let $x$ realise $\Lambda$, say in $P_0$. If $[ax]=0$,
+Lemma~\ref{lem:vertex} at the vertex $Y_2$ of (I) puts a class of $Y_{-2}$
+below $\Lambda$; so $[ax]\ne0$ has level below $\Lambda$, and $\mu<\Lambda$.
+Every traceless class below $\Lambda$ is killed by $b$ and $b'$ (otherwise
+they carry it below $\Lambda$); Lemma~\ref{lem:vertex} at the middle vertex
+of (I) and of (II), applied to the lowest one, bounds $\lambda_0$ and
+$\lambda_1$ by $\mu+\frac1{16}$. The top is the same statement for the
+mirror, since $S^3_r(\bar K)=-S^3_{-r}(K)$.
+\end{proof}
+
+These windows are necessary, not sufficient: the mirrors of torus knots
+with $\det=1$ satisfy the bottom one (for $T(3,-5)$, $\Lambda(Y_2)=-0.6255$
+and $\mu=-0.6292$) and still have $D\approx\frac18$ (computed).
+
+\st{Why $1/16$ is a ceiling, not a floor.} The constant enters only through
+$c,c',g_M,g_B$, which move classes upward: from $Y_{-2}$ or the middle term
+to $Y_2$, or from $Y_{-2}$ to the middle term. Through
+Lemma~\ref{lem:vertex} it bounds $\Lambda$ above by $\mu+\frac1{16}$, never
+a drop below. The two maps from the $Y_2$ side to the $Y_{-2}$ side of level
+$-\frac1{16}$ do not help. The exterior $W'\setminus\nu S$ with limit
+$\gamma_1$ is the $L(4,1)$-face of the one-parameter odd family on $W'$,
+whose $S^3$-face is empty, so it is null-homotopic (plausible: the gluing
+at $\gamma_1$ is not written). The composite $g_Ag_M$ plus pentagon terms is
+a chain map $C^\tl\to C(Y_{-2},P_1)$ of level $-\frac1{16}$ that vanishes in
+the model of \S\ref{sec:nogo} (proved). Every lower bound comes from the
+$-\frac18$ of $g_A$, and from counting.
+
+\section{The pillowcase reduction}\label{sec:pillow}
+
+\st{The curve.} Let $\cC$ be the image of the irreducible $\SU(2)$
+representations of $\pi_1(S^3\setminus K)$ in the pillowcase, with
+meridian $\sim e^{2\pi i\alpha}$, longitude $\sim e^{2\pi i\beta}$,
+$\delta=\alpha-\frac14$, and slope $s=d\beta/d\alpha$. Its closure meets the
+line $\beta=0$ of reducibles only where $e^{4\pi i\alpha}$ is a root of
+$\Delta_K$ (proved: Burde, de Rham), so for $\Delta_K=1$ it is a union of closed curves, which we
+take to be smooth and immersed (plausible after a small holonomy
+perturbation).
+The irreducible flat connections on $(Y_N,P_0)$ and $(Y_N,P_1)$ are the
+points of $\cC$ on $N\alpha+\beta\in\Z$ and on $N\alpha+\beta\in\frac12+\Z$,
+each $\SO(3)$ connection appearing twice, as $x$ and its twist by
+$\mu\mapsto-\mu$; the traceless generators are the points on
+$\alpha=\frac14$.
+
+\st{The formula for $c$ (plausible).} There is a function $\Phi$ on $\cC$
+with
+\[
+d\Phi=2\bigl(\alpha-\tfrac14\bigr)\,d\beta,
+\]
+such that every flat connection $x$ on $Y_N$, in either bundle, has
+\begin{equation}\label{eq:pillow}
+c(Y_N,x)=\Phi(x)+\tfrac3{16}\operatorname{sgn}N-N\alpha\bigl(\tfrac12-\alpha\bigr)-\tfrac18\iota_N(x),\qquad\iota_N(x)\in\{0,1\},
+\end{equation}
+where $\iota_2(x)=0$ if $s(x)\notin(-2,0)$ and $\iota_{-2}(x)=0$ if
+$s(x)\notin(0,2)$; a traceless generator $z$ has level
+$\Phi(z)+\operatorname{sgn}s(z)/16$. As
+$\alpha(\frac12-\alpha)=\frac1{16}-\delta^2$, for $N=\pm2$ this reads
+\begin{equation}\label{eq:pm2}
+c(Y_{\pm2},x)=\Phi(x)\pm\bigl(\tfrac1{16}+2\delta^2\bigr)-\tfrac18\iota_{\pm2}(x).
+\end{equation}
+Status: computed, exactly for torus knots (all slopes, both bundles) and
+to within $10^{-4}$ for the figure-eight knot ($N=\pm1,\pm2,\pm3$); on every arc of $16$ mirror
+torus knots, $\Phi$ recovered from $Y_2$ and from $Y_{-2}$, in both bundles,
+is the same rational number. In general it is plausible (we estimate
+$70\%$, and $55\%$ for the rule for $\iota$): it is the $\mathfrak{su}(2)$
+analogue of the splitting theorem of Boden--Herald--Kirk--Klassen, namely a
+Kirk--Lesch splitting of $\rho$ along the boundary torus, with $\iota$ a
+Maslov triple index and Kirk--Klassen's formula for the Chern--Simons part;
+degenerate curves need perturbations and a limit.
+
+\st{How $1/16$ enters.} At $\alpha=\frac14$ the slope term of
+\eqref{eq:pillow} is $\pm\bigl(\frac3{16}-|N|\cdot(\frac14)^2\bigr)
+=\pm\frac{3-|N|}{16}$, since $\alpha(\frac12-\alpha)$ attains its maximum
+$(\frac14)^2$ exactly at the traceless holonomy. The $\frac3{16}\operatorname{sgn}N$ comes from
+the signature of the trace; $-N\alpha(\frac12-\alpha)$ is the solid-torus
+Chern--Simons term $N\alpha^2$ plus the solid-torus spectral flow
+$-N\alpha/2$, which are $\frac2{16}$ and $-\frac4{16}$ at $N=2$,
+$\alpha=\frac14$. At $|N|=1$ the offset is $\frac18$, the value of DLME's
+constant; at $|N|=2$ it is $\frac1{16}=\frac3{16}-2(\frac14)^2$. So, where
+$\iota$ vanishes, $Y_2$ lies at least $\frac1{16}$ above $\Phi$ and $Y_{-2}$
+at least $\frac1{16}$ below it, with equality at $\alpha=\frac14$. The drop below
+is this gap $2\cdot\frac1{16}$, less a spacing error.
+
+\begin{lemma}[proved, given \eqref{eq:pillow}]\label{lem:steep}
+Let $\Delta_K=1$, let $\cC$ be as above, and $\Phi_0=\min_\cC\Phi$.
+\begin{enumerate}
+\item[(i)] The critical points of $\Phi$ on $\cC$ are the traceless points
+and the horizontal tangencies. Near a traceless point $z$ of slope $s$,
+$\Phi=\Phi(z)+s\delta^2+O(\delta^3)$; so positive-slope traceless points are
+local minima and negative-slope ones local maxima; $\Phi_0$ is attained at
+a positive-slope traceless point or at a horizontal tangency.
+\item[(ii)] If $s\notin(-2,0)$ at every flat connection of $Y_2$, then every
+flat connection of $Y_2$, in either bundle, has level $\ge\Phi_0+\frac1{16}$;
+hence $\Lambda(Y_2)\ge\Phi_0+\frac1{16}$, whatever the differentials.
+\item[(iii)] Every traceless generator has level $\ge\Phi_0-\frac1{16}$; if
+$\Phi_0$ is attained at a traceless point, the lowest one has level
+$\le\Phi_0+\frac1{16}$.
+\item[(iv)] Suppose $\Phi_0=\Phi(z_0)$ with $z_0$ traceless, and that the
+branch of $\cC$ through $z_0$ is a graph over $v=\beta-2\alpha$ on
+$|v-v(z_0)|\le\frac14$, with slope $\ge s_*>2$ there. Then some flat
+connection of $Y_{-2}$ has level $\le\Phi_0-\frac1{16}+\frac1{16(s_*-2)}$. On
+$|v-v(z_0)|\le\frac12$ the same holds in each bundle, with
+$\frac1{4(s_*-2)}$ in place of $\frac1{16(s_*-2)}$.
+\item[(v)] Let $G(Y)$ be the least level of an irreducible flat
+$\SO(3)$ connection on $Y$, over both bundles. Under (ii) and (iv),
+$G(Y_2)-G(Y_{-2})\ge\frac18-\frac1{16(s_*-2)}$, which is positive for
+$s_*>\frac52$ and at least $\frac1{16}$ for $s_*\ge3$; the bundle-by-bundle
+and mixed differences are at least $\frac18-\frac1{4(s_*-2)}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) Along $\cC$, $d\Phi=2\delta\,d\beta$, and near $z$,
+$d\beta=(s+O(\delta))\,d\delta$. (ii) By \eqref{eq:pm2} with $\iota_2=0$,
+$c\ge\Phi+\frac1{16}\ge\Phi_0+\frac1{16}$; and the level of a class is at
+least the least level of a generator. (iii) From the
+traceless rule and (i). (iv) The flat connections of $Y_{-2}$ are the points
+of $\cC$ with $v\in\frac12\Z$ (both bundles; $v\in\Z$, $v\in\frac12+\Z$ for
+each), so the interval contains one, $x$. On the branch $dv=(s-2)\,d\alpha$,
+so $\delta$ has the sign of $v-v_0$ and $|\delta|\le|v-v_0|/(s_*-2)$; and
+$d(\Phi-2\delta^2)=2\delta\,dv$. Hence
+$\Phi(x)-2\delta(x)^2-\Phi_0=\int2\delta\,dv\le(v-v_0)^2/(s_*-2)$, and
+\eqref{eq:pm2} with $\iota_{-2}\ge0$ gives the claim. (v) Subtract.
+\end{proof}
+
+\begin{proposition}[proved]\label{prop:invariant}
+$G$ is an invariant of the oriented manifold, and so are the multisets of
+levels of flat connections in each bundle. Hence a cosmetic pair has
+$G(Y_2)=G(Y_{-2})$.
+\end{proposition}
+
+\begin{proof}
+An orientation-preserving diffeomorphism pulls irreducible flat $\SO(3)$
+connections back to irreducible ones, preserves $\rho$, which is intrinsic,
+and preserves $w_2$, since $H^2(Y_{\pm2};\Z/2)=\Z/2$.
+\end{proof}
+
+\begin{corollary}[proved, given \eqref{eq:pillow}]
+If $\Delta_K=1$ and $\cC$ satisfies the hypotheses of (ii) and (iv) with
+$s_*>\frac52$, then $S^3_2(K)\not\cong S^3_{-2}(K)$. No energy enters, not
+even $E\ge0$, and differentials play no role.
+\end{corollary}
+
+Parts (ii) and (iii) explain \S\ref{sec:nogo}: when they apply, the
+traceless bottom lies at or below the generator bottom of $Y_2$, so the
+middle term is always placed to receive the lowest class, and the triangles
+cannot decide. Conversely, by (v), the model of \S\ref{sec:nogo} cannot come
+from a curve satisfying (ii) and (iv).
+
+\st{The remaining gap.} (a) \emph{Shallow parts of $\cC$.} If $\Phi_0$ is
+attained at a horizontal tangency, or a flat connection of $Y_2$ has slope
+in $(-2,0)$, then $\iota_2$ may be $1$ there and that generator may sit near
+$\Phi_0-\frac1{16}$; the lemma then says nothing. Nothing known forces
+$|s|>2$ on $\cC$ for a general knot. (b) \emph{The formula}
+\eqref{eq:pillow}, plausible only. (c) A drop of $\Lambda$ itself, rather
+than of $G$, would also need a class of $Y_{-2}$ below $\Phi_0+\frac1{16}$,
+for instance that the lowest flat connection of $Y_{-2}$ on the branch
+through $z_0$ survives in homology. This concerns differentials, not
+energy, and it is open; the cosmetic application does not need it.
+
+\section{Data}\label{sec:data}
+
+\st{The $\pm2$ surgeries (computed; Seifert fibred, zero differentials).}
+For positive $T(p,q)$, $D>\frac18$ and $m_1,m_2\in(\frac18,\frac3{16}]$, while
+$\lambda_0(Y_2)-\lambda_0(Y_{-2})=-\frac18+\frac{2n-5}{n^2-4}$ ($n=pq$) changes
+sign. For negative $T(p,q)$ ($pq\le120$), $D=\frac18$ exactly when $\det>1$ (78 knots:
+both lowest generators are one representation shared by $Y_{\pm2}$, and
+$\frac18$ is the level of a flat connection on $W'\setminus\nu S$), and
+$D=\frac18-\frac1{4(n^2-4)}$ when $\det=1$ (27 knots), least $\frac18-\frac1{884}$
+at $T(3,-5)$. For the figure-eight knot, $D=\frac18$, $m_1=\frac{13}{80}$,
+$m_2=\frac1{16}$; in both cases with $m_2=\frac1{16}$ (the figure-eight knot,
+$T(2,-3)$) the lowest class of $Y_2$ maps at zero energy through a binary
+dihedral representation, which does not exist when $\det K=1$. At all
+$1732$ shared representations the gap is
+$\frac18$ (same bundle) or $\frac3{16}$ (mixed). Lemma~\ref{lem:steep} holds
+on $16$ mirror torus knots and the figure-eight knot; (iv) is attained
+exactly for odd--odd mirrors, whose minimum of $\Phi$ sits midway between
+flat connections of $Y_{-2}$, and $m_2(T(2,-3))=\frac1{16}=\frac18-\frac1{4(6-2)}$
+is sharp. For the figure-eight knot, $\Phi$ has one minimum, $\frac{11}{80}$, at
+the traceless passage of slope $2\sqrt5$, and one maximum, $\frac{19}{80}$;
+$G(Y_2)=\frac15=\Phi_0+\frac1{16}$, $G(Y_{-2})=\frac3{40}\le0.1003$. The lemma
+does not apply to positive torus knots, whose arcs end on the reducible
+line with $\Phi$ concave; their drop exceeds $\frac18$ by parity.
+
+\st{The $\pm1/n$ surgeries (computed; torus knots).} There is no positive
+one-step bound: for positive $T(p,q)$,
+$\ell(Y_{1/(n+1)})-\ell(Y_{1/n})=\frac1{4(pqn-1)(pq(n+1)-1)}\to0$, and on the
+negative side the least one-step drop is $\frac7{232}$ ($T(3,-5)$, $n=1$).
+These are differences of Chern--Simons values across simply connected
+negative definite cobordisms, where only $E>0$ is available. The
+\emph{two-step} drop satisfies $\ell(Y_{-1/n})-\ell(Y_{-1/(n+2)})\ge\frac18$
+on all torus knots with $pq\le160$, both chiralities, $n\le3$, and on $18$
+knots with $n\le8$; equality holds exactly for mirrors of odd--odd torus
+knots at odd $n$. The equality comes from flat $\SO(3)$ connections with
+traceless meridian and longitude (plausible as bookkeeping; computed). Such
+an $x$ sits at $(\frac14,\pm\frac14)$; for odd $n$, one of $x$ and its twist
+by $\mu\mapsto-\mu$ is a flat connection of $Y_{-1/n}$ and the other of
+$Y_{-1/(n+2)}$, and $\mathrm{ad}\,x$, common to both, descends to the
+complement of the sphere of square $-2$ in the composite cobordism, with
+limit the rotation by $\pi$ on $\R P^3$, term $\frac18$ in \eqref{eq:level}.
+With index $0$ and $b^+=0$ the levels differ by exactly $\frac18$; computed at
+every such representation for five odd--odd knots in both chiralities, and
+for the odd--odd mirrors the minimisers are such representations.
+
+\st{Why the triangle cannot prove the two-step bound (proved, given
+DLME).} The pair $-\frac1n,-\frac1{n+2}$ is at distance two, and its
+triangle has middle term $C(Y_{-1/(n+1)})^{\oplus2}$, a closed manifold
+theory. By DLME's surgery lemma it is short exact with injective first map,
+so every class is carried into the middle term and Lemma~\ref{lem:vertex}
+never yields a drop; and the first map, injective of level $\le0$, makes the
+spectrum of the middle term dominate that of $Y_{-1/n}$ termwise, so
+$t_*=\infty$ in Proposition~\ref{prop:count}; the models of \S\ref{sec:nogo}
+transcribe (plausible). The bound of $\frac18$, true in all data, lies
+outside the triangle, in the positions of the generators.
+
+\st{Census (computed).} Among all $313{,}230$ prime knots with at most $15$
+crossings and the $3{,}116$ census knots with at most $10$ tetrahedra, the
+knots with both $S^3_{\pm2}(K)$ Seifert fibred are exactly the torus knots
+($11$ up to mirror) and the figure-eight knot. This is rigorous (interval
+arithmetic, exact recognition) up to $14$ crossings and for the census; for
+$243{,}282$ hyperbolic $15$-crossing knots it rests on floating-point cusp
+lengths above $12$, against the threshold $6$ of Agol and Lackenby. So no
+knot with $\Delta_K=1$ can be tested by Seifert methods; the test must use
+hyperbolic surgeries, where Lemma~\ref{lem:steep} needs only the curve.
+
+\section{What remains, ranked}
+
+\begin{enumerate}
+\item \emph{Test the mechanism on knots with $\Delta_K=1$.} The computation
+of $\cC$, $\Phi$, the slopes and $G(Y_{\pm2})$ for the Kinoshita--Terasaka
+knot, the Conway knot and the pretzel knot $P(-3,5,7)$ is now running. It
+decides whether $\Phi_0$ sits at a traceless point on a branch of slope
+$>\frac52$ and whether the flat connections of $Y_2$ avoid slopes in
+$(-2,0)$; if so, the drop of $G$ is positive for these knots, given
+\eqref{eq:pillow}.
+\item \emph{Prove \eqref{eq:pillow} in general} (plausible, $70\%$): the
+splitting of $\rho$ along the torus, the rule for $\iota$, and
+perturbations for degenerate curves.
+\item \emph{Control the shallow parts of $\cC$} (conjecture; we put the
+probability that the drop of $G$ is positive for every knot with
+$\Delta_K=1$ at about $55\%$, and that this is provable along these lines at
+about $15\%$): show that $\Phi_0$ is attained at a traceless point on a
+branch of slope $>\frac52$, and that the flat connections of $Y_2$ with
+$\iota_2=1$ do not lie below $\Phi_0+\frac1{16}$; or replace the slope
+hypotheses using the symmetry $(\alpha,\beta)\mapsto(\frac12-\alpha,-\beta)$
+of $\cC$, the integrality of $\oint2\alpha\,d\beta$, and closedness.
+\item \emph{A drop of $\Lambda$, if wanted}: that the relevant flat
+connection of $Y_{-2}$ survives in homology. A flat singular contribution
+supplies this at shared representations, as for the figure-eight knot.
+\item \emph{The counting route} (Proposition~\ref{prop:count}; conjecture,
+about $35\%$ true and under $10\%$ provable): more classes of $Y_2$ than
+traceless bars below $\Lambda(Y_2)+\frac18$.
+\item \emph{Clustering forced by the twist and by a cosmetic automorphism}:
+it gives only $r\ge4$ (proved for perfect complexes, if the distance-four
+map is an isomorphism), and nothing bounds $r$ above; under $3\%$.
+\end{enumerate}
+
+\end{document}
