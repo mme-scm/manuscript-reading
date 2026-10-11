@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.10.11)  11 OCT 2026 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.10.11)  11 OCT 2026 15:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -515,29 +515,29 @@ Overfull \hbox (29.90515pt too wide) in paragraph at lines 33--38
 []$.
  []
 
-[6]) (./s4b-exact.tex [7] [8]) (./s5-tests.tex
-Underfull \vbox (badness 1270) has occurred while \output is active []
+[6]) (./s4b-exact.tex [7] [8]) (./s5-tests.tex [9]
+Underfull \vbox (badness 1178) has occurred while \output is active []
 
- [9])
-(./s6-workflow.tex [10]
+ [10])
+(./s6-workflow.tex
 Overfull \hbox (27.62596pt too wide) in paragraph at lines 15--18
 \OT1/cmr/m/n/10.95 Her-ald, Kirk--Klassen--Ruberman, Braam--Donaldson, Daemi, N
 ozaki--Sato--Taniguchi, Fintushel--
  []
 
-) (./refs.tex [11]) [12] (./main.aux)
+) (./app-collar.tex [11] [12]) (./refs.tex [13]) [14] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0F8799C6AA816498F74C39D63921BEFE;1593.
+(rerunfilecheck)             Checksum: 917AF0966FD4A7E08A59EE4C2C99C618;2092.
  ) 
 Here is how much of TeX's memory you used:
- 12323 strings out of 476106
- 185606 string characters out of 5793932
- 1952975 words of memory out of 5000000
- 33888 multiletter control sequences out of 15000+600000
+ 12344 strings out of 476106
+ 185941 string characters out of 5793932
+ 1947975 words of memory out of 5000000
+ 33900 multiletter control sequences out of 15000+600000
  572007 words of font info for 87 fonts, out of 8000000 for 9000
  220 hyphenation exceptions out of 8191
  75i,13n,79p,1319b,776s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -567,10 +567,10 @@ onts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (12 pages, 393301 bytes).
+Output written on main.pdf (14 pages, 414094 bytes).
 PDF statistics:
- 463 PDF objects out of 1000 (max. 8388607)
- 391 compressed objects within 4 object streams
- 109 named destinations out of 1000 (max. 500000)
- 65 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 486 PDF objects out of 1000 (max. 8388607)
+ 411 compressed objects within 5 object streams
+ 115 named destinations out of 1000 (max. 500000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

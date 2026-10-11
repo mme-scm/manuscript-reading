@@ -82,9 +82,13 @@ $T^2\times I\subset Y_{1/n}$.  Choose such a perturbation $\pi_n$ moving $L_{1/n
 \begin{enumerate}[label=(\roman*)]
 \item The critical set of $\cs+\pi_n$ on $Y_{1/n}$ is $r^{-1}(L_{1/(n-1)})\sqcup r^{-1}(L^w_0)\sqcup\{\theta\}$, all
 nondegenerate (Proposition~\ref{prop:gens} applied to $Z_n$).
-\item The perturbed Chern--Simons values are the cone actions: the Kirk--Klassen formula holds for perturbed flat
-connections with the collar perturbation term added, and that term is exactly $f_{Z_n}-f_{L_{1/n}}$ evaluated at
-the critical point.
+\item The perturbed Chern--Simons values are the cone actions.  Precisely (Appendix~\ref{app:collar}): a shear
+perturbation with Hamiltonian $H$ along $\ell_v=pa+qb$ moves the line by the time-one flow of $H\circ\ell_v$ for
+$\omega_P=2\,da\wedge db$, and the perturbed functional on a perturbed-flat collar piece equals the generating function
+$S=H(\ell)-\tfrac12\ell H'(\ell)$ of the shear, so that
+$\cs_\pi(\rho_1)-\cs_\pi(\rho_0)\equiv\int_\gamma\lambda_0-\big[f_{L^\pi}\big]$ with $f_{L^\pi}$ the primitive of
+$\lambda_0=a\,db-b\,da$ along the perturbed line: the difference is twice the signed area between $\gamma$ and $L^\pi$.
+(The naive guess ``add $h(\rho_1)-h(\rho_0)$'' is wrong: the curvature in the collar contributes $-\tfrac12\ell H'(\ell)$.)
 \item Floer's argument gives a two-step filtration of $\CI(Y_{1/n};\pi_n)$ by the two halves of the critical set,
 with associated graded $\CI(Y_{1/(n-1)})$ and $\CI(Y_0,w)$ and connecting map $F_n$; this is an
 \emph{isomorphism} of complexes $\CI(Y_{1/n};\pi_n)\cong\Cone(F_n)$, not merely a quasi-isomorphism.
@@ -107,5 +111,9 @@ first-variation formula for the perturbed functional; the integral equals $\delt
 What remains to be checked for a complete proof: that Floer's filtration argument identifies the connecting map
 with the cobordism map $F_n$ (it does up to homotopy; exactness at the level of filtered complexes needs the
 chain-level identification, which is what the perturbation picture provides), and the approximation of $Z_n$ by
-shearing isotopies with control of the perturbed Chern--Simons values (Sivek--Zentner give $C^0$ control; the
-action needs $C^1$).  Both are assigned in \S\ref{sec:workflow}.
+shearing isotopies with control of the perturbed Chern--Simons values.  For the latter, Appendix~\ref{app:collar}
+shows: Sivek--Zentner's approximation is $C^r$ for every fixed $r$ (not $C^\infty$), a diagonal argument (round
+the corners of $Z_n$, then approximate in $C^1$) makes the actions converge, but the perturbations themselves do
+not converge, so uniform compactness for the perturbed complexes along the sequence is open.  The cleanest route
+avoids the limit: fix one smoothing $Z_n^\epsilon$, use the exact formula for its actions, and let $\delta_n$ absorb the
+$O(\epsilon)$ difference.

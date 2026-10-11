@@ -25,4 +25,5 @@
 \contentsline {subsection}{\tocsubsection {}{6.3}{Figure-eight knot}}{10}{subsection.6.3}%
 \contentsline {subsection}{\tocsubsection {}{6.4}{Figure-eight knot: the exact cone (Theorem\nonbreakingspace \ref {thm:exact})}}{10}{subsection.6.4}%
 \contentsline {section}{\tocsection {}{7}{Workflow}}{11}{section.7}%
-\contentsline {section}{\tocsection {}{}{References}}{11}{section*.2}%
+\contentsline {section}{\tocsection {Appendix}{A}{Appendix: collar holonomy perturbations, shears, and the perturbed action}}{12}{appendix.A}%
+\contentsline {section}{\tocsection {Appendix}{}{References}}{13}{section*.2}%

@@ -1,0 +1,78 @@
+% collar.tex -- amsart fragment (no preamble). Uses only amsmath/amssymb.
+% Tags: [V] = VERIFIED (source + number), [P] = PLAUSIBLE (derived here or standard,
+% not found in the sources), [O] = OPEN.
+\section{Appendix: collar holonomy perturbations, shears, and the perturbed action}\label{app:collar}
+\emph{Prepared by the collar-perturbation agent (Task~9); tags [V]/[P]/[O] as in \S\ref{sec:workflow}.}
+
+
+\noindent\textbf{Setup.} $Y=Y_{1/n}(K)=X\cup C\cup V$, $C=[0,1]_s\times T^2$, $\{0\}\times T^2=\partial X$,
+$V$ a solid torus with meridian $\mu\lambda^{n}$; $(\mu,\lambda)$ is an oriented basis of $\partial X$
+(the opposite convention replaces $\lambda_0,H$ below by $-\lambda_0,-H$). For $A=i\sigma\omega$,
+$\sigma=\mathrm{diag}(1,-1)$, $a=\frac1{2\pi}\int_\mu\omega$, $b=\frac1{2\pi}\int_\lambda\omega$;
+$cs(A)=\frac1{8\pi^2}\int\mathrm{tr}(A\wedge dA+\frac23A^3)$, so $cs(i\sigma\omega)=-\frac1{4\pi^2}\int\omega\wedge d\omega$.
+On $\widetilde P=\mathbb R^2$ put $\lambda_0=a\,db-b\,da=-2b\,da+d(ab)$, $\omega_P=d\lambda_0=2\,da\wedge db$;
+$\tilde L=\{a+nb=0\}$. Perturbation datum: primitive $v=(p,q)\in H_1(T^2)$, $\ell_v=pa+qb$; $H$ even,
+$1$-periodic, $H(0)=0$, $h(\mathrm{diag}(e^{2\pi i\theta},e^{-2\pi i\theta}))=H(\theta)$; an annulus
+$\Sigma=[s_0,s_1]\times S^1_u\subset[0,1]\times T^2$ ($\det(u,v)=1$), loops $\{z\}\times S^1_v$, $\int_\Sigma\mu_\Sigma=1$,
+$\Phi(A)=\int_\Sigma h(\mathrm{Hol}_{z}A)\,\mu_\Sigma(z)$. Nested data $(v_j,H_j)$, $j=1..N$ (from the $X$ side),
+$cs_\pi=cs+\sum_j\Phi_j$, as in [Z, \S2], [SZ, (4.4)--(4.7)]; [Z]=arXiv:1605.08530, [SZ]=arXiv:1710.01957.
+
+\smallskip\noindent\textbf{(1) Shear.} [V] Critical points of $cs_\pi$ solve $F_A=\sum_j c\,h_j'(\mathrm{Hol}_{\iota_j}A)\mu_j$
+([Z, Prop.~1.3]; gradient of cylinder functions [KM, \S3.2, Def.~3.3, (72)], KM=arXiv:0806.1053);
+on $C$ every solution is reducible and boundary holonomies obey, in radians,
+$\alpha\mapsto\alpha+f(\beta)$, $f=g'$, conjugated by $A_k\in SL(2,\mathbb Z)$ [Z, Prop.~2.1], [SZ, (4.8), (4.9)];
+equivalently Herald's condition $\nu=f(\beta)$ on a perturbation solid torus [HHK, \S7.1],
+HHK=arXiv:1301.0164, citing Herald, CAG 2 (1994), Lemma~61. The constants linking $CS+\Phi$ to $F=\chi'\mu$
+are not tracked in [Z,SZ]. [P] In the normalization above, the abelian Euler--Lagrange equation is
+$d\omega=\pi H'(\ell_v)\mu_\Sigma$, whence by Stokes on $\Sigma$
+\begin{equation}\label{collar:shear}
+\phi_{v,H}(x)=x+\tfrac12H'(\ell_v(x))\,(q,-p),\qquad \iota_{X}\omega_P=d(H\circ\ell_v),\ \phi_{v,H}=\mathrm{Fl}^1_{X},
+\end{equation}
+i.e.\ the shear is the time-one Hamiltonian flow of $H\circ\ell_v$ for $\omega_P$ (the $\frac12$ is forced by $\omega_P=2da\wedge db$).
+With $\phi=\phi_N\circ\dots\circ\phi_1$ ($\mathbb Z^2$- and $\pm$-equivariant, fixes the four corners, Hamiltonian):
+[P] gauge classes of critical points of $cs_\pi$ on $Y$ $\leftrightarrow$ $\{[\rho]\in R(X): i^*\rho\in L^\pi:=\bar\phi^{-1}(L_{1/n})\}$
+(proof of [SZ, Lemma~4.6] with $F\times S^1$ replaced by $V$; reducibles of $Y$ are not excluded here).
+
+\smallskip\noindent\textbf{(2) Approximation.} [V] [SZ, Thm.~4.5, App.~A]: for a smooth $\mathbb Z/2$-equivariant
+area-preserving isotopy $\psi_t$ of $T^2$, any $r\ge0$, $\epsilon>0$, there is a piecewise-in-$t$ isotopy through
+equivariant shearings $\phi_t$ with $\|\phi_t-\psi_t\|_{C^r(T^2)}<\epsilon$ for all $t$. Global $C^r$ on $T^2$ for
+each fixed $r$ (not $C^\infty$; corners of $P$ play no role upstairs); $r=0$ is [Z, Thm.~3.3]; the error functions
+depend on $C^{r+1}$ bounds of the generating vector field (App.~A). Curves enter via [SZ, Lemma~4.9]
+(Moser), which assumes the curves avoid the orbifold points; $L_{1/n}$ passes through $(0,0)$, so a relative
+version (curves fixed near corners) is needed: [P], standard.
+
+\smallskip\noindent\textbf{(3) Action.} [P] For a perturbed-flat collar piece with input $x$,
+$\omega=2\pi(a_u(s)d\theta_u+\ell\,d\theta_v)$, $a_u'=\frac12H'(\ell)\cdot(\text{bump})$, so
+$cs(A|_{\rm piece})=-\frac12\ell H'(\ell)$, $\Phi=H(\ell)$:
+\begin{equation}\label{collar:S}
+cs+\Phi=S_{v,H}(x):=H(\ell_v)-\tfrac12\ell_vH'(\ell_v),\qquad \phi_{v,H}^*\lambda_0-\lambda_0=dS_{v,H},
+\end{equation}
+which is the standard formula $S=\int_0^1(H+\lambda_0(X))\circ\mathrm{Fl}^t_X\,dt$. Composition:
+$S_\phi=\sum_jS_j\circ\phi_{j-1}\circ\dots\circ\phi_1$, $S_\phi(0)=0$. Using locality of the CS integrand,
+$\delta cs_X=-\frac1{8\pi^2}\int_{\partial X}\mathrm{tr}(A\wedge\dot A)=\lambda_0(\dot x)$ on flat normal-form paths, and
+$\lambda_0|_{\tilde L}\equiv0$ (so $cs_V$ is constant), for a flat path on $X$ with lifted boundary path
+$\gamma\subset\mathbb R^2$, $\phi(\gamma(0)),\phi(\gamma(1))\in\tilde L$:
+\begin{equation}\label{collar:action}
+cs_\pi(A_1)-cs_\pi(A_0)\equiv\int_\gamma\lambda_0-\bigl[f_{L^\pi}\bigr]_{\gamma(0)}^{\gamma(1)},\qquad
+f_{L^\pi}(x):=-S_\phi(x)=\int_{0}^{x}\lambda_0\big|_{\tilde L^\pi}
+\end{equation}
+mod $\mathbb Z$ ($\tilde L^\pi=\phi^{-1}\tilde L\ni0$; the integral is along $\tilde L^\pi$), i.e.\ $2\times$ the signed area between $\gamma$ and $\tilde L^\pi$. In KK form:
+$cs_\pi(A_1)-cs_\pi(A_0)\equiv-2\int_\gamma b\,da+[ab+S_\phi]_{\gamma(0)}^{\gamma(1)}$; for one $\lambda$-shear ($v=(0,1)$):
+$[-nb^2+H(b)-bH'(b)]$, i.e.\ $f^{KK}_{L^\pi}=f^{KK}_L+\bigl(bH'(b)-H(b)\bigr)$, $f^{KK}_L=nb^2$; $H=0$ gives
+the unperturbed Kirk--Klassen formula (Math.\ Ann.\ 287 (1990), Thm.~4.2; not re-checked). \emph{Correction:} the
+term is not $h(\rho_1)-h(\rho_0)$ alone; the collar curvature contributes $-\frac12\ell H'(\ell)$ ($\lambda_0$-bookkeeping),
+equivalently $-\ell H'(\ell)$ in the KK bookkeeping. If the lifts of the endpoints lie on different
+$\mathbb Z^2$-translates of $\tilde L^\pi$, a gauge change on $X$ adds the same $\pi$-independent correction as in KK [P].
+
+\smallskip\noindent\textbf{(4) Limits.} By \eqref{collar:action}, actions depend only on $\tilde L^\pi$ through $0$. For arcs
+$\gamma_1,\gamma_2$ from $0$, $|\int_{\gamma_1}\lambda_0-\int_{\gamma_2}\lambda_0|\le2\delta(\mathrm{len}\,\gamma_1+\mathrm{len}\,\gamma_2+|\gamma_2(1)|)$,
+$\delta=\|\gamma_1-\gamma_2\|_{C^0}$. Needed [P]: perturbations $\pi_m$ with $L^{\pi_m}\to Z$ uniformly as
+parametrized curves through $0$, with $\sup_m\mathrm{len}(L^{\pi_m})<\infty$, and intersection points
+$x_m\in i^*R(X)\cap L^{\pi_m}\to x$ on a fixed component of $R(X)$; $C^0$ alone is insufficient, $C^1$ is
+impossible at corners of $Z$. $Z$ must pass through the corners of $P$ met by $L$ and cut $P$ into
+regions of the same areas. [SZ] gives this for each fixed smoothing, not as a limit; modification [P]: round
+corners of $Z$ to $C'_m$ ($\mathrm{len}\,C'_m\le\mathrm{len}\,Z$, $C'_m\to Z$ in $C^0$), take $\psi_m$ from the relative
+Lemma~4.9, then $\phi_m$ from Thm.~4.5 ($r=1$) with $\|\phi_m^{-1}-\psi_m^{-1}\|_{C^1}<1/m$; then
+$\mathrm{len}\,L^{\pi_m}\le\mathrm{len}\,C'_m+\mathrm{len}(L)/m$. [O] $\pi_m$ do not converge ($N_m$, $\|H_j\|$ unbounded as
+$\|\psi_m\|_{C^2}\to\infty$), so any uniformity needing bounds on $\pi$ (Floer compactness, spectral invariants,
+reducibles of $Y$) is not supplied by [SZ].
