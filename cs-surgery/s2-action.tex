@@ -62,11 +62,21 @@ $R^{\rm irr}(X)$ is the action filtration of the pillowcase Floer complex}.
 \begin{lemma}[periods]\label{lem:period}
 $f_\gamma$ does not in general descend to $\gamma$.  By \cite{KK93}, $\cs_X$ is a section over $R(X)$ of the circle bundle
 $E(\partial X)=\big(\R^2\times U(1)\big)/\!\approx$ with $(a,b;z)\approx(a+1,b;z e^{-8\pi ib})\approx(a,b+1;z e^{8\pi ia})\approx(-a,-b;z)$,
-and $e^{2\pi i f_\gamma}$ is the pull-back of that section to the lift.  Hence if one circuit of $\gamma$ translates the lift by
-$(m,k)\in\Z^2$, the period $\oint_\gamma 2b\,da$ is an integer only after adding the transition terms of $E(\partial X)$.
+and $e^{2\pi i f_\gamma}$ is the pull-back of that section to the lift.  Precisely: if one circuit of $\gamma$ carries the
+lift $(a,b)(0)$ to $\varepsilon(a,b)(0)+(m,k)$, $\varepsilon=\pm1$, then
+\[
+\oint_\gamma 2b\,da\equiv2\varepsilon k\,a(0)\pmod{\Z},
+\]
+so the period is an integer iff $k=0$, and for $K\subset S^3$ (where $\varepsilon=1$, $m=0$) the lift-independent
+statement is $\oint_\gamma 2a\,db\in\Z$.
 \end{lemma}
-For the figure-eight knot the lift translates by $(0,\mp2)$ and $\oint2b\,da=\tfrac13$; with the transition term the
-corrected period is $-1$ (\S\ref{sec:tests}).  The first draft of this lemma claimed $\oint2b\,da\in\tfrac12\Z$; that is false.
+\begin{proof}
+Along normal-form paths $d\,\cs_X=\pm\lambda$; around the loop the endpoint connections differ by a gauge
+transformation whose restriction to $\partial X$ is $\exp(2\pi(mx+ky)\sigma)$, not boundary-trivial, contributing
+$\pm(mb-ka)$ modulo the integer bulk degree; the Weyl element is constant and contributes nothing.
+\end{proof}
+For the figure-eight knot, $k=2$, $\oint2b\,da=4a(0)-1$ (numerically, to $10^{-6}$, at every base point) and
+$\oint2a\,db=1$ (\S\ref{sec:tests}).  The first draft of this lemma claimed $\oint2b\,da\in\tfrac12\Z$; that is false.
 
 \subsection{Absolute constants: the first correction terms}
 Proposition~\ref{prop:action} determines $\cs$ on the generators coming from one component $\gamma_i$ only up to a

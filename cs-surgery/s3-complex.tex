@@ -5,10 +5,11 @@
 Floer's $\Z/8$ grading of a flat connection on $Y_{p/q}$ is a spectral flow.  Kirk--Klassen--Ruberman
 \cite{KKR} split it along $T^2$: for $x,y\in r^{-1}(L_{p/q})$ on one component $\gamma$,
 \[
-\gr(y)-\gr(x)\equiv\mathrm{Mas}\big(\tilde\gamma|_{x\to y},\,L\big)+\text{(branch-point corrections)}\pmod 8,
+\gr(y)-\gr(x)\equiv\mathrm{Mas}\big(\tilde\gamma|_{x\to y},\,L\big)\pmod 8,
 \]
-where $\mathrm{Mas}$ is the Maslov index of the path of tangent lines of $\tilde\gamma$ against the fixed line
-$L$ in $(\R^2,\omega)$, and each branch point crossed contributes a fixed term determined by the local model.
+where $\mathrm{Mas}$ is the Maslov index of the path of tangent lines of $\tilde\gamma$ (an immersed curve, by
+Proposition~\ref{prop:basic}) against the fixed line $L$ in $(\R^2,\omega)$; the exact form of the splitting
+formula, including the contribution of the solid torus, is Task~4 of \S\ref{sec:workflow}.
 Within a component this is computable from the picture.  Across components there are constants
 $d_i\in\Z/8$, again fixed by one known filling.  The $\Z/2$ reduction is Herald's sign \cite{Herald}, and
 $\sum_x(-1)^{\gr(x)}$ over $\Gam\cap L_{1/n}$ is the Casson invariant of $Y_{1/n}$ (Herald's formula).
@@ -49,7 +50,8 @@ conjectural.  For $1/n$ surgeries only the listed maps are needed (Theorem~\ref{
 \begin{conjecture}[pillowcase model]\label{conj:pillow}
 Under \ref{H:alex}--\ref{H:Y}, $C(K)$ is $A_\infty$-quasi-isomorphic, as a filtered module, to the Fukaya module
 $\Hom(\tilde\Gam,\ L_{1/0}\oplus L_0^w)$ in the $\Z/2$-equivariant Fukaya category of $T^2$, with $\tilde\Gam$
-equipped with a bounding cochain supported at the branch points and the action/grading data of
+equipped with a bounding cochain supported at its double points, over the Novikov field (the products $\mu^2$
+on $T^2$ are infinite sums over triangles), and the action/grading data of
 \S\ref{sec:action}--\ref{sec:complex}.  Differentials are counts of immersed bigons in $T^2$ avoiding the corners.
 \end{conjecture}
 Evidence: generators, nondegeneracy, Chern--Simons values and gradings match (Propositions \ref{prop:gens},

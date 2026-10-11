@@ -24,15 +24,17 @@ sense of Daemi--Lidman--Miller Eismeier \cite{DLM}: $L_n=-c_n^2/4-\eta(W_n,c_n)$
 energy defect; for the $\pm1$ triangle they prove $L=0$ for the Floer map and $L\le\tfrac14$ for the distance-two maps.
 
 \subsection{The Dehn-twist triangle}
-In $T^2$ the Dehn twist along $\{b=\tfrac12\}$ carries $L_{1/(n-1)}$ to $L^w_{1/n}=\{a+nb=\tfrac12\}$, and by
-Proposition~\ref{prop:basic}(c) the translation $a\mapsto a+\tfrac12$ identifies $\Gam\cap L^w_{1/n}$ with
-$\Gam\cap L_{1/n}$ (both are the flat $\SO(3)$ connections on $Y_{1/n}$).  Seidel's exact triangle for the Dehn
-twist along $L^w_0$ reads, in the Fukaya category of $T^2$,
+The (inverse) Dehn twist along $L^w_0=\{b=\tfrac12\}$ carries $L_{1/(n-1)}$, up to Hamiltonian isotopy, to the
+line $L_{1/n}=\{a+nb=0\}$ through the origin, \emph{not} to $L^w_{1/n}$ (Lemma~\ref{lem:flux}; the linear shear
+fixing $L^w_0$ pointwise lands on $L^w_{1/n}$ but is not Hamiltonian isotopic to the twist).  Seidel's exact
+triangle \cite{Seidel}, in the Fukaya category of $T^2$ over the Novikov field, reads
 \[
-L_{1/(n-1)}\xrightarrow{\ \cdot p_n\ }L^w_0\longrightarrow L^w_{1/n}\longrightarrow L_{1/(n-1)}[1],
+L_{1/(n-1)}\xrightarrow{\ \cdot p_n\ }L^w_0\longrightarrow L_{1/n}\longrightarrow L_{1/(n-1)}[1],
 \]
-and applying $\Hom(\tilde\Gam,-)$ gives $\Hom(\tilde\Gam,L^w_{1/n})\simeq\Cone\big(\Hom(\tilde\Gam,L_{1/(n-1)})\xrightarrow{m_2(-,p_n)}\Hom(\tilde\Gam,L^w_0)\big)$.
-This is the pillowcase shadow of Floer's exact triangle for the triple $(Y_{1/(n-1)},\ (Y_0,w),\ Y_{1/n})$.
+and applying $\Hom(\tilde\Gam,-)$ gives $\Hom(\tilde\Gam,L_{1/n})\simeq\Cone\big(\Hom(\tilde\Gam,L_{1/(n-1)})\xrightarrow{m_2(-,p_n)}\Hom(\tilde\Gam,L^w_0)\big)$.
+This is the pillowcase shadow of Floer's exact triangle for the triple $(Y_{1/(n-1)},\ (Y_0,w),\ Y_{1/n})$, with
+the bundle $w$ on $Y_0$ only, as it should be.  (A test object: the line $L^w_{1/n}$ is concurrent with the two
+others at $p_n$, and $\mu^2(p_n,-)$ is an isomorphism on it, so it cannot be the cone.)
 
 \subsection{Relation to Daemi--Lidman--Miller Eismeier}
 A filtered version of Floer's triangle for $\pm1$ surgery already exists: Daemi--Lidman--Miller Eismeier

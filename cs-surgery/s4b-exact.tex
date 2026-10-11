@@ -1,0 +1,102 @@
+%======================================================================
+\section{The exact statement: Lagrangian surgery and collar perturbations}\label{sec:exact}
+%======================================================================
+Theorem~\ref{thm:cone}(b) is an inequality-type statement (as in \cite{DLM}), and no statement of that shape can
+be exact: for the figure-eight knot and $n=1$ the cone is $\CI(S^3_0(4_1),w)$, whose two generators have
+$\cs$ differing by $\tfrac12$ (modulo the $\tfrac14$ ambiguity of the $w$-line), while the two generators of
+$\CI(\pm\Sigma(2,3,7))$ differ by $\tfrac47$.  The exact relation has generator-dependent corrections, and they
+are areas.
+
+\subsection{The zigzag}
+Let $Z_n\subset T^2$ be the Lagrangian surgery of $L_{1/(n-1)}$ and $L^w_0$ at the corner $p_n$: the two lines with
+the crossing resolved, smoothed in an $\epsilon$-neighbourhood of $p_n$.  It is a closed curve in the class of
+$L_{1/n}$.
+
+\begin{lemma}[zero flux]\label{lem:flux}
+$Z_n$ is Hamiltonian isotopic in $T^2$ to the line $L_{1/n}=\{a+nb=0\}$ through the origin (not to $L^w_{1/n}$).
+\end{lemma}
+\begin{proof}
+In $\R^2$ one circuit of $Z_n$ lifts to the path $\tilde p_n\to\tilde p_n+v_1\to\tilde p_n+v_1+v_2$ with
+$v_1=(n-1,-1)$, $v_2=(1,0)$, and $\tilde p_n=(-\tfrac{n-1}2,\tfrac12)$.  Two isotopic closed curves on $T^2$ are
+Hamiltonian isotopic iff the signed area between them vanishes.  Against the line $a+nb=c$ the signed area is a
+linear function of $c$ vanishing exactly when the line passes through the midpoints $\tilde p_n+\tfrac12v_1=(0,0)$
+and $\tilde p_n+v_1+\tfrac12v_2$ of the two legs, i.e.\ for $c=0$.
+\end{proof}
+This is the pillowcase form of the fact that $Y_{1/n}$ carries the trivial bundle.
+
+\begin{proposition}[exact cone for the zigzag]\label{prop:zigzag}
+As $\epsilon\to0$, $CF(\tilde\Gam,Z_n)$ with its action filtration is isomorphic, as a filtered complex, to
+\[
+\Cone\big(CF(\tilde\Gam,L_{1/(n-1)})\xrightarrow{\ \mu^2(-,p_n)\ }CF(\tilde\Gam,L^w_0)\big),
+\]
+the first summand carrying the action $A$ of Proposition~\ref{prop:action} shifted by the corner action
+$A(p_n)$ of Lemma~\ref{lem:corner}, the second its own action.
+\end{proposition}
+\begin{proof}
+Generators of $CF(\tilde\Gam,Z_n)$ are those of the two summands.  Bigons between points of the same summand are
+bigons for that line.  A bigon from a point of $L_{1/(n-1)}$ to a point of $L^w_0$ must pass through the surgery
+region, and for $\epsilon\to0$ it is a triangle with a corner at $p_n$: this is $\mu^2(-,p_n)$.  The primitive of
+$\lambda$ on $Z_n$ restricts to the two line primitives, offset by $A(p_n)$, up to $O(\epsilon)$.
+\end{proof}
+
+\subsection{From the zigzag to the straight line}
+Let $\phi_t$ be an equivariant Hamiltonian isotopy of $T^2$ with $\phi_0(Z_n)=Z_n$ and $\phi_1(Z_n)=L_{1/n}$
+(Lemma~\ref{lem:flux}).  Say $\Gam$ is in \emph{minimal position} for the pair if $\phi_t(Z_n)\cap\tilde\Gam$ has
+constant cardinality; by the class computation this holds iff
+$|\Gam\cap L_{1/n}|=|\Gam\cap L_{1/(n-1)}|+|\Gam\cap L^w_0|$, which is the case for the figure-eight and all
+$n$ (counts $2|n|=2|n-1|+2$).
+
+\begin{theorem}[exact filtered cone, pillowcase side]\label{thm:exact}
+Assume \ref{H:alex}--\ref{H:Y} and minimal position.  Then
+\begin{enumerate}[label=(\alph*)]
+\item the isotopy induces a bijection $x\mapsto x'$ from the generators of the cone to $\Gam\cap L_{1/n}$ and an
+isomorphism of complexes $\Cone(\mu^2(-,p_n))\cong CF(\tilde\Gam,L_{1/n})$;
+\item the action of $x'$ is $A(x)+\delta_n(x)$, where $\delta_n(x)=\int_{R_n(x)}\omega$ is the signed area of the
+region in $\R^2$ bounded by the arc of $\tilde\Gam$ from $\tilde x$ to $\tilde x'$, the segment of $Z_n$ from
+$\tilde x$ back to the lift of the corner, and the segment of $L_{1/n}$ from there to $\tilde x'$;
+\item $\cs$ on the generators of $\CI(Y_{1/n})$ is $A(x')+c_i$, exactly (Proposition~\ref{prop:action}).
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(a) Between birth--death moments the bigon counts of $CF(\tilde\Gam,\phi_t(Z_n))$ are locally constant.
+(b) is Stokes' theorem for $\lambda$ along the boundary of $R_n(x)$.  (c) is Proposition~\ref{prop:action}.
+\end{proof}
+Without minimal position, (a) holds after cancelling the birth--death pairs, each of which is an explicit bigon
+of explicit area.  The DLME-type level bounds follow from $|\delta_n(x)|\le\operatorname{area}$ swept; the exact
+statement is (b).
+
+\subsection{The instanton side: Floer's perturbation}
+The pillowcase statement has an exact instanton counterpart, and it is Floer's original proof of the triangle
+\cite{Floer,BD}.  By Sivek--Zentner \cite[Thm.~4.5]{SZ}, any area-preserving isotopy of the pillowcase applied to
+the filling line is approximated by shearing isotopies induced by holonomy perturbations supported in the collar
+$T^2\times I\subset Y_{1/n}$.  Choose such a perturbation $\pi_n$ moving $L_{1/n}$ onto (a smoothing of) $Z_n$.
+\begin{enumerate}[label=(\roman*)]
+\item The critical set of $\cs+\pi_n$ on $Y_{1/n}$ is $r^{-1}(L_{1/(n-1)})\sqcup r^{-1}(L^w_0)\sqcup\{\theta\}$, all
+nondegenerate (Proposition~\ref{prop:gens} applied to $Z_n$).
+\item The perturbed Chern--Simons values are the cone actions: the Kirk--Klassen formula holds for perturbed flat
+connections with the collar perturbation term added, and that term is exactly $f_{Z_n}-f_{L_{1/n}}$ evaluated at
+the critical point.
+\item Floer's argument gives a two-step filtration of $\CI(Y_{1/n};\pi_n)$ by the two halves of the critical set,
+with associated graded $\CI(Y_{1/(n-1)})$ and $\CI(Y_0,w)$ and connecting map $F_n$; this is an
+\emph{isomorphism} of complexes $\CI(Y_{1/n};\pi_n)\cong\Cone(F_n)$, not merely a quasi-isomorphism.
+\item The family $\cs+t\pi_n$, $t\in[0,1]$, gives a continuation map $\CI(Y_{1/n};\pi_n)\to\CI(Y_{1/n})$; when the
+critical points move without birth--death (the instanton form of minimal position), it is an isomorphism of
+complexes sending each generator $x$ to $x'$ with
+$\cs(x')=\cs_{\pi_n}(x)+\int_0^1\big(\partial_t\cs_{t\pi_n}\big)(x_t)\,dt$, the integral being $\delta_n(x)$.
+\end{enumerate}
+\begin{theorem}[exact filtered cone, instanton side]\label{thm:exact-inst}
+Assume \ref{H:alex}--\ref{H:Y}, transversality of $\Gam$ to $L_{1/(n-1)},L^w_0,L_{1/n}$, and minimal position.
+Then $\CI(Y_{1/n})\cong\Cone(F_n)$ as $\Z/8$-graded complexes, with the Chern--Simons value of the generator
+corresponding to $x$ equal to $A(x)+\delta_n(x)+c_i$.  The differential of $\CI(Y_{1/n})$ is \emph{not} assumed to
+be a bigon count; only its generators and levels are identified.
+\end{theorem}
+\begin{proof}[Proof sketch]
+(i), (ii) are Propositions \ref{prop:gens}, \ref{prop:action} with the perturbation term; (iii) is Floer's
+filtration argument, which we take from \cite{BD}; (iv) is the standard continuation argument together with the
+first-variation formula for the perturbed functional; the integral equals $\delta_n(x)$ by (ii) and Stokes.
+\end{proof}
+What remains to be checked for a complete proof: that Floer's filtration argument identifies the connecting map
+with the cobordism map $F_n$ (it does up to homotopy; exactness at the level of filtered complexes needs the
+chain-level identification, which is what the perturbation picture provides), and the approximation of $Z_n$ by
+shearing isotopies with control of the perturbed Chern--Simons values (Sivek--Zentner give $C^0$ control; the
+action needs $C^1$).  Both are assigned in \S\ref{sec:workflow}.
