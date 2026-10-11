@@ -87,3 +87,22 @@ $\{\tfrac{25}{168},\tfrac{121}{168}\}$, the Chern--Simons invariants of $-\Sigma
 (the cone actions differ by $\tfrac12$, the targets by $\tfrac47$).  The normalisation of the $w$-leg was
 discovered here: the vertex offset $(n-1)/4$ fails, the midpoint-matched offset $\tfrac n4$ passes.
 Files: \texttt{numerics/fig8\_cone.py}, \texttt{fig8\_cone\_n1.png}.
+
+\subsection{Figure-eight knot: Farey triads (Theorem~\ref{thm:allslopes})}
+All twelve bundle combinations of the triads $(1,1/0)\to2$, $(1/2,1)\to2/3$, $(2,1)\to3/2$ pass: zero flux
+(triangles of $\omega$-area $\pm\tfrac14$), the balanced line is the one predicted by the parity rule
+$\varepsilon_\gamma=\varepsilon_\alpha+\varepsilon_\beta+1$, counts are additive ($2|q|$ points on slope $p/q$, as $\Gam$ has class $(0,2)$),
+the equivariant isotopy has no birth--death, and $A(x')=A_{\rm cone}(x)+\int_{R(x)}\omega$ holds to $3\cdot10^{-10}$.
+The offsets $(\kappa_\alpha,\kappa_\beta)$ found: $(\tfrac14,0)$ for $L^0_1,L^0_{1/0}\to L^w_2$; $(0,\tfrac12)$ for
+$L^0_1,L^w_{1/0}\to L^0_2$; $(\tfrac14,0)$, $(0,\tfrac14)$, $(\tfrac14,0)$, $(0,\tfrac34)$ for the four $2/3$ cases;
+$(0,\tfrac14)$, $(0,\tfrac12)$, $(\tfrac12,0)$, $(0,\tfrac14)$ for $3/2$.  As the numerics agent observed, once
+$\kappa$ is defined by matching primitives at the midpoints the action identity is Stokes' theorem; the content of the
+test is the parity rule, zero flux, minimal position, the bijection, and the independence of $\kappa$ from the
+choice of corner lift (translating $m$ by a lattice vector leaves $\kappa$ unchanged mod $\Z$).
+
+\emph{Flag.}  $L^w_2$ and $L^w_{2/3}$ pass through the transverse double point $(\tfrac14,0)$ of $\Gam$, which is also
+the image of the abelian representation with $a=\tfrac14$: two irreducible generators and one reducible share a
+pillowcase image.  The generator count is unaffected (each branch is transverse), but any bigon model must treat
+this coincidence; the reducible is nondegenerate by Lemma~\ref{lem:red}.  On the torus the reducible counts add,
+$p_\gamma=p_\alpha+p_\beta$; in the pillowcase they do not, because of the identifications at corners.
+Files: \texttt{numerics/fig8\_farey.py}, \texttt{fig8\_farey\_output.txt}.

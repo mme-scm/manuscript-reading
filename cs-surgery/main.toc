@@ -28,6 +28,7 @@
 \contentsline {subsection}{\tocsubsection {}{7.2}{Right-handed trefoil: the naive corner-offset identity is false}}{12}{subsection.7.2}%
 \contentsline {subsection}{\tocsubsection {}{7.3}{Figure-eight knot}}{12}{subsection.7.3}%
 \contentsline {subsection}{\tocsubsection {}{7.4}{Figure-eight knot: the exact cone (Theorem\nonbreakingspace \ref {thm:exact})}}{12}{subsection.7.4}%
+\contentsline {subsection}{\tocsubsection {}{7.5}{Figure-eight knot: Farey triads (Theorem\nonbreakingspace \ref {thm:allslopes})}}{13}{subsection.7.5}%
 \contentsline {section}{\tocsection {}{8}{Workflow}}{13}{section.8}%
-\contentsline {section}{\tocsection {Appendix}{A}{Appendix: collar holonomy perturbations, shears, and the perturbed action}}{13}{appendix.A}%
+\contentsline {section}{\tocsection {Appendix}{A}{Appendix: collar holonomy perturbations, shears, and the perturbed action}}{14}{appendix.A}%
 \contentsline {section}{\tocsection {Appendix}{}{References}}{15}{section*.2}%
