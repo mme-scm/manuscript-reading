@@ -1,0 +1,177 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}\raggedbottom
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+\numberwithin{equation}{section}
+\newcommand{\st}[1]{\par\noindent\textit{#1}\enspace}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\SU}{\mathrm{SU}}
+
+\title{Where things stand after the sixth round}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2.5em}
+
+\noindent Labels: \emph{proved} (complete argument from standard facts),
+\emph{computed} (exact or high-precision computation with saved code,
+independently rechecked where stated), \emph{plausible}, \emph{conjecture}.
+Records are in \texttt{notes/R6/}; the companion note is \texttt{drop.pdf}.
+
+\section{Notation}
+
+$Y_r=S^3_r(K)$. On $Y_{\pm2}$ there are two $\SO(3)$-bundles, $P_0$
+($w_2=0$) and $P_1$ ($w_2\ne0$). For an irreducible flat connection
+$\alpha$, its level is $c(\alpha)=\widetilde{\mathrm{CS}}-\widetilde{\mathrm{gr}}/8
+=(3+\rho(\alpha))/16$, with $\rho$ the adjoint $\rho$-invariant;
+$\lambda_i(Y)$ is the least level of a nonzero class of $I(Y,P_i)$, so
+$\lambda_0=\ell$ (DLME). The \emph{both-bundle drop} is
+$\min(\lambda_0,\lambda_1)(Y_2)-\min(\lambda_0,\lambda_1)(Y_{-2})$; the
+\emph{mixed drops} are $m_1=\lambda_0(Y_2)-\lambda_1(Y_{-2})$ and
+$m_2=\lambda_1(Y_2)-\lambda_0(Y_{-2})$. A cosmetic pair makes all of these
+zero.
+
+\section{What the Floer-theoretic layer can and cannot do}
+
+\st{No-go theorem (proved; five independent explicit models, all checked by
+code, with negative controls).} The following inputs, all together, cannot
+prove any of the drops above to be positive: the bundle-exchanging exact
+triangles (outer terms summed over both bundles, middle term the theory of
+$S^3$ plus the traceless theory of $(S^3,K)$) with the level of every map
+and homotopy; strict positivity of energy on every singular map; arbitrary
+differentials; the gradings mod $8$, the twist $\chi$, the null-homotopies,
+Euler characteristics and the Casson--Lin count, balanced gradings; the
+mirror triangles, the automorphisms forced by a cosmetic pair, and the lift
+to the double cover branched along $S$. What these inputs do not see is
+\emph{where the generators sit} (their $\rho$-values) and \emph{which
+generators survive} in homology.
+
+\st{What the layer does give (proved).} (i) A strict drop from positivity
+alone, except in one precisely described configuration: the lowest classes
+of $Y_2$ (both bundles) are carried into the traceless theory, and every
+traceless class at or below that level comes from $Y_2$ and dies in
+$Y_{-2}$. A cosmetic pair forces this configuration at the bottom of the
+spectrum and its mirror image at the top. (ii) A counting form of DLME's
+argument: $\min(\lambda_0,\lambda_1)(Y_{-2})\le T_1-\frac18$, where $T_1$ is
+the first level at which the classes of $I(Y_2)$ (both bundles) born so far
+outnumber the traceless bars alive. (iii) The constant $\frac1{16}$ enters
+only as the $\rho$-term of the flat connection of $L(4,1)$ with holonomy a
+rotation by $\pi/2$; it appears only in maps that move classes \emph{up}, so
+it is a ceiling on the cost of absorption into the traceless theory, never
+a floor. Every absorption cost in $(0,\frac1{16}]$ occurs in the models, so
+``absorption costs more than $\frac1{16}$'' is equivalent to the conclusion
+and is not admissible.
+
+\st{Corrections to earlier notes (proved).} The level $c$ is not a
+filtration: the differential raises it by $\frac18-E$; boundary depth must be
+measured accordingly. The vertex lemma of the triangle note was too weak by
+$\frac18$. The hypothesis ``no traceless representation sends the longitude
+to $\pm1$'' is genuinely extra, even when $\Delta_K=1$ (see \S4).
+
+\section{The pillowcase reduction, and why its key lemma is withdrawn}
+
+The generators of $I(Y_{\pm2})$ and of the traceless theory are the points
+where one curve $\mathcal C$ (the irreducible $\SU(2)$ representations of
+the knot group, in the pillowcase with meridian angle $\alpha$ and longitude
+angle $\beta$) meets three lines. Their levels are
+$c(Y_N,x)=\Phi(x)+\frac3{16}\operatorname{sgn}N-N\alpha(\frac12-\alpha)
+-\frac18\iota_N(x)$ with $d\Phi=2(\alpha-\frac14)\,d\beta$ along
+$\mathcal C$ (computed exactly for torus knots, to $10^{-7}$ for the
+figure-eight knot; plausible in general). At $\alpha=\frac14$ the slope term
+is $\pm(\frac3{16}-2\cdot\frac1{16})=\pm\frac1{16}$, which is where
+$\frac1{16}$ comes from on the level of generators.
+
+\st{Correction.} The rule for $\iota_N$ printed in \texttt{drop.pdf} has the
+wrong sign for $N<0$; the consistent rule is $\iota_N=\operatorname{sgn}N$
+when the slope of $\mathcal C$ lies strictly between $0$ and $-N$, and $0$
+otherwise (computed: forced by $c(-Y)=\frac38-c(Y)$ and by the exact
+mirror-torus data; gives Euler characteristic $0$ where required).
+
+\st{Withdrawn.} Lemma 5.1 of \texttt{drop.pdf} derived a drop in the least
+generator level from a \emph{steepness} hypothesis on $\mathcal C$ near the
+minimum of $\Phi$. Steepness bounds how much $\Phi$, i.e.\ the Chern--Simons
+value, can change between neighbouring generators: it is an energy
+hypothesis in disguise, and is withdrawn as a strategy. It also fails in
+practice: its hypotheses hold on only $3$ of $48$ components in the tests
+below.
+
+\section{Tests on knots with Alexander polynomial one (computed)}
+
+The curve $\mathcal C$ was computed numerically for the Kinoshita--Terasaka
+knot (genus $2$), the Conway knot, the pretzel knot $P(-3,5,7)$ and the
+untwisted Whitehead doubles $D_\pm$ of the right-handed trefoil, in both
+chiralities; the pipeline reproduces the figure-eight and torus-knot values to
+$10^{-7}$. Since the constants of integration of $\Phi$ on different closed
+components are unknown, only a range for the drop in the least generator
+level (both bundles) is determined:
+
+\begin{center}\small
+\begin{tabular}{lcc}
+knot & as given & mirror\\\hline
+Kinoshita--Terasaka, Conway (same curve) & $[0.096,\,0.119]$ & $[0.111,\,0.187]$\\
+$D_+$ (right-handed trefoil) & $[0.085,\,0.125]$ & $[0.109,\,0.125]$\\
+$D_-$ (right-handed trefoil) & $[0.100,\,0.125]$ & $[0.099,\,0.125]$\\
+$P(-3,5,7)$ & $[0,\,0.164]$ & $[0,\,0.123]$
+\end{tabular}
+\end{center}
+
+\noindent So the generator-level drop exceeds $\frac1{16}$ for
+Kinoshita--Terasaka, Conway and both Whitehead doubles. For $P(-3,5,7)$ the
+representation variety is degenerate: four flat loops lie on $\beta=0$,
+carrying twisted generators at $(\alpha,\beta)=(\frac14,0)$ that are shared by
+$Y_2$ and $Y_{-2}$ with level difference exactly $0$; a drop of $0$ is not
+excluded. On the Whitehead doubles all traceless points also sit at
+$(\frac14,0)$ (longitude $\mapsto1$), as Morse--Bott circles; they are not
+binary dihedral. Thus traceless representations sending the longitude to
+$\pm1$ occur for knots with $\Delta_K=1$, and they are exactly where the
+generator-level approach gives nothing. (For Kinoshita--Terasaka and Conway,
+$Y_2$ and $Y_{-2}$ even have different numbers of irreducible flat
+connections, $48$ against $32$, which distinguishes them by counting; this
+says nothing in general.)
+
+\section{Other data (computed)}
+
+\st{The $\pm1/n$ surgeries on torus knots} (two independent codes, $282$
+torus knots of both chiralities, $n\le3$; $18$ knots up to $n=8$).
+$\ell(Y_{-1/n})$ decreases in $n$, as in DLME's chain. The one-step drops
+have no positive universal bound: $\ell(Y_{-1})-\ell(Y_{-1/2})$ has minimum
+$7/232\approx0.030$ (mirror $T(3,5)$), below $\frac1{32}$. The two-step drop
+satisfies $\ell(Y_{-1/n})-\ell(Y_{-1/(n+2)})\ge\frac18$ in every case, with
+equality exactly for mirror torus knots with $p,q$ both odd, at odd $n$. The
+equality comes from a flat $\SO(3)$ connection on the composite cobordism
+(intersection form $-I_2$, a sphere of square $-2$ with boundary $\mathbb{R}P^3$)
+whose $\mathbb{R}P^3$-end is the rotation by $\pi$, at representations with
+meridian and longitude both traceless; the term $\frac18$ is that end's
+$\rho$-contribution. The triangle argument cannot prove the two-step bound:
+its middle term absorbs every class.
+
+\st{Census.} Among all $313{,}230$ prime knots with at most $15$
+crossings and $3{,}116$ census knots, the only knots whose $\pm2$ surgeries
+are both Seifert fibred are the torus knots and the figure-eight knot
+(verified by interval arithmetic through $14$ crossings and for the
+census; at $15$ crossings, $243{,}282$ knots are excluded on floating-point
+slope lengths above $12$).
+
+\section{What is running and what remains}
+
+\st{Running.} Fibres in Brieskorn spheres that are not torus knot surgeries
+(no $a_k\equiv\pm1\bmod a_ia_j$): for each singular fibre $K$ of
+$\Sigma(a_1,a_2,a_3)$, compute $\ell$ of the $-1,-\frac12,-\frac13,-\frac14$
+surgeries (and $\Sigma$, and $+\frac1n$), and test whether these decrease
+and whether $\ell(Y_{-1})-\ell(Y_{-1/3})\ge\frac18$; if not, find the bound.
+
+\st{Remaining, as we now see it.} (i) An input outside the no-go list,
+not an energy estimate, governing which generators survive or where they
+sit. (ii) The traceless representations sending the longitude to $\pm1$,
+which $P(-3,5,7)$ shows can occur, degenerately, when $\Delta_K=1$; any
+proof must handle them. (iii) The general formula for $c$ on the pillowcase.
+\end{document}
