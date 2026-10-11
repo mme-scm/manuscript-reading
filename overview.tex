@@ -1,0 +1,137 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}\raggedbottom
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+\newcommand{\st}[1]{\par\noindent\textit{#1}\enspace}
+
+\title{The drop question: a bird's-eye view}
+\date{}
+\begin{document}\sloppy
+\maketitle
+\vspace{-2.5em}
+
+\noindent Labels as in \texttt{status.pdf}. Details: \texttt{status.pdf},
+\texttt{fibres.pdf}, \texttt{notes/R6/}, \texttt{notes/G-sources/}.
+
+\section{Set-up}
+
+For an irreducible flat connection $\alpha$ (either $\mathrm{SO}(3)$ bundle),
+$c(\alpha)=(3+\rho(\alpha))/16$, with $\rho$ the adjoint $\rho$-invariant. This
+normalisation is canonical for both bundles, so differences between bundles are
+meaningful. $\lambda_0,\lambda_1$ are the least levels of nonzero classes for
+$w_2=0$ and $w_2\ne0$; $\lambda_0=\ell$. For $\pm2$ surgery on $K\subset S^3$:
+\[
+u=\lambda_0(Y_2)-\lambda_0(Y_{-2}),\quad w=\lambda_1(Y_2)-\lambda_1(Y_{-2}),\quad
+m_1=\lambda_0(Y_2)-\lambda_1(Y_{-2}),\quad m_2=\lambda_1(Y_2)-\lambda_0(Y_{-2}),
+\]
+and the both-bundle drop $D=\min(\lambda_0,\lambda_1)(Y_2)-\min(\lambda_0,\lambda_1)(Y_{-2})$.
+
+\section{$\pm2$ surgery on knots in $S^3$ (computed, exact)}
+
+Exact data exist only where $Y_{\pm2}$ are Seifert fibred, and there the
+differential vanishes. Among all prime knots with at most $15$ crossings and the
+census knots, these are the torus knots and $4_1$. Data: all $210$ torus knots
+with $pq\le120$ in both chiralities, plus $4_1$.
+
+\begin{center}\small
+\begin{tabular}{lccccc}
+ & $u$ & $w$ & $m_1$ & $m_2$ & $D$\\\hline
+positive $T(p,q)$, $n=pq$ & $-\frac18+\frac{2n-5}{n^2-4}$, \emph{changes sign} & $\frac38-\frac4{n^2-4}$ & $(\frac18,\frac3{16}]$ & $(\frac18,\frac3{16}]$ & $>\frac18$\\
+negative $T(p,q)$ & $[\frac3{32},\frac18]$ & $[0.0854,\frac18]$ & $[0.0854,\frac5{32}]$ & $[\frac1{16},0.137]$ & $\ge\frac18-\frac1{884}$\\
+$4_1$ & $\frac1{10}$ & $\frac18$ & $\frac{13}{80}$ & $\frac1{16}$ & $\frac18$
+\end{tabular}
+\end{center}
+
+\noindent So in every case $m_1,m_2,D,w\ge\frac1{16}$; only DLME's untwisted
+$u$ fails. $D$ never comes near $\frac1{16}$: its minimum is
+$\frac18-\frac1{884}$ at $T(3,-5)$. The minimum of $m_1$ and $w$ is
+$\frac{151}{1768}\approx0.0854$, also at $T(3,-5)$, which has $\det=1$.
+
+\st{Equality $\frac1{16}$.} It is attained only by $m_2$, and only for $T(2,-3)$
+and $4_1$. In both, the twisted minimiser of $Y_2$ is a \emph{binary dihedral}
+representation: traceless meridian, longitude $\mapsto+1$, the point
+$(\frac14,0)$ of the pillowcase. That point is a common point of the two twisted
+surgery lines. The minimiser is absorbed into the traceless theory of $(S^3,K)$
+by a flat singular connection, at zero energy, and the next twisted class is then
+matched with $\lambda_0(Y_{-2})$.
+\begin{itemize}
+\item For $T(2,-3)$, $m_2=\frac3{16}-\frac18$ exactly. Here $\frac3{16}$ is the gap
+at a mixed common point, namely the $\mathbb RP^3$ term $\frac18$ plus the
+$L(4,1)$ term $\frac1{16}$, and $\frac18$ is the spacing of the twisted
+generators.
+\item For $4_1$, $m_2=\frac{13}{80}-\frac1{10}$. I found no structural reason for
+this value; it may be a coincidence.
+\end{itemize}
+There are $(\det K-1)/2$ binary dihedral representations, so \emph{none when
+$\Delta_K=1$}, and this equality mechanism is absent in the case of interest.
+For $\det K=1$ torus knots the smallest values are $m\approx0.0854$ and
+$D=\frac18-\frac1{884}$.
+
+\st{$\Delta_K=1$ knots (generator level only; computed numerically).} These are
+Kinoshita--Terasaka, Conway, and the Whitehead doubles of the trefoil, in both
+chiralities. For them the drop in the least \emph{generator} level, over both
+bundles, lies in $[0.085,0.187]$, above $\frac1{16}$; this is not $\ell$. For
+$P(-3,5,7)$ it is undecided: there are degenerate loops of traceless
+representations with longitude $\mapsto1$, which are not binary dihedral.
+
+\section{Other surgery pairs (computed)}
+
+\st{$-1/n$ on torus knots in $S^3$.} The two-step drop
+$\ell(Y_{-1/n})-\ell(Y_{-1/(n+2)})$ is at least $\frac18$. Equality holds exactly
+for odd--odd mirror torus knots at odd $n$, where the minimiser has meridian and
+longitude both traceless. One-step drops have no positive floor.
+
+\st{$-1/n$ on fibres of Brieskorn spheres (rechecked independently).} On the
+link-oriented side the two-step drop is $\frac18+\beta^2/(8mm'')$, with
+equality iff the holonomy along the surgered fibre is traceless. In closed form,
+$\ell=A^*-\frac mP\alpha(\frac12-\alpha)$: per step this is $\frac1{16}$, the
+value at traceless holonomy, plus a square. On the reversed side the one-sided
+$\ell$ rises at one step, and its two-step drops tend to $0$.
+
+\section{The common pattern (plausible)}
+
+In all three families, \emph{equality occurs exactly when the minimiser sits at a
+representation of the knot exterior that is common to both fillings}, with
+traceless holonomy. There a flat connection on the connecting cobordism exists,
+and the drop is the $\rho$-term of that flat connection at a lens-space end.
+For the $-1/n$ families this is the $\mathbb RP^3$ rotation by $\pi$, giving
+$\frac18$. For $\pm2$ the equality also involves the zero-energy absorption above,
+and is explained structurally only for $T(2,-3)$. In the Brieskorn chains the
+excess over equality is a perfect square. Every exact case is Seifert fibred.
+
+\section{What did not work}
+
+\begin{itemize}
+\item \emph{Triangles.} The exact triangles, with all levels, positivity of
+energy, arbitrary differentials, gradings, Euler characteristics, the mirror and
+cover symmetries, and the automorphisms forced by a cosmetic pair, cannot prove
+any drop (no-go theorem, five explicit models). The constant $\frac1{16}$ appears
+in them only as a ceiling.
+\item \emph{Pillowcase steepness.} This was an energy hypothesis in disguise, and
+is withdrawn.
+\item \emph{Equivariant theory on the branched cover.} Abandoned.
+\item \emph{General homology spheres.} There is no uniform positive drop for the
+one-sided $\ell$; with nonzero $I(Y)$, a standard triangle argument shows no sign
+of working.
+\end{itemize}
+
+\section{What this suggests}
+
+The inequality is about \emph{where} the bottom class sits relative to common
+representations, and whether it survives. Equality needs a zero-energy
+absorption at a common point with traceless meridian and longitude
+$\mapsto\pm1$. When $\Delta_K=1$ the only candidates are degenerate traceless
+representations with longitude $\mapsto\pm1$ that are not binary dihedral,
+as for $P(-3,5,7)$ and the Whitehead doubles. Any argument must either exclude
+these or control them. Exact evidence beyond Seifert fibred spaces is missing,
+and computing it needs the differential.
+\end{document}
