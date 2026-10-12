@@ -1,0 +1,268 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\renewcommand{\thetheorem}{\Alph{theorem}}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\RP}{\mathbb{RP}}
+\newcommand{\HP}{\mathbb{HP}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\B}{\mathfrak{B}}
+\newcommand{\HPU}{\mathit{HPU}}
+\newcommand{\cHPU}{\check{\mathit{HPU}}}
+\DeclareMathOperator{\CS}{CS}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Map}{Map}
+
+\title{A $PU(2)$-monopole Floer homology for integer homology spheres}
+\date{}
+
+\begin{document}
+
+\begin{abstract}
+We propose a definition with three ingredients: a real blow-up along
+$\Phi=0$, on which the $SU(2)$-gauge action is free; Borel
+$S^1$-equivariance with respect to scalar multiplication on $\Phi$; and
+$\HPU(Y):=$ the $U$-torsion of the ``minus'' flavour, the Borel analogue
+of $\im N$. Vanishing for $S^3$ is proved by a parity count, given the
+standard analytic package. The instanton content is proved in the form of
+a spectral sequence whose $E_1$-page, in high tower levels, is
+$I_*(Y;\Q)$. Degeneration of that spectral sequence is not settled here.
+\end{abstract}
+
+\maketitle
+
+\section{Setup}
+
+Let $Y$ be an integer homology sphere with metric $g$, let $W\to Y$ be the
+spinor bundle of the unique spin$^c$ structure with a fixed spin
+connection, let $E=Y\times\C^2$, and let $\cG=\Map(Y,SU(2))$.
+Configurations are pairs $(A,\Phi)$, where $A$ is an $SU(2)$-connection on
+$E$ and $\Phi\in\Gamma(W\otimes E)$. The functional is
+\[
+\cL(A,\Phi)=\CS(A)+\tfrac12\langle D_A\Phi,\Phi\rangle_{L^2}.
+\]
+Its critical points satisfy
+\[
+\ast F_A=\rho^{-1}\big((\Phi\Phi^*)_{00}\big),\qquad D_A\Phi=0,
+\]
+with the sign chosen so that the Weitzenb\"ock term is
+\[
+\langle(\Phi\Phi^*)_{00}\Phi,\Phi\rangle=|(\Phi\Phi^*)_{00}|^2\ge\tfrac14|\Phi|^4.
+\]
+\begin{itemize}[leftmargin=*]
+\item $S^1$ acts on $\Phi$ by scalars. This action is not a gauge symmetry.
+\item Perturbations are $\cG$-invariant only; they need not be
+  $S^1$-invariant.
+\item Relative gradings are defined mod $6$: a degree-one gauge loop has
+  index $8$ (ASD part) $-\,2$ (Dirac part, since $\int\mathrm{ch}_2=-1$)
+  $=6$.
+\end{itemize}
+
+\begin{lemma}\label{lem:free}
+$\cG$ acts freely on $\{\Phi\neq0\}$.
+\end{lemma}
+
+\begin{proof}
+Suppose $g\cdot A=A$. Then $g$ is $A$-parallel, hence determined by its
+value at one point. Suppose also $g\Phi=\Phi$, and pick $y$ with
+$\Phi(y)\neq0$. Then $g(y)$ fixes the nonzero subspace
+$\im\Phi(y)\subset E_y$. An element of $SU(2)$ with eigenvalue $1$ is the
+identity, so $g(y)=1$, hence $g\equiv1$.
+\end{proof}
+
+Thus the only non-free points are those with $\Phi=0$. Irreducible flat
+$\alpha$ have isotropy $\{\pm1\}$, acting on $\Phi$ by $-1$. The trivial
+connection $\theta$ has isotropy $SU(2)$.
+
+\section{Construction}
+
+Form the real blow-up
+\[
+\B^\sigma=\{(A,r,\psi): r\ge0,\ \|\psi\|_{L^2}=1\}/\cG.
+\]
+
+\emph{Free quotient.} Lemma~\ref{lem:free} applies with $\psi$ in place of
+$\Phi$, since $\psi\neq0$. Hence $\B^\sigma$ is a Hilbert manifold with
+boundary $\partial\B^\sigma=\{r=0\}$.
+
+\emph{KM flavours.} Kronheimer--Mrowka's construction applies to
+$\B^\sigma$, giving $\check{\ }$, $\hat{\ }$, $\bar{\ }$ complexes with the
+exact triangle. Since gradings are only $\Z/6$, one uses negative
+completions.
+
+\emph{Borel flavours.} The $S^1$-action on $\psi$ commutes with $\cG$.
+Using $S^1$-equivariant families of perturbations parametrized by $ES^1$
+yields $\check C^-$, $\check C^+$, $\check C^\infty$, related by the
+triangle
+\[
+H^-\to H^\infty\to H^+\xrightarrow{\;N\;}H^-.
+\]
+
+\begin{definition}
+\[
+\HPU(Y):=\ker\big(\cHPU^-(Y)\to\cHPU^\infty(Y)\big)=\im N
+=U\text{-torsion of }\cHPU^-(Y).
+\]
+\end{definition}
+
+\section{Structure of the instanton face}
+
+\begin{lemma}\label{lem:face}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+\item $\partial\B^\sigma=\big(\cA\times S(\Gamma(W\otimes E))\big)/\cG$,
+  with $\cG$ acting freely and $S(\Gamma(W\otimes E))$ contractible. Hence
+  $\partial\B^\sigma\simeq ESU(2)\times_{SU(2)}\widetilde{\B}_{\mathrm{inst}}$,
+  the Borel model of the framed instanton configuration space.
+\item The boundary critical points over irreducible $\alpha$ are
+  $(\alpha,\pm\psi)$, with $\psi$ spanning a real eigenline of $L_\alpha$.
+  They form $\RP^\infty$-towers with step $1$.
+\item The boundary critical points over $\theta$ are $(\theta,E)$, with $E$
+  a quaternionic eigenline of $L_\theta$. They form $\HP^\infty$-towers
+  with step $4$; adjacent stable and unstable points differ in grading by
+  $4-1=3$.
+\item Every point $(\theta,E)$ is $S^1$-fixed for every perturbation,
+  whereas $S^1/\{\pm1\}$ acts freely on the face over irreducible
+  connections.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) is immediate from Lemma~\ref{lem:free}. For (b),(c): $L_\theta$
+commutes with $SU(2)$ acting on $\C^2=\HH$, so $L_\theta$ is
+right-$\HH$-linear; its eigenspaces are quaternionic, generically of real
+dimension $4$, and $SU(2)$ acts simply transitively on $S(E)=S^3$. For
+(d): complex scalars commute with $SU(2)$, so lie in
+$\End_{SU(2)}=\HH^{\mathrm{op}}$, and therefore preserve $E$. Over an
+irreducible $\alpha$, $z\psi=\pm\psi$ only if $z=\pm1$.
+\end{proof}
+
+\section{Vanishing for $S^3$}
+
+\begin{theorem}\label{thm:A}
+$\HPU(S^3)=0$.
+\end{theorem}
+
+\begin{proof}
+\emph{Step 1: the critical set is $\{\theta\}$.} Take the round metric.
+For any critical point,
+\[
+0=\|\nabla\Phi\|^2+\int\tfrac{s}{4}|\Phi|^2+\|(\Phi\Phi^*)_{00}\|^2,
+\]
+so $\Phi=0$. Every flat $SU(2)$-connection on $S^3$ is trivial, so
+$A=\theta$. It is nondegenerate: $H^1=0$, and $\ker D_\theta=0$ by
+Lichnerowicz.
+
+\emph{Step 2: small perturbations add nothing.} Take a small equivariant
+family of perturbations. $\theta$ is critical for every $\cG$-invariant
+perturbation, by $SU(2)$-isotropy. By compactness and the implicit
+function theorem, the critical set of the family remains $\{\theta\}$.
+Hence the generators of $\check C$ are exactly the boundary-stable points
+$(\theta,E_j)$.
+
+\emph{Step 3: every component of the differential vanishes.} Relative
+gradings between boundary-stable $\theta$-points are $4m+6n$, which is
+even. The equivariant components $\partial_k$ have degree $-1+2k$, which
+is odd, so they vanish. The KM correction term
+$\partial^u_s\bar\partial^s_u$ also vanishes: $\bar\partial^s_u$ requires
+equal raw gradings between a stable and an unstable point, but these
+differ by $4m+3+6n$, which is odd.
+
+\emph{Step 4.} Hence $H^-=C^s\otimes\Q[[U]]$, which is $U$-torsion-free,
+so $\HPU(S^3)=0$.
+\end{proof}
+
+\section{Instanton content over $\Q$}
+
+\begin{theorem}\label{thm:B}
+There is a spectral sequence whose $E_1$-page, in high tower levels, is
+canonically $I_*(Y;\Q)$, regraded by the Dirac spectral flow $\sigma$, and
+which converges to the high-level part of $\HPU(Y)$.
+\end{theorem}
+
+\begin{proof}
+\emph{(i) Which contributions survive.} By Lemma~\ref{lem:face}(d), the
+face over each irreducible $\alpha$ is $S^1$-free. Its Borel model is a
+complex semi-infinite tower on which $U$ acts locally nilpotently, so it
+is $U$-torsion and lands in $\HPU$. The $\theta$-points are $S^1$-fixed,
+each contributing $\Q[[U]]$, which is torsion-free; so $\theta$ is
+excluded. Free interior critical points (irreducible $PU(2)$ monopoles,
+including the former Seiberg--Witten points, which are no longer special)
+are $U$-torsion.
+
+\emph{(ii) A filtration recovering $\partial_I$.} Work on the $\Z$-cover
+and set $\nu=\gr_{PU}-\gr_I$.
+\begin{itemize}[leftmargin=*]
+\item A face component lying over an instanton trajectory of index $m$
+  changes $\nu$ by $m-1\ge0$.
+\item The $\nu$-preserving part is exactly Floer's differential
+  $\partial_I$: each index-$1$ trajectory carries exactly one spinor line.
+\item Components $\theta\to\beta$ raise $\nu$ by at least $3$. Hence
+  $\theta$ spans a subcomplex of the associated graded, with quotient
+  $CI\otimes(\text{tower})$.
+\item At the bottoms of the half-towers, entries with negative Dirac
+  spectral flow are truncated; for $\nu\gg0$ every entry is present.
+\end{itemize}
+Therefore, in high tower levels, $\gr_\nu$ of the $\alpha$-part is
+canonically $(CI_*(Y;\Q),\partial_I)$, regraded by $\sigma$. This gives
+the stated spectral sequence.
+\end{proof}
+
+\begin{remark}
+The higher differentials come from Euler classes of the Dirac index
+bundle over higher-index instanton moduli spaces, the analogue of the
+$\mu$-class insertions in Feehan--Leness. Their vanishing is not proved
+here.
+\end{remark}
+
+\section{Remarks}
+
+\subsection*{Why these flavour choices}
+\begin{itemize}[leftmargin=*]
+\item The KM-reduced group $\coker i_*$ kills the $\alpha$-towers, just as
+  it kills the reducible in KM theory, so it fails~(1).
+\item The non-equivariant $\Q$-theory satisfies~(2) by the same parity
+  argument, but fails~(1): the $\RP^\infty$-towers are $\Q$-acyclic, which
+  deletes exactly the $\partial_I$-entries between $\alpha,\beta$ with
+  nonzero Dirac spectral flow.
+\item $S^1$-equivariance absorbs those spectral shifts into $U$-powers.
+  The $U$-torsion of $H^-$ then separates the $S^1$-free part (the
+  $\alpha$'s) from the $S^1$-fixed part ($\theta$).
+\item The complement $U^{-1}H^-$ carries the $\theta$-towers. The torsion
+  part also contains the free $PU(2)$ monopoles and the Seiberg--Witten
+  data; this is where a Floer-theoretic Feehan--Leness relation would
+  appear.
+\end{itemize}
+
+\subsection*{Analytic input assumed}
+\begin{itemize}[leftmargin=*]
+\item A $C^0$ bound on $\Phi$, from
+  $|(\Phi\Phi^*)_{00}|^2\ge\tfrac14|\Phi|^4$.
+\item Uhlenbeck strata of codimension $2\ell$: each bubble lowers the
+  moduli dimension by $6$ and adds $4$ for its position, so these strata
+  are irrelevant in the dimensions used.
+\item Transversality for $ES^1$-families of perturbations.
+\item KM-type gluing and completions.
+\end{itemize}
+Since the action on $\B^\sigma$ is free, no singular phenomena arise
+beyond the boundary face already handled by Kronheimer--Mrowka.
+
+\end{document}
