@@ -1,0 +1,1 @@
+Riley word b(19,5), longitude flip=True matches SnapPy exterior

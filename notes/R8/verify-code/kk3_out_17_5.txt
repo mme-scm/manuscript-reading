@@ -1,0 +1,4 @@
+Riley word b(17,5), longitude flip=True matches SnapPy exterior
+== b(17,5) = 7_5(0,0)
+ N=+2 Vol/4pi^2=0.154776510  x/2 mod 1/4=0.2078216  I_N=(1/4pi^2)int tau=0.03619907  endpoint-L check=6.3e-13
+ N=-2 Vol/4pi^2=0.146821510  x/2 mod 1/4=0.2120218  I_N=(1/4pi^2)int tau=0.04459953  endpoint-L check=4.6e-13
