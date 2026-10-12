@@ -156,3 +156,6 @@ For T(2,−3), the equality m2 = 1/16 pairs the binary dihedral generator (1/4, 
 - Where the "16, 12 / 16, 20" for T(3,5) comes from: these are ranks of the *irreducible* twisted complex, which excludes the reducible ζ on the w-bundle (μ ↦ rotation by π, pillowcase point (1/4,0)). ell-1 §2.5 records rank I^w_irr(Y_{±2}) = rank I(Y_1) ± σ(K)/2.
   - The discrepancy is σ/2, contributed by ζ, and it vanishes when σ = 0, e.g. when Δ_K = 1. It is not a det condition: T(3,5) has det 1 and σ = −8.
 - Do not use O1 as an obstruction. The rest of tri-cover.md stands.
+- **User's explanation of the rank discrepancy.** The cobordism maps in the surgery triangles are obstructed, with a cokernel of rank about σ(K). Obstructed gluing corrects this by contributing one new irreducible generator for each complex dimension of the cokernel, and that restores the triangles. So the discrepancy is a σ(K) effect.
+  - There is no discrepancy when σ = 0, in particular when Δ_K = 1.
+  - Our twisted data use the irreducible complex *without* these extra generators. So the twisted ℓ values for σ ≠ 0 knots refer to the uncorrected theory.
