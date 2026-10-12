@@ -1,0 +1,6 @@
+(i) A0 point x=(0.17802,-0.35604), c=19/80 fixes Phi(x)=0.164637
+    branch+ (slope +2sqrt5) at (1/4,0): Phi*80=10.9987  c(A1)*80=15.9987  c(B1)*80=5.9987  c^tl*80=15.9987
+    branch- (slope -2sqrt5) at (1/4,0): Phi*80=18.9980  c(A1)*80=23.9980  c(B1)*80=13.9980  c^tl*80=13.9980
+(ii) a-triangle x -> p_A -> y+ : omega-area 0.0374999993 (ccw>0); level drop 19/80 - 1/5 = 0.0375000000
+(iii) right lobe (V up from y+ to y-, back along Gamma): signed omega-area -0.099992
+     => ccw bigon y- -(V)-> y+ -(Gamma)-> y- of area 0.099992 ; a differential d(y-)=y+ needs area 1/8 + c(y-) - c(y+) = 0.100000

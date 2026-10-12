@@ -1,0 +1,176 @@
+mT(3,5) (I) rule=free   c=q1           gA=gAs+gAn    edges=1 M5=True   failing relation entries: 48 {'ac': 12, 'vA': 20, 'vT': 2, 'vB': 14}
+mT(3,5) (I) rule=free   c=q1           gA=gAs+gAn    edges=2 M5=True   failing relation entries: 50 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 14}
+mT(3,5) (I) rule=free   c=q1           gA=gAs        edges=1 M5=True   failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=free   c=q1           gA=gAs        edges=2 M5=True   failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=free   c=q1           gA=gAn        edges=1 M5=True   failing relation entries: 42 {'ac': 12, 'vA': 18, 'vT': 2, 'vB': 10}
+mT(3,5) (I) rule=free   c=q1           gA=gAn        edges=2 M5=True   failing relation entries: 44 {'ac': 12, 'vA': 20, 'vT': 2, 'vB': 10}
+mT(3,5) (I) rule=free   c=q2           gA=gAs+gAn    edges=1 M5=True   failing relation entries: 54 {'ac': 12, 'vA': 24, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=free   c=q2           gA=gAs+gAn    edges=2 M5=True   failing relation entries: 50 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 14}
+mT(3,5) (I) rule=free   c=q2           gA=gAs        edges=1 M5=True   failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=free   c=q2           gA=gAs        edges=2 M5=True   failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=free   c=q2           gA=gAn        edges=1 M5=True   failing relation entries: 48 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 12}
+mT(3,5) (I) rule=free   c=q2           gA=gAn        edges=2 M5=True   failing relation entries: 44 {'ac': 12, 'vA': 20, 'vT': 2, 'vB': 10}
+mT(3,5) (I) rule=free   c=q1+q2        gA=gAs+gAn    edges=1 M5=True   failing relation entries: 6 {'vA': 4, 'vB': 2}
+mT(3,5) (I) rule=free   c=q1+q2        gA=gAs+gAn    edges=2 M5=True   failing relation entries: 0 {}
+mT(3,5) (I) rule=free   c=q1+q2        gA=gAs        edges=1 M5=True   failing relation entries: 12 {'vA': 8, 'vB': 4}
+mT(3,5) (I) rule=free   c=q1+q2        gA=gAs        edges=2 M5=True   failing relation entries: 12 {'vA': 8, 'vB': 4}
+mT(3,5) (I) rule=free   c=q1+q2        gA=gAn        edges=1 M5=True   failing relation entries: 34 {'vA': 24, 'vB': 10}
+mT(3,5) (I) rule=free   c=q1+q2        gA=gAn        edges=2 M5=True   failing relation entries: 32 {'vA': 24, 'vB': 8}
+mT(3,5) (I) rule=int    c=q1           gA=gAs+gAn    edges=1 M5=True   failing relation entries: 48 {'ac': 12, 'vA': 20, 'vT': 2, 'vB': 14}
+mT(3,5) (I) rule=int    c=q1           gA=gAs+gAn    edges=1 M5=False  failing relation entries: 35 {'ac': 4, 'vA': 14, 'vT': 1, 'vB': 16}
+mT(3,5) (I) rule=int    c=q1           gA=gAs+gAn    edges=2 M5=True   failing relation entries: 50 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 14}
+mT(3,5) (I) rule=int    c=q1           gA=gAs+gAn    edges=2 M5=False  failing relation entries: 55 {'ac': 4, 'vA': 30, 'vT': 1, 'vB': 20}
+mT(3,5) (I) rule=int    c=q1           gA=gAs        edges=1 M5=True   failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=int    c=q1           gA=gAs        edges=1 M5=False  failing relation entries: 53 {'ac': 4, 'vA': 28, 'vT': 1, 'vB': 20}
+mT(3,5) (I) rule=int    c=q1           gA=gAs        edges=2 M5=True   failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=int    c=q1           gA=gAs        edges=2 M5=False  failing relation entries: 53 {'ac': 4, 'vA': 28, 'vT': 1, 'vB': 20}
+mT(3,5) (I) rule=int    c=q1           gA=gAn        edges=1 M5=True   failing relation entries: 42 {'ac': 12, 'vA': 18, 'vT': 2, 'vB': 10}
+mT(3,5) (I) rule=int    c=q1           gA=gAn        edges=1 M5=False  failing relation entries: 48 {'ac': 4, 'vA': 27, 'vT': 1, 'vB': 16}
+mT(3,5) (I) rule=int    c=q1           gA=gAn        edges=2 M5=True   failing relation entries: 44 {'ac': 12, 'vA': 20, 'vT': 2, 'vB': 10}
+mT(3,5) (I) rule=int    c=q1           gA=gAn        edges=2 M5=False  failing relation entries: 52 {'ac': 4, 'vA': 27, 'vT': 1, 'vB': 20}
+mT(3,5) (I) rule=int    c=q2           gA=gAs+gAn    edges=1 M5=True   failing relation entries: 54 {'ac': 12, 'vA': 24, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=int    c=q2           gA=gAs+gAn    edges=1 M5=False  failing relation entries: 45 {'ac': 4, 'vA': 24, 'vT': 1, 'vB': 16}
+mT(3,5) (I) rule=int    c=q2           gA=gAs+gAn    edges=2 M5=True   failing relation entries: 50 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 14}
+mT(3,5) (I) rule=int    c=q2           gA=gAs+gAn    edges=2 M5=False  failing relation entries: 55 {'ac': 4, 'vA': 30, 'vT': 1, 'vB': 20}
+mT(3,5) (I) rule=int    c=q2           gA=gAs        edges=1 M5=True   failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=int    c=q2           gA=gAs        edges=1 M5=False  failing relation entries: 53 {'ac': 4, 'vA': 28, 'vT': 1, 'vB': 20}
+mT(3,5) (I) rule=int    c=q2           gA=gAs        edges=2 M5=True   failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=int    c=q2           gA=gAs        edges=2 M5=False  failing relation entries: 53 {'ac': 4, 'vA': 28, 'vT': 1, 'vB': 20}
+mT(3,5) (I) rule=int    c=q2           gA=gAn        edges=1 M5=True   failing relation entries: 48 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 12}
+mT(3,5) (I) rule=int    c=q2           gA=gAn        edges=1 M5=False  failing relation entries: 64 {'ac': 4, 'vA': 35, 'vT': 1, 'vB': 24}
+mT(3,5) (I) rule=int    c=q2           gA=gAn        edges=2 M5=True   failing relation entries: 44 {'ac': 12, 'vA': 20, 'vT': 2, 'vB': 10}
+mT(3,5) (I) rule=int    c=q2           gA=gAn        edges=2 M5=False  failing relation entries: 52 {'ac': 4, 'vA': 27, 'vT': 1, 'vB': 20}
+mT(3,5) (I) rule=int    c=q1+q2        gA=gAs+gAn    edges=1 M5=True   failing relation entries: 6 {'vA': 4, 'vB': 2}
+mT(3,5) (I) rule=int    c=q1+q2        gA=gAs+gAn    edges=1 M5=False  failing relation entries: 50 {'ac': 8, 'vA': 22, 'vT': 2, 'vB': 18}
+mT(3,5) (I) rule=int    c=q1+q2        gA=gAs+gAn    edges=2 M5=True   failing relation entries: 0 {}
+mT(3,5) (I) rule=int    c=q1+q2        gA=gAs+gAn    edges=2 M5=False  failing relation entries: 70 {'ac': 8, 'vA': 36, 'vT': 2, 'vB': 24}
+mT(3,5) (I) rule=int    c=q1+q2        gA=gAs        edges=1 M5=True   failing relation entries: 12 {'vA': 8, 'vB': 4}
+mT(3,5) (I) rule=int    c=q1+q2        gA=gAs        edges=1 M5=False  failing relation entries: 70 {'ac': 8, 'vA': 40, 'vT': 2, 'vB': 20}
+mT(3,5) (I) rule=int    c=q1+q2        gA=gAs        edges=2 M5=True   failing relation entries: 12 {'vA': 8, 'vB': 4}
+mT(3,5) (I) rule=int    c=q1+q2        gA=gAs        edges=2 M5=False  failing relation entries: 70 {'ac': 8, 'vA': 40, 'vT': 2, 'vB': 20}
+mT(3,5) (I) rule=int    c=q1+q2        gA=gAn        edges=1 M5=True   failing relation entries: 34 {'vA': 24, 'vB': 10}
+mT(3,5) (I) rule=int    c=q1+q2        gA=gAn        edges=1 M5=False  failing relation entries: 68 {'ac': 8, 'vA': 36, 'vT': 2, 'vB': 22}
+mT(3,5) (I) rule=int    c=q1+q2        gA=gAn        edges=2 M5=True   failing relation entries: 32 {'vA': 24, 'vB': 8}
+mT(3,5) (I) rule=int    c=q1+q2        gA=gAn        edges=2 M5=False  failing relation entries: 68 {'ac': 8, 'vA': 34, 'vT': 2, 'vB': 24}
+mT(3,5) (I) rule=closed c=q1           gA=gAs+gAn    edges=1 M5=True   failing relation entries: 48 {'ac': 12, 'vA': 20, 'vT': 2, 'vB': 14}
+mT(3,5) (I) rule=closed c=q1           gA=gAs+gAn    edges=1 M5=False  failing relation entries: 70 {'ac': 12, 'vA': 36, 'vT': 2, 'vB': 20}
+mT(3,5) (I) rule=closed c=q1           gA=gAs+gAn    edges=2 M5=True   failing relation entries: 50 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 14}
+mT(3,5) (I) rule=closed c=q1           gA=gAs+gAn    edges=2 M5=False  failing relation entries: 80 {'ac': 12, 'vA': 40, 'vT': 2, 'vB': 26}
+mT(3,5) (I) rule=closed c=q1           gA=gAs        edges=1 M5=True   failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=closed c=q1           gA=gAs        edges=1 M5=False  failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=closed c=q1           gA=gAs        edges=2 M5=True   failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=closed c=q1           gA=gAs        edges=2 M5=False  failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=closed c=q1           gA=gAn        edges=1 M5=True   failing relation entries: 42 {'ac': 12, 'vA': 18, 'vT': 2, 'vB': 10}
+mT(3,5) (I) rule=closed c=q1           gA=gAn        edges=1 M5=False  failing relation entries: 76 {'ac': 12, 'vA': 38, 'vT': 2, 'vB': 24}
+mT(3,5) (I) rule=closed c=q1           gA=gAn        edges=2 M5=True   failing relation entries: 44 {'ac': 12, 'vA': 20, 'vT': 2, 'vB': 10}
+mT(3,5) (I) rule=closed c=q1           gA=gAn        edges=2 M5=False  failing relation entries: 86 {'ac': 12, 'vA': 42, 'vT': 2, 'vB': 30}
+mT(3,5) (I) rule=closed c=q2           gA=gAs+gAn    edges=1 M5=True   failing relation entries: 54 {'ac': 12, 'vA': 24, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=closed c=q2           gA=gAs+gAn    edges=1 M5=False  failing relation entries: 58 {'ac': 12, 'vA': 26, 'vT': 2, 'vB': 18}
+mT(3,5) (I) rule=closed c=q2           gA=gAs+gAn    edges=2 M5=True   failing relation entries: 50 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 14}
+mT(3,5) (I) rule=closed c=q2           gA=gAs+gAn    edges=2 M5=False  failing relation entries: 80 {'ac': 12, 'vA': 40, 'vT': 2, 'vB': 26}
+mT(3,5) (I) rule=closed c=q2           gA=gAs        edges=1 M5=True   failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=closed c=q2           gA=gAs        edges=1 M5=False  failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=closed c=q2           gA=gAs        edges=2 M5=True   failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=closed c=q2           gA=gAs        edges=2 M5=False  failing relation entries: 52 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 16}
+mT(3,5) (I) rule=closed c=q2           gA=gAn        edges=1 M5=True   failing relation entries: 48 {'ac': 12, 'vA': 22, 'vT': 2, 'vB': 12}
+mT(3,5) (I) rule=closed c=q2           gA=gAn        edges=1 M5=False  failing relation entries: 52 {'ac': 12, 'vA': 24, 'vT': 2, 'vB': 14}
+mT(3,5) (I) rule=closed c=q2           gA=gAn        edges=2 M5=True   failing relation entries: 44 {'ac': 12, 'vA': 20, 'vT': 2, 'vB': 10}
+mT(3,5) (I) rule=closed c=q2           gA=gAn        edges=2 M5=False  failing relation entries: 86 {'ac': 12, 'vA': 42, 'vT': 2, 'vB': 30}
+mT(3,5) (I) rule=closed c=q1+q2        gA=gAs+gAn    edges=1 M5=True   failing relation entries: 6 {'vA': 4, 'vB': 2}
+mT(3,5) (I) rule=closed c=q1+q2        gA=gAs+gAn    edges=1 M5=False  failing relation entries: 34 {'vA': 24, 'vB': 10}
+mT(3,5) (I) rule=closed c=q1+q2        gA=gAs+gAn    edges=2 M5=True   failing relation entries: 0 {}
+mT(3,5) (I) rule=closed c=q1+q2        gA=gAs+gAn    edges=2 M5=False  failing relation entries: 32 {'vA': 32}
+mT(3,5) (I) rule=closed c=q1+q2        gA=gAs        edges=1 M5=True   failing relation entries: 12 {'vA': 8, 'vB': 4}
+mT(3,5) (I) rule=closed c=q1+q2        gA=gAs        edges=1 M5=False  failing relation entries: 12 {'vA': 8, 'vB': 4}
+mT(3,5) (I) rule=closed c=q1+q2        gA=gAs        edges=2 M5=True   failing relation entries: 12 {'vA': 8, 'vB': 4}
+mT(3,5) (I) rule=closed c=q1+q2        gA=gAs        edges=2 M5=False  failing relation entries: 12 {'vA': 8, 'vB': 4}
+mT(3,5) (I) rule=closed c=q1+q2        gA=gAn        edges=1 M5=True   failing relation entries: 34 {'vA': 24, 'vB': 10}
+mT(3,5) (I) rule=closed c=q1+q2        gA=gAn        edges=1 M5=False  failing relation entries: 28 {'vA': 26, 'vB': 2}
+mT(3,5) (I) rule=closed c=q1+q2        gA=gAn        edges=2 M5=True   failing relation entries: 32 {'vA': 24, 'vB': 8}
+mT(3,5) (I) rule=closed c=q1+q2        gA=gAn        edges=2 M5=False  failing relation entries: 52 {'vA': 44, 'vB': 8}
+mT(3,5) (II) rule=free   c=q1           gA=gAs+gAn    edges=1 M5=True   failing relation entries: 66 {'ac': 16, 'vA': 27, 'vT': 2, 'vB': 21}
+mT(3,5) (II) rule=free   c=q1           gA=gAs+gAn    edges=2 M5=True   failing relation entries: 70 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 22}
+mT(3,5) (II) rule=free   c=q1           gA=gAs        edges=1 M5=True   failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=free   c=q1           gA=gAs        edges=2 M5=True   failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=free   c=q1           gA=gAn        edges=1 M5=True   failing relation entries: 54 {'ac': 16, 'vA': 23, 'vT': 2, 'vB': 13}
+mT(3,5) (II) rule=free   c=q1           gA=gAn        edges=2 M5=True   failing relation entries: 58 {'ac': 16, 'vA': 26, 'vT': 2, 'vB': 14}
+mT(3,5) (II) rule=free   c=q2           gA=gAs+gAn    edges=1 M5=True   failing relation entries: 76 {'ac': 16, 'vA': 33, 'vT': 2, 'vB': 25}
+mT(3,5) (II) rule=free   c=q2           gA=gAs+gAn    edges=2 M5=True   failing relation entries: 70 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 22}
+mT(3,5) (II) rule=free   c=q2           gA=gAs        edges=1 M5=True   failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=free   c=q2           gA=gAs        edges=2 M5=True   failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=free   c=q2           gA=gAn        edges=1 M5=True   failing relation entries: 64 {'ac': 16, 'vA': 29, 'vT': 2, 'vB': 17}
+mT(3,5) (II) rule=free   c=q2           gA=gAn        edges=2 M5=True   failing relation entries: 58 {'ac': 16, 'vA': 26, 'vT': 2, 'vB': 14}
+mT(3,5) (II) rule=free   c=q1+q2        gA=gAs+gAn    edges=1 M5=True   failing relation entries: 10 {'vA': 6, 'vB': 4}
+mT(3,5) (II) rule=free   c=q1+q2        gA=gAs+gAn    edges=2 M5=True   failing relation entries: 0 {}
+mT(3,5) (II) rule=free   c=q1+q2        gA=gAs        edges=1 M5=True   failing relation entries: 20 {'vA': 12, 'vB': 8}
+mT(3,5) (II) rule=free   c=q1+q2        gA=gAs        edges=2 M5=True   failing relation entries: 20 {'vA': 12, 'vB': 8}
+mT(3,5) (II) rule=free   c=q1+q2        gA=gAn        edges=1 M5=True   failing relation entries: 46 {'vA': 32, 'vB': 14}
+mT(3,5) (II) rule=free   c=q1+q2        gA=gAn        edges=2 M5=True   failing relation entries: 44 {'vA': 32, 'vB': 12}
+mT(3,5) (II) rule=int    c=q1           gA=gAs+gAn    edges=1 M5=True   failing relation entries: 66 {'ac': 16, 'vA': 27, 'vT': 2, 'vB': 21}
+mT(3,5) (II) rule=int    c=q1           gA=gAs+gAn    edges=1 M5=False  failing relation entries: 45 {'ac': 4, 'vA': 18, 'vT': 1, 'vB': 22}
+mT(3,5) (II) rule=int    c=q1           gA=gAs+gAn    edges=2 M5=True   failing relation entries: 70 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 22}
+mT(3,5) (II) rule=int    c=q1           gA=gAs+gAn    edges=2 M5=False  failing relation entries: 72 {'ac': 4, 'vA': 40, 'vT': 1, 'vB': 27}
+mT(3,5) (II) rule=int    c=q1           gA=gAs        edges=1 M5=True   failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=int    c=q1           gA=gAs        edges=1 M5=False  failing relation entries: 71 {'ac': 4, 'vA': 36, 'vT': 1, 'vB': 30}
+mT(3,5) (II) rule=int    c=q1           gA=gAs        edges=2 M5=True   failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=int    c=q1           gA=gAs        edges=2 M5=False  failing relation entries: 71 {'ac': 4, 'vA': 36, 'vT': 1, 'vB': 30}
+mT(3,5) (II) rule=int    c=q1           gA=gAn        edges=1 M5=True   failing relation entries: 54 {'ac': 16, 'vA': 23, 'vT': 2, 'vB': 13}
+mT(3,5) (II) rule=int    c=q1           gA=gAn        edges=1 M5=False  failing relation entries: 63 {'ac': 4, 'vA': 36, 'vT': 1, 'vB': 22}
+mT(3,5) (II) rule=int    c=q1           gA=gAn        edges=2 M5=True   failing relation entries: 58 {'ac': 16, 'vA': 26, 'vT': 2, 'vB': 14}
+mT(3,5) (II) rule=int    c=q1           gA=gAn        edges=2 M5=False  failing relation entries: 72 {'ac': 4, 'vA': 38, 'vT': 1, 'vB': 29}
+mT(3,5) (II) rule=int    c=q2           gA=gAs+gAn    edges=1 M5=True   failing relation entries: 76 {'ac': 16, 'vA': 33, 'vT': 2, 'vB': 25}
+mT(3,5) (II) rule=int    c=q2           gA=gAs+gAn    edges=1 M5=False  failing relation entries: 62 {'ac': 4, 'vA': 34, 'vT': 1, 'vB': 23}
+mT(3,5) (II) rule=int    c=q2           gA=gAs+gAn    edges=2 M5=True   failing relation entries: 70 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 22}
+mT(3,5) (II) rule=int    c=q2           gA=gAs+gAn    edges=2 M5=False  failing relation entries: 72 {'ac': 4, 'vA': 40, 'vT': 1, 'vB': 27}
+mT(3,5) (II) rule=int    c=q2           gA=gAs        edges=1 M5=True   failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=int    c=q2           gA=gAs        edges=1 M5=False  failing relation entries: 71 {'ac': 4, 'vA': 36, 'vT': 1, 'vB': 30}
+mT(3,5) (II) rule=int    c=q2           gA=gAs        edges=2 M5=True   failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=int    c=q2           gA=gAs        edges=2 M5=False  failing relation entries: 71 {'ac': 4, 'vA': 36, 'vT': 1, 'vB': 30}
+mT(3,5) (II) rule=int    c=q2           gA=gAn        edges=1 M5=True   failing relation entries: 64 {'ac': 16, 'vA': 29, 'vT': 2, 'vB': 17}
+mT(3,5) (II) rule=int    c=q2           gA=gAn        edges=1 M5=False  failing relation entries: 88 {'ac': 4, 'vA': 48, 'vT': 1, 'vB': 35}
+mT(3,5) (II) rule=int    c=q2           gA=gAn        edges=2 M5=True   failing relation entries: 58 {'ac': 16, 'vA': 26, 'vT': 2, 'vB': 14}
+mT(3,5) (II) rule=int    c=q2           gA=gAn        edges=2 M5=False  failing relation entries: 72 {'ac': 4, 'vA': 38, 'vT': 1, 'vB': 29}
+mT(3,5) (II) rule=int    c=q1+q2        gA=gAs+gAn    edges=1 M5=True   failing relation entries: 10 {'vA': 6, 'vB': 4}
+mT(3,5) (II) rule=int    c=q1+q2        gA=gAs+gAn    edges=1 M5=False  failing relation entries: 71 {'ac': 8, 'vA': 34, 'vT': 2, 'vB': 27}
+mT(3,5) (II) rule=int    c=q1+q2        gA=gAs+gAn    edges=2 M5=True   failing relation entries: 0 {}
+mT(3,5) (II) rule=int    c=q1+q2        gA=gAs+gAn    edges=2 M5=False  failing relation entries: 88 {'ac': 8, 'vA': 44, 'vT': 2, 'vB': 34}
+mT(3,5) (II) rule=int    c=q1+q2        gA=gAs        edges=1 M5=True   failing relation entries: 20 {'vA': 12, 'vB': 8}
+mT(3,5) (II) rule=int    c=q1+q2        gA=gAs        edges=1 M5=False  failing relation entries: 94 {'ac': 8, 'vA': 52, 'vT': 2, 'vB': 32}
+mT(3,5) (II) rule=int    c=q1+q2        gA=gAs        edges=2 M5=True   failing relation entries: 20 {'vA': 12, 'vB': 8}
+mT(3,5) (II) rule=int    c=q1+q2        gA=gAs        edges=2 M5=False  failing relation entries: 94 {'ac': 8, 'vA': 52, 'vT': 2, 'vB': 32}
+mT(3,5) (II) rule=int    c=q1+q2        gA=gAn        edges=1 M5=True   failing relation entries: 46 {'vA': 32, 'vB': 14}
+mT(3,5) (II) rule=int    c=q1+q2        gA=gAn        edges=1 M5=False  failing relation entries: 91 {'ac': 8, 'vA': 48, 'vT': 2, 'vB': 33}
+mT(3,5) (II) rule=int    c=q1+q2        gA=gAn        edges=2 M5=True   failing relation entries: 44 {'vA': 32, 'vB': 12}
+mT(3,5) (II) rule=int    c=q1+q2        gA=gAn        edges=2 M5=False  failing relation entries: 84 {'ac': 8, 'vA': 36, 'vT': 2, 'vB': 38}
+mT(3,5) (II) rule=closed c=q1           gA=gAs+gAn    edges=1 M5=True   failing relation entries: 66 {'ac': 16, 'vA': 27, 'vT': 2, 'vB': 21}
+mT(3,5) (II) rule=closed c=q1           gA=gAs+gAn    edges=1 M5=False  failing relation entries: 108 {'ac': 16, 'vA': 55, 'vT': 2, 'vB': 35}
+mT(3,5) (II) rule=closed c=q1           gA=gAs+gAn    edges=2 M5=True   failing relation entries: 70 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 22}
+mT(3,5) (II) rule=closed c=q1           gA=gAs+gAn    edges=2 M5=False  failing relation entries: 126 {'ac': 16, 'vA': 62, 'vT': 2, 'vB': 46}
+mT(3,5) (II) rule=closed c=q1           gA=gAs        edges=1 M5=True   failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=closed c=q1           gA=gAs        edges=1 M5=False  failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=closed c=q1           gA=gAs        edges=2 M5=True   failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=closed c=q1           gA=gAs        edges=2 M5=False  failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=closed c=q1           gA=gAn        edges=1 M5=True   failing relation entries: 54 {'ac': 16, 'vA': 23, 'vT': 2, 'vB': 13}
+mT(3,5) (II) rule=closed c=q1           gA=gAn        edges=1 M5=False  failing relation entries: 112 {'ac': 16, 'vA': 55, 'vT': 2, 'vB': 39}
+mT(3,5) (II) rule=closed c=q1           gA=gAn        edges=2 M5=True   failing relation entries: 58 {'ac': 16, 'vA': 26, 'vT': 2, 'vB': 14}
+mT(3,5) (II) rule=closed c=q1           gA=gAn        edges=2 M5=False  failing relation entries: 138 {'ac': 16, 'vA': 66, 'vT': 2, 'vB': 54}
+mT(3,5) (II) rule=closed c=q2           gA=gAs+gAn    edges=1 M5=True   failing relation entries: 76 {'ac': 16, 'vA': 33, 'vT': 2, 'vB': 25}
+mT(3,5) (II) rule=closed c=q2           gA=gAs+gAn    edges=1 M5=False  failing relation entries: 86 {'ac': 16, 'vA': 37, 'vT': 2, 'vB': 31}
+mT(3,5) (II) rule=closed c=q2           gA=gAs+gAn    edges=2 M5=True   failing relation entries: 70 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 22}
+mT(3,5) (II) rule=closed c=q2           gA=gAs+gAn    edges=2 M5=False  failing relation entries: 126 {'ac': 16, 'vA': 62, 'vT': 2, 'vB': 46}
+mT(3,5) (II) rule=closed c=q2           gA=gAs        edges=1 M5=True   failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=closed c=q2           gA=gAs        edges=1 M5=False  failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=closed c=q2           gA=gAs        edges=2 M5=True   failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=closed c=q2           gA=gAs        edges=2 M5=False  failing relation entries: 72 {'ac': 16, 'vA': 30, 'vT': 2, 'vB': 24}
+mT(3,5) (II) rule=closed c=q2           gA=gAn        edges=1 M5=True   failing relation entries: 64 {'ac': 16, 'vA': 29, 'vT': 2, 'vB': 17}
+mT(3,5) (II) rule=closed c=q2           gA=gAn        edges=1 M5=False  failing relation entries: 82 {'ac': 16, 'vA': 37, 'vT': 2, 'vB': 27}
+mT(3,5) (II) rule=closed c=q2           gA=gAn        edges=2 M5=True   failing relation entries: 58 {'ac': 16, 'vA': 26, 'vT': 2, 'vB': 14}
+mT(3,5) (II) rule=closed c=q2           gA=gAn        edges=2 M5=False  failing relation entries: 138 {'ac': 16, 'vA': 66, 'vT': 2, 'vB': 54}
+mT(3,5) (II) rule=closed c=q1+q2        gA=gAs+gAn    edges=1 M5=True   failing relation entries: 10 {'vA': 6, 'vB': 4}
+mT(3,5) (II) rule=closed c=q1+q2        gA=gAs+gAn    edges=1 M5=False  failing relation entries: 46 {'vA': 32, 'vB': 14}
+mT(3,5) (II) rule=closed c=q1+q2        gA=gAs+gAn    edges=2 M5=True   failing relation entries: 0 {}
+mT(3,5) (II) rule=closed c=q1+q2        gA=gAs+gAn    edges=2 M5=False  failing relation entries: 40 {'vA': 40}
+mT(3,5) (II) rule=closed c=q1+q2        gA=gAs        edges=1 M5=True   failing relation entries: 20 {'vA': 12, 'vB': 8}
+mT(3,5) (II) rule=closed c=q1+q2        gA=gAs        edges=1 M5=False  failing relation entries: 20 {'vA': 12, 'vB': 8}
+mT(3,5) (II) rule=closed c=q1+q2        gA=gAs        edges=2 M5=True   failing relation entries: 20 {'vA': 12, 'vB': 8}
+mT(3,5) (II) rule=closed c=q1+q2        gA=gAs        edges=2 M5=False  failing relation entries: 20 {'vA': 12, 'vB': 8}
