@@ -1,0 +1,134 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}\raggedbottom
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+\newcommand{\st}[1]{\par\noindent\textit{#1}\enspace}
+\newcommand{\Cone}{\mathrm{Cone}}
+
+\title{A strategy for the drop of $\frac1{16}$ at $\pm2$}
+\date{}
+\begin{document}\sloppy
+\maketitle
+\vspace{-2.5em}
+
+\noindent Setting as in \texttt{status.pdf}: $A_i=C(Y_2,P_i)$, $B_i=C(Y_{-2},P_i)$, $T$ the
+traceless complex of $(S^3,K)$, mixed triangle $A_0\xrightarrow{a}T\xrightarrow{b}B_1\xrightarrow{c}A_0$
+with homotopies $g_A$ ($ba\simeq0$), $g_M$ ($cb\simeq0$), $g_B$ ($ac\simeq0$).
+Levels (topological part): $a,b\le0$; $c=\frac3{16}$; $g_A=-\frac18$; $g_M=g_B=+\frac1{16}$.
+Everything below has a primed twin with the bundles exchanged.
+
+\section{What the $\pm1$ proof teaches}
+
+The map $g_1$ works because (i) its level is an index count, $-\frac18$ for one parameter,
+(ii) its energy is positive on a simply connected cobordism, and (iii) it is
+\emph{injective} because the middle term vanishes. At $\pm2$ the same family, $g_A$, has (i)
+and (ii) but not (iii): its boundary is $ba$. The only way to keep (i)--(ii) and recover
+(iii) is to restrict $g_A$ to the chains that $a$ kills.
+
+\section{The source}
+
+\st{The map.} $\ker a\subset A_0$ is a subcomplex, and
+\[
+\Psi:=g_A\big|_{\ker a}\colon\ \ker a\longrightarrow B_1
+\]
+is a chain map: $d g_Ax+g_Adx=ba\,x=0$. Its level is $-\frac18-\eta_g$, $\eta_g>0$, for
+exactly the reasons of $\pm1$ (index $-1$, $W'$ simply connected, no flat singular
+connection with both limits). It is injective on $H(\ker a)$ modulo the classes that bound in
+$A_0$ through a chain whose $a$-image is exact: triangle detection,
+$(g_A,b)\colon\Cone(a)\to B_1$ is a quasi-isomorphism, and $\Psi$ is its restriction to
+$\ker a\subset\Cone(a)$. These are proved facts, not new ones.
+
+\st{What it gives.} If the bottom class $\xi$ of $A_0$ has a cycle representative in $\ker a$,
+then $m_1\ge\frac18+\eta_g>\frac18$. This is the \emph{non-absorbed} case. It covers the
+positive torus knots (parity forbids absorption) and it is where the data show
+$m\in(\frac18,\frac3{16}]$.
+
+\section{The absorbed case and where $\frac1{16}$ lives}
+
+Suppose instead $a\xi=\tau\ne0$ in $H(T)$. Write $\lambda=c(\xi)$, $\mu=c(\tau)\le\lambda-\eta_a$,
+and let $\kappa=\lambda+\delta$ be the lowest level of a class of $\ker a_*$; $\delta$ is the
+\emph{depth of absorption}. Then $\Psi$ applied at $\kappa$ gives
+\[
+m_1\ \ge\ \tfrac18-\delta+\eta_g\qquad(\text{Theorem 5.1 of \texttt{strategy-exact}}).
+\]
+So the whole problem is the single inequality
+\begin{equation}\label{depth}
+\delta\ \le\ \tfrac1{16}+\eta_g .
+\end{equation}
+\st{It is exactly tight in both equality cases.} For $T(2,-3)$ in the primed triangle:
+$\lambda=-\frac1{24}$, $\kappa=\frac1{12}$, so $\delta=\frac18$, and the $g_A'$-instanton on the
+first class of $\ker a'$ has $\eta_g=\frac1{16}$; for $4_1$: $\delta=\frac1{10}$,
+$\eta_g=\frac3{80}$. In both, $\delta-\eta_g=\frac1{16}$, and
+$m_2=\frac18-\delta+\eta_g=\frac1{16}$. This is the structural reason for the two
+equalities, which \texttt{triangle-1} lacked. So \eqref{depth} is not an artefact of the
+Seifert examples: it is the statement the examples saturate.
+
+\st{Where \eqref{depth} comes from.} The vertex relation at $A_0$ (the pentagon $h_0$,
+level $-\frac1{16}$, $b^+=1$, two parameters, $\gamma_1$ end) is
+\[
+\mathrm{id}_{A_0}\ \simeq\ c\,g_A+g_M\,a .
+\]
+Apply it to $\xi$: $\xi=[c\,g_A x+g_M\tau]$ with $x$ a cycle for $\xi$. The right side has
+topological level $\lambda+\frac1{16}$ (both terms: $\frac3{16}-\frac18$ and $\frac1{16}+0$),
+minus energies. Now $w:=c\,g_Ax+g_M\tau$ is a cycle with $a_*[w]=\tau$, hence $\xi-[w]\in\ker a_*$,
+at level $\le\lambda+\frac1{16}-\min(\eta_g+\eta_c,\ \eta_a+E_M)$. If $\xi-[w]\ne0$ this is
+\eqref{depth} with room to spare. The one escape is
+\begin{equation}\label{return}
+\xi=[w]=[\,g_M\tau+c\,g_Ax\,]:
+\end{equation}
+\emph{the bottom class is returned to itself by $g_M$ from its own absorption image.} A
+cosmetic pair needs \eqref{return} for both bottoms of both bundles, and then forces
+$\eta_a+E_M=\frac1{16}$ exactly on the returning instanton (the identity
+$c(\tau)+\frac1{16}-E_M=c(\xi)$ with $c(\tau)=c(\xi)-\eta_a$). The sixteenth is the width of this
+window: $\mathrm{level}(g_M)-\mathrm{level}(a)$.
+
+\section{The statement to prove, and why it is plausible}
+
+\st{Conjecture R (no return).} For a nontrivial knot with $\Delta_K=1$, the bottom class of
+$I(Y_2,P_i)$ is not of the form \eqref{return}: equivalently, $g_M$ does not carry the bottom
+of $T$ back onto the bottom of $Y_2$ at the chain level.
+
+This is not an energy estimate. It is a statement about which generator $g_M$ hits, i.e.\ about
+the return instanton: a one-parameter family on $(X_{-2}^\circ,D_r)\cup_{Y_{-2}}(-X')$ with the
+flat limit $\gamma_1$ at $L(4,1)$ and $b^+=1$. Reasons to believe it:
+\begin{itemize}
+\item \emph{Zero-energy returns need common points.} A return with $\eta_a=0$ is an absorption
+through a traceless representation with $\lambda\mapsto\pm1$, binary dihedral at
+$(\frac14,0)$; there are $(\det K-1)/2$ of these, so none when $\Delta_K=1$. Both equality
+cases are of this type. This is the only mechanism the data ever show.
+\item \emph{The return crosses $b^+=1$.} The family lives on $-X'$ glued to a singular
+handle, where the energy budget $\frac1{16}$ is the minimal odd cap energy $1/(4|S\cdot S|)$
+of $\nu S$. A return of total energy exactly $\frac1{16}$ is a lens-end configuration: a flat
+singular connection plus the minimal cap. By the Thom principle we may assume $\Gamma_K$
+misses the four mixed points and is transverse to the lines; then no such flat connection
+exists, and \eqref{return} cannot be realised by a single instanton. What remains is a sum of
+several terms of which a cancellation would have to produce $\xi$; this is the genuinely
+open part.
+\item \emph{Data.} In all $211$ exact cases, \eqref{depth} holds, equality only in the two
+binary-dihedral cases.
+\end{itemize}
+
+\st{Test that decides it.} Compute $g_A$, $g_M$ and $a$ at the chain level for the mirror
+torus knots and $4_1$, in the pillowcase model (Section~6 of the uploaded paper gives the
+generators and levels; the maps are polygon counts with one corner at the mixed point). This
+checks \eqref{return} directly on the absorbed cases and shows what the returning
+instanton is. I have not done this.
+
+\section{Summary}
+
+Source: the one-parameter family $g_A$ on $W'$, restricted to $\ker a$. Injective and of level
+$-\frac18$ for the same reasons as $g_1$. The drop it gives is $\frac18-\delta+\eta_g$, and
+$\frac1{16}$ is a bound on the depth of absorption, forced by the vertex relation unless the
+bottom class is returned by $g_M$ from the bottom of $T$ \eqref{return}. Conjecture R says it
+is not. The two equality cases are precisely returns at zero energy through binary dihedral
+representations, which do not exist for $\Delta_K=1$.
+\end{document}
