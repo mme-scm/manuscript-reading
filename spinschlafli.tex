@@ -1,0 +1,109 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}\raggedbottom
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+\newtheorem{thm}{Theorem}\newtheorem{lem}[thm]{Lemma}\newtheorem{prop}[thm]{Proposition}\newtheorem{cor}[thm]{Corollary}
+\newcommand{\st}[1]{\par\noindent\textit{#1}\enspace}
+
+\title{A spin--Schl\"afli obstruction to $\pm2$ cosmetic surgery}
+\date{}
+\begin{document}\sloppy
+\maketitle
+\vspace{-2.5em}
+
+\noindent Sources: \texttt{notes/R8/hyp.md} and \texttt{notes/R8/hyp-code/}. $K$ is a hyperbolic knot; by Ren we may
+assume this, and by Ravelomanana $Y_{\pm2}=S^3_{\pm2}(K)$ are then hyperbolic.
+$\mathrm{cs}\in\mathbb R/\mathbb Z$ denotes the real part of complex Chern--Simons in $SU(2)$ units.
+SnapPy's \texttt{chern\_simons} computes it only modulo $\tfrac12$.
+
+\section{Two exact facts}
+
+\begin{lem}[spin swap]
+$Y_{\pm2}$ has two spin structures: $s_0$, which extends over the trace $X_{\pm2}$, and $s_1$, which does not.
+If $\mathrm{Arf}(K)=0$, then every orientation-preserving homeomorphism $Y_{-2}\to Y_2$ sends $s_1$ to $s_0$.
+\end{lem}
+\noindent\emph{Proof.} By Kirby--Melvin, $\mu(Y_{\pm2},s_0)=\pm1$ and
+$\mu(Y_{\pm2},s_1)=\mp1+8\,\mathrm{Arf}(K)$ in $\mathbb Z/16$. A homeomorphism preserves $\mu$, which forces the swap. $\square$
+
+\begin{lem}[half period]
+Let $\tilde\rho$ be an $SL_2(\mathbb C)$ representation of $\pi_1(Y_{\pm2})$, and let $\varepsilon$ be the
+nontrivial character. Then $\mathrm{cs}(\tilde\rho\varepsilon)=\mathrm{cs}(\tilde\rho)+\tfrac12$.
+\end{lem}
+\noindent\emph{Proof.} Twisting by $\varepsilon$ tensors the flat bundle with the flat line bundle $L_\varepsilon$.
+For Cheeger--Chern--Simons classes, $\hat c_2(E\otimes L)=\hat c_2(E)+\hat c_1(L)\ast\hat c_1(L)$.
+Here $\hat c_1(L_\varepsilon)\ast\hat c_1(L_\varepsilon)$ is the self-linking of the generator of $H_1=\mathbb Z/2$,
+namely $\pm\tfrac12$, equivalently $\langle\varepsilon^3,[Y]\rangle/2$ with $\varepsilon^3\neq0$.
+Checks: on $\mathbb{RP}^3$ the central representation has $\mathrm{cs}=\tfrac12$; on $L(4,1)$, $\varepsilon^3=0$. $\square$
+
+\st{Consequence.} On a hyperbolic manifold, spin structures are exactly the $SL_2$ lifts of the holonomy, so
+$\mathrm{cs}(Y,s)$ is defined modulo $1$. Lemma~2 gives $\mathrm{cs}(Y_{\pm2},s_1)=\mathrm{cs}(Y_{\pm2},s_0)+\tfrac12$.
+A cosmetic homeomorphism is an isometry (Mostow) and carries $s_1$ to $s_0$ (Lemma~1). Hence
+\[
+\mathrm{cs}(Y_2,s_0)-\mathrm{cs}(Y_{-2},s_0)\equiv\tfrac12\pmod 1 .
+\]
+The $PSL_2$ invariants alone only give a value in $\{0,\tfrac12\}$. The spin structure supplies exactly the one
+missing bit, and it is the bit that a coincidence of $PSL_2$ data would leave open.
+
+\section{Computing the left side from the knot}
+
+\begin{lem}
+Take the lift of the complete structure on $E_K$ induced by the spin structure of $S^3$; it has
+$\mathrm{tr}\,\mu=\mathrm{tr}\,\lambda=-2$. Continue it along the cone deformation for slope $(N,1)$ with $N$ even.
+The trace of the filling slope is $-2\cos(\alpha/2)$, which reaches $+2$ at $\alpha=2\pi$.
+So the lift descends to $Y_N$, and the spin structure it determines is $s_0$.
+\end{lem}
+
+\begin{prop}[complex Schl\"afli]
+Write $\tau_N(\alpha)=\mathrm{Im}\log\mathrm{hol}(\mu)$ along the cone path, with $\tau_N(0)=0$. Then
+\[
+\mathrm{cs}(Y_N,s_0)\equiv \mathrm{cs}(E_K)+c_N+\tfrac1{4\pi^2}\int_0^{2\pi}\tau_N\,d\alpha \pmod 1,
+\]
+where $c_N\equiv N/4\pmod 1$ is the solid-torus constant. In particular $c_2=c_{-2}$.
+\end{prop}
+\noindent\emph{The single point needing an independent check.} The dual curve must be the same, namely $\mu$,
+for both slopes. Replacing it by $\mu\cdot m_{\rm fill}$ changes the integral by exactly $\tfrac12$, which is
+precisely the bit at stake. The constants were cross-checked against lens spaces, where the central
+representation of $L(N,1)$ has $\mathrm{cs}=-N/4$. Modulo $\tfrac12$ the formula agrees with SnapPy to
+$10^{-6}$ on $482$ cone paths. The mod-$1$ refinement has not been checked numerically.
+
+\begin{thm}[spin--Schl\"afli criterion]
+Let $K$ be hyperbolic with $\mathrm{Arf}(K)=0$. Suppose the cone paths from the complete structure to the
+$\pm2$ fillings exist, and set
+\[
+\Delta_K=\frac1{4\pi^2}\int_0^{2\pi}\bigl(\tau_2-\tau_{-2}\bigr)\,d\alpha .
+\]
+If $|\Delta_K|<\tfrac12$, then $S^3_2(K)\not\cong S^3_{-2}(K)$. It suffices that
+$\sup|\tau_2|+\sup|\tau_{-2}|<\pi$.
+\end{thm}
+
+\section{Evidence and limits}
+
+\begin{itemize}
+\item \emph{Survey of knots up to $10$ crossings.} On the $217$ knots whose cone paths are clean,
+$|\Delta|\le0.135$ (median $0.014$) and $\sup|\tau_2|+\sup|\tau_{-2}|\le2.72<\pi$.
+\item \emph{Genus-$2$ knots with $\Delta_K=1$, up to $13$ crossings.} These are KT, $12n_{313}$, $12n_{430}$,
+$13n_{71}$, $13n_{1019}$, $13n_{1756}$, $13n_{1757}$ and $13n_{4591}$. For them $\Delta_K\in[0.028,0.076]$.
+These checks are numerical and add nothing new, since Futer--Purcell--Schleimer already cover $\le19$ crossings.
+\item \emph{Heuristic.} At leading order in Neumann--Zagier,
+$\Delta_K\approx\tfrac12\bigl[(2+x)/|\tau+2|^2-(x-2)/|\tau-2|^2\bigr]$, where $\tau=x+iy$ is the cusp shape.
+This gives $|\Delta_K|\lesssim1/(2\,\mathrm{Im}\,\tau)$, so a cosmetic pair would need a cusp with
+$\mathrm{Im}\,\tau\lesssim1$ or a large twist.
+\item \emph{What it is.} It reduces the conjecture, for these knots, to an \emph{a priori twist bound}: the
+cone paths must not accumulate half a period of twist. The spin input is what is specific to $S^3$ and to $\pm2$.
+For $\pm1/q$ there is only one spin structure and no gap. Ren has shown that purely cosmetic fillings do exist
+on some multi-cusped hyperbolic manifolds, so any proof needs such input.
+\item \emph{What it is not.} It is not uniform. The $\pm2$ slopes are short (normalised length about $2.8$ for KT),
+outside the range where Hodgson--Kerckhoff guarantee that cone paths exist, and no a priori twist bound is known.
+\item \emph{Gauge-theoretic reading.} The useful specialisation is $\theta=0$: the real part of complex
+Chern--Simons, taken for the spin-lifted hyperbolic holonomy. Volume ($\theta=\pi/2$) cannot see orientation.
+\end{itemize}
+\end{document}

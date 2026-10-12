@@ -1,0 +1,3 @@
+/usr/local/lib/python3.13/dist-packages/plink/gui.py:33: UserWarning: Plink failed to import tkinter, GUI will not be available
+  warnings.warn('Plink failed to import tkinter, GUI will not be available')
+[('K11n34', 3, False, 0), ('K11n42', 2, False, 0), ('K12n313', 2, False, 0), ('K12n430', 2, False, 0), ('K13n65', 3, False, 0), ('K13n71', 2, False, 0), ('K13n866', 3, False, 0), ('K13n1019', 2, False, 0), ('K13n1496', 2, False, 1), ('K13n1756', 2, False, 0), ('K13n1757', 2, False, 0), ('K13n3871', 4, False, 0), ('K13n3872', 4, False, 0), ('K13n3897', 4, False, 0), ('K13n3934', 3, False, 0), ('K13n3936', 3, False, 0), ('K13n3938', 3, False, 0), ('K13n4582', 3, False, 0), ('K13n4591', 2, False, 0)]
