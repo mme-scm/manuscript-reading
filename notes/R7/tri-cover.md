@@ -12,6 +12,8 @@ The cover yields exactly one triangle that is not among the four known ones and 
 
 Labels: PROVED, COMPUTED, PLAUSIBLE, SPECULATIVE.
 
+> **Correction (user).** O1 below is withdrawn. Floer's triangles (S³, Y_1, Y_2), with w on either side, give I(Y_2,w) ≅ I(Y_1) ≅ I(Y_2) for every K, and likewise for Y_{−2}. The table counts the *irreducible* twisted complex. That complex excludes the reducible ζ (pillowcase point (1/4,0)), and its rank is rank I(Y_1) ± σ(K)/2 (ell-1 §2.5). So O1 is only a statement about irreducible twisted complexes when σ ≠ 0. It is not an obstruction for the theory in the triangles. The other observations are unaffected.
+
 ## (a) The triangle Δ_F (new)
 
 - Write W′ = W_l ∪_J W_r, with W_l = −X_2°, W_r = X_{−2}° and J = S³ the connected-sum sphere.
