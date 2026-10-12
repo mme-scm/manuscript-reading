@@ -23,7 +23,10 @@
 \noindent Sources: \texttt{notes/R8/hyp.md} and \texttt{notes/R8/hyp-code/}. $K$ is a hyperbolic knot; by Ren we may
 assume this, and by Ravelomanana $Y_{\pm2}=S^3_{\pm2}(K)$ are then hyperbolic.
 $\mathrm{cs}\in\mathbb R/\mathbb Z$ denotes the real part of complex Chern--Simons in $SU(2)$ units.
-SnapPy's \texttt{chern\_simons} computes it only modulo $\tfrac12$.
+\emph{Units (corrected; \texttt{notes/R8/examples.md}, \texttt{verify.md}).} SnapPy's \texttt{chern\_simons} is $\pm2\,\mathrm{cs}$
+modulo $\tfrac12$, so it determines $\mathrm{cs}$ only modulo $\tfrac14$; $\mathrm{Im}\,\mathrm{cs}=-\mathrm{Vol}/4\pi^2$.
+The Riemannian Chern--Simons invariant is $2\,\mathrm{cs}$ modulo $1$, i.e.\ $\mathrm{cs}$ modulo $\tfrac12$.
+The first version of this note took $\mathrm{cs}=$ \texttt{chern\_simons}; that was off by a factor $2$.
 
 \section{Two exact facts}
 
@@ -50,7 +53,7 @@ A cosmetic homeomorphism is an isometry (Mostow) and carries $s_1$ to $s_0$ (Lem
 \[
 \mathrm{cs}(Y_2,s_0)-\mathrm{cs}(Y_{-2},s_0)\equiv\tfrac12\pmod 1 .
 \]
-The $PSL_2$ invariants alone only give a value in $\{0,\tfrac12\}$. The spin structure supplies exactly the one
+The Riemannian ($PSL_2$, isometry) invariant fixes the left side modulo $\tfrac12$, to $0$. The spin structure supplies exactly the one
 missing bit, and it is the bit that a coincidence of $PSL_2$ data would leave open.
 
 \section{Computing the left side from the knot}
@@ -65,15 +68,22 @@ So the lift descends to $Y_N$, and the spin structure it determines is $s_0$.
 \begin{prop}[complex Schl\"afli]
 Write $\tau_N(\alpha)=\mathrm{Im}\log\mathrm{hol}(\mu)$ along the cone path, with $\tau_N(0)=0$. Then
 \[
-\mathrm{cs}(Y_N,s_0)\equiv \mathrm{cs}(E_K)+c_N+\tfrac1{4\pi^2}\int_0^{2\pi}\tau_N\,d\alpha \pmod 1,
+\mathrm{cs}(Y_N,s_0)\equiv c_E+\tfrac{N+3}4+\tfrac1{8\pi^2}\int_0^{2\pi}\tau_N\,d\alpha \pmod 1,
 \]
-where $c_N\equiv N/4\pmod 1$ is the solid-torus constant. In particular $c_2=c_{-2}$.
+where $c_E$ is the relative invariant of the complete $S^3$-lift. In particular $c_2\equiv c_{-2}$. The coefficient is
+$\tfrac1{8\pi^2}$, not $\tfrac1{4\pi^2}$: the twist enters at \emph{half} the SnapPy rate.
 \end{prop}
-\noindent\emph{The single point needing an independent check.} The dual curve must be the same, namely $\mu$,
-for both slopes. Replacing it by $\mu\cdot m_{\rm fill}$ changes the integral by exactly $\tfrac12$, which is
-precisely the bit at stake. The constants were cross-checked against lens spaces, where the central
-representation of $L(N,1)$ has $\mathrm{cs}=-N/4$. Modulo $\tfrac12$ the formula agrees with SnapPy to
-$10^{-6}$ on $482$ cone paths. The mod-$1$ refinement has not been checked numerically.
+\noindent\emph{Proof and checks.} Kirk--Klassen along the path, with $a=\tfrac12+H_\mu/4\pi i$, $b=\tfrac12+H_\lambda/4\pi i$,
+$NH_\mu+H_\lambda=i\alpha$; the endpoint terms in $h(2\pi)$ cancel against the solid-torus term. Changing the dual curve by
+$m_{\rm fill}$ changes the solid-torus term by an integer, so the earlier dual-curve worry dissolves. Independent mod-$1$ checks:
+\begin{itemize}
+\item exact $SU(2)$ analogue, $44$ arcs on $12$ torus knots: the difference is $\tfrac1{8\pi^2}\int(\tau_2-\tau_{-2})$ exactly;
+\item Kirk--Klassen from an abelian character (exact base value $0$) on the Riley curves of $6_2,7_3,6_3$: agreement to $10^{-6}$,
+and $\mathrm{cs}(s_1)-\mathrm{cs}(s_0)=0.5000000$, i.e.\ Lemma~2 numerically on a hyperbolic representation;
+\item closed amphichiral census: if $H_1=\mathbb Z/2\oplus$odd, Rokhlin parity forces an orientation-reversing isometry to swap
+the spin structures, so $\mathrm{cs}\in\{\tfrac14,\tfrac34\}$. All $37$ amphichiral census manifolds (seven of this type) have
+\texttt{chern\_simons}$\,=0$, which refutes $\mathrm{cs}=$ \texttt{chern\_simons} and fits $\mathrm{cs}=\pm$\texttt{chern\_simons}$/2$.
+\end{itemize}
 
 \begin{thm}[spin--Schl\"afli criterion]
 Let $K$ be hyperbolic with $\mathrm{Arf}(K)=0$. Suppose the cone paths from the complete structure to the
@@ -81,25 +91,32 @@ $\pm2$ fillings exist, and set
 \[
 \Delta_K=\frac1{4\pi^2}\int_0^{2\pi}\bigl(\tau_2-\tau_{-2}\bigr)\,d\alpha .
 \]
-If $|\Delta_K|<\tfrac12$, then $S^3_2(K)\not\cong S^3_{-2}(K)$. It suffices that
-$\sup|\tau_2|+\sup|\tau_{-2}|<\pi$.
+If $S^3_2(K)\cong S^3_{-2}(K)$, then $\Delta_K$ is an \emph{odd integer}. (The Riemannian invariant alone gives
+$\Delta_K\in\mathbb Z$; the spin structure gives oddness.) Hence $|\Delta_K|<1$ implies $S^3_2(K)\not\cong S^3_{-2}(K)$.
+It suffices that $\sup|\tau_2|+\sup|\tau_{-2}|<2\pi$.
 \end{thm}
 
 \section{Evidence and limits}
 
 \begin{itemize}
 \item \emph{Survey of knots up to $10$ crossings.} On the $217$ knots whose cone paths are clean,
-$|\Delta|\le0.135$ (median $0.014$) and $\sup|\tau_2|+\sup|\tau_{-2}|\le2.72<\pi$.
+$|\Delta|\le0.135$ (median $0.014$) and $\sup|\tau_2|+\sup|\tau_{-2}|\le2.72<2\pi$. Over all knots surveyed, $\max|\Delta|=0.385$
+($10_{644}$). The twist agent's ``sharp negative'' families reach $\Delta\approx\tfrac12+\tfrac1{2(4k^2-1)}\le\tfrac23$: no longer near the threshold.
 \item \emph{Genus-$2$ knots with $\Delta_K=1$, up to $13$ crossings.} These are KT, $12n_{313}$, $12n_{430}$,
 $13n_{71}$, $13n_{1019}$, $13n_{1756}$, $13n_{1757}$ and $13n_{4591}$. For them $\Delta_K\in[0.028,0.076]$.
 These checks are numerical and add nothing new, since Futer--Purcell--Schleimer already cover $\le19$ crossings.
 \item \emph{Heuristic.} At leading order in Neumann--Zagier,
 $\Delta_K\approx\tfrac12\bigl[(2+x)/|\tau+2|^2-(x-2)/|\tau-2|^2\bigr]$, where $\tau=x+iy$ is the cusp shape.
 This gives $|\Delta_K|\lesssim1/(2\,\mathrm{Im}\,\tau)$, so a cosmetic pair would need a cusp with
-$\mathrm{Im}\,\tau\lesssim1$ or a large twist.
+$\mathrm{Im}\,\tau\lesssim\tfrac12$ or a large twist.
+\item \emph{Known homeomorphic fillings} (\texttt{examples.md}). With the corrected units and genuine $SL_2$ lifts the formula
+reproduces every known identity: $788$ amphichiral slopes (exact), Dunfield's $o9_{39009}$ pair (an instance of Ren's construction),
+a purely cosmetic family on the census manifold $o10_{150704}$, Ren's chiral Brunnian knot, $m135$, $t12051$. In every known pair
+the isolating twist difference is $0$: the pair is induced by a symmetry of an ancestor, which pairs the lifts unmixed.
+A $\pm2$ pair in $S^3$ with $\mathrm{Arf}=0$ would be the first \emph{mixed} pairing, and needs a full odd period.
 \item \emph{What it is.} It reduces the conjecture, for these knots, to an \emph{a priori twist bound}: the
-cone paths must not accumulate half a period of twist. The spin input is what is specific to $S^3$ and to $\pm2$.
-For $\pm1/q$ there is only one spin structure and no gap. Ren has shown that purely cosmetic fillings do exist
+cone paths must not accumulate a full (SnapPy) period of twist. The spin input is what is specific to $S^3$ and to $\pm2$.
+For $\pm1/q$ there is one spin structure; for $q$ odd the constants alone still force an odd twist difference, for $q$ even there is no gap. Ren has shown that purely cosmetic fillings do exist
 on some multi-cusped hyperbolic manifolds, so any proof needs such input.
 \item \emph{What it is not.} It is not uniform. The $\pm2$ slopes are short (normalised length about $2.8$ for KT),
 outside the range where Hodgson--Kerckhoff guarantee that cone paths exist, and no a priori twist bound is known.
