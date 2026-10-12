@@ -1,0 +1,133 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\setlength{\textwidth}{\paperwidth}\addtolength{\textwidth}{-3.6cm}
+\setlength{\oddsidemargin}{-0.74cm}\setlength{\evensidemargin}{-0.74cm}
+\setlength{\headheight}{0pt}\setlength{\headsep}{0pt}
+\setlength{\topmargin}{-0.84cm}
+\setlength{\textheight}{\paperheight}\addtolength{\textheight}{-3.6cm}
+\setlength{\footskip}{0.8cm}
+\ifdefined\pdfpagewidth\pdfpagewidth=\paperwidth\pdfpageheight=\paperheight\fi
+\pagestyle{plain}\raggedbottom
+\setlength{\parskip}{0pt plus 0.5pt}
+\widowpenalty=150 \clubpenalty=150
+\makeatletter\def\section{\@startsection{section}{1}{\z@}{.6\baselineskip}{.25\baselineskip}{\normalfont\bfseries}}\makeatother
+\newcommand{\st}[1]{\par\noindent\textit{#1}\enspace}
+\newtheorem*{prop}{Proposition}
+
+\title{New triangles at $\pm2$: panel results, the sharpness obstruction, and the corrected complex}
+\date{}
+\begin{document}\sloppy
+\maketitle
+\vspace{-2.5em}
+
+\noindent Sources: \texttt{notes/R7/} (\texttt{tri-cover}, \texttt{tri-orbifold-g},
+\texttt{tri-pillowcase-g}, \texttt{tri-topology-g}, \texttt{prove}, \texttt{test},
+\texttt{reducible-index}, \texttt{corrected/}). Target: all nontrivial $K$. $A_i=C(Y_2,P_i)$,
+$B_i=C(Y_{-2},P_i)$, bd $=(\frac14,0)$.
+
+\section{Panel: four angles, no triangle meets the requirements}
+
+The requirements were (1) an injective connecting map, (2) of topological level exactly
+$-\frac1{16}$, supporting flat connections in the mixed case, and (3) exact at
+$T(2,-3)$ and $4_1$.
+
+\begin{center}\small
+\begin{tabular}{p{2.1cm}p{7.4cm}p{6.2cm}}
+angle & what is new & why it fails\\\hline
+cover & $\Delta_F$: branch $W'$ along the capped Seifert surfaces; middle term $C(S^3)=0$ for all $K$. & $b^+=2g-1$, so the level is $(4g-3)/8=+\frac58$ at $g=2$.\\
+orbifold, pillowcase (found independently) & $F:\ (Y_2,P_\varepsilon)\to(Y_{-2},P_{1-\varepsilon})\to I(Y_0)\oplus I(Y_0,w)$. Its side map $\mathcal E_{\gamma_1}+\mathcal E_{\gamma_1'}$ has topological level \emph{exactly} $-\frac1{16}$. It is the only rigid map of that level in the pillowcase. & Null for every $K$: each mixed point factors through an $S^3$ edge via a corner triangle of area $\frac1{16}$ ($\mathcal E_{\gamma_1}=\partial g^{ns}$). The third vertex is nonzero.\\
+topology & $Y_{-2}=(Y_2)_{\lambda'}(-1)$, with $\lambda'$ the Seifert push-off of $K$. This gives a triad $Y_2\to Y_{-2}\to Y_0\#\mathbb{RP}^3$ through one negative definite 2-handle, with form $(-1)$. The singular maps along its core and cocore have $s=\frac12$, so level exactly $-\frac1{16}$; their pillowcase line $H=\{b=\pm\frac14\}$ passes through all four mixed points. & Same bundle only, and the third vertex is nonzero. The $H$-maps are not flat at bd. The triple point $(L_2,H,L_{-2})$ has zero area, which is the degenerate configuration of triangle-1 Prop.~3.1.
+\end{tabular}
+\end{center}
+
+\st{Pillowcase classification (proved in the Fukaya model).} Every triangle with vertices
+$L_2^\varepsilon$ and $L_{-2}^{1-\varepsilon}$ is the cone of a map spanned by the two
+mixed points.
+\begin{itemize}
+\item The backward cones have middle term $V_\alpha\oplus E_0\oplus E_{1/2}$.
+  \begin{itemize}
+  \item $\alpha=\frac14$ gives the known triangles (I) and (II).
+  \item $\alpha\ne\frac14$ gives Triangle($\alpha$). Its cap areas $4(\alpha-\frac18)^2$ and $4(\alpha-\frac38)^2$ differ, so the theory is non-monotone.
+  \item $\alpha\to0$ gives the Farey route, with middle term $0$ but level $\ge\frac18$.
+  \end{itemize}
+\item The forward cone is $F$.
+\end{itemize}
+Nothing else exists.
+
+\section{The sharpness obstruction}
+
+\begin{prop}[N2]
+Let $f\colon A_1\to B_0$ be defined uniformly in $K$ by counting, possibly broken, instantons
+on cobordisms or families that contain $E_K\times[0,1]$ compatibly with both ends. This covers
+surgery, singular, orbifold and lens-capped cobordisms, families, composites, Toda brackets and
+pillowcase polygons. If $f$ is injective at $K=4_1$, then $L_{\rm top}(f)>-\frac1{16}$.
+\end{prop}
+
+\noindent\emph{Proof.}
+\begin{enumerate}
+\item For $4_1$ we have $\sigma=0$, so the correction of \S3 does not enter. Both complexes are perfect: $A_1$ has its bottom class at bd, level $\frac15$, and $B_0=\{z\}$ at level $\frac{11}{80}=\frac15-\frac1{16}$.
+\item An injective map of level $-\frac1{16}$ must send $x_{\rm bd}$ to $z$ through an instanton of energy $0$, i.e.\ a flat connection.
+\item A flat connection restricts to a single representation of $\pi_1(E_K\times I)$. But bd and $z$ are different representations: bd is binary dihedral with $a=\frac14$, and $z$ is not. $\square$
+\end{enumerate}
+
+\st{Consequences.}
+\begin{itemize}
+\item In this toolkit, no single injective map proves the sharp bound $m_2\ge\frac1{16}$.
+\item If levels lie in $\frac1{16}\mathbb Z$, as every row of the arithmetic table does, the best possible outcome is $m_2>0$, coming from a level-$0$ map plus positivity of energy.
+\item A flat connection realising equality must change the $E_K$-representation. It therefore lives on a cobordism that does \emph{not} contain $E_K\times I$ compatibly.
+\item It also cannot pass through a vertex carrying only reducibles, if that vertex is reached by 2- and 3-handles (topology, O3). The holonomy image of bd is dihedral ($D_3$ for $T(2,-3)$, $D_5$ for $4_1$) and has no element of order $4$, so a $\gamma_1$ end never occurs.
+\end{itemize}
+In the data the equality is carried by $b'\circ a'$: $a'$ is flat at bd, and $b'$ has energy
+exactly $\frac1{16}$, the area of the mixed triangle.
+
+\st{Escapes left.}
+\begin{itemize}
+\item A cobordism $Y_2\to Y_{-2}$ not containing $E_K\times I$. Its flat part must change representation, e.g.\ by adding $1$-handles.
+\item A non-topological cancellation.
+\item Settling for a strict bound $m_2>0$. This needs a non-null mixed map of topological level $0$ that is nonzero on the bottom class. The known ones, $W'_{\rm odd}$ and $b\circ a$, are null.
+\end{itemize}
+
+\section{The corrected complex for $(Y_{\pm2},w)$}
+
+\st{Reducible index (\texttt{reducible-index.md}).}
+\begin{itemize}
+\item On $Y_1\to(Y_2,w)$, the twisted reducible $A_k=\mathbb R\oplus L$ with $c_1(L)=(2k+1)e$ has $e^2=-\frac12$ and energy $(2k+1)^2/8$.
+\item Its $L$-part has complex index $\frac{(2k+1)^2-1}2+\frac{\rho_\chi(Y_2)}2$, where $\rho_\chi(Y_{\pm2})=\sigma(K)$ in the APS convention (Casson--Gordon).
+\item So the minimal reducible ($\kappa=\frac18$) is obstructed with cokernel $\mathbb C^{|\sigma|/2}$ on one of the two edges at $(Y_{\pm2},w)$.
+\item This gives $|\sigma|/2$ suspensions, and none when $\sigma=0$, in particular when $\Delta_K=1$.
+\end{itemize}
+
+\st{Your rule, applied.} I added $|\sigma|/2$ generators with Chern--Simons equal to that of
+$\zeta$. I read the degrees as ${\rm ind}(\zeta\to\cdot)$. Read as ${\rm ind}(\cdot\to\zeta)$
+instead, the excess cases are inconsistent: the new and old generators have the same parity,
+so the rank cannot come out right. In the deficit cases the new generators survive. In the
+excess cases each one cancels an old generator, constrained by the $\mathbb Z/8$ grading and
+by $E>0$. Data: the $105$ torus knots with $pq\le120$, in both chiralities.
+
+\begin{center}\small
+\begin{tabular}{lll}
+drop & mirror knots ($\sigma>0$) & positive knots ($\sigma<0$)\\\hline
+$\lambda_1(Y_2)-\lambda_0(Y_{-2})$ & $\ge\frac1{16}$, equality only at $T(2,-3)$ & $<0$ for all $105$, minimum $-0.234$ at $T(3,40)$\\
+$\lambda_0(Y_2)-\lambda_1(Y_{-2})$ & $\ge\frac19$ ($T(4,-5)$) & depends on the cancellations; best case $\ge0.131$\\
+$\lambda_0(Y_2)-\lambda_0(Y_{-2})$ & $\ge\frac3{32}$, unchanged & $\ge-0.109$, unchanged (DLME)\\
+$\lambda_1(Y_2)-\lambda_1(Y_{-2})$ & $\ge0.1225$ & depends on the cancellations; best case $\ge0.006$\\
+$\min_i\lambda_i(Y_2)-\min_i\lambda_i(Y_{-2})$ & $\ge0.1244$ & depends on the cancellations; best case $\ge0.006$
+\end{tabular}
+\end{center}
+
+\noindent For positive knots the surviving new generators of $(Y_2,w)$ sit at levels
+$\frac{1+|\sigma|}8,\frac{|\sigma|-1}8,\dots$, ending at \emph{exactly} $\frac38$. So
+$\lambda_1(Y_2)=\frac38<\lambda_0(Y_{-2})$.
+
+\emph{Caveat.} This depends on two normalisations. An offset of $2$ in degree moves the
+bottom generator to $\frac58$. Taking Chern--Simons to be $0$ in the absolute normalisation,
+rather than at $\zeta$, moves it to $\frac14$. The mirror-knot column depends on the same choices; in this reading no mirror-knot drop decreases.
+
+\section{Calibration for general knots}
+
+\begin{itemize}
+\item The sharp, non-strict $\frac1{16}$ cannot come from any map built on $E_K\times I$ (N2). Equality at $4_1$ is witnessed by positive energy on a triangle face.
+\item What such maps can give is a strict bound from a level-$0$ map. Even that needs a non-null mixed map that is injective on the bottom class, and none is known.
+\item The $-\frac1{16}$ maps that do exist are $F$'s side map, $\mathcal E_{\gamma_1}$ and the $s=\frac12$ singular maps of $\lambda'$. All are null, go to or from a singular theory, or are not flat at bd.
+\end{itemize}
+\end{document}
